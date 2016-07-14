@@ -293,7 +293,7 @@ static void roadmap_layer_reload_internal (void) {
 #ifdef OPENGL
         bg_color = (category->pen_count > 2 ? 1 : 0);
         if (color[bg_color] != NULL && *(color[bg_color]) > ' ') {
-				roadmap_canvas_set_background (global_label_bg_color);
+				//roadmap_canvas_set_background (global_label_bg_color);
         }
 #endif //OPENGL
 

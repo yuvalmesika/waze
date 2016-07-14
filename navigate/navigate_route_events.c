@@ -196,8 +196,9 @@ static void _draw_bar(SsdWidget widget, RoadMapGuiRect *rect, int flags) {
 			return;
 		}
 		else {
-			roadmap_canvas_draw_image_stretch(bar_image, &sign_top, &sign_bottom, &position, 0,
-					IMAGE_NORMAL);
+			//TODO
+			//roadmap_canvas_draw_image_stretch(bar_image, &sign_top, &sign_bottom, &position, 0,
+			//		IMAGE_NORMAL);
 		}
 	}
 }
@@ -286,8 +287,9 @@ static void _draw_traffic(SsdWidget widget, RoadMapGuiRect *rect, int flags) {
 				sign_bottom.x = rect->minx + (width * data->iStart / 100) + (width * data->iPrecentage
 						/ 100) - 2 * roadmap_canvas_image_width(events_divider);
 			sign_bottom.y = rect->miny + roadmap_canvas_image_height(event_traffic);
-			roadmap_canvas_draw_image_stretch(event_traffic, &sign_top, &sign_bottom, &position, 0,
-					IMAGE_NORMAL);
+			//TODO
+			//roadmap_canvas_draw_image_stretch(event_traffic, &sign_top, &sign_bottom, &position, 0,
+			//		IMAGE_NORMAL);
 		}
 	}
 

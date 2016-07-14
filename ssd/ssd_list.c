@@ -845,7 +845,7 @@ SsdWidget ssd_list_new( const char*             name,
    SsdWidget list;
    ssd_list_data_ptr data =
       (ssd_list_data_ptr) calloc (1, sizeof(*data));
-   data->min_row_height = ADJ_SCALE(MIN_ROW_HEIGHT);
+   //data->min_row_height = ADJ_SCALE(MIN_ROW_HEIGHT);
    SsdWidget list_container = ssd_container_new (name, NULL, width, SSD_MIN_SIZE, flags);
    ssd_widget_set_color(list_container, NULL, NULL);
    /* Override list container draw */

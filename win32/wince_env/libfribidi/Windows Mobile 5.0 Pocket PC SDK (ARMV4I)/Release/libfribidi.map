@@ -1,0 +1,80 @@
+ libfribidi
+
+ Timestamp is 57875714 (Thu Jul 14 12:10:44 2016)
+
+ Preferred load address is 00100000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00001964H .text                   CODE
+ 0002:00000000 000011b4H .rdata                  DATA
+ 0002:000011b4 00000014H .idata$2                DATA
+ 0002:000011c8 00000014H .idata$3                DATA
+ 0002:000011dc 00000010H .idata$4                DATA
+ 0002:000011ec 0000000cH .idata$6                DATA
+ 0002:00001200 00000051H .edata                  DATA
+ 0003:00000000 00000010H .idata$5                DATA
+ 0003:00000010 00000004H .CRT$XCA                DATA
+ 0003:00000014 00000004H .CRT$XCZ                DATA
+ 0003:00000018 00000004H .CRT$XIA                DATA
+ 0003:0000001c 00000004H .CRT$XIZ                DATA
+ 0003:00000020 00000004H .CRT$XPA                DATA
+ 0003:00000024 00000004H .CRT$XPZ                DATA
+ 0003:00000028 00000004H .CRT$XTA                DATA
+ 0003:0000002c 00000004H .CRT$XTZ                DATA
+ 0003:00000030 00000008H .data                   DATA
+ 0003:00000038 0000001cH .bss                    DATA
+ 0004:00000000 00000090H .pdata                  DATA
+
+  Address         Publics by Value              Rva+Base       Lib:Object
+
+ 0000:00000000       ___safe_se_handler_count   00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
+ 0001:00000f2c       fribidi_log2vis            00101f2c f   fribidi.obj
+ 0001:000013f4       fribidi_get_type_internal  001023f4 f   fribidi_char_type.obj
+ 0001:00001520       fribidi_get_type           00102520 f   fribidi_char_type.obj
+ 0001:00001540       DllMain                    00102540 f   fribidi_dll.obj
+ 0001:00001548       fribidi_mem_chunk_new      00102548 f   fribidi_mem.obj
+ 0001:00001578       fribidi_mem_chunk_alloc    00102578 f   fribidi_mem.obj
+ 0001:000015e0       fribidi_get_mirror_char    001025e0 f   fribidi_mirroring.obj
+ 0001:00001684       free                       00102684 f   coredll:COREDLL.dll
+ 0001:00001694       malloc                     00102694 f   coredll:COREDLL.dll
+ 0001:000016a4       _DllMainCRTStartup         001026a4 f   corelibc:pegdmain.obj
+ 0001:0000173c       _cinit                     0010273c f   corelibc:crt0dat.obj
+ 0001:000018ac       _cexit                     001028ac f   corelibc:crt0dat.obj
+ 0001:000018c8       LocalFree                  001028c8 f   coredll:COREDLL.dll
+ 0002:00000000       ??_C@_0BNI@KILDIDLM@fribidi?50?410?47?6interface?5version@ 00103000     fribidi.obj
+ 0002:000001d8       ??_C@_0CJ@LGLIABCC@TypeLink?5mem?5chunks?5?$CIFRIBIDI_CHU@ 001031d8     fribidi.obj
+ 0002:00001158       nFriBidiMirroredChars      00104158     fribidi_mirroring.obj
+ 0002:00001160       fribidi_prop_to_type       00104160     fribidi_types.obj
+ 0002:000011b4       __IMPORT_DESCRIPTOR_COREDLL 001041b4     coredll:COREDLL.dll
+ 0002:000011c8       __NULL_IMPORT_DESCRIPTOR   001041c8     coredll:COREDLL.dll
+ 0003:00000000       __imp_malloc               00105000     coredll:COREDLL.dll
+ 0003:00000004       __imp_LocalFree            00105004     coredll:COREDLL.dll
+ 0003:00000008       __imp_free                 00105008     coredll:COREDLL.dll
+ 0003:0000000c       \177COREDLL_NULL_THUNK_DATA 0010500c     coredll:COREDLL.dll
+ 0003:00000010       __xc_a                     00105010     corelibc:crt0init.obj
+ 0003:00000014       __xc_z                     00105014     corelibc:crt0init.obj
+ 0003:00000018       __xi_a                     00105018     corelibc:crt0init.obj
+ 0003:0000001c       __xi_z                     0010501c     corelibc:crt0init.obj
+ 0003:00000020       __xp_a                     00105020     corelibc:crt0init.obj
+ 0003:00000024       __xp_z                     00105024     corelibc:crt0init.obj
+ 0003:00000028       __xt_a                     00105028     corelibc:crt0init.obj
+ 0003:0000002c       __xt_z                     0010502c     corelibc:crt0init.obj
+ 0003:00000034       fribidi_version_info       00105034     fribidi.obj
+ 0003:00000044       __onexitend                00105044     <common>
+ 0003:00000048       __onexitbegin              00105048     <common>
+ 0003:0000004c       _exitflag                  0010504c     <common>
+ 0003:00000050       _pRawDllMain               00105050     <common>
+
+ entry point at        0001:000016a4
+
+ Static symbols
+
+ 0001:00000000       new_type_link              00101000 f   fribidi.obj
+ 0001:00000084       run_length_encode_types    00101084 f   fribidi.obj
+ 0001:00000238       init_list                  00101238 f   fribidi.obj
+ 0001:00000340       override_list              00101340 f   fribidi.obj
+ 0001:00000590       compact_list               00101590 f   fribidi.obj
+ 0001:00000614       compact_neutrals           00101614 f   fribidi.obj
+ 0001:000006a8       fribidi_analyse_string     001016a8 f   fribidi.obj
+ 0001:000017a8       doexit                     001027a8 f   corelibc:crt0dat.obj

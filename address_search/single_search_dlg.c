@@ -496,16 +496,16 @@ static void on_search(void)
    }
    if ( !strcmp( "dbg@tts", ssd_text_get_text( edit ) ) )
    {
-      if ( !strcmp( tts_was_provider_voices_set(), TTS_WAS_VOICES_SET_PRODUCTION ) )
-      {
-         tts_was_provider_apply_voices_set( TTS_WAS_VOICES_SET_DEBUG );
-         roadmap_messagebox("","TTS Feature is running in debug mode!\nPlease restart WAZE.");
-      }
-      else
-      {
-         tts_was_provider_apply_voices_set( TTS_WAS_VOICES_SET_PRODUCTION );
-         roadmap_messagebox("","TTS Feature is running in production mode!\nPlease restart WAZE.");
-      }
+      //if ( !strcmp( tts_was_provider_voices_set(), TTS_WAS_VOICES_SET_PRODUCTION ) )
+      //{
+      //   //tts_was_provider_apply_voices_set( TTS_WAS_VOICES_SET_DEBUG );
+      //   roadmap_messagebox("","TTS Feature is running in debug mode!\nPlease restart WAZE.");
+      //}
+      //else
+      //{
+      //   //tts_was_provider_apply_voices_set( TTS_WAS_VOICES_SET_PRODUCTION );
+      //   roadmap_messagebox("","TTS Feature is running in production mode!\nPlease restart WAZE.");
+      //}
       return;
    }
 
@@ -540,9 +540,13 @@ static void on_search(void)
    if (strstr(txt, "@")){
 
        char txt_buffer[128];
+	   int i;
+	   char *name;
+	   char *coord; 
        strcpy (txt_buffer, txt);
-       char *name = strtok (txt_buffer, "@");
-       char *coord = strtok (NULL, "@");
+	   i=1;
+       *name = strtok (txt_buffer, "@");
+       *coord = strtok (NULL, "@");
        if (coord && (isdigit(coord[0]) || coord[0] == '-') && strchr (coord, ',') && strchr (coord, '.')){
              RoadMapPosition position;
               double   longtitude;

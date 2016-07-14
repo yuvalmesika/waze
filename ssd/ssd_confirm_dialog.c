@@ -337,6 +337,9 @@ static void create_confirm_dialog (BOOL default_yes, const char * textYes, const
 void ssd_confirm_dialog_custom (const char *title, const char *text, BOOL default_yes, ConfirmDialogCallback callback, void *context,const char *textYes, const char *textNo) {
 
   SsdWidget dialog;
+  SsdWidget buttonYes;
+  SsdWidget buttonNo;
+
   confirm_dialog_context *data =
     (confirm_dialog_context  *)calloc (1, sizeof(*data));
 
@@ -354,8 +357,6 @@ void ssd_confirm_dialog_custom (const char *title, const char *text, BOOL defaul
   }
 #ifdef TOUCH_SCREEN
    //set button text & softkeys
-   SsdWidget buttonYes;
-   SsdWidget buttonNo;
    buttonYes = ssd_widget_get(dialog, roadmap_lang_get ("Yes")); // change the buttons to custom text
    ssd_button_change_text(buttonYes, textYes);
    ssd_widget_loose_focus(buttonYes);

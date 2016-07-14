@@ -658,10 +658,11 @@ TtsPlayList tts_playlist_create( const char* voice_id )
 
    if ( tts_enabled() )
    {
+	   const TtsProvider* provider ;
       if ( voice_id == NULL )
          voice_id = sgTtsVoiceId;
 
-      const TtsProvider* provider = _voice_service_provider( voice_id );
+      provider = _voice_service_provider( voice_id );
       switch ( provider->storage_type )
       {
          case __tts_db_data_storage__file:

@@ -2572,7 +2572,7 @@ void roadmap_canvas_draw_image (RoadMapImage image, const RoadMapGuiPoint *pos,
 	bottom_right_point.x = pos->x + image->width; // Actually w-1
 	bottom_right_point.y = pos->y + image->height; // Actually h-1
 
-	roadmap_canvas_draw_image_scaled( image, pos, &bottom_right_point, opacity, mode );
+	roadmap_canvas_draw_image( image, pos, &bottom_right_point, opacity, mode );
 }
 
 void roadmap_canvas_draw_image_angle (RoadMapImage image, const RoadMapGuiPoint *pos,
@@ -2583,7 +2583,7 @@ void roadmap_canvas_draw_image_angle (RoadMapImage image, const RoadMapGuiPoint 
 	bottom_right_point.x = pos->x + image->width; // Actually w-1
 	bottom_right_point.y = pos->y + image->height; // Actually h-1
    
-	roadmap_canvas_draw_image_scaled_angle( image, pos, &bottom_right_point, opacity, angle, mode );
+	roadmap_canvas_draw_image( image, pos, &bottom_right_point, opacity, angle, mode );
 }
 
 
@@ -2725,7 +2725,7 @@ void roadmap_canvas_draw_image_scaled_angle ( RoadMapImage image, const RoadMapG
 void roadmap_canvas_draw_image_scaled( RoadMapImage image, const RoadMapGuiPoint *top_left_pos, const RoadMapGuiPoint *bottom_right_pos,
                                       int opacity, int mode )
 {
-   roadmap_canvas_draw_image_scaled_angle (image, top_left_pos, bottom_right_pos, opacity, 0, mode);
+   roadmap_canvas_draw_image(image, top_left_pos, bottom_right_pos, opacity, 0, mode);
 }
 /*
  * Draws the target image in the area defined by top_left_pos and bottom_right_pos by

@@ -397,7 +397,7 @@ static void roadmap_http_async_prepare_output (HttpAsyncContext *hcontext) {
    hcontext->download_size_current = 0;
    hcontext->content_length = -1;
    
-   roadmap_main_set_output(&hcontext->io, roadmap_http_async_write_cb, FALSE);
+  //TODO roadmap_main_set_output(&hcontext->io, roadmap_http_async_write_cb, FALSE);
 }
 
 

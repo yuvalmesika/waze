@@ -566,9 +566,6 @@ INLINE_DEC int  roadmap_screen_draw_one_line_internal (RoadMapPosition *from,
    RoadMapScreenPattern empty_pattern = {NULL, 0};
    BOOL draw_out_of_screen = FALSE;
    
-   if (!pattern)
-      pattern = &empty_pattern;
-
    int i;
 
    int last_point_visible = 0;
@@ -576,6 +573,9 @@ INLINE_DEC int  roadmap_screen_draw_one_line_internal (RoadMapPosition *from,
 
    int drawn = 0;
    int opposite_flag = 0;
+
+   if (!pattern)
+      pattern = &empty_pattern;
 
    dbg_time_start(DBG_TIME_DRAW_ONE_LINE);
 
@@ -2012,7 +2012,7 @@ static void roadmap_screen_draw_object (const char *name,
          top_left_pos.y -= (roadmap_canvas_image_height(image)*scale)/(2 * 100) - offset->y*scale/100;
          bottom_right_pos.x = top_left_pos.x + (roadmap_canvas_image_width(image)*scale)/100;
          bottom_right_pos.y = top_left_pos.y + (roadmap_canvas_image_height(image)*scale)/100;
-         roadmap_canvas_draw_image_scaled_angle(image, &top_left_pos, &bottom_right_pos, opacity, rotation, IMAGE_NORMAL);
+         //roadmap_canvas_draw_image_scaled_angle(image, &top_left_pos, &bottom_right_pos, opacity, rotation, IMAGE_NORMAL);
 #else
          top_left_pos.x -= roadmap_canvas_image_width(image)/2 - offset->x;
          top_left_pos.y -= roadmap_canvas_image_height(image)/2 - offset->y;
@@ -2033,7 +2033,7 @@ static void roadmap_screen_draw_object (const char *name,
       roadmap_canvas_create_pen("ObjectText");
       roadmap_canvas_set_foreground(texts[i].fg_color);
 #ifdef OPENGL
-      roadmap_canvas_set_background(texts[i].bg_color);
+      //roadmap_canvas_set_background(texts[i].bg_color);
 #endif
       roadmap_canvas_draw_formated_string_size(&top_left_pos, ROADMAP_CANVAS_CENTERMIDDLE,
                                                texts[i].size*scale/100, texts[i].font_flags, roadmap_string_get(texts[i].text));
@@ -2110,7 +2110,7 @@ static void roadmap_screen_draw_alerts (void) {
                bottom_right_pos.x = top_left_pos.x + (roadmap_canvas_image_width(image)*scale)/100;
                bottom_right_pos.y = top_left_pos.y + (roadmap_canvas_image_height(image)*scale)/100;
 
-               roadmap_canvas_draw_image_scaled(image, &top_left_pos, &bottom_right_pos, 0, IMAGE_NORMAL);
+               //roadmap_canvas_draw_image_scaled(image, &top_left_pos, &bottom_right_pos, 0, IMAGE_NORMAL);
 #else
        	      icon_screen_point.x = top_left_pos.x - 10; //roadmap_canvas_image_width(image) ;
                icon_screen_point.y = top_left_pos.y - roadmap_canvas_image_height (image)  + 2;
@@ -2132,7 +2132,7 @@ static void roadmap_screen_draw_alerts (void) {
                         bottom_right_pos.x = top_left_pos.x + (roadmap_canvas_image_width(image)*scale)/100;
                         bottom_right_pos.y = top_left_pos.y + (roadmap_canvas_image_height(image)*scale)/100;
 
-                        roadmap_canvas_draw_image_scaled(image, &top_left_pos, &bottom_right_pos, 0, IMAGE_NORMAL);                  }
+                        //roadmap_canvas_draw_image_scaled(image, &top_left_pos, &bottom_right_pos, 0, IMAGE_NORMAL);                  }
 #else
           	  icon_screen_point.x = top_left_pos.x - 3;
                	  icon_screen_point.y = top_left_pos.y - roadmap_canvas_image_height (image)  + 5;
@@ -2232,7 +2232,7 @@ static void draw_real_time_traffic_speed_signs(void){
          bottom_right_pos.y = icon_screen_point.y + (roadmap_canvas_image_height(images[TrafficRecord->iType])*scale)/100;
 
 #ifdef OPENGL
-         roadmap_canvas_draw_image_scaled(images[TrafficRecord->iType], &icon_screen_point, &bottom_right_pos, 225, IMAGE_NORMAL);
+         //roadmap_canvas_draw_image_scaled(images[TrafficRecord->iType], &icon_screen_point, &bottom_right_pos, 225, IMAGE_NORMAL);
 #else
          icon_screen_point.x = screen_point.x - roadmap_canvas_image_width(images[TrafficRecord->iType])/2  ;
          icon_screen_point.y = screen_point.y - roadmap_canvas_image_height (images[TrafficRecord->iType]) ;
@@ -2455,11 +2455,11 @@ void roadmap_screen_draw_sky(void){
          screen_point.x = image_width * roadmap_math_get_orientation() / 360;
          bottom_right.x = screen_point.x + image_width;
          bottom_right.y = screen_point.y + roadmap_canvas_image_height(SkyImage);
-         roadmap_canvas_draw_image_scaled(SkyImage, &screen_point, &bottom_right, 0, IMAGE_NORMAL);
+         //roadmap_canvas_draw_image_scaled(SkyImage, &screen_point, &bottom_right, 0, IMAGE_NORMAL);
          if (roadmap_math_get_orientation() != 0) {
             screen_point.x -= image_width;
             bottom_right.x -= image_width;
-            roadmap_canvas_draw_image_scaled(SkyImage, &screen_point, &bottom_right, 0, IMAGE_NORMAL);
+            //roadmap_canvas_draw_image_scaled(SkyImage, &screen_point, &bottom_right, 0, IMAGE_NORMAL);
          }
 
       }
@@ -2496,7 +2496,7 @@ static void roadmap_screen_draw_glow (void) {
          top_left_pos.y = pos.y -  (roadmap_canvas_image_height(image) * scale*glow)/(2 * 100) - RoadMapScreenGlowOffset.y*scale;
          bottom_right_pos.x = top_left_pos.x + (roadmap_canvas_image_width(image) * scale*glow)/100;
          bottom_right_pos.y = top_left_pos.y + (roadmap_canvas_image_height(image) * scale*glow)/100;
-         roadmap_canvas_draw_image_scaled(image, &top_left_pos, &bottom_right_pos, 255*(101 - glow)/100, IMAGE_NORMAL);
+         //roadmap_canvas_draw_image_scaled(image, &top_left_pos, &bottom_right_pos, 255*(101 - glow)/100, IMAGE_NORMAL);
 
          glow += 33;
          if (glow > 100)
@@ -2505,7 +2505,7 @@ static void roadmap_screen_draw_glow (void) {
          top_left_pos.y = pos.y -  (roadmap_canvas_image_height(image) * scale*glow)/(2 * 100) - RoadMapScreenGlowOffset.y*scale;
          bottom_right_pos.x = top_left_pos.x + (roadmap_canvas_image_width(image) * scale*glow)/100;
          bottom_right_pos.y = top_left_pos.y + (roadmap_canvas_image_height(image) * scale*glow)/100;
-         roadmap_canvas_draw_image_scaled(image, &top_left_pos, &bottom_right_pos, 255*(101 - glow)/100, IMAGE_NORMAL);
+         //roadmap_canvas_draw_image_scaled(image, &top_left_pos, &bottom_right_pos, 255*(101 - glow)/100, IMAGE_NORMAL);
 
          glow += 33;
          if (glow > 100)
@@ -2514,7 +2514,7 @@ static void roadmap_screen_draw_glow (void) {
          top_left_pos.y = pos.y -  (roadmap_canvas_image_height(image) * scale*glow)/(2 * 100) - RoadMapScreenGlowOffset.y*scale;
          bottom_right_pos.x = top_left_pos.x + (roadmap_canvas_image_width(image) * scale*glow)/100;
          bottom_right_pos.y = top_left_pos.y + (roadmap_canvas_image_height(image) * scale*glow)/100;
-         roadmap_canvas_draw_image_scaled(image, &top_left_pos, &bottom_right_pos, 255*(101 - glow)/100, IMAGE_NORMAL);
+         //roadmap_canvas_draw_image_scaled(image, &top_left_pos, &bottom_right_pos, 255*(101 - glow)/100, IMAGE_NORMAL);
       }
    }
 #endif

@@ -918,11 +918,11 @@ void roadmap_navigate_locate (const RoadMapGpsPosition *gps_position, time_t gps
    static time_t lost_route_time = 0;
    int old_direction = RoadMapConfirmedStreet.line_direction;
    int distance_threashold = gps_position->accuracy;
-   
-   if (distance_threashold < 20)
-      distance_threashold = 20;
 
 	zoom_t zoom = 20;
+
+	if (distance_threashold < 20)
+      distance_threashold = 20;
 
    if (confidence_delta > 1000)
       confidence_delta = 1000;
@@ -1021,8 +1021,9 @@ void roadmap_navigate_locate (const RoadMapGpsPosition *gps_position, time_t gps
 
 
    if (RoadMapLatestGpsPosition.steering == INVALID_STEERING) {
+	   RoadMapPosition trip_gps_pos;
       RoadMapLatestValidPosition = *roadmap_trip_get_gps_position ("GPS");
-      RoadMapPosition trip_gps_pos = *(RoadMapPosition*)&RoadMapLatestValidPosition;
+      trip_gps_pos = *(RoadMapPosition*)&RoadMapLatestValidPosition;
       last_azymuth_point = *(RoadMapPosition*)gps_position;
       if (roadmap_math_distance(&last_azymuth_point, &trip_gps_pos) < 100)
          //For first tine, use the last session's steering. current steering is probably not correct

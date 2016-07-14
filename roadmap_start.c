@@ -293,7 +293,7 @@ RoadMapAction *roadmap_start_find_action_un_const (const char *name);
 void mark_location(void);
 void save_location(void);
 void gps_network_status(void);
-void roadmap_start_continue(void);
+//void roadmap_start_continue(void);
 static void viewMyPoints(void);
 static void roadmap_start_hide_current_dialog ( void );
 static void _tts_config( void* after_geo );
@@ -3264,7 +3264,7 @@ void roadmap_start (int argc, char **argv) {
     roadmap_start_set_right_softkey("Report", "Report", start_alerts_menu);
     roadmap_browser_init();
     _tts_config( NULL );
-    roadmap_geo_config(roadmap_start_continue);
+    //roadmap_geo_config(roadmap_start_continue);
 }
 
 

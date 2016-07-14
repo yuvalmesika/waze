@@ -114,7 +114,7 @@ static void draw_title_bar_image ( RoadMapImage header_image, RoadMapGuiRect *re
 #ifdef OPENGL
    bottom_right_point.x = rect->maxx+1;
    bottom_right_point.y = rect->maxy;
-   roadmap_canvas_draw_image_scaled( header_image, pos, &bottom_right_point, 0, IMAGE_NOBLEND );
+   //roadmap_canvas_draw_image_scaled( header_image, pos, &bottom_right_point, 0, IMAGE_NOBLEND );
 #else
    image_width = roadmap_canvas_image_width(header_image);
 
@@ -462,7 +462,7 @@ static void draw (SsdWidget widget, RoadMapGuiRect *rect, int flags) {
                   position.y = roadmap_canvas_image_height(focus_image) / 2;
                   sign_bottom.x = rect->maxx;
                   sign_bottom.y = rect->maxy;
-                  roadmap_canvas_draw_image_stretch( focus_image, &sign_top, &sign_bottom, &position, 0, IMAGE_NORMAL );
+                  //roadmap_canvas_draw_image_stretch( focus_image, &sign_top, &sign_bottom, &position, 0, IMAGE_NORMAL );
                }
 
             }

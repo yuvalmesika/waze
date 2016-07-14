@@ -884,7 +884,7 @@ void navigate_bar_draw (void){
 #else
    AddressBottomRightPoint.x = roadmap_canvas_width();
    AddressBottomRightPoint.y = BarLocation.y + get_AddressBarHeight();
-   roadmap_canvas_draw_image_scaled( NavigateBarAddressImage, &BarLocation, &AddressBottomRightPoint, 0, IMAGE_NORMAL );
+   //roadmap_canvas_draw_image_scaled( NavigateBarAddressImage, &BarLocation, &AddressBottomRightPoint, 0, IMAGE_NORMAL );
 #endif
 
 

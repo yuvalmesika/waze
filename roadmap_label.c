@@ -385,7 +385,7 @@ static void draw_shield (RoadMapImage shield, RoadMapGuiRect bbox, int opacity) 
       bottom_right.x = top_left.x + req_w;
       bottom_right.y = top_left.y + req_h;
 
-      roadmap_canvas_draw_image_scaled(shield, &top_left, &bottom_right, opacity, IMAGE_NORMAL);
+      //TODO : roadmap_canvas_draw_image_scaled(shield, &top_left, &bottom_right, opacity, IMAGE_NORMAL);
    }
 }
 
@@ -1304,7 +1304,7 @@ void roadmap_label_activate (void) {
          shield_pens[i] = roadmap_canvas_create_pen (pen_name);
          roadmap_canvas_set_foreground (color);
          if (bg_color && bg_color[0]) {
-				roadmap_canvas_set_background (bg_color);
+				//roadmap_canvas_set_background (bg_color);
          }
       } else {
          shield_pens[i] = NULL;

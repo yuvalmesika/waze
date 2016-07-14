@@ -440,7 +440,8 @@ static void navigate_play_start (void) {
       char file_name[128];
       const int num_start_drive_prompts = 10;
       const char* tts_text;
-      
+      RoadMapSoundList list;
+
       shuffle_num = time(NULL) % num_start_drive_prompts;
       tts_text = tts_apptext_get_start_drive( shuffle_num );
       if ( tts_apptext_available( tts_text ) )
@@ -454,7 +455,8 @@ static void navigate_play_start (void) {
          else
             strncpy_safe(file_name, "StartDrive", sizeof(file_name));
 
-         RoadMapSoundList list = roadmap_sound_list_create (0);
+		 
+		 list = roadmap_sound_list_create (0);
          roadmap_sound_list_add (list, file_name);
          roadmap_sound_play_list (list);
       }
@@ -948,6 +950,11 @@ static void refresh_eta (BOOL initial) {
 	   char addtext1_2[100];
 	   char newETA[100];
 	   const char *icon;
+	   int ETA;
+	   timeStruct ETA_struct;
+	   timeStruct curTime;
+	   timeStruct timeToDest;
+
 		if (NavigateETADiff > 0) {
 		   icon = "wazer_top_sad";
 		   snprintf (title, sizeof (title), "%d %s",(NavigateETADiff + 30) / 60, roadmap_lang_get("min delay"));
@@ -969,10 +976,8 @@ static void refresh_eta (BOOL initial) {
 
 		}
 		navigate_play_sound();
-	   int ETA = NavigateETA + NavigateETAToTurn + 60;
-	   timeStruct ETA_struct;
-	   timeStruct curTime = navigate_main_get_current_time();
-	   timeStruct timeToDest;
+	   ETA = NavigateETA + NavigateETAToTurn + 60;
+	   curTime = navigate_main_get_current_time();
 	   timeToDest.hours = ETA / 3600;
 	   timeToDest.minutes =  (ETA % 3600) / 60;
 	   timeToDest.seconds = ETA % 60;
@@ -1554,6 +1559,10 @@ void navigate_main_on_suggest_reroute (int reroute_segment, int time_before, int
 	char msg[100];
 	char newETA[100];
 	int min_saved;
+	int ETA;
+	timeStruct ETA_struct;
+    timeStruct curTime;
+	timeStruct timeToDest;
    if (!NavigateTrackEnabled) {
    	roadmap_log (ROADMAP_WARNING, "Received suggested reroute when not navigating");
    	return;
@@ -1573,10 +1582,8 @@ void navigate_main_on_suggest_reroute (int reroute_segment, int time_before, int
 	   snprintf (msg, sizeof(msg), "%d %s",min_saved, roadmap_lang_get("minutes"));
 	else
 	   msg[0] = 0;
-   int ETA = NavigateETA + NavigateETAToTurn + 60;
-   timeStruct ETA_struct;
-   timeStruct curTime = navigate_main_get_current_time();
-   timeStruct timeToDest;
+   ETA = NavigateETA + NavigateETAToTurn + 60;
+   curTime = navigate_main_get_current_time();
    timeToDest.hours = ETA / 3600;
    timeToDest.minutes =  (ETA % 3600) / 60 - min_saved;
    timeToDest.seconds = ETA % 60;
@@ -2935,7 +2942,7 @@ void navigate_main_initialize (void) {
       roadmap_config_save(1);
    }
 
-   navigate_tts_initialize();
+   //navigate_tts_initialize();
    navigate_main_get_guidance_types(); //init
 
    roadmap_config_set_integer (&NavigateConfigNavigateTime, -1);
@@ -3181,6 +3188,9 @@ void navigate_main_prepare_for_request (void) {
 }
 
 
+void navigate_main_set_src_pos(RoadMapPosition *position){
+   NavigateSrcPos = *position;
+}
 static void recalc_alt_route(void){
    const RoadMapPosition *from;
    RoadMapGpsPosition pos;
@@ -3715,9 +3725,6 @@ void navigate_main_set_dest_pos(RoadMapPosition *position){
    NavigateDestPos = *position;
 }
 
-void navigate_main_set_src_pos(RoadMapPosition *position){
-   NavigateSrcPos = *position;
-}
 
 int navigate_is_auto_zoom (void) {
    return (roadmap_config_match(&NavigateConfigAutoZoom, "yes"));
@@ -4414,7 +4421,7 @@ static BOOL navigate_main_guidance_tts( void ) {
 
    BOOL tts_turned_on = roadmap_config_match( &NavigateConfigNavigationGuidanceType, NAV_CFG_GUIDANCE_TYPE_TTS );
 
-   return navigate_tts_available() && tts_turned_on;
+   return FALSE;//navigate_tts_available() && tts_turned_on;
 }
 
 int navigate_main_visible_route_scale(RoadMapPosition *pos) {

@@ -204,7 +204,7 @@ int roadmap_display_border( int style, int header, int pointer_type, RoadMapGuiP
          OGLBorderStretchPoints[border_type].y = roadmap_canvas_image_height(image)/2;
    }
 
-	roadmap_canvas_draw_image_stretch( image, &sign_top, &sign_bottom, &OGLBorderStretchPoints[border_type], 0, IMAGE_NORMAL );
+	//roadmap_canvas_draw_image_stretch( image, &sign_top, &sign_bottom, &OGLBorderStretchPoints[border_type], 0, IMAGE_NORMAL );
 
 	/*
 	 * Draw the pointer

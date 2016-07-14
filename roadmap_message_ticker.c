@@ -140,7 +140,7 @@ void roadmap_message_ticker_display(void) {
       position.y = roadmap_canvas_image_height(image) / 2;
       sign_bottom.x = roadmap_canvas_width();
       sign_bottom.y = roadmap_bar_top_height() + roadmap_canvas_image_height(image)*factor ;
-      roadmap_canvas_draw_image_stretch( image, &sign_top, &sign_bottom, &position, 0, IMAGE_NORMAL );
+      //roadmap_canvas_draw_image_stretch( image, &sign_top, &sign_bottom, &position, 0, IMAGE_NORMAL );
    }
    else{
       roadmap_log (ROADMAP_ERROR, "roadmap_message_ticker - cannot load TickerBackground image ");

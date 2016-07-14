@@ -721,7 +721,7 @@ static void drawBarBGImage( const char* res, const RoadMapGuiPoint* pos ) {
    bottom_right_pos.y = pos->y + image_height;
 
 #ifdef OPENGL
-   roadmap_canvas_draw_image_scaled( bgImage, pos, &bottom_right_pos, 0, IMAGE_NORMAL );
+   //roadmap_canvas_draw_image_scaled( bgImage, pos, &bottom_right_pos, 0, IMAGE_NORMAL );
 #else
    num_images = width / image_width ;
    BarLocation.y = pos->y;

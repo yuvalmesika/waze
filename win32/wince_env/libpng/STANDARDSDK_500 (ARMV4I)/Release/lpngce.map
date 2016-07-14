@@ -1,0 +1,779 @@
+ lpngce
+
+ Timestamp is 5787e0bf (Thu Jul 14 21:58:07 2016)
+
+ Preferred load address is 00100000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00019f1cH .text                   CODE
+ 0002:00000000 00002a6aH .rdata                  DATA
+ 0002:00002a6c 00000038H .xdata                  DATA
+ 0002:00002aa4 00000028H .idata$2                DATA
+ 0002:00002acc 00000014H .idata$3                DATA
+ 0002:00002ae0 000000ecH .idata$4                DATA
+ 0002:00002bcc 00000018H .idata$6                DATA
+ 0002:00002bf0 000015a4H .edata                  DATA
+ 0003:00000000 000000ecH .idata$5                DATA
+ 0003:000000ec 00000004H .CRT$XCA                DATA
+ 0003:000000f0 00000004H .CRT$XCAA               DATA
+ 0003:000000f4 00000004H .CRT$XCZ                DATA
+ 0003:000000f8 00000004H .CRT$XIA                DATA
+ 0003:000000fc 00000004H .CRT$XIZ                DATA
+ 0003:00000100 00000004H .CRT$XPA                DATA
+ 0003:00000104 00000004H .CRT$XPZ                DATA
+ 0003:00000108 00000004H .CRT$XTA                DATA
+ 0003:0000010c 00000004H .CRT$XTZ                DATA
+ 0003:00000110 00000048H .data                   DATA
+ 0003:00000158 00000010H .bss                    DATA
+ 0004:00000000 000009f8H .pdata                  DATA
+
+  Address         Publics by Value              Rva+Base       Lib:Object
+
+ 0000:00000000       ___safe_se_handler_count   00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
+ 0001:00000000       png_set_sig_bytes          00101000 f   png.obj
+ 0001:00000040       png_sig_cmp                00101040 f   png.obj
+ 0001:00000108       png_check_sig              00101108 f   png.obj
+ 0001:000001a4       png_zalloc                 001011a4 f   png.obj
+ 0001:00000220       png_zfree                  00101220 f   png.obj
+ 0001:00000224       png_reset_crc              00101224 f   png.obj
+ 0001:00000244       png_calculate_crc          00101244 f   png.obj
+ 0001:00000284       png_info_init_3            00101284 f   png.obj
+ 0001:000002b8       png_data_freer             001012b8 f   png.obj
+ 0001:00000310       png_free_data              00101310 f   png.obj
+ 0001:00000720       png_info_destroy           00101720 f   png.obj
+ 0001:00000780       png_get_io_ptr             00101780 f   png.obj
+ 0001:00000780       png_get_progressive_ptr    00101780 f   pngpread.obj
+ 0001:000007a0       png_init_io                001017a0 f   png.obj
+ 0001:000007b0       png_convert_to_rfc1123     001017b0 f   png.obj
+ 0001:00000960       png_get_copyright          00101960 f   png.obj
+ 0001:00000980       png_get_libpng_ver         00101980 f   png.obj
+ 0001:00000980       png_get_header_ver         00101980 f   png.obj
+ 0001:000009a0       png_get_header_version     001019a0 f   png.obj
+ 0001:000009ac       png_handle_as_unknown      001019ac f   png.obj
+ 0001:00000a20       png_reset_zstream          00101a20 f   png.obj
+ 0001:00000a40       png_access_version_number  00101a40 f   png.obj
+ 0001:00000a4c       png_init_mmx_flags         00101a4c f   png.obj
+ 0001:00000a60       png_create_info_struct     00101a60 f   png.obj
+ 0001:00000aa0       png_destroy_info_struct    00101aa0 f   png.obj
+ 0001:00000b1c       png_info_init              00101b1c f   png.obj
+ 0001:00000dd8       png_set_error_fn           00101dd8 f   pngerror.obj
+ 0001:00000e00       png_get_error_ptr          00101e00 f   pngerror.obj
+ 0001:00000e18       png_error                  00101e18 f   pngerror.obj
+ 0001:00000f34       png_warning                00101f34 f   pngerror.obj
+ 0001:00000fc0       png_chunk_error            00101fc0 f   pngerror.obj
+ 0001:0000101c       png_chunk_warning          0010201c f   pngerror.obj
+ 0001:00001070       png_get_valid              00102070 f   pngget.obj
+ 0001:00001094       png_get_rowbytes           00102094 f   pngget.obj
+ 0001:000010a8       png_get_rows               001020a8 f   pngget.obj
+ 0001:000010bc       png_get_image_width        001020bc f   pngget.obj
+ 0001:000010d0       png_get_image_height       001020d0 f   pngget.obj
+ 0001:000010e4       png_get_bit_depth          001020e4 f   pngget.obj
+ 0001:000010f8       png_get_color_type         001020f8 f   pngget.obj
+ 0001:0000110c       png_get_filter_type        0010210c f   pngget.obj
+ 0001:00001120       png_get_interlace_type     00102120 f   pngget.obj
+ 0001:00001134       png_get_compression_type   00102134 f   pngget.obj
+ 0001:00001148       png_get_x_pixels_per_meter 00102148 f   pngget.obj
+ 0001:0000117c       png_get_y_pixels_per_meter 0010217c f   pngget.obj
+ 0001:000011b0       png_get_pixels_per_meter   001021b0 f   pngget.obj
+ 0001:000011f0       png_get_pixel_aspect_ratio 001021f0 f   pngget.obj
+ 0001:00001268       png_get_x_offset_microns   00102268 f   pngget.obj
+ 0001:0000129c       png_get_y_offset_microns   0010229c f   pngget.obj
+ 0001:000012d0       png_get_x_offset_pixels    001022d0 f   pngget.obj
+ 0001:00001304       png_get_y_offset_pixels    00102304 f   pngget.obj
+ 0001:00001338       png_get_channels           00102338 f   pngget.obj
+ 0001:0000134c       png_get_signature          0010234c f   pngget.obj
+ 0001:00001360       png_get_bKGD               00102360 f   pngget.obj
+ 0001:0000139c       png_get_cHRM               0010239c f   pngget.obj
+ 0001:000014d4       png_get_cHRM_fixed         001024d4 f   pngget.obj
+ 0001:00001578       png_get_gAMA               00102578 f   pngget.obj
+ 0001:000015cc       png_get_gAMA_fixed         001025cc f   pngget.obj
+ 0001:00001608       png_get_sRGB               00102608 f   pngget.obj
+ 0001:00001644       png_get_iCCP               00102644 f   pngget.obj
+ 0001:000016b8       png_get_sPLT               001026b8 f   pngget.obj
+ 0001:000016d8       png_get_hIST               001026d8 f   pngget.obj
+ 0001:00001714       png_get_IHDR               00102714 f   pngget.obj
+ 0001:0000186c       png_get_oFFs               0010286c f   pngget.obj
+ 0001:000018d4       png_get_pCAL               001028d4 f   pngget.obj
+ 0001:00001990       png_get_sCAL               00102990 f   pngget.obj
+ 0001:000019ec       png_get_pHYs               001029ec f   pngget.obj
+ 0001:00001a5c       png_get_PLTE               00102a5c f   pngget.obj
+ 0001:00001aa4       png_get_sBIT               00102aa4 f   pngget.obj
+ 0001:00001ae0       png_get_text               00102ae0 f   pngget.obj
+ 0001:00001b30       png_get_tIME               00102b30 f   pngget.obj
+ 0001:00001b6c       png_get_tRNS               00102b6c f   pngget.obj
+ 0001:00001c0c       png_get_unknown_chunks     00102c0c f   pngget.obj
+ 0001:00001c2c       png_get_rgb_to_gray_status 00102c2c f   pngget.obj
+ 0001:00001c60       png_get_user_chunk_ptr     00102c60 f   pngget.obj
+ 0001:00001c80       png_get_compression_buffer_size 00102c80 f   pngget.obj
+ 0001:00001ca0       png_get_user_width_max     00102ca0 f   pngget.obj
+ 0001:00001cc0       png_get_user_height_max    00102cc0 f   pngget.obj
+ 0001:00001cd8       png_create_struct_2        00102cd8 f   pngmem.obj
+ 0001:00001da4       png_destroy_struct_2       00102da4 f   pngmem.obj
+ 0001:00001dfc       png_memcpy_check           00102dfc f   pngmem.obj
+ 0001:00001e1c       png_memset_check           00102e1c f   pngmem.obj
+ 0001:00001e40       png_set_mem_fn             00102e40 f   pngmem.obj
+ 0001:00001e60       png_create_struct          00102e60 f   pngmem.obj
+ 0001:00001e74       png_destroy_struct         00102e74 f   pngmem.obj
+ 0001:00001ea4       png_malloc                 00102ea4 f   pngmem.obj
+ 0001:00001f14       png_free                   00102f14 f   pngmem.obj
+ 0001:00001f4c       png_malloc_warn            00102f4c f   pngmem.obj
+ 0001:00001fcc       png_push_fill_buffer       00102fcc f   pngpread.obj
+ 0001:00002080       png_push_save_buffer       00103080 f   pngpread.obj
+ 0001:00002180       png_read_push_finish_row   00103180 f   pngpread.obj
+ 0001:00002308       png_push_handle_tEXt       00103308 f   pngpread.obj
+ 0001:00002378       png_push_handle_zTXt       00103378 f   pngpread.obj
+ 0001:000023f0       png_push_handle_unknown    001033f0 f   pngpread.obj
+ 0001:00002534       png_progressive_combine_row 00103534 f   pngpread.obj
+ 0001:00002558       png_set_progressive_read_fn 00103558 f   pngpread.obj
+ 0001:00002584       png_push_read_sig          00103584 f   pngpread.obj
+ 0001:00002638       png_push_read_chunk        00103638 f   pngpread.obj
+ 0001:00002f44       png_push_crc_finish        00103f44 f   pngpread.obj
+ 0001:00003040       png_push_process_row       00104040 f   pngpread.obj
+ 0001:000036d8       png_push_read_tEXt         001046d8 f   pngpread.obj
+ 0001:000037f4       png_push_read_zTXt         001047f4 f   pngpread.obj
+ 0001:00003ac4       png_process_IDAT_data      00104ac4 f   pngpread.obj
+ 0001:00003bf4       png_push_read_IDAT         00104bf4 f   pngpread.obj
+ 0001:00003dec       png_process_data           00104dec f   pngpread.obj
+ 0001:00003ea4       png_create_read_struct_2   00104ea4 f   pngread.obj
+ 0001:000040c4       png_read_init_3            001050c4 f   pngread.obj
+ 0001:00004290       png_read_info              00105290 f   pngread.obj
+ 0001:00004870       png_read_update_info       00105870 f   pngread.obj
+ 0001:000048b8       png_start_read_image       001058b8 f   pngread.obj
+ 0001:000048cc       png_read_row               001058cc f   pngread.obj
+ 0001:00004dfc       png_read_rows              00105dfc f   pngread.obj
+ 0001:00004e90       png_read_image             00105e90 f   pngread.obj
+ 0001:00004ee8       png_read_end               00105ee8 f   pngread.obj
+ 0001:000053a4       png_read_destroy           001063a4 f   pngread.obj
+ 0001:00005680       png_set_read_status_fn     00106680 f   pngread.obj
+ 0001:00005688       png_read_png               00106688 f   pngread.obj
+ 0001:000058bc       png_create_read_struct     001068bc f   pngread.obj
+ 0001:000058e0       png_read_init_2            001068e0 f   pngread.obj
+ 0001:00005954       png_destroy_read_struct    00106954 f   pngread.obj
+ 0001:00005a20       png_read_init              00106a20 f   pngread.obj
+ 0001:00005a7c       png_read_data              00106a7c f   pngrio.obj
+ 0001:00005aa8       png_default_read_data      00106aa8 f   pngrio.obj
+ 0001:00005b04       png_set_read_fn            00106b04 f   pngrio.obj
+ 0001:00005b6c       png_set_crc_action         00106b6c f   pngrtran.obj
+ 0001:00005c34       png_set_background         00106c34 f   pngrtran.obj
+ 0001:00005d20       png_set_strip_16           00106d20 f   pngrtran.obj
+ 0001:00005d40       png_set_strip_alpha        00106d40 f   pngrtran.obj
+ 0001:00005d50       png_set_dither             00106d50 f   pngrtran.obj
+ 0001:00006644       png_set_gamma              00107644 f   pngrtran.obj
+ 0001:00006768       png_set_gray_1_2_4_to_8    00107768 f   pngrtran.obj
+ 0001:00006768       png_set_palette_to_rgb     00107768 f   pngrtran.obj
+ 0001:00006768       png_set_tRNS_to_alpha      00107768 f   pngrtran.obj
+ 0001:00006768       png_set_expand             00107768 f   pngrtran.obj
+ 0001:00006780       png_set_expand_gray_1_2_4_to_8 00107780 f   pngrtran.obj
+ 0001:000067a0       png_set_gray_to_rgb        001077a0 f   pngrtran.obj
+ 0001:000067b0       png_set_rgb_to_gray_fixed  001077b0 f   pngrtran.obj
+ 0001:000068c4       png_set_read_user_transform_fn 001078c4 f   pngrtran.obj
+ 0001:000068d8       png_read_transform_info    001078d8 f   pngrtran.obj
+ 0001:00006b54       png_do_unpack              00107b54 f   pngrtran.obj
+ 0001:00006d04       png_do_unshift             00107d04 f   pngrtran.obj
+ 0001:00006f34       png_do_read_swap_alpha     00107f34 f   pngrtran.obj
+ 0001:00007070       png_do_read_invert_alpha   00108070 f   pngrtran.obj
+ 0001:0000717c       png_do_read_filler         0010817c f   pngrtran.obj
+ 0001:00007498       png_do_gray_to_rgb         00108498 f   pngrtran.obj
+ 0001:00007668       png_do_rgb_to_gray         00108668 f   pngrtran.obj
+ 0001:00007ce8       png_build_grayscale_palette 00108ce8 f   pngrtran.obj
+ 0001:00007d74       png_do_background          00108d74 f   pngrtran.obj
+ 0001:00008e3c       png_do_gamma               00109e3c f   pngrtran.obj
+ 0001:00009258       png_do_expand_palette      0010a258 f   pngrtran.obj
+ 0001:00009510       png_do_expand              0010a510 f   pngrtran.obj
+ 0001:0000998c       png_do_dither              0010a98c f   pngrtran.obj
+ 0001:00009b18       png_build_gamma_table      0010ab18 f   pngrtran.obj
+ 0001:0000a5ec       png_do_read_intrapixel     0010b5ec f   pngrtran.obj
+ 0001:0000a6e8       png_set_rgb_to_gray        0010b6e8 f   pngrtran.obj
+ 0001:0000a7f0       png_init_read_transformations 0010b7f0 f   pngrtran.obj
+ 0001:0000bb14       png_do_read_transformations 0010cb14 f   pngrtran.obj
+ 0001:0000bf98       strtod                     0010cf98 f i pngrutil.obj
+ 0001:0000c06c       png_get_int_32             0010d06c f   pngrutil.obj
+ 0001:0000c06c       png_get_uint_32            0010d06c f   pngrutil.obj
+ 0001:0000c090       png_get_uint_16            0010d090 f   pngrutil.obj
+ 0001:0000c0a8       png_crc_read               0010d0a8 f   pngrutil.obj
+ 0001:0000c0d0       png_decompress_chunk       0010d0d0 f   pngrutil.obj
+ 0001:0000c3c4       png_check_chunk_name       0010d3c4 f   pngrutil.obj
+ 0001:0000c468       png_combine_row            0010d468 f   pngrutil.obj
+ 0001:0000c768       png_do_read_interlace      0010d768 f   pngrutil.obj
+ 0001:0000cb80       png_read_filter_row        0010db80 f   pngrutil.obj
+ 0001:0000cd44       png_read_start_row         0010dd44 f   pngrutil.obj
+ 0001:0000d060       png_get_uint_31            0010e060 f   pngrutil.obj
+ 0001:0000d098       png_crc_finish             0010e098 f   pngrutil.obj
+ 0001:0000d1f8       png_handle_IHDR            0010e1f8 f   pngrutil.obj
+ 0001:0000d3c4       png_handle_PLTE            0010e3c4 f   pngrutil.obj
+ 0001:0000d5a4       png_handle_IEND            0010e5a4 f   pngrutil.obj
+ 0001:0000d608       png_handle_gAMA            0010e608 f   pngrutil.obj
+ 0001:0000d824       png_handle_sBIT            0010e824 f   pngrutil.obj
+ 0001:0000d9e4       png_handle_cHRM            0010e9e4 f   pngrutil.obj
+ 0001:0000e1f4       png_handle_sRGB            0010f1f4 f   pngrutil.obj
+ 0001:0000e4c4       png_handle_iCCP            0010f4c4 f   pngrutil.obj
+ 0001:0000e714       png_handle_sPLT            0010f714 f   pngrutil.obj
+ 0001:0000e9b4       png_handle_tRNS            0010f9b4 f   pngrutil.obj
+ 0001:0000ebe0       png_handle_bKGD            0010fbe0 f   pngrutil.obj
+ 0001:0000ee10       png_handle_hIST            0010fe10 f   pngrutil.obj
+ 0001:0000ef48       png_handle_pHYs            0010ff48 f   pngrutil.obj
+ 0001:0000f09c       png_handle_oFFs            0011009c f   pngrutil.obj
+ 0001:0000f1e8       png_handle_pCAL            001101e8 f   pngrutil.obj
+ 0001:0000f548       png_handle_sCAL            00110548 f   pngrutil.obj
+ 0001:0000f79c       png_handle_tIME            0011079c f   pngrutil.obj
+ 0001:0000f8cc       png_handle_tEXt            001108cc f   pngrutil.obj
+ 0001:0000fa20       png_handle_zTXt            00110a20 f   pngrutil.obj
+ 0001:0000fbec       png_handle_unknown         00110bec f   pngrutil.obj
+ 0001:0000fd7c       png_read_finish_row        00110d7c f   pngrutil.obj
+ 0001:000100c8       png_set_bKGD               001110c8 f   pngset.obj
+ 0001:00010110       png_set_cHRM               00111110 f   pngset.obj
+ 0001:0001074c       png_set_cHRM_fixed         0011174c f   pngset.obj
+ 0001:00010c48       png_set_gAMA               00111c48 f   pngset.obj
+ 0001:00010d8c       png_set_gAMA_fixed         00111d8c f   pngset.obj
+ 0001:00010e5c       png_set_hIST               00111e5c f   pngset.obj
+ 0001:00010f34       png_set_IHDR               00111f34 f   pngset.obj
+ 0001:00011214       png_set_oFFs               00112214 f   pngset.obj
+ 0001:00011248       png_set_pCAL               00112248 f   pngset.obj
+ 0001:000113d0       png_set_sCAL               001123d0 f   pngset.obj
+ 0001:0001141c       png_set_pHYs               0011241c f   pngset.obj
+ 0001:00011450       png_set_PLTE               00112450 f   pngset.obj
+ 0001:00011514       png_set_sBIT               00112514 f   pngset.obj
+ 0001:0001155c       png_set_sRGB               0011255c f   pngset.obj
+ 0001:00011580       png_set_sRGB_gAMA_and_cHRM 00112580 f   pngset.obj
+ 0001:000116d4       png_set_iCCP               001126d4 f   pngset.obj
+ 0001:000117cc       png_set_text_2             001127cc f   pngset.obj
+ 0001:000119dc       png_set_tIME               001129dc f   pngset.obj
+ 0001:00011a28       png_set_tRNS               00112a28 f   pngset.obj
+ 0001:00011ae8       png_set_sPLT               00112ae8 f   pngset.obj
+ 0001:00011c08       png_set_unknown_chunks     00112c08 f   pngset.obj
+ 0001:00011d34       png_set_unknown_chunk_location 00112d34 f   pngset.obj
+ 0001:00011d6c       png_permit_empty_plte      00112d6c f   pngset.obj
+ 0001:00011d9c       png_set_keep_unknown_chunks 00112d9c f   pngset.obj
+ 0001:00011ea0       png_set_read_user_chunk_fn 00112ea0 f   pngset.obj
+ 0001:00011eb0       png_set_rows               00112eb0 f   pngset.obj
+ 0001:00011f08       png_set_compression_buffer_size 00112f08 f   pngset.obj
+ 0001:00011f54       png_set_invalid            00112f54 f   pngset.obj
+ 0001:00011f80       png_set_user_limits        00112f80 f   pngset.obj
+ 0001:00011f8c       png_set_text               00112f8c f   pngset.obj
+ 0001:00011fc0       png_set_bgr                00112fc0 f   pngtrans.obj
+ 0001:00011fd0       png_set_swap               00112fd0 f   pngtrans.obj
+ 0001:00011fec       png_set_packing            00112fec f   pngtrans.obj
+ 0001:00012010       png_set_packswap           00113010 f   pngtrans.obj
+ 0001:0001202c       png_set_shift              0011302c f   pngtrans.obj
+ 0001:00012064       png_set_interlace_handling 00113064 f   pngtrans.obj
+ 0001:00012090       png_set_filler             00113090 f   pngtrans.obj
+ 0001:000120ec       png_set_add_alpha          001130ec f   pngtrans.obj
+ 0001:00012160       png_set_swap_alpha         00113160 f   pngtrans.obj
+ 0001:00012180       png_set_invert_alpha       00113180 f   pngtrans.obj
+ 0001:000121a0       png_set_invert_mono        001131a0 f   pngtrans.obj
+ 0001:000121b0       png_do_invert              001131b0 f   pngtrans.obj
+ 0001:00012278       png_do_swap                00113278 f   pngtrans.obj
+ 0001:000122b4       png_do_packswap            001132b4 f   pngtrans.obj
+ 0001:0001231c       png_do_strip_filler        0011331c f   pngtrans.obj
+ 0001:000125f4       png_do_bgr                 001135f4 f   pngtrans.obj
+ 0001:00012700       png_set_user_transform_info 00113700 f   pngtrans.obj
+ 0001:00012720       png_get_user_transform_ptr 00113720 f   pngtrans.obj
+ 0001:00012728       png_write_data             00113728 f   pngwio.obj
+ 0001:00012754       png_default_write_data     00113754 f   pngwio.obj
+ 0001:000127b0       png_flush                  001137b0 f   pngwio.obj
+ 0001:000127e0       png_default_flush          001137e0 f   pngwio.obj
+ 0001:000127e4       png_set_write_fn           001137e4 f   pngwio.obj
+ 0001:00012854       png_write_info_before_PLTE 00113854 f   pngwrite.obj
+ 0001:00012b18       png_write_info             00113b18 f   pngwrite.obj
+ 0001:00012e94       png_write_end              00113e94 f   pngwrite.obj
+ 0001:00013058       png_write_row              00114058 f   pngwrite.obj
+ 0001:000132b4       png_set_flush              001142b4 f   pngwrite.obj
+ 0001:000132cc       png_write_flush            001142cc f   pngwrite.obj
+ 0001:0001338c       png_write_destroy          0011438c f   pngwrite.obj
+ 0001:000134f8       png_set_filter             001144f8 f   pngwrite.obj
+ 0001:0001370c       png_set_filter_heuristics  0011470c f   pngwrite.obj
+ 0001:0001430c       png_set_compression_level  0011530c f   pngwrite.obj
+ 0001:00014328       png_set_compression_mem_level 00115328 f   pngwrite.obj
+ 0001:00014344       png_set_compression_strategy 00115344 f   pngwrite.obj
+ 0001:00014360       png_set_compression_window_bits 00115360 f   pngwrite.obj
+ 0001:000143c8       png_set_compression_method 001153c8 f   pngwrite.obj
+ 0001:00014420       png_set_write_status_fn    00115420 f   pngwrite.obj
+ 0001:0001442c       png_set_write_user_transform_fn 0011542c f   pngwrite.obj
+ 0001:00014448       png_create_write_struct_2  00115448 f   pngwrite.obj
+ 0001:000145f8       png_write_init_3           001155f8 f   pngwrite.obj
+ 0001:00014768       png_write_rows             00115768 f   pngwrite.obj
+ 0001:0001479c       png_write_image            0011579c f   pngwrite.obj
+ 0001:000147fc       png_destroy_write_struct   001157fc f   pngwrite.obj
+ 0001:000148b0       png_write_png              001158b0 f   pngwrite.obj
+ 0001:0001498c       png_create_write_struct    0011598c f   pngwrite.obj
+ 0001:000149b0       png_write_init_2           001159b0 f   pngwrite.obj
+ 0001:00014a24       png_write_init             00115a24 f   pngwrite.obj
+ 0001:00014a80       png_do_pack                00115a80 f   pngwtran.obj
+ 0001:00014c04       png_do_shift               00115c04 f   pngwtran.obj
+ 0001:00014ed4       png_do_write_swap_alpha    00115ed4 f   pngwtran.obj
+ 0001:00014ffc       png_do_write_invert_alpha  00115ffc f   pngwtran.obj
+ 0001:000150e4       png_do_write_intrapixel    001160e4 f   pngwtran.obj
+ 0001:000151e0       png_do_write_transformations 001161e0 f   pngwtran.obj
+ 0001:0001532c       png_save_uint_32           0011632c f   pngwutil.obj
+ 0001:00015350       png_save_int_32            00116350 f   pngwutil.obj
+ 0001:00015380       png_save_uint_16           00116380 f   pngwutil.obj
+ 0001:00015390       png_write_chunk_start      00116390 f   pngwutil.obj
+ 0001:000153fc       png_write_chunk_data       001163fc f   pngwutil.obj
+ 0001:00015434       png_write_chunk_end        00116434 f   pngwutil.obj
+ 0001:00015478       png_write_sig              00116478 f   pngwutil.obj
+ 0001:000158c0       png_write_PLTE             001168c0 f   pngwutil.obj
+ 0001:00015a20       png_write_hIST             00116a20 f   pngwutil.obj
+ 0001:00015b28       png_check_keyword          00116b28 f   pngwutil.obj
+ 0001:00015d44       png_write_tEXt             00116d44 f   pngwutil.obj
+ 0001:00015ebc       png_write_zTXt             00116ebc f   pngwutil.obj
+ 0001:00016030       png_write_pCAL             00117030 f   pngwutil.obj
+ 0001:000162f4       png_write_start_row        001172f4 f   pngwutil.obj
+ 0001:000164d8       png_do_write_interlace     001174d8 f   pngwutil.obj
+ 0001:00016754       png_write_chunk            00117754 f   pngwutil.obj
+ 0001:0001682c       png_write_IHDR             0011782c f   pngwutil.obj
+ 0001:00016c3c       png_write_IDAT             00117c3c f   pngwutil.obj
+ 0001:00016d98       png_write_IEND             00117d98 f   pngwutil.obj
+ 0001:00016e44       png_write_gAMA             00117e44 f   pngwutil.obj
+ 0001:00016ee8       png_write_sRGB             00117ee8 f   pngwutil.obj
+ 0001:00016f2c       png_write_iCCP             00117f2c f   pngwutil.obj
+ 0001:000170ec       png_write_sPLT             001180ec f   pngwutil.obj
+ 0001:0001734c       png_write_sBIT             0011834c f   pngwutil.obj
+ 0001:00017444       png_write_cHRM             00118444 f   pngwutil.obj
+ 0001:00017afc       png_write_tRNS             00118afc f   pngwutil.obj
+ 0001:00017c50       png_write_bKGD             00118c50 f   pngwutil.obj
+ 0001:00017d9c       png_write_oFFs             00118d9c f   pngwutil.obj
+ 0001:00017e48       png_write_sCAL             00118e48 f   pngwutil.obj
+ 0001:00017f74       png_write_pHYs             00118f74 f   pngwutil.obj
+ 0001:00018020       png_write_tIME             00119020 f   pngwutil.obj
+ 0001:000180d4       png_write_finish_row       001190d4 f   pngwutil.obj
+ 0001:000182dc       png_write_filtered_row     001192dc f   pngwutil.obj
+ 0001:000183a4       png_write_find_filter      001193a4 f   pngwutil.obj
+ 0001:00018f24       memcmp                     00119f24 f   coredll:COREDLL.dll
+ 0001:00018f34       memset                     00119f34 f   coredll:COREDLL.dll
+ 0001:00018f44       WideCharToMultiByte        00119f44 f   coredll:COREDLL.dll
+ 0001:00018f54       wsprintfW                  00119f54 f   coredll:COREDLL.dll
+ 0001:00018f64       strncpy                    00119f64 f   coredll:COREDLL.dll
+ 0001:00018f74       longjmp                    00119f74 f   coredll:COREDLL.dll
+ 0001:00018f84       fprintf                    00119f84 f   coredll:COREDLL.dll
+ 0001:00018f94       _getstdfilex               00119f94 f   coredll:COREDLL.dll
+ 0001:00018fa4       malloc                     00119fa4 f   coredll:COREDLL.dll
+ 0001:00018fb4       free                       00119fb4 f   coredll:COREDLL.dll
+ 0001:00018fc4       memcpy                     00119fc4 f   coredll:COREDLL.dll
+ 0001:00018fd4       strcpy                     00119fd4 f   coredll:COREDLL.dll
+ 0001:00018fe4       setjmp                     00119fe4 f   coredll:COREDLL.dll
+ 0001:00018ff4       ReadFile                   00119ff4 f   coredll:COREDLL.dll
+ 0001:00019004       wcstod                     0011a004 f   coredll:COREDLL.dll
+ 0001:00019014       MultiByteToWideChar        0011a014 f   coredll:COREDLL.dll
+ 0001:00019024       strlen                     0011a024 f   coredll:COREDLL.dll
+ 0001:00019034       WriteFile                  0011a034 f   coredll:COREDLL.dll
+ 0001:00019044       swprintf                   0011a044 f   coredll:COREDLL.dll
+ 0001:00019054       _DllMainCRTStartup         0011a054 f   corelibc:pegdmain.obj
+ 0001:00019138       __security_check_cookie    0011a138 f   corelibc:secchk.obj
+ 0001:00019158       _cinit                     0011a158 f   corelibc:crt0dat.obj
+ 0001:000192c8       exit                       0011a2c8 f   corelibc:crt0dat.obj
+ 0001:000192e0       _cexit                     0011a2e0 f   corelibc:crt0dat.obj
+ 0001:000192fc       DllMain                    0011a2fc f   corelibc:dllmain.obj
+ 0001:00019314       __security_init_cookie     0011a314 f   corelibc:seccinit.obj
+ 0001:0001935c       crc32                      0011a35c f   zlibce:zlibce.dll
+ 0001:0001936c       inflateReset               0011a36c f   zlibce:zlibce.dll
+ 0001:0001937c       inflate                    0011a37c f   zlibce:zlibce.dll
+ 0001:0001938c       inflateInit_               0011a38c f   zlibce:zlibce.dll
+ 0001:0001939c       inflateEnd                 0011a39c f   zlibce:zlibce.dll
+ 0001:000193ac       deflate                    0011a3ac f   zlibce:zlibce.dll
+ 0001:000193bc       deflateEnd                 0011a3bc f   zlibce:zlibce.dll
+ 0001:000193cc       deflateReset               0011a3cc f   zlibce:zlibce.dll
+ 0001:000193dc       deflateInit2_              0011a3dc f   zlibce:zlibce.dll
+ 0001:000193ec       __GSHandlerCheckCommon     0011a3ec f   LIBCMT:gshandler.obj
+ 0001:00019434       __GSHandlerCheck           0011a434 f   LIBCMT:gshandler.obj
+ 0001:00019464       __security_error_handler   0011a464 f   coredll:COREDLL.dll
+ 0001:00019474       __C_specific_handler       0011a474 f   coredll:COREDLL.dll
+ 0001:00019484       LocalFree                  0011a484 f   coredll:COREDLL.dll
+ 0001:00019494       DisableThreadLibraryCalls  0011a494 f   coredll:COREDLL.dll
+ 0001:000194a4       __security_gen_cookie      0011a4a4 f   coredll:COREDLL.dll
+ 0002:00000000       png_libpng_ver             0011b000     png.obj
+ 0002:00000014       png_sig                    0011b014     png.obj
+ 0002:0000001c       png_IHDR                   0011b01c     png.obj
+ 0002:00000024       png_IDAT                   0011b024     png.obj
+ 0002:0000002c       png_IEND                   0011b02c     png.obj
+ 0002:00000034       png_PLTE                   0011b034     png.obj
+ 0002:0000003c       png_bKGD                   0011b03c     png.obj
+ 0002:00000044       png_cHRM                   0011b044     png.obj
+ 0002:0000004c       png_gAMA                   0011b04c     png.obj
+ 0002:00000054       png_hIST                   0011b054     png.obj
+ 0002:0000005c       png_iCCP                   0011b05c     png.obj
+ 0002:00000064       png_iTXt                   0011b064     png.obj
+ 0002:0000006c       png_oFFs                   0011b06c     png.obj
+ 0002:00000074       png_pCAL                   0011b074     png.obj
+ 0002:0000007c       png_sCAL                   0011b07c     png.obj
+ 0002:00000084       png_pHYs                   0011b084     png.obj
+ 0002:0000008c       png_sBIT                   0011b08c     png.obj
+ 0002:00000094       png_sPLT                   0011b094     png.obj
+ 0002:0000009c       png_sRGB                   0011b09c     png.obj
+ 0002:000000a4       png_tEXt                   0011b0a4     png.obj
+ 0002:000000ac       png_tIME                   0011b0ac     png.obj
+ 0002:000000b4       png_tRNS                   0011b0b4     png.obj
+ 0002:000000bc       png_zTXt                   0011b0bc     png.obj
+ 0002:000000c4       png_pass_start             0011b0c4     png.obj
+ 0002:000000e0       png_pass_inc               0011b0e0     png.obj
+ 0002:000000fc       png_pass_ystart            0011b0fc     png.obj
+ 0002:00000118       png_pass_yinc              0011b118     png.obj
+ 0002:00000134       png_pass_mask              0011b134     png.obj
+ 0002:00000150       png_pass_dsp_mask          0011b150     png.obj
+ 0002:0000019c       ??_C@_0CC@CMIPDMOP@Too?5many?5bytes?5for?5PNG?5signature@ 0011b19c     png.obj
+ 0002:000001c0       ??_C@_0CD@PGGPKBFM@Potential?5overflow?5in?5png_zalloc@ 0011b1c0     png.obj
+ 0002:000001e4       ??_C@_0CL@CBLDLGDP@Unknown?5freer?5parameter?5in?5png_d@ 0011b1e4     png.obj
+ 0002:00000210       ??_C@_1DM@CGAMKPKI@?$AA?$CF?$AAd?$AA?5?$AA?$CF?$AAS?$AA?5?$AA?$CF?$AAd?$AA?5?$AA?$CF?$AA0?$AA2?$AAd?$AA?3?$AA?$CF?$AA0?$AA2?$AAd?$AA?3?$AA?$CF?$AA0?$AA2?$AAd?$AA?5?$AA?$CL?$AA0?$AA0?$AA0?$AA0?$AA?$AA@ 0011b210     png.obj
+ 0002:00000250       ??_C@_0MB@BIDDCOAG@?6?5libpng?5version?51?42?412?5?9?5June?52@ 0011b250     png.obj
+ 0002:00000314       ??_C@_06CPEACBM@1?42?412?$AA@ 0011b314     png.obj
+ 0002:0000031c       ??_C@_0DB@CNCCCAJN@?5libpng?5version?51?42?412?5?9?5June?527@ 0011b31c     png.obj
+ 0002:00000360       ??_C@_0BC@MFANGAPN@libpng?5error?3?5?$CFs?6?$AA@ 0011b360     pngerror.obj
+ 0002:00000374       ??_C@_0BN@HLDBDDID@libpng?5error?3?5?$CFs?0?5offset?$DN?$CFd?6?$AA@ 0011b374     pngerror.obj
+ 0002:00000394       ??_C@_0BJ@LPAEKCLO@libpng?5error?5no?4?5?$CFs?3?5?$CFs?6?$AA@ 0011b394     pngerror.obj
+ 0002:000003b0       ??_C@_0BE@LNAJCNP@libpng?5warning?3?5?$CFs?6?$AA@ 0011b3b0     pngerror.obj
+ 0002:000003c4       ??_C@_0BL@FIILBAME@libpng?5warning?5no?4?5?$CFs?3?5?$CFs?6?$AA@ 0011b3c4     pngerror.obj
+ 0002:000003e0       ??_C@_0DC@MHGEAIEM@Width?5too?5large?5for?5libpng?5to?5pr@ 0011b3e0     pngget.obj
+ 0002:00000414       ??_C@_0BF@IBPIFLEG@Invalid?5image?5height?$AA@ 0011b414     pngget.obj
+ 0002:0000042c       ??_C@_0BE@MKFPKGEK@Invalid?5image?5width?$AA@ 0011b42c     pngget.obj
+ 0002:00000440       ??_C@_0BD@JPMLPKHD@Invalid?5color?5type?$AA@ 0011b440     pngget.obj
+ 0002:00000454       ??_C@_0BC@IIDONEMJ@Invalid?5bit?5depth?$AA@ 0011b454     pngget.obj
+ 0002:00000468       ??_C@_0P@PFFMKGBN@Out?5of?5Memory?$CB?$AA@ 0011b468     pngmem.obj
+ 0002:00000478       ??_C@_0CC@MFEFGIGK@Potential?5overflow?5of?5save_buffe@ 0011b478     pngpread.obj
+ 0002:0000049c       ??_C@_0BC@NMDDCNNN@Out?5of?5place?5tEXt?$AA@ 0011b49c     pngpread.obj
+ 0002:000004b0       ??_C@_0BC@ILKGKDEG@Out?5of?5place?5zTXt?$AA@ 0011b4b0     pngpread.obj
+ 0002:000004c4       ??_C@_0BH@OMJPKJPP@unknown?5critical?5chunk?$AA@ 0011b4c4     pngpread.obj
+ 0002:000004dc       ??_C@_0CH@NMANOLCN@PNG?5file?5corrupted?5by?5ASCII?5conv@ 0011b4dc     pngpread.obj
+ 0002:00000504       ??_C@_0P@KIMIGLKH@Not?5a?5PNG?5file?$AA@ 0011b504     pngpread.obj
+ 0002:00000514       ??_C@_0BG@JAHFDNP@Too?5many?5IDAT?8s?5found?$AA@ 0011b514     pngpread.obj
+ 0002:0000052c       ??_C@_0BJ@LAKDHAPN@Missing?5PLTE?5before?5IDAT?$AA@ 0011b52c     pngpread.obj
+ 0002:00000548       ??_C@_0BJ@FFGICIDJ@Missing?5IHDR?5before?5IDAT?$AA@ 0011b548     pngpread.obj
+ 0002:00000564       ??_C@_0CJ@OMHIGPCF@Insufficient?5memory?5to?5store?5tex@ 0011b564     pngpread.obj
+ 0002:00000590       ??_C@_0BN@PPIOOCD@Too?5much?5data?5in?5IDAT?5chunks?$AA@ 0011b590     pngpread.obj
+ 0002:000005b0       ??_C@_0BG@OKGHHCLP@Extra?5compressed?5data?$AA@ 0011b5b0     pngpread.obj
+ 0002:000005c8       ??_C@_0BE@JLEKBIKH@Decompression?5Error?$AA@ 0011b5c8     pngpread.obj
+ 0002:000005dc       ??_C@_0BH@KJLLHDND@Extra?5compression?5data?$AA@ 0011b5dc     pngpread.obj
+ 0002:000005f4       ??_C@_0BL@BCNNDALF@Not?5enough?5compressed?5data?$AA@ 0011b5f4     pngpread.obj
+ 0002:00000610       ??_C@_0BD@CPDHIJBA@Unknown?5zlib?5error?$AA@ 0011b610     pngread.obj
+ 0002:00000624       ??_C@_0BD@LBMCPKOE@zlib?5version?5error?$AA@ 0011b624     pngread.obj
+ 0002:00000638       ??_C@_0BC@MCPIPOGP@zlib?5memory?5error?$AA@ 0011b638     pngread.obj
+ 0002:0000064c       ??_C@_05GDHACFMB@1?42?43?$AA@ 0011b64c     pngread.obj
+ 0002:00000654       ??_C@_0DH@LDFDLODO@Incompatible?5libpng?5version?5in?5a@ 0011b654     pngread.obj
+ 0002:0000068c       ??_C@_0N@JEPAMDDI@zlib?5version?$AA@ 0011b68c     pngread.obj
+ 0002:0000069c       ??_C@_0M@KPLPCJNA@zlib?5memory?$AA@ 0011b69c     pngread.obj
+ 0002:000006a8       ??_C@_0EG@NOMOHBEB@Application?5uses?5deprecated?5png_@ 0011b6a8     pngread.obj
+ 0002:000006f0       ??_C@_0EH@CHENFKEM@Ignoring?5extra?5png_read_update_i@ 0011b6f0     pngread.obj
+ 0002:00000738       ??_C@_0BE@JMOGBNJB@Decompression?5error?$AA@ 0011b738     pngread.obj
+ 0002:0000074c       ??_C@_0BG@EIEOOJHA@Not?5enough?5image?5data?$AA@ 0011b74c     pngread.obj
+ 0002:00000764       ??_C@_0CB@KCPNIGFM@Invalid?5attempt?5to?5read?5row?5data@ 0011b764     pngread.obj
+ 0002:00000788       ??_C@_0DB@NOCCEKO@Image?5is?5too?5high?5to?5process?5wit@ 0011b788     pngread.obj
+ 0002:000007c0       ??_C@_0ED@GEINILFF@The?5info?5struct?5allocated?5by?5app@ 0011b7c0     pngread.obj
+ 0002:00000808       ??_C@_0EG@PKBACJBJ@The?5png?5struct?5allocated?5by?5the?5@ 0011b808     pngread.obj
+ 0002:00000850       ??_C@_0BB@MDLEEGBF@1?40?46?5or?5earlier?$AA@ 0011b850     pngread.obj
+ 0002:00000864       ??_C@_0BL@GPADEDKN@Call?5to?5NULL?5read?5function?$AA@ 0011b864     pngrio.obj
+ 0002:00000880       ??_C@_0L@BAFDDAPG@Read?5Error?$AA@ 0011b880     pngrio.obj
+ 0002:00000890       ??_C@_0EB@NJKELLKM@It?8s?5an?5error?5to?5set?5both?5read_d@ 0011b890     pngrio.obj
+ 0002:000008d4       ??_C@_0DC@EOBOCMJO@same?5structure?4?5?5Resetting?5write@ 0011b8d4     pngrio.obj
+ 0002:00000908       ??_C@_0CK@BDBGBGO@Can?8t?5discard?5critical?5data?5on?5C@ 0011b908     pngrtran.obj
+ 0002:00000934       ??_C@_0DB@ODHMCKFP@Application?5must?5supply?5a?5known?5@ 0011b934     pngrtran.obj
+ 0002:00000968       ??_C@_0CP@HEBPIFPB@ignoring?5out?5of?5range?5rgb_to_gra@ 0011b968     pngrtran.obj
+ 0002:00000998       ??_C@_0CC@JEAKIKEF@png_do_dither?5returned?5rowbytes?$DN@ 0011b998     pngrtran.obj
+ 0002:000009bc       ??_C@_0CH@DAMIMNHG@png_do_rgb_to_gray?5found?5nongray@ 0011b9bc     pngrtran.obj
+ 0002:000009e4       ??_C@_0BA@DBGPKIA@NULL?5row?5buffer?$AA@ 0011b9e4     pngrtran.obj
+ 0002:000009f4       ??_C@_0BO@OHBHBCOJ@Unknown?5zTXt?5compression?5type?$AA@ 0011b9f4     pngrutil.obj
+ 0002:00000a14       ??_C@_0BM@JFPBMAIB@Not?5enough?5memory?5for?5text?4?$AA@ 0011ba14     pngrutil.obj
+ 0002:00000a30       ??_C@_0DK@DLNOMDGM@Incomplete?5compressed?5datastream@ 0011ba30     pngrutil.obj
+ 0002:00000a6c       ??_C@_0CG@CPNAANEJ@Not?5enough?5memory?5to?5decompress?5@ 0011ba6c     pngrutil.obj
+ 0002:00000a94       ??_C@_0CI@GGNOMFOH@Not?5enough?5memory?5to?5decompress?5@ 0011ba94     pngrutil.obj
+ 0002:00000abc       ??_C@_0CH@ECICABF@Not?5enough?5memory?5to?5decompress?5@ 0011babc     pngrutil.obj
+ 0002:00000ae4       ??_C@_0BD@GFBMLKLH@invalid?5chunk?5type?$AA@ 0011bae4     pngrutil.obj
+ 0002:00000af8       ??_C@_0CC@FECADCN@Ignoring?5bad?5adaptive?5filter?5typ@ 0011baf8     pngrutil.obj
+ 0002:00000b1c       ??_C@_0CO@BIJGDGNC@Row?5has?5too?5many?5bytes?5to?5alloca@ 0011bb1c     pngrutil.obj
+ 0002:00000b4c       ??_C@_0CD@EOPDCPFH@PNG?5unsigned?5integer?5out?5of?5rang@ 0011bb4c     pngrutil.obj
+ 0002:00000b70       ??_C@_09BJGMGMHA@CRC?5error?$AA@ 0011bb70     pngrutil.obj
+ 0002:00000b7c       ??_C@_0BD@CLODLFAN@Invalid?5IHDR?5chunk?$AA@ 0011bb7c     pngrutil.obj
+ 0002:00000b90       ??_C@_0BC@KBAKFAAH@Out?5of?5place?5IHDR?$AA@ 0011bb90     pngrutil.obj
+ 0002:00000ba4       ??_C@_0CM@LODLIOMP@Truncating?5incorrect?5info?5tRNS?5c@ 0011bba4     pngrutil.obj
+ 0002:00000bd0       ??_C@_0CH@GNNEJFAH@Truncating?5incorrect?5tRNS?5chunk?5@ 0011bbd0     pngrutil.obj
+ 0002:00000bf8       ??_C@_0BG@HHEHMEJK@Invalid?5palette?5chunk?$AA@ 0011bbf8     pngrutil.obj
+ 0002:00000c10       ??_C@_0CF@FFJHLJE@Ignoring?5PLTE?5chunk?5in?5grayscale@ 0011bc10     pngrutil.obj
+ 0002:00000c38       ??_C@_0BF@PMKDIIMG@Duplicate?5PLTE?5chunk?$AA@ 0011bc38     pngrutil.obj
+ 0002:00000c50       ??_C@_0BI@GEKPHPN@Invalid?5PLTE?5after?5IDAT?$AA@ 0011bc50     pngrutil.obj
+ 0002:00000c68       ??_C@_0BJ@LEBILHKO@Missing?5IHDR?5before?5PLTE?$AA@ 0011bc68     pngrutil.obj
+ 0002:00000c84       ??_C@_0BM@PFCLLCBO@Incorrect?5IEND?5chunk?5length?$AA@ 0011bc84     pngrutil.obj
+ 0002:00000ca0       ??_C@_0BB@BLPFHNNN@No?5image?5in?5file?$AA@ 0011bca0     pngrutil.obj
+ 0002:00000cb4       ??_C@_0DI@KINMKNNO@Ignoring?5incorrect?5gAMA?5value?5wh@ 0011bcb4     pngrutil.obj
+ 0002:00000cec       ??_C@_0BF@BDHDCHJF@gamma?5?$DN?5?$CI?$CFd?1100000?$CJ?6?$AA@ 0011bcec     pngrutil.obj
+ 0002:00000d04       ??_C@_0CB@NAEALNDI@Ignoring?5gAMA?5chunk?5with?5gamma?$DN0@ 0011bd04     pngrutil.obj
+ 0002:00000d28       ??_C@_0BM@NIAHDFBB@Incorrect?5gAMA?5chunk?5length?$AA@ 0011bd28     pngrutil.obj
+ 0002:00000d44       ??_C@_0BF@IMCFKHDJ@Duplicate?5gAMA?5chunk?$AA@ 0011bd44     pngrutil.obj
+ 0002:00000d5c       ??_C@_0BI@JEEHFLME@Out?5of?5place?5gAMA?5chunk?$AA@ 0011bd5c     pngrutil.obj
+ 0002:00000d74       ??_C@_0BI@POPIJBNN@Invalid?5gAMA?5after?5IDAT?$AA@ 0011bd74     pngrutil.obj
+ 0002:00000d8c       ??_C@_0BJ@CCOIFGBO@Missing?5IHDR?5before?5gAMA?$AA@ 0011bd8c     pngrutil.obj
+ 0002:00000da8       ??_C@_0BM@NECIIMI@Incorrect?5sBIT?5chunk?5length?$AA@ 0011bda8     pngrutil.obj
+ 0002:00000dc4       ??_C@_0BF@BAIKMFDA@Duplicate?5sBIT?5chunk?$AA@ 0011bdc4     pngrutil.obj
+ 0002:00000ddc       ??_C@_0BI@IOIDJMN@Out?5of?5place?5sBIT?5chunk?$AA@ 0011bddc     pngrutil.obj
+ 0002:00000df4       ??_C@_0BI@GNBHBDGP@Invalid?5sBIT?5after?5IDAT?$AA@ 0011bdf4     pngrutil.obj
+ 0002:00000e0c       ??_C@_0BJ@JFIBIGHK@Missing?5IHDR?5before?5sBIT?$AA@ 0011be0c     pngrutil.obj
+ 0002:00000e28       ??_C@_0BJ@FAHLKGEB@Invalid?5cHRM?5white?5point?$AA@ 0011be28     pngrutil.obj
+ 0002:00000e44       ??_C@_0DI@MIMDNNAG@Ignoring?5incorrect?5cHRM?5value?5wh@ 0011be44     pngrutil.obj
+ 0002:00000e7c       ??_C@_0BM@NBPNPEHL@wx?$DN?$CFf?0?5wy?$DN?$CFf?0?5rx?$DN?$CFf?0?5ry?$DN?$CFf?6?$AA@ 0011be7c     pngrutil.obj
+ 0002:00000e98       ??_C@_0BM@IACKJHOF@gx?$DN?$CFf?0?5gy?$DN?$CFf?0?5bx?$DN?$CFf?0?5by?$DN?$CFf?6?$AA@ 0011be98     pngrutil.obj
+ 0002:00000eb4       ??_C@_0BI@GNBEGBIO@Invalid?5cHRM?5blue?5point?$AA@ 0011beb4     pngrutil.obj
+ 0002:00000ecc       ??_C@_0BJ@OMNHHNBI@Invalid?5cHRM?5green?5point?$AA@ 0011becc     pngrutil.obj
+ 0002:00000ee8       ??_C@_0BH@MNPFDHMO@Invalid?5cHRM?5red?5point?$AA@ 0011bee8     pngrutil.obj
+ 0002:00000f00       ??_C@_0BM@JPCBJGIK@Incorrect?5cHRM?5chunk?5length?$AA@ 0011bf00     pngrutil.obj
+ 0002:00000f1c       ??_C@_0BF@OEDPGHJO@Duplicate?5cHRM?5chunk?$AA@ 0011bf1c     pngrutil.obj
+ 0002:00000f34       ??_C@_0BJ@PEGEEMNB@Missing?5PLTE?5before?5cHRM?$AA@ 0011bf34     pngrutil.obj
+ 0002:00000f50       ??_C@_0BI@PGCHPLFE@Invalid?5cHRM?5after?5IDAT?$AA@ 0011bf50     pngrutil.obj
+ 0002:00000f68       ??_C@_0BJ@BBKPBEBF@Missing?5IHDR?5before?5cHRM?$AA@ 0011bf68     pngrutil.obj
+ 0002:00000f84       ??_C@_0BN@PPEBNPGC@incorrect?5gamma?$DN?$CI?$CFd?1100000?$CJ?6?$AA@ 0011bf84     pngrutil.obj
+ 0002:00000fa4       ??_C@_0BE@CEGOJHBA@Unknown?5sRGB?5intent?$AA@ 0011bfa4     pngrutil.obj
+ 0002:00000fb8       ??_C@_0BM@FMAJKMKD@Incorrect?5sRGB?5chunk?5length?$AA@ 0011bfb8     pngrutil.obj
+ 0002:00000fd4       ??_C@_0BF@EFDCKHOG@Duplicate?5sRGB?5chunk?$AA@ 0011bfd4     pngrutil.obj
+ 0002:00000fec       ??_C@_0BI@FNFAFLBL@Out?5of?5place?5sRGB?5chunk?$AA@ 0011bfec     pngrutil.obj
+ 0002:00001004       ??_C@_0BI@PGAMKAKH@Invalid?5sRGB?5after?5IDAT?$AA@ 0011c004     pngrutil.obj
+ 0002:0000101c       ??_C@_0BJ@NDJOEJDI@Missing?5IHDR?5before?5sRGB?$AA@ 0011c01c     pngrutil.obj
+ 0002:00001038       ??_C@_0CL@DPOBKPIG@Profile?5size?5field?5missing?5from?5@ 0011c038     pngrutil.obj
+ 0002:00001064       ??_C@_0CB@EGBHHAKA@Ignoring?5truncated?5iCCP?5profile?4@ 0011c064     pngrutil.obj
+ 0002:00001088       ??_C@_0DA@PBEFIAOD@Ignoring?5nonzero?5compression?5typ@ 0011c088     pngrutil.obj
+ 0002:000010b8       ??_C@_0BF@NLNNCHCP@Malformed?5iCCP?5chunk?$AA@ 0011c0b8     pngrutil.obj
+ 0002:000010d0       ??_C@_0BF@KCHFLGCF@Duplicate?5iCCP?5chunk?$AA@ 0011c0d0     pngrutil.obj
+ 0002:000010e8       ??_C@_0BI@LKBHEKNI@Out?5of?5place?5iCCP?5chunk?$AA@ 0011c0e8     pngrutil.obj
+ 0002:00001100       ??_C@_0BI@NEPGPMDI@Invalid?5iCCP?5after?5IDAT?$AA@ 0011c100     pngrutil.obj
+ 0002:00001118       ??_C@_0BJ@GOJGCOOO@Missing?5IHDR?5before?5iCCP?$AA@ 0011c118     pngrutil.obj
+ 0002:00001134       ??_C@_0CE@MCMAFPMA@sPLT?5chunk?5requires?5too?5much?5mem@ 0011c134     pngrutil.obj
+ 0002:00001158       ??_C@_0BE@HJCMKPPM@sPLT?5chunk?5too?5long?$AA@ 0011c158     pngrutil.obj
+ 0002:0000116c       ??_C@_0BK@FFJLCLGE@sPLT?5chunk?5has?5bad?5length?$AA@ 0011c16c     pngrutil.obj
+ 0002:00001188       ??_C@_0BF@JHCGGFHI@malformed?5sPLT?5chunk?$AA@ 0011c188     pngrutil.obj
+ 0002:000011a0       ??_C@_0BI@FFAFDNM@Invalid?5sPLT?5after?5IDAT?$AA@ 0011c1a0     pngrutil.obj
+ 0002:000011b8       ??_C@_0BJ@GJFKNLIF@Missing?5IHDR?5before?5sPLT?$AA@ 0011c1b8     pngrutil.obj
+ 0002:000011d4       ??_C@_0CK@JMGMOHJA@tRNS?5chunk?5not?5allowed?5with?5alph@ 0011c1d4     pngrutil.obj
+ 0002:00001200       ??_C@_0BH@JJNMONHM@Zero?5length?5tRNS?5chunk?$AA@ 0011c200     pngrutil.obj
+ 0002:00001218       ??_C@_0BJ@NIHNNFHD@Missing?5PLTE?5before?5tRNS?$AA@ 0011c218     pngrutil.obj
+ 0002:00001234       ??_C@_0BM@JNMFOMLO@Incorrect?5tRNS?5chunk?5length?$AA@ 0011c234     pngrutil.obj
+ 0002:00001250       ??_C@_0BF@HALLDFIL@Duplicate?5tRNS?5chunk?$AA@ 0011c250     pngrutil.obj
+ 0002:00001268       ??_C@_0BI@MMDCNIMN@Invalid?5tRNS?5after?5IDAT?$AA@ 0011c268     pngrutil.obj
+ 0002:00001280       ??_C@_0BJ@DNLGINLH@Missing?5IHDR?5before?5tRNS?$AA@ 0011c280     pngrutil.obj
+ 0002:0000129c       ??_C@_0CB@NACPDIGJ@Incorrect?5bKGD?5chunk?5index?5value@ 0011c29c     pngrutil.obj
+ 0002:000012c0       ??_C@_0BM@MJOFIPAI@Incorrect?5bKGD?5chunk?5length?$AA@ 0011c2c0     pngrutil.obj
+ 0002:000012dc       ??_C@_0BF@DHJOBPEI@Duplicate?5bKGD?5chunk?$AA@ 0011c2dc     pngrutil.obj
+ 0002:000012f4       ??_C@_0BJ@BAJOBAFN@Missing?5PLTE?5before?5bKGD?$AA@ 0011c2f4     pngrutil.obj
+ 0002:00001310       ??_C@_0BI@CMLGFIFF@Invalid?5bKGD?5after?5IDAT?$AA@ 0011c310     pngrutil.obj
+ 0002:00001328       ??_C@_0BJ@PFFFEIJJ@Missing?5IHDR?5before?5bKGD?$AA@ 0011c328     pngrutil.obj
+ 0002:00001344       ??_C@_0BM@HJCIDHBG@Incorrect?5hIST?5chunk?5length?$AA@ 0011c344     pngrutil.obj
+ 0002:00001360       ??_C@_0BF@FMFDLFKH@Duplicate?5hIST?5chunk?$AA@ 0011c360     pngrutil.obj
+ 0002:00001378       ??_C@_0BJ@KBMKNJIK@Missing?5PLTE?5before?5hIST?$AA@ 0011c378     pngrutil.obj
+ 0002:00001394       ??_C@_0BI@LLJKEGEF@Invalid?5hIST?5after?5IDAT?$AA@ 0011c394     pngrutil.obj
+ 0002:000013ac       ??_C@_0BJ@EEABIBEO@Missing?5IHDR?5before?5hIST?$AA@ 0011c3ac     pngrutil.obj
+ 0002:000013c8       ??_C@_0BM@CAALIFOJ@Incorrect?5pHYs?5chunk?5length?$AA@ 0011c3c8     pngrutil.obj
+ 0002:000013e4       ??_C@_0BF@MBDJBKMG@Duplicate?5pHYs?5chunk?$AA@ 0011c3e4     pngrutil.obj
+ 0002:000013fc       ??_C@_0BI@ILGPKLEK@Invalid?5pHYs?5after?5IDAT?$AA@ 0011c3fc     pngrutil.obj
+ 0002:00001414       ??_C@_0BJ@HLHPANNL@Missing?5IHDR?5before?5pHYs?$AA@ 0011c414     pngrutil.obj
+ 0002:00001430       ??_C@_0BM@NBDONMKL@Incorrect?5oFFs?5chunk?5length?$AA@ 0011c430     pngrutil.obj
+ 0002:0000144c       ??_C@_0BF@JBIHJHNI@Duplicate?5oFFs?5chunk?$AA@ 0011c44c     pngrutil.obj
+ 0002:00001464       ??_C@_0BI@DOPHGCAB@Invalid?5oFFs?5after?5IDAT?$AA@ 0011c464     pngrutil.obj
+ 0002:0000147c       ??_C@_0BJ@GOGKJOPG@Missing?5IHDR?5before?5oFFs?$AA@ 0011c47c     pngrutil.obj
+ 0002:00001498       ??_C@_0BL@ELFLIGPP@No?5memory?5for?5pCAL?5params?4?$AA@ 0011c498     pngrutil.obj
+ 0002:000014b4       ??_C@_0CK@GBCGFDCK@Unrecognized?5equation?5type?5for?5p@ 0011c4b4     pngrutil.obj
+ 0002:000014e0       ??_C@_0CK@ONFOCIAG@Invalid?5pCAL?5parameters?5for?5equa@ 0011c4e0     pngrutil.obj
+ 0002:0000150c       ??_C@_0BC@KNEPBMNA@Invalid?5pCAL?5data?$AA@ 0011c50c     pngrutil.obj
+ 0002:00001520       ??_C@_0BM@BADKGCIJ@No?5memory?5for?5pCAL?5purpose?4?$AA@ 0011c520     pngrutil.obj
+ 0002:0000153c       ??_C@_0BF@HCCMEAIJ@Duplicate?5pCAL?5chunk?$AA@ 0011c53c     pngrutil.obj
+ 0002:00001554       ??_C@_0BI@CAHJBHPE@Invalid?5pCAL?5after?5IDAT?$AA@ 0011c554     pngrutil.obj
+ 0002:0000156c       ??_C@_0BJ@OGJFFCCO@Missing?5IHDR?5before?5pCAL?$AA@ 0011c56c     pngrutil.obj
+ 0002:00001588       ??_C@_0BC@EGHIKHND@Invalid?5sCAL?5data?$AA@ 0011c588     pngrutil.obj
+ 0002:0000159c       ??_C@_0CG@ILPCKGAK@malformed?5height?5string?5in?5sCAL?5@ 0011c59c     pngrutil.obj
+ 0002:000015c4       ??_C@_0CF@LLNCAD@malformed?5width?5string?5in?5sCAL?5c@ 0011c5c4     pngrutil.obj
+ 0002:000015ec       ??_C@_0CK@IHKBDLGD@Out?5of?5memory?5while?5processing?5s@ 0011c5ec     pngrutil.obj
+ 0002:00001618       ??_C@_0BF@OLMOCGII@Duplicate?5sCAL?5chunk?$AA@ 0011c618     pngrutil.obj
+ 0002:00001630       ??_C@_0BI@JLBKDAG@Invalid?5sCAL?5after?5IDAT?$AA@ 0011c630     pngrutil.obj
+ 0002:00001648       ??_C@_0BJ@KBDFCIPO@Missing?5IHDR?5before?5sCAL?$AA@ 0011c648     pngrutil.obj
+ 0002:00001664       ??_C@_0BM@HAEOJOJG@Incorrect?5tIME?5chunk?5length?$AA@ 0011c664     pngrutil.obj
+ 0002:00001680       ??_C@_0BF@CMKMELPN@Duplicate?5tIME?5chunk?$AA@ 0011c680     pngrutil.obj
+ 0002:00001698       ??_C@_0BI@DEMOLHAA@Out?5of?5place?5tIME?5chunk?$AA@ 0011c698     pngrutil.obj
+ 0002:000016b0       ??_C@_0CL@OGIJCCIO@Insufficient?5memory?5to?5process?5t@ 0011c6b0     pngrutil.obj
+ 0002:000016dc       ??_C@_0CJ@FOHJNEOL@Not?5enough?5memory?5to?5process?5tex@ 0011c6dc     pngrutil.obj
+ 0002:00001708       ??_C@_0CB@EKMLANHJ@No?5memory?5to?5process?5text?5chunk?4@ 0011c708     pngrutil.obj
+ 0002:0000172c       ??_C@_0BJ@DCBGIPDG@Missing?5IHDR?5before?5tEXt?$AA@ 0011c72c     pngrutil.obj
+ 0002:00001748       ??_C@_0CJ@KDPACLDH@Insufficient?5memory?5to?5store?5zTX@ 0011c748     pngrutil.obj
+ 0002:00001774       ??_C@_0CJ@BBPBJAPJ@Not?5enough?5memory?5to?5process?5zTX@ 0011c774     pngrutil.obj
+ 0002:000017a0       ??_C@_0CH@KHHIIBBM@Unknown?5compression?5type?5in?5zTXt@ 0011c7a0     pngrutil.obj
+ 0002:000017c8       ??_C@_0BH@OKNNOGIJ@Zero?5length?5zTXt?5chunk?$AA@ 0011c7c8     pngrutil.obj
+ 0002:000017e0       ??_C@_0CF@INOJJBEP@Out?5of?5memory?5processing?5zTXt?5ch@ 0011c7e0     pngrutil.obj
+ 0002:00001808       ??_C@_0BJ@GFIDABKN@Missing?5IHDR?5before?5zTXt?$AA@ 0011c808     pngrutil.obj
+ 0002:00001824       ??_C@_0BH@FADDMAED@Extra?5compressed?5data?4?$AA@ 0011c824     pngrutil.obj
+ 0002:0000183c       ??_C@_0DE@IIKHIEFN@Ignoring?5attempt?5to?5set?5negative@ 0011c83c     pngset.obj
+ 0002:00001870       ??_C@_0DO@EEGLKLJK@Ignoring?5attempt?5to?5set?5chromati@ 0011c870     pngset.obj
+ 0002:000018b0       ??_C@_0BA@FODJPOMI@Setting?5gamma?$DN0?$AA@ 0011c8b0     pngset.obj
+ 0002:000018c0       ??_C@_0BL@OOPLOBFJ@Limiting?5gamma?5to?521474?483?$AA@ 0011c8c0     pngset.obj
+ 0002:000018dc       ??_C@_0BP@BJIADBMD@Setting?5negative?5gamma?5to?5zero?$AA@ 0011c8dc     pngset.obj
+ 0002:000018fc       ??_C@_0CP@KJELKCMD@Invalid?5palette?5size?0?5hIST?5alloc@ 0011c8fc     pngset.obj
+ 0002:0000192c       ??_C@_0CJ@HIIPIHBM@Insufficient?5memory?5for?5hIST?5chu@ 0011c92c     pngset.obj
+ 0002:00001958       ??_C@_0BO@PAJOKPHG@Invalid?5filter?5method?5in?5IHDR?$AA@ 0011c958     pngset.obj
+ 0002:00001978       ??_C@_0BO@KOOEGEDO@Unknown?5filter?5method?5in?5IHDR?$AA@ 0011c978     pngset.obj
+ 0002:00001998       ??_C@_0DB@CJBLKABO@MNG?5features?5are?5not?5allowed?5in?5@ 0011c998     pngset.obj
+ 0002:000019cc       ??_C@_0CD@DDOOCEDP@Unknown?5compression?5method?5in?5IH@ 0011c9cc     pngset.obj
+ 0002:000019f0       ??_C@_0CB@EMHJMLOA@Unknown?5interlace?5method?5in?5IHDR@ 0011c9f0     pngset.obj
+ 0002:00001a14       ??_C@_0DB@FGMBGHOJ@Invalid?5color?5type?1bit?5depth?5com@ 0011ca14     pngset.obj
+ 0002:00001a48       ??_C@_0BL@KPIFPGMP@Invalid?5color?5type?5in?5IHDR?$AA@ 0011ca48     pngset.obj
+ 0002:00001a64       ??_C@_0BK@OAKOLNFJ@Invalid?5bit?5depth?5in?5IHDR?$AA@ 0011ca64     pngset.obj
+ 0002:00001a80       ??_C@_0DA@KJHOLOOI@Width?5is?5too?5large?5for?5libpng?5to@ 0011ca80     pngset.obj
+ 0002:00001ab0       ??_C@_0BL@PKEOJJBA@Invalid?5image?5size?5in?5IHDR?$AA@ 0011cab0     pngset.obj
+ 0002:00001acc       ??_C@_0CH@MBJMGPKM@image?5size?5exceeds?5user?5limits?5i@ 0011cacc     pngset.obj
+ 0002:00001af4       ??_C@_0CG@OEFPMCG@Image?5width?5or?5height?5is?5zero?5in@ 0011caf4     pngset.obj
+ 0002:00001b1c       ??_C@_0CI@BJJAJFBL@Insufficient?5memory?5for?5pCAL?5par@ 0011cb1c     pngset.obj
+ 0002:00001b44       ??_C@_0CF@FNBJPHKN@Insufficient?5memory?5for?5pCAL?5par@ 0011cb44     pngset.obj
+ 0002:00001b6c       ??_C@_0CE@GHAOJDBK@Insufficient?5memory?5for?5pCAL?5uni@ 0011cb6c     pngset.obj
+ 0002:00001b90       ??_C@_0CG@JFEJBACA@Insufficient?5memory?5for?5pCAL?5pur@ 0011cb90     pngset.obj
+ 0002:00001bb8       ??_C@_0BH@IKBNLCFC@Invalid?5palette?5length?$AA@ 0011cbb8     pngset.obj
+ 0002:00001bd0       ??_C@_0CN@LIEAHFGD@Insufficient?5memory?5to?5process?5i@ 0011cbd0     pngset.obj
+ 0002:00001c00       ??_C@_0CL@FFBJCBGI@Insufficient?5memory?5to?5process?5i@ 0011cc00     pngset.obj
+ 0002:00001c2c       ??_C@_0BK@DENNMICD@iTXt?5chunk?5not?5supported?4?$AA@ 0011cc2c     pngset.obj
+ 0002:00001c48       ??_C@_0BN@MLELJANO@No?5memory?5for?5sPLT?5palettes?4?$AA@ 0011cc48     pngset.obj
+ 0002:00001c68       ??_C@_0CI@ICGKPKMD@Out?5of?5memory?5processing?5unknown@ 0011cc68     pngset.obj
+ 0002:00001c90       ??_C@_0CO@KHAGOEON@Out?5of?5memory?5while?5processing?5u@ 0011cc90     pngset.obj
+ 0002:00001cc0       ??_C@_0CC@LLCCFJFC@Insufficient?5memory?5to?5store?5tex@ 0011ccc0     pngset.obj
+ 0002:00001fe8       ??_C@_0BM@HGGPCIDB@Call?5to?5NULL?5write?5function?$AA@ 0011cfe8     pngwio.obj
+ 0002:00002004       ??_C@_0M@POLPJMAP@Write?5Error?$AA@ 0011d004     pngwio.obj
+ 0002:00002010       ??_C@_0DI@HLGELEHE@Attempted?5to?5set?5both?5read_data_@ 0011d010     pngwio.obj
+ 0002:00002048       ??_C@_0DF@KDLDDAHD@the?5same?5structure?4?5?5Resetting?5r@ 0011d048     pngwio.obj
+ 0002:00002080       ??_C@_0CD@JNFKAPPE@Unable?5to?5write?5international?5te@ 0011d080     pngwrite.obj
+ 0002:000020a4       ??_C@_0CL@BBINJHDH@Valid?5palette?5required?5for?5palet@ 0011d0a4     pngwrite.obj
+ 0002:000020d0       ??_C@_0BL@LMBFPIMK@No?5IDATs?5written?5into?5file?$AA@ 0011d0d0     pngwrite.obj
+ 0002:000020ec       ??_C@_0DG@PIMMNKNE@png_write_info?5was?5never?5called?5@ 0011d0ec     pngwrite.obj
+ 0002:00002124       ??_C@_0L@KKACNLAH@zlib?5error?$AA@ 0011d124     pngwrite.obj
+ 0002:00002130       ??_C@_0BN@FEBFJLIP@Unknown?5custom?5filter?5method?$AA@ 0011d130     pngwrite.obj
+ 0002:00002150       ??_C@_0CG@NMBMEAFF@Can?8t?5add?5Paeth?5filter?5after?5sta@ 0011d150     pngwrite.obj
+ 0002:00002178       ??_C@_0CI@IKCNDNAL@Can?8t?5add?5Average?5filter?5after?5s@ 0011d178     pngwrite.obj
+ 0002:000021a0       ??_C@_0CD@OPNEDBEP@Can?8t?5add?5Up?5filter?5after?5starti@ 0011d1a0     pngwrite.obj
+ 0002:000021c4       ??_C@_0CA@EENAMDIO@Unknown?5row?5filter?5for?5method?50?$AA@ 0011d1c4     pngwrite.obj
+ 0002:000021e4       ??_C@_0CA@OPOKNKIO@Unknown?5filter?5heuristic?5method?$AA@ 0011d1e4     pngwrite.obj
+ 0002:00002204       ??_C@_0CJ@GBBOAMKD@Compression?5window?5is?5being?5rese@ 0011d204     pngwrite.obj
+ 0002:00002230       ??_C@_0DB@FJDHLPIN@Only?5compression?5windows?5?$DO?$DN?5256?5@ 0011d230     pngwrite.obj
+ 0002:00002264       ??_C@_0DB@JHPDBBJC@Only?5compression?5windows?5?$DM?$DN?532k?5@ 0011d264     pngwrite.obj
+ 0002:00002298       ??_C@_0CO@BHFFHNIH@Only?5compression?5method?58?5is?5sup@ 0011d298     pngwrite.obj
+ 0002:000022c8       ??_C@_0EH@POAHBPLA@Application?5uses?5deprecated?5png_@ 0011d2c8     pngwrite.obj
+ 0002:00002310       ??_C@_0EH@CHJEHECM@The?5info?5struct?5allocated?5by?5the@ 0011d310     pngwrite.obj
+ 0002:00002358       ??_C@_0EG@BNADKHNF@The?5png?5struct?5allocated?5by?5the?5@ 0011d358     pngwrite.obj
+ 0002:000023a0       ??_C@_0BJ@OKEHCCNM@Unknown?5compression?5type?$AA@ 0011d3a0     pngwutil.obj
+ 0002:000023bc       ??_C@_0DI@EOMIECBC@Ignoring?5request?5to?5write?5a?5PLTE@ 0011d3bc     pngwutil.obj
+ 0002:000023f4       ??_C@_0CE@HMOECEJ@Invalid?5number?5of?5colors?5in?5pale@ 0011d3f4     pngwutil.obj
+ 0002:00002418       ??_C@_0CO@KLGKHOE@Invalid?5number?5of?5histogram?5entr@ 0011d418     pngwutil.obj
+ 0002:00002448       ??_C@_0BE@PMDOJLFC@zero?5length?5keyword?$AA@ 0011d448     pngwutil.obj
+ 0002:0000245c       ??_C@_0CJ@IDAIANNL@keyword?5length?5must?5be?51?5?9?579?5ch@ 0011d45c     pngwutil.obj
+ 0002:00002488       ??_C@_0BE@OGMCMLFJ@Zero?5length?5keyword?$AA@ 0011d488     pngwutil.obj
+ 0002:0000249c       ??_C@_0CL@HHFCBFIC@extra?5interior?5spaces?5removed?5fr@ 0011d49c     pngwutil.obj
+ 0002:000024c8       ??_C@_0CE@JDFMMCPJ@leading?5spaces?5removed?5from?5keyw@ 0011d4c8     pngwutil.obj
+ 0002:000024ec       ??_C@_0CF@FJBLBIB@trailing?5spaces?5removed?5from?5key@ 0011d4ec     pngwutil.obj
+ 0002:00002514       ??_C@_0BN@FKPMJPEI@invalid?5character?5in?5keyword?$AA@ 0011d514     pngwutil.obj
+ 0002:00002534       ??_C@_0CG@BDAAAKEB@Out?5of?5memory?5while?5procesing?5ke@ 0011d534     pngwutil.obj
+ 0002:0000255c       ??_C@_0BM@PNEBJDKO@Empty?5keyword?5in?5tEXt?5chunk?$AA@ 0011d55c     pngwutil.obj
+ 0002:00002578       ??_C@_0BM@GHFLFCHO@Empty?5keyword?5in?5zTXt?5chunk?$AA@ 0011d578     pngwutil.obj
+ 0002:00002594       ??_C@_0CB@INFMBLLB@Invalid?5interlace?5type?5specified@ 0011d594     pngwutil.obj
+ 0002:000025b8       ??_C@_0BO@NHOMDFKG@Invalid?5filter?5type?5specified?$AA@ 0011d5b8     pngwutil.obj
+ 0002:000025d8       ??_C@_0CD@KAANFJDM@Invalid?5compression?5type?5specifi@ 0011d5d8     pngwutil.obj
+ 0002:000025fc       ??_C@_0CD@BMDFBAM@Invalid?5image?5color?5type?5specifi@ 0011d5fc     pngwutil.obj
+ 0002:00002620       ??_C@_0CB@KFCOJLNF@Invalid?5bit?5depth?5for?5RGBA?5image@ 0011d620     pngwutil.obj
+ 0002:00002644       ??_C@_0CM@FPEKKHEM@Invalid?5bit?5depth?5for?5grayscale?$CL@ 0011d644     pngwutil.obj
+ 0002:00002670       ??_C@_0CF@KCHGLJIB@Invalid?5bit?5depth?5for?5paletted?5i@ 0011d670     pngwutil.obj
+ 0002:00002698       ??_C@_0CA@JFINDAEN@Invalid?5bit?5depth?5for?5RGB?5image?$AA@ 0011d698     pngwutil.obj
+ 0002:000026b8       ??_C@_0CG@NMBHOEGJ@Invalid?5bit?5depth?5for?5grayscale?5@ 0011d6b8     pngwutil.obj
+ 0002:000026e0       ??_C@_0DB@EIEMKDIH@Invalid?5zlib?5compression?5method?5@ 0011d6e0     pngwutil.obj
+ 0002:00002714       ??_C@_0CI@CGCNKNIG@Invalid?5sRGB?5rendering?5intent?5sp@ 0011d714     pngwutil.obj
+ 0002:0000273c       ??_C@_0BM@MGJENKCF@Empty?5keyword?5in?5iCCP?5chunk?$AA@ 0011d73c     pngwutil.obj
+ 0002:00002758       ??_C@_0CH@GLHAJEH@Unknown?5compression?5type?5in?5iCCP@ 0011d758     pngwutil.obj
+ 0002:00002780       ??_C@_0BM@BNKHLNKK@Empty?5keyword?5in?5sPLT?5chunk?$AA@ 0011d780     pngwutil.obj
+ 0002:0000279c       ??_C@_0BN@EBBMENIF@Invalid?5sBIT?5depth?5specified?$AA@ 0011d79c     pngwutil.obj
+ 0002:000027bc       ??_C@_0CD@ENBHLKCJ@Invalid?5cHRM?5white?5point?5specifi@ 0011d7bc     pngwutil.obj
+ 0002:000027e0       ??_C@_0BI@INBHNBOF@white_x?$DN?$CFf?0?5white_y?$DN?$CFf?6?$AA@ 0011d7e0     pngwutil.obj
+ 0002:000027f8       ??_C@_0CB@EPFJDOMM@Invalid?5cHRM?5red?5point?5specified@ 0011d7f8     pngwutil.obj
+ 0002:0000281c       ??_C@_0CD@IEHDBPFI@Invalid?5cHRM?5green?5point?5specifi@ 0011d81c     pngwutil.obj
+ 0002:00002840       ??_C@_0CC@NIHKPHAB@Invalid?5cHRM?5blue?5point?5specifie@ 0011d840     pngwutil.obj
+ 0002:00002864       ??_C@_0CH@JCFDIEK@Can?8t?5write?5tRNS?5with?5an?5alpha?5c@ 0011d864     pngwutil.obj
+ 0002:00002890       ??_C@_0EA@JIMPJFKJ@Ignoring?5attempt?5to?5write?516?9bit@ 0011d890     pngwutil.obj
+ 0002:000028d0       ??_C@_0EA@GMIFOPEM@Ignoring?5attempt?5to?5write?5tRNS?5c@ 0011d8d0     pngwutil.obj
+ 0002:00002910       ??_C@_0CP@PFJBFCBG@Invalid?5number?5of?5transparent?5co@ 0011d910     pngwutil.obj
+ 0002:00002940       ??_C@_0EA@NFOOLGHI@Ignoring?5attempt?5to?5write?5bKGD?5c@ 0011d940     pngwutil.obj
+ 0002:00002980       ??_C@_0EA@PGJGJFFB@Ignoring?5attempt?5to?5write?516?9bit@ 0011d980     pngwutil.obj
+ 0002:000029c0       ??_C@_0CB@BIGCBPLL@Invalid?5background?5palette?5index@ 0011d9c0     pngwutil.obj
+ 0002:000029e4       ??_C@_0CG@LALPJLHA@Unrecognized?5unit?5type?5for?5oFFs?5@ 0011d9e4     pngwutil.obj
+ 0002:00002a0c       ??_C@_1BA@ONFANOIP@?$AA?$CF?$AA1?$AA2?$AA?4?$AA1?$AA2?$AAe?$AA?$AA@ 0011da0c     pngwutil.obj
+ 0002:00002a1c       ??_C@_0CG@OAABBGGO@Unrecognized?5unit?5type?5for?5pHYs?5@ 0011da1c     pngwutil.obj
+ 0002:00002a44       ??_C@_0CG@IADLICLG@Invalid?5time?5specified?5for?5tIME?5@ 0011da44     pngwutil.obj
+ 0002:00002aa4       __IMPORT_DESCRIPTOR_COREDLL 0011daa4     coredll:COREDLL.dll
+ 0002:00002ab8       __IMPORT_DESCRIPTOR_zlibce 0011dab8     zlibce:zlibce.dll
+ 0002:00002acc       __NULL_IMPORT_DESCRIPTOR   0011dacc     coredll:COREDLL.dll
+ 0003:00000000       __imp_memcmp               00120000     coredll:COREDLL.dll
+ 0003:00000004       __imp___rt_udiv            00120004     coredll:COREDLL.dll
+ 0003:00000008       __imp_memset               00120008     coredll:COREDLL.dll
+ 0003:0000000c       __imp_WideCharToMultiByte  0012000c     coredll:COREDLL.dll
+ 0003:00000010       __imp_wsprintfW            00120010     coredll:COREDLL.dll
+ 0003:00000014       __imp_strncpy              00120014     coredll:COREDLL.dll
+ 0003:00000018       __imp_longjmp              00120018     coredll:COREDLL.dll
+ 0003:0000001c       __imp_fprintf              0012001c     coredll:COREDLL.dll
+ 0003:00000020       __imp__getstdfilex         00120020     coredll:COREDLL.dll
+ 0003:00000024       __imp___utos               00120024     coredll:COREDLL.dll
+ 0003:00000028       __imp___divs               00120028     coredll:COREDLL.dll
+ 0003:0000002c       __imp___stod               0012002c     coredll:COREDLL.dll
+ 0003:00000030       __imp_malloc               00120030     coredll:COREDLL.dll
+ 0003:00000034       __imp_free                 00120034     coredll:COREDLL.dll
+ 0003:00000038       __imp_memcpy               00120038     coredll:COREDLL.dll
+ 0003:0000003c       __imp_strcpy               0012003c     coredll:COREDLL.dll
+ 0003:00000040       __imp_setjmp               00120040     coredll:COREDLL.dll
+ 0003:00000044       __imp_ReadFile             00120044     coredll:COREDLL.dll
+ 0003:00000048       __imp___dtos               00120048     coredll:COREDLL.dll
+ 0003:0000004c       __imp___muld               0012004c     coredll:COREDLL.dll
+ 0003:00000050       __imp___subd               00120050     coredll:COREDLL.dll
+ 0003:00000054       __imp_fabs                 00120054     coredll:COREDLL.dll
+ 0003:00000058       __imp___gtd                00120058     coredll:COREDLL.dll
+ 0003:0000005c       __imp___muls               0012005c     coredll:COREDLL.dll
+ 0003:00000060       __imp___itod               00120060     coredll:COREDLL.dll
+ 0003:00000064       __imp___divd               00120064     coredll:COREDLL.dll
+ 0003:00000068       __imp___utod               00120068     coredll:COREDLL.dll
+ 0003:0000006c       __imp_pow                  0012006c     coredll:COREDLL.dll
+ 0003:00000070       __imp___addd               00120070     coredll:COREDLL.dll
+ 0003:00000074       __imp___dtou               00120074     coredll:COREDLL.dll
+ 0003:00000078       __imp___dtoi               00120078     coredll:COREDLL.dll
+ 0003:0000007c       __imp___nes                0012007c     coredll:COREDLL.dll
+ 0003:00000080       __imp___ltd                00120080     coredll:COREDLL.dll
+ 0003:00000084       __imp_wcstod               00120084     coredll:COREDLL.dll
+ 0003:00000088       __imp_MultiByteToWideChar  00120088     coredll:COREDLL.dll
+ 0003:0000008c       __imp_strlen               0012008c     coredll:COREDLL.dll
+ 0003:00000090       __imp___itos               00120090     coredll:COREDLL.dll
+ 0003:00000094       __imp___rt_sdiv            00120094     coredll:COREDLL.dll
+ 0003:00000098       __imp___led                00120098     coredll:COREDLL.dll
+ 0003:0000009c       __imp___eqd                0012009c     coredll:COREDLL.dll
+ 0003:000000a0       __imp_WriteFile            001200a0     coredll:COREDLL.dll
+ 0003:000000a4       __imp___ged                001200a4     coredll:COREDLL.dll
+ 0003:000000a8       __imp_swprintf             001200a8     coredll:COREDLL.dll
+ 0003:000000ac       __imp_DisableThreadLibraryCalls 001200ac     coredll:COREDLL.dll
+ 0003:000000b0       __imp_LocalFree            001200b0     coredll:COREDLL.dll
+ 0003:000000b4       __imp___C_specific_handler 001200b4     coredll:COREDLL.dll
+ 0003:000000b8       __imp___security_error_handler 001200b8     coredll:COREDLL.dll
+ 0003:000000bc       __imp___security_gen_cookie 001200bc     coredll:COREDLL.dll
+ 0003:000000c0       \177COREDLL_NULL_THUNK_DATA 001200c0     coredll:COREDLL.dll
+ 0003:000000c4       __imp_deflate              001200c4     zlibce:zlibce.dll
+ 0003:000000c8       __imp_deflateEnd           001200c8     zlibce:zlibce.dll
+ 0003:000000cc       __imp_deflateReset         001200cc     zlibce:zlibce.dll
+ 0003:000000d0       __imp_deflateInit2_        001200d0     zlibce:zlibce.dll
+ 0003:000000d4       __imp_inflateInit_         001200d4     zlibce:zlibce.dll
+ 0003:000000d8       __imp_inflate              001200d8     zlibce:zlibce.dll
+ 0003:000000dc       __imp_inflateReset         001200dc     zlibce:zlibce.dll
+ 0003:000000e0       __imp_crc32                001200e0     zlibce:zlibce.dll
+ 0003:000000e4       __imp_inflateEnd           001200e4     zlibce:zlibce.dll
+ 0003:000000e8       \177zlibce_NULL_THUNK_DATA 001200e8     zlibce:zlibce.dll
+ 0003:000000ec       __xc_a                     001200ec     corelibc:crt0init.obj
+ 0003:000000f4       __xc_z                     001200f4     corelibc:crt0init.obj
+ 0003:000000f8       __xi_a                     001200f8     corelibc:crt0init.obj
+ 0003:000000fc       __xi_z                     001200fc     corelibc:crt0init.obj
+ 0003:00000100       __xp_a                     00120100     corelibc:crt0init.obj
+ 0003:00000104       __xp_z                     00120104     corelibc:crt0init.obj
+ 0003:00000108       __xt_a                     00120108     corelibc:crt0init.obj
+ 0003:0000010c       __xt_z                     0012010c     corelibc:crt0init.obj
+ 0003:00000154       __security_cookie          00120154     corelibc:seccook.obj
+ 0003:00000158       __onexitend                00120158     <common>
+ 0003:0000015c       __onexitbegin              0012015c     <common>
+ 0003:00000160       _exitflag                  00120160     <common>
+ 0003:00000164       _pRawDllMain               00120164     <common>
+
+ entry point at        0001:00019054
+
+ Static symbols
+
+ 0001:00000b3c       png_format_buffer          00101b3c f   pngerror.obj
+ 0001:00000c24       png_default_error          00101c24 f   pngerror.obj
+ 0001:00000d18       png_default_warning        00101d18 f   pngerror.obj
+ 0001:00015510       png_text_compress          00116510 f   pngwutil.obj
+ 0001:00015790       png_write_compressed_data_out 00116790 f   pngwutil.obj
+ 0001:000190f4       report_failure             0011a0f4 f   corelibc:secchk.obj
+ 0001:000191c4       doexit                     0011a1c4 f   corelibc:crt0dat.obj

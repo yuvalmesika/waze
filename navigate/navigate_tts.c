@@ -776,7 +776,7 @@ static void _on_voice_changed( const char* voice_id, BOOL force_recommit )
  */
 static int _prepare_nav_voice( const char* voice_id )
 {
-   int preload_count, route_count;
+   int preload_count, route_count,total_count;
    if ( sgCtx.voice_prepare_ctx )
    {
       roadmap_log( ROADMAP_WARNING, NAV_TTS_LOGSTR( "Previous voice prepare request is in process" ) );
@@ -825,8 +825,8 @@ static int _prepare_nav_voice( const char* voice_id )
 
 
    navigate_tts_commit();
-
-   return ctx->total_count;
+	total_count = ctx->total_count;
+   return total_count;
 }
 
 /*
