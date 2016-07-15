@@ -29,7 +29,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <assert.h>
-
 #include "roadmap.h"
 #include "roadmap_canvas.h"
 #include "roadmap_lang.h"

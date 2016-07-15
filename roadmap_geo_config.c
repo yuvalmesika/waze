@@ -886,7 +886,7 @@ static void roadmap_geo_config_init (void) {
       //   Web-service address
       roadmap_config_declare( "preferences",
                               &RoadMapConfigWebServiceName,
-                              "",
+                              "http://rt.waze.com/rtserver",
                               NULL);
       roadmap_config_declare ("preferences",
                               &RoadMapConfigSystemServerId,

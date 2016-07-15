@@ -310,10 +310,10 @@ SsdWidget create_quick_setting_menu(){
    	  }
    	  //View 2D/3D
 
-#ifndef OPENGL
-        if ( !roadmap_screen_is_hd_screen() )
+        if ( roadmap_screen_is_hd_screen() )
         {
-#endif
+			roadmap_log (ROADMAP_ERROR,
+                  "roadmap_screen_is_hd_screen true");
            box = ssd_container_new ("View group", NULL, SSD_MAX_SIZE, height,
                                SSD_WIDGET_SPACE|SSD_END_ROW|tab_flag);
            ssd_widget_set_color (box, NULL, NULL);
@@ -332,9 +332,10 @@ SsdWidget create_quick_setting_menu(){
            ssd_widget_add(box, space(1));
            ssd_widget_add(box, ssd_separator_new("separator", SSD_ALIGN_BOTTOM));
            ssd_widget_add (quick_container, box);
-#ifndef OPENGL
         }
-#endif
+		else
+			roadmap_log (ROADMAP_ERROR,
+                  "roadmap_screen_is_hd_screen false");
 
    	  //Light day/night
    	  box = ssd_container_new ("Light group", NULL, SSD_MAX_SIZE, height,
@@ -410,8 +411,8 @@ void roadmap_general_settings_show(void) {
 	  ssd_widget_add(dialog, space(5));
 #endif
 
-      container = ssd_container_new ("Conatiner Group", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,
-              SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER);
+	  container = ssd_container_new ("Conatiner Group", NULL, SSD_MENU_WIDTH, SSD_MIN_SIZE,
+              SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
 
       //////////// Language /////////////
       if (lang_count > 1){
@@ -463,8 +464,8 @@ void roadmap_general_settings_show(void) {
       }
       ssd_widget_add(dialog, container);
 
-      container = ssd_container_new ("Conatiner Group", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,
-               SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER);
+	  container = ssd_container_new ("Conatiner Group", NULL, SSD_MENU_WIDTH, SSD_MIN_SIZE,
+               SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
       //General Units
       box = ssd_container_new ("use_metric group", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,
                                SSD_WIDGET_SPACE|SSD_END_ROW|tab_flag);
@@ -481,8 +482,8 @@ void roadmap_general_settings_show(void) {
       ssd_widget_add (container, box);
       ssd_widget_add(dialog, container);
 
-      container = ssd_container_new ("Conatiner Group", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,
-               SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER);
+	  container = ssd_container_new ("Conatiner Group", NULL, SSD_MENU_WIDTH, SSD_MIN_SIZE,
+               SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
 
 #ifdef __SYMBIAN32__
 

@@ -73,25 +73,43 @@ BOOL   WSA_ExtractParams(
    char*    pWebSvc  = NULL;
    int      iPort    = WSA_SERVER_DEFAULT_PORT;
    char     Copy[WSA_STRING_MAXSIZE+1];
-   
+   int isValid;
+   int size=0;
    //   Verify sizes are ok:
    if( !szWebServiceAddress                              || 
       !(*szWebServiceAddress)                            || 
       (strlen(szWebServiceAddress)< WSA_STRING_MINSIZE)  ||
       (WSA_STRING_MAXSIZE < strlen(szWebServiceAddress)))
+   {
+	   roadmap_log( ROADMAP_ERROR, "websvc_address() - error on size");
       return FALSE;
-   
+   }
    //   Copy of service-name:
    for( i=0; i<strlen(szWebServiceAddress); i++)
       Copy[i] = szWebServiceAddress[i];
    Copy[i] = '\0';
    
+   
+   isValid = 0;
+   
    //   Search for 'http://':
-   if( 0 != strncasecmp( (const char*)Copy, WSA_PREFIX, WSA_PREFIX_SIZE))
-      return FALSE;
-
+   if( 0 == strncasecmp( (const char*)Copy, WSA_PREFIX, WSA_PREFIX_SIZE))
+   {
+      isValid = 1;
+	  size = WSA_PREFIX_SIZE;
+   }
+   if( 0 == strncasecmp( (const char*)Copy, WSA_PREFIX_SECURED, WSA_PREFIX_SIZE_SECURED))
+   {
+      isValid = 1;
+	  size = WSA_PREFIX_SIZE_SECURED;
+   }
+   if(isValid == 0)
+   {
+	   roadmap_log( ROADMAP_ERROR, "websvc_address() - no http or https");
+	   return FALSE; 
+   }
    //   Server URL:
-   pSrvURL = (Copy + WSA_PREFIX_SIZE);
+   pSrvURL = (Copy + size);
    
    //   Do we have a port number?
    pTmp = strchr( pSrvURL, WSA_SERVER_PORT_DELIMITER);
@@ -109,29 +127,38 @@ BOOL   WSA_ExtractParams(
    //   Search for server URL termination dellimiter:
    pTmp = strchr( pTmp, WSA_SERVER_URL_DELIMITER);
    if( !pTmp)
+   {
+	   roadmap_log( ROADMAP_ERROR, "websvc_address() - Address termination delimiter was not found");
       return FALSE;   //   Address termination delimiter was not found
-   
+   }
    //   Next value is service-name
    pWebSvc = pTmp + 1;
    (*pTmp) = '\0';      //   Terminate last value (port-number, or server URL)
 
    //   Verify server URL is valid:
    if( !(*pSrvURL) || (WSA_SERVER_URL_MAXSIZE < strlen(pSrvURL)))
+   {
+	   roadmap_log( ROADMAP_ERROR, "websvc_address() - pSrvURL");
       return FALSE;
-
+   }
    //   If we had port-number, verify it is a valid integer value:
    if( pSrvPrt)
    {
       //   Terminate port value string:
       iPort = atoi(pSrvPrt);
       if( (0 == iPort) || (WSA_SERVER_PORT_INVALIDVALUE == iPort))
+	  {
+		  roadmap_log( ROADMAP_ERROR, "websvc_address() - Port-number was zero, or string did not hold an integer value");
          return FALSE;   //   Port-number was zero, or string did not hold an integer value
+	  }
    }
 
    //   Do we have a name?
    if( !(*pWebSvc) || (WSA_SERVICE_NAME_MAXSIZE < strlen(pWebSvc)))
+   {
+	   roadmap_log( ROADMAP_ERROR, "websvc_address() - Do we have a name?");
       return FALSE;
-
+   }
    //   All is cosher, copy output:
    if( pServerURL)
       strncpy( pServerURL, pSrvURL, WSA_SERVER_URL_MAXSIZE);

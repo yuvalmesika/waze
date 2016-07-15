@@ -29,6 +29,9 @@
 #define  WSA_PREFIX                       ("http://")
 #define  WSA_PREFIX_SIZE                  (sizeof(WSA_PREFIX)-1)
 
+#define  WSA_PREFIX_SECURED                       ("https://")
+#define  WSA_PREFIX_SIZE_SECURED                  (sizeof(WSA_PREFIX_SECURED)-1)
+
 #define  WSA_SERVER_DEFAULT_PORT          (80)
 #define  WSA_SERVER_URL_MAXSIZE           (64)
 #define  WSA_SERVER_PORT_DELIMITER        (':')

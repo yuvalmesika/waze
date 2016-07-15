@@ -157,7 +157,7 @@ void ssd_generic_icon_list_dialog_show(
    if ( !ssd_dialog_exists( SSD_GEN_LIST_DLG_NAME ) )
    {
       GenericList   = ssd_dialog_new ( SSD_GEN_LIST_DLG_NAME, "", on_dialog_closed, SSD_CONTAINER_TITLE|dialog_flags);
-      list          = ssd_list_new ("list", SSD_MAX_SIZE, SSD_MAX_SIZE, inputtype_none, 0, NULL);
+	  list          = ssd_list_new ("list", SSD_MENU_WIDTH, SSD_MAX_SIZE, inputtype_none, SSD_CONTAINER_BORDER|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_ALIGN_CENTER, NULL);
       ssd_widget_add (GenericList, list);
    }
    else{

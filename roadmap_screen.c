@@ -87,8 +87,8 @@
 #include "roadmap_time.h"
 #include "animation/roadmap_animation.h"
 
-//#define HI_RES_SCREEN
-
+#define HI_RES_SCREEN
+//#define VIEW_MODE_3D_OGL
 #ifdef SSD
 #include "ssd/ssd_dialog.h"
 #endif

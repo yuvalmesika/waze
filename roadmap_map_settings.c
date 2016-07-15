@@ -253,8 +253,8 @@ void roadmap_map_settings_show(void){
 
 
 
-       container = ssd_container_new ("General prefs", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,
-              SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER);
+	   container = ssd_container_new ("General prefs", NULL, SSD_MENU_WIDTH, SSD_MIN_SIZE,
+              SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
 
 
       if (roadmap_skin_auto_night_feature_enabled()){
@@ -376,8 +376,8 @@ void roadmap_map_settings_show(void){
 
 
 
-	   container = ssd_container_new ("Map GUI prefs", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,
-              SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER);
+	  container = ssd_container_new ("Map GUI prefs", NULL, SSD_MENU_WIDTH, SSD_MIN_SIZE,
+              SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
 
 
 

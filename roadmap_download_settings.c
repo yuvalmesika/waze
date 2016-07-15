@@ -188,8 +188,8 @@ void roadmap_download_settings_show(void){
 
      // ---------------------- Net config group ---------------------------------------------
      box = ssd_container_new ("Download map group", NULL,
-                  SSD_MAX_SIZE, SSD_MIN_SIZE,
-		  SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER );
+		 SSD_MENU_WIDTH, SSD_MIN_SIZE,
+		  SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
 	  ssd_widget_set_color (box, "#000000", "#ffffff");
 
 	  if ( roamdmap_map_download_enabled() )
@@ -234,8 +234,8 @@ void roadmap_download_settings_show(void){
 	  ssd_widget_add( dialog, space(3) );
 
 	   // ---------------------- Net config group ---------------------------------------------
-      container = ssd_container_new ("Net compression", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,
-            SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER);
+	  container = ssd_container_new ("Net compression", NULL, SSD_MENU_WIDTH, SSD_MIN_SIZE,
+            SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
 
       //////// Net compress ////////
       box = ssd_container_new( "Net compression group", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,
@@ -278,8 +278,8 @@ void roadmap_download_settings_show(void){
         ssd_widget_add(dialog, container);
 
 	  // ---------------------- Traffic download group ---------------------------------------------
-	   container = ssd_container_new ("Download prefs", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,
-            SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER);
+	   container = ssd_container_new ("Download prefs", NULL, SSD_MENU_WIDTH, SSD_MIN_SIZE,
+            SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
 
 	   box = ssd_container_new ("Download Traffic Group", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,
               SSD_WIDGET_SPACE|SSD_END_ROW|tab_flag);

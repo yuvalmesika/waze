@@ -855,8 +855,8 @@ void roadmap_login_profile_dialog_show( void )
 #endif
 
       box = ssd_container_new ("box group", NULL,
-                               SSD_MAX_SIZE,SSD_MIN_SIZE,
-                               SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER);
+		  SSD_MENU_WIDTH,SSD_MIN_SIZE,
+                               SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
 
       group = ssd_container_new ("Name group", NULL,
                                  SSD_MAX_SIZE,SSD_MIN_SIZE,
@@ -909,9 +909,9 @@ void roadmap_login_profile_dialog_show( void )
 
       ssd_widget_add (dialog, box);
       group = ssd_container_new ("Car group", NULL,
-                                 SSD_MAX_SIZE,SSD_MIN_SIZE,
+		  SSD_MENU_WIDTH,SSD_MIN_SIZE,
                                  SSD_WIDGET_SPACE|SSD_END_ROW|tab_flag|SSD_ROUNDED_CORNERS|
-                                 SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER);
+                                 SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
       ssd_widget_set_color (group, "#000000", "#ffffff");
 
       config_car = roadmap_config_get (&RoadMapConfigCarName);
@@ -944,9 +944,9 @@ void roadmap_login_profile_dialog_show( void )
 
       //Privacy
       group = ssd_container_new ("Privacy group", NULL,
-                                 SSD_MAX_SIZE,SSD_MIN_SIZE,
+                                 SSD_MENU_WIDTH,SSD_MIN_SIZE,
                                  SSD_WIDGET_SPACE|SSD_END_ROW|tab_flag|SSD_ROUNDED_CORNERS|
-                                 SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER);
+                                 SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
       ssd_widget_set_color (group, "#000000", "#ffffff");
 
 #ifdef TOUCH_SCREEN
@@ -976,8 +976,8 @@ void roadmap_login_profile_dialog_show( void )
 
       ssd_widget_add (dialog, group);
 
-      group = ssd_container_new("AllowPing group",NULL,SSD_MAX_SIZE, SSD_MIN_SIZE, SSD_WIDGET_SPACE
-                                |SSD_END_ROW|tab_flag|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER);
+	  group = ssd_container_new("AllowPing group",NULL,SSD_MENU_WIDTH, SSD_MIN_SIZE, SSD_WIDGET_SPACE
+                                |SSD_END_ROW|tab_flag|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
       ssd_widget_set_color (group, NULL, NULL);
       group2 = ssd_container_new ("group2", NULL, 2*roadmap_canvas_width()/3, height,
                                   SSD_ALIGN_VCENTER);
@@ -1014,9 +1014,9 @@ void roadmap_login_profile_dialog_show( void )
 
       //Social networks
       box = ssd_container_new ("social group", NULL,
-                               SSD_MAX_SIZE,SSD_MIN_SIZE,
+		  SSD_MENU_WIDTH,SSD_MIN_SIZE,
                                SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS
-                               |SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER);
+                               |SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
 
       //Twitter
       group = create_button_group ("Twitter group",

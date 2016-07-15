@@ -574,8 +574,8 @@ static void create_ssd_dialog (void) {
       trails_label[2] = roadmap_lang_get (trails_value[2]);
    }
 
-   container = ssd_container_new ("conatiner", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,
-                            SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_CONTAINER_BORDER|SSD_POINTER_NONE);
+   container = ssd_container_new ("conatiner", NULL, SSD_MENU_WIDTH, SSD_MIN_SIZE,
+                            SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_CONTAINER_BORDER|SSD_POINTER_NONE|SSD_ALIGN_CENTER);
 
    box = ssd_container_new ("type group", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,
                             SSD_WIDGET_SPACE|SSD_END_ROW|tab_flag);
@@ -619,8 +619,8 @@ static void create_ssd_dialog (void) {
    ssd_widget_add (container, box);
    ssd_widget_add (dialog, container);
    
-   container = ssd_container_new ("conatiner", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,
-                            SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_CONTAINER_BORDER|SSD_POINTER_NONE);
+   container = ssd_container_new ("conatiner", NULL, SSD_MENU_WIDTH, SSD_MIN_SIZE,
+                            SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_CONTAINER_BORDER|SSD_POINTER_NONE|SSD_ALIGN_CENTER);
 
    box = ssd_container_new ("samestreet group", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,
                             SSD_WIDGET_SPACE|SSD_END_ROW|tab_flag);

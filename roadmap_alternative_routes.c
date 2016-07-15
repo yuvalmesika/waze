@@ -637,6 +637,7 @@ static int on_route_show_all (SsdWidget widget, const char *new_value) {
    const char *right_buttons[] = { "route_list_e", "route_list_p" };
 #endif
 
+	roadmap_screen_set_view (VIEW_MODE_2D);
    pAltRoute = (AltRouteTrip *) RealtimeAltRoutes_Get_Record (0);
    if (!pAltRoute) {
       roadmap_log (ROADMAP_ERROR,"on_route_show_all - pAltRoute is NULL");
@@ -1635,7 +1636,7 @@ void roadmap_alternative_routes_routes_dialog (void) {
 
 
       sprintf (icon, "%d_route", i + 1);
-      r_box = ssd_container_new ("r_box", NULL, SSD_MAX_SIZE, route_row_height, SSD_WIDGET_SPACE
+	  r_box = ssd_container_new ("r_box", NULL, SSD_MENU_WIDTH, route_row_height, SSD_WIDGET_SPACE
                      | SSD_ALIGN_CENTER | SSD_END_ROW | SSD_ROUNDED_CORNERS | SSD_ROUNDED_WHITE
                      | SSD_CONTAINER_BORDER );
 

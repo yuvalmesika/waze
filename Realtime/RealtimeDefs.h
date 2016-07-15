@@ -119,7 +119,7 @@
 //   Remote web-service address
 #define  RT_CFG_PRM_WEBSRV_Var         RTPrm_WebServiceAddress
 #define  RT_CFG_PRM_WEBSRV_Name        ("Web-Service Address")
-#define  RT_CFG_PRM_WEBSRV_Default     ("")
+#define  RT_CFG_PRM_WEBSRV_Default     ("http://rtproxy-il.waze.com:80/rtserver")
 
 const char*  RT_CFG_GetWebServiceAddress();
 

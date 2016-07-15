@@ -504,15 +504,15 @@ static SsdWidget create_results_container()
                               NULL,
                               SSD_MIN_SIZE,
                               SSD_MIN_SIZE,
-                              0);
+                              SSD_ALIGN_CENTER);
    ssd_widget_set_color(rcnt, NULL,NULL);
 
 
    list = ssd_list_new(       ASD_RC_LIST_NAME,
-                              SSD_MAX_SIZE,
+	   SSD_MENU_WIDTH,
                               SSD_MAX_SIZE,
                               inputtype_free_text,
-                              0,
+                              SSD_CONTAINER_BORDER|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_ALIGN_CENTER,
                               NULL);
    //ssd_widget_set_color(list, NULL,NULL);
    ssd_list_resize( list, 50);

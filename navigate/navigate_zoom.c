@@ -75,17 +75,17 @@ void navigate_zoom_update (int distance,
 #endif
 
    if (roadmap_screen_get_view_mode() == VIEW_MODE_3D){
-      if (distance <= 250 || current_road_type == ROADMAP_ROAD_RAMP) {
-          NavigateZoomScale = 250;
-       } else if (distance <= 500) {
-          NavigateZoomScale = distance;
-       } else if (distance <= 1000) {
-          NavigateZoomScale = ((distance - 500) * 2000 + (1000 - distance) * 1500) / 1000;
+      if (distance <= 100 || current_road_type == ROADMAP_ROAD_RAMP) {
+          NavigateZoomScale = 200;
+       } else if (distance <= 600) {
+          NavigateZoomScale = distance * 2;
+       } else if (distance <= 1200) {
+        NavigateZoomScale = distance * 4 - 1200;
        } else {
 #ifdef VIEW_MODE_3D_OGL
           NavigateZoomScale = 2000;
 #else
-          NavigateZoomScale = 10000;
+          NavigateZoomScale = 3600;
 #endif
        }
    } else {

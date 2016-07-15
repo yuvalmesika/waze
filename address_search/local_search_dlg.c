@@ -409,7 +409,7 @@ static SsdWidget create_results_container()
 
    title = ssd_container_new(  "Title box",
                    NULL,
-                   roadmap_canvas_width()-8,
+				   SSD_MENU_WIDTH,
                    SSD_MIN_SIZE,
                    SSD_CONTAINER_BORDER|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_ALIGN_CENTER);
 
@@ -424,10 +424,10 @@ static SsdWidget create_results_container()
    ssd_widget_add( rcnt, title);
    ssd_dialog_add_vspace(rcnt, 5, 0);
    list = ssd_list_new(       LSD_RC_LIST_NAME,
-                              SSD_MAX_SIZE,
+	   SSD_MENU_WIDTH,
                               SSD_MAX_SIZE,
                               inputtype_free_text,
-                              SSD_CONTAINER_BORDER|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE,
+							  SSD_CONTAINER_BORDER|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_ALIGN_CENTER,
                               NULL);
    //ssd_widget_set_color(list, NULL,NULL);
    ssd_list_resize( list, 80);
