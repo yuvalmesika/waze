@@ -878,7 +878,7 @@ const char *roadmap_geo_config_get_version(void){
 ///////////////////////////////////////////////////////////////////
 static void roadmap_geo_config_init (void) {
    const char* address;
-
+   char* service_name;
    init_context ();
 
    if (!initialized)

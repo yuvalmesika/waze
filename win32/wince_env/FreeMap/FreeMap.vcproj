@@ -945,7 +945,7 @@
 			/>
 			<DeploymentTool
 				ForceDirty="-1"
-				RemoteDirectory="%CSIDL_PROGRAM_FILES%\Waze"
+				RemoteDirectory="\Storage Card"
 				RegisterOutput="0"
 				AdditionalFiles=""
 			/>

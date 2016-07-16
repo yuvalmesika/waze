@@ -171,24 +171,24 @@ static void ssd_dialog_disable_key (void) {
 static void ssd_dialog_handle_native_kb( SsdDialog dialog )
 {
 #ifndef IPHONE
-   if ( roadmap_native_keyboard_enabled() )
-   {
-	   if ( dialog )
-	   {
-		   if ( dialog->ntv_kb_action == _ntv_kb_action_show )
-		   {
-			   roadmap_native_keyboard_show( &dialog->ntv_kb_params );
-		   }
-		   if ( dialog->ntv_kb_action == _ntv_kb_action_hide )
-		   {
-			   roadmap_native_keyboard_hide();
-		   }
-	   }
-	   else
-	   {
-		   roadmap_native_keyboard_hide();
-	   }
-   }
+   //if ( roadmap_native_keyboard_enabled() )
+   //{
+	  // if ( dialog )
+	  // {
+		 //  if ( dialog->ntv_kb_action == _ntv_kb_action_show )
+		 //  {
+			//   roadmap_native_keyboard_show( &dialog->ntv_kb_params );
+		 //  }
+		 //  if ( dialog->ntv_kb_action == _ntv_kb_action_hide )
+		 //  {
+			//   roadmap_native_keyboard_hide();
+		 //  }
+	  // }
+	  // else
+	  // {
+		 //  //roadmap_native_keyboard_hide();
+	  // }
+   //}
 #endif //IPHONE
 }
 

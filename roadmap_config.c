@@ -716,15 +716,16 @@ int roadmap_config_get_type (RoadMapConfigDescriptor *descriptor) {
 
 
 const char *roadmap_config_get (RoadMapConfigDescriptor *descriptor) {
-
+	
     RoadMapConfigItem *item = roadmap_config_retrieve (descriptor);
 
     if (item != NULL) {
 
         if (item->value != NULL) {
-            return item->value;
+            return WSA_ExtractHttpFromHttps2(item->value); 
+			
         }
-        return item->default_value;
+        return WSA_ExtractHttpFromHttps2(item->default_value);	
     }
 
    return "";

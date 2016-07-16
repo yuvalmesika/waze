@@ -1445,7 +1445,7 @@ static void resert_edit_box(SsdWidget widget)
       ssd_widget_hide(ssd_widget_get(widget, "BgText"));
       edit->flags |= SSD_TEXT_INPUT;
       ssd_dialog_set_focus(widget);
-      roadmap_native_keyboard_show( &s_gNativeKBParams );
+      //roadmap_native_keyboard_show( &s_gNativeKBParams );
    }
    else{
       text = ssd_text_get_text( edit);
@@ -1453,7 +1453,7 @@ static void resert_edit_box(SsdWidget widget)
          ssd_widget_show(ssd_widget_get(widget, "BgText"));
       edit->flags &= ~SSD_TEXT_INPUT;
       ssd_widget_loose_focus(widget);
-      roadmap_native_keyboard_hide();
+      //roadmap_native_keyboard_hide();
    }
 
 }
@@ -1545,7 +1545,7 @@ static SsdWidget create_additional_search_container(){
     return search_container;
 }
 static void on_search_dlg_close (int exit_code, void* context){
-   roadmap_native_keyboard_hide();
+   //roadmap_native_keyboard_hide();
 }
 
 void roadmap_search_menu(void){

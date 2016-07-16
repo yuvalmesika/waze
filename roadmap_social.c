@@ -322,7 +322,7 @@ static void on_check_login_completed( void* ctx, roadmap_result res) {
 void roadmap_facebook_check_login(void) {
    char url[256];
    char query[256];
-
+   char* service_name;
    roadmap_log (ROADMAP_DEBUG, "check login");
 
 
@@ -334,6 +334,7 @@ void roadmap_facebook_check_login(void) {
 
    if (INVALID_WEBSVC_HANDLE != s_websvc)
       wst_term (s_websvc);
+
 
    s_websvc = wst_init( url, "application/x-www-form-urlencoded; charset=utf-8");
 
@@ -388,7 +389,7 @@ static void on_disconnect_completed( void* ctx, roadmap_result res) {
 static void facebook_disconnect_confirmed_cb(int exit_code, void *context){
    char url[256];
    char query[256];
-
+   //char* service_name;
    if (exit_code != dec_yes)
       return;
 
@@ -403,7 +404,7 @@ static void facebook_disconnect_confirmed_cb(int exit_code, void *context){
 
    if (INVALID_WEBSVC_HANDLE != s_websvc)
       wst_term (s_websvc);
-
+   //WSA_ExtractHttpFromHttps(url,&service_name);
    s_websvc = wst_init( url, "application/x-www-form-urlencoded; charset=utf-8");
 
    wst_start_trans( s_websvc,

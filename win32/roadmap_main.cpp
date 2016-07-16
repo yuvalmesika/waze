@@ -124,12 +124,12 @@ extern HWND roadmap_canvas_new (HWND hWnd);
 ///[BOOKMARK]:[NOTE]:[PAZ] - For testing
 ///#define  TESTING_BUILD
 
-#ifdef   FORCE_PHONE_KEYBOARD_USAGE
-   #pragma message("    NOTE: Forcing the usage of phone-keyboard!")
-   extern "C" int USING_PHONE_KEYPAD = TRUE;
-#else
-   extern "C" int USING_PHONE_KEYPAD = FALSE;
-#endif   // FORCE_PHONE_KEYBOARD_USAGE
+//#ifdef   FORCE_PHONE_KEYBOARD_USAGE
+//   #pragma message("    NOTE: Forcing the usage of phone-keyboard!")
+//   extern "C" int USING_PHONE_KEYPAD = TRUE;
+//#else
+//   extern "C" int USING_PHONE_KEYPAD = FALSE;
+//#endif   // FORCE_PHONE_KEYBOARD_USAGE
 
 #ifdef UNDER_CE
    #ifndef  KBDI_KEYBOARD_PRESENT
@@ -860,18 +860,18 @@ int WINAPI WinMain(HINSTANCE hInstance,
    MSG      msg;
    LPTSTR   cmd_line = L"";
 #if defined (UNDER_CE) && !defined(EMBEDDED_CE)
-#ifndef  FORCE_PHONE_KEYBOARD_USAGE
-   DWORD dwKeyboardStatus  = ::GetKeyboardStatus();
-   DWORD dwKyeboardCaps    = (dwKeyboardStatus&ROADMAP_FULL_KEYBOARD);
-   if( ROADMAP_FULL_KEYBOARD == dwKyeboardCaps)
-      USING_PHONE_KEYPAD = FALSE;
-   else
-      USING_PHONE_KEYPAD = TRUE;
-#endif   // FORCE_PHONE_KEYBOARD_USAGE
+//#ifndef  FORCE_PHONE_KEYBOARD_USAGE
+//   DWORD dwKeyboardStatus  = ::GetKeyboardStatus();
+//   DWORD dwKyeboardCaps    = (dwKeyboardStatus&ROADMAP_FULL_KEYBOARD);
+//   if( ROADMAP_FULL_KEYBOARD == dwKyeboardCaps)
+//      USING_PHONE_KEYPAD = FALSE;
+//   else
+//      USING_PHONE_KEYPAD = TRUE;
+//#endif   // FORCE_PHONE_KEYBOARD_USAGE
 
    cmd_line = lpCmdLine;
 #endif
-USING_PHONE_KEYPAD = FALSE;
+//USING_PHONE_KEYPAD = FALSE;
 #ifdef WIN32_PROFILE
    //SuspendCAPAll();
 #endif

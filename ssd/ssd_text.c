@@ -511,7 +511,7 @@ static BOOL ssd_text_on_key_pressed( SsdWidget this, const char* utf8char, uint3
       return FALSE;
    }
 
-   if( USING_PHONE_KEYPAD)
+   /*if( USING_PHONE_KEYPAD)
    {
       BOOL        value_was_replaced;
       const char* translated_char = roadmap_phone_keyboard_get_multiple_key_value(
@@ -532,7 +532,7 @@ static BOOL ssd_text_on_key_pressed( SsdWidget this, const char* utf8char, uint3
    {
       if( !is_valid_key( utf8char, ctx->input_type))
          return FALSE;
-   }
+   }*/
 
    sttstr_append_string( this->value, utf8char, ctx->value_max_size);
    return TRUE;

@@ -150,10 +150,10 @@ void generic_search_dlg_switch_gui(void)
 
 #else
       SsdWidget edit_cont= ssd_widget_get( search_context[s_type].c_dlg, GSD_IC_EDITBOX_CNT_NAME);
-      if ( roadmap_native_keyboard_enabled() )
-      {
-         roadmap_native_keyboard_show( &s_gNativeKBParams );
-      }
+      //if ( roadmap_native_keyboard_enabled() )
+      //{
+      //   roadmap_native_keyboard_show( &s_gNativeKBParams );
+      //}
       ssd_dialog_set_focus( edit_cont );
       ssd_dialog_set_current_scroll_flag( FALSE );
 #endif
@@ -480,7 +480,7 @@ void generic_search_dlg_show( search_types   type,
 
 #else
    update_editbox_topspace();
-   if ( roadmap_native_keyboard_enabled() )
+   /*if ( roadmap_native_keyboard_enabled() )
    {
 	  if ( s_kb_refs[s_type] )
 	  {
@@ -489,12 +489,12 @@ void generic_search_dlg_show( search_types   type,
       roadmap_native_keyboard_show( &s_gNativeKBParams );
    }
    else
-   {
+   {*/
 	  if ( s_kb_refs[s_type] )
 	  {
 		  ssd_widget_show( s_kb_refs[s_type] );
 	  }
-   }
+   //}
    roadmap_input_type_set_mode( inputtype_free_text );
 
    ssd_dialog_activate( dlg_name, NULL );
@@ -551,9 +551,9 @@ void generic_search_dlg_reopen_native_keyboard(void)
     ShowEditbox(roadmap_lang_get( search_context[s_type].c_dlg_title), search_context[s_type].c_saved_txt,
             on_keyboard_closed, NULL, EEditBoxStandard | EEditBoxAlphaNumeric |EEditBoxEmbedded|EEditBoxActionSearch );
 #else
-   if ( roadmap_native_keyboard_enabled() )
-   {
-      roadmap_native_keyboard_show( &s_gNativeKBParams );
-   }
+   //if ( roadmap_native_keyboard_enabled() )
+   //{
+   //   roadmap_native_keyboard_show( &s_gNativeKBParams );
+   //}
 #endif
 }

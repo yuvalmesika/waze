@@ -210,10 +210,10 @@ static void on_address_resolved( void*                context,
    indexes[i] = (void*)COULDNT_FIND_INDEX;
    icons[i] = "submit_logs";
 
-   if ( roadmap_native_keyboard_enabled() )
+  /* if ( roadmap_native_keyboard_enabled() )
    {
 	   roadmap_native_keyboard_hide();
-   }
+   }*/
    ssd_list_populate(list,
                      size+1,
                      results,

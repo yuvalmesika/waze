@@ -41,14 +41,14 @@ static BOOL initialized = FALSE;
  */
 BOOL roadmap_native_keyboard_enabled( void )
 {
- 
-#ifdef EMBEDDED_CE
-	return FALSE;
-#else
-   if (0 == strcmp (roadmap_config_get (&RoadMapConfigUseNativeKeyboard), "yes"))
-      return TRUE;
-   return FALSE;
-#endif
+ return FALSE;
+//#ifdef EMBEDDED_CE
+//	return FALSE;
+//#else
+//   if (0 == strcmp (roadmap_config_get (&RoadMapConfigUseNativeKeyboard), "yes"))
+//      return TRUE;
+//   return FALSE;
+//#endif
 }
 
 
@@ -58,12 +58,12 @@ BOOL roadmap_native_keyboard_enabled( void )
  *	Params		: params - set of parameters for the keyboard representation
  *
  */
-void roadmap_native_keyboard_show( RMNativeKBParams* params )
-{
-#ifndef EMBEDDED_CE
-	SipShowIM(SIPF_ON);
-#endif
-}
+//void roadmap_native_keyboard_show( RMNativeKBParams* params )
+//{
+//#ifndef EMBEDDED_CE
+//	SipShowIM(SIPF_ON);
+//#endif
+//}
 
 /***********************************************************
  *  Name        : roadmap_keyboard_hide
@@ -71,35 +71,35 @@ void roadmap_native_keyboard_show( RMNativeKBParams* params )
  *
  *
  */
-void roadmap_native_keyboard_hide( void )
-{
-#ifndef EMBEDDED_CE
-	SipShowIM(SIPF_OFF);
-#endif
-}
+//void roadmap_native_keyboard_hide( void )
+//{
+//#ifndef EMBEDDED_CE
+//	SipShowIM(SIPF_OFF);
+//#endif
+//}
 
 /***********************************************************
  *  Name        : roadmap_keyboard_hide
  *  Purpose     : Returns true if the native keyboard is currently visible
  *
  */
-BOOL roadmap_native_keyboard_visible( void )
-{
-#ifndef EMBEDDED_CE
-  SIPINFO si;
-
-  memset (&si, 0, sizeof (si));
-  si.cbSize = sizeof (si);
-  if (SipGetInfo(&si))
-  {
-    return (si.fdwFlags && SIPF_ON);
-  }
-  else
-	return FALSE;
-#else
-	return FALSE;
-#endif
-}
+//BOOL roadmap_native_keyboard_visible( void )
+//{
+//#ifndef EMBEDDED_CE
+//  SIPINFO si;
+//
+//  memset (&si, 0, sizeof (si));
+//  si.cbSize = sizeof (si);
+//  if (SipGetInfo(&si))
+//  {
+//    return (si.fdwFlags && SIPF_ON);
+//  }
+//  else
+//	return FALSE;
+//#else
+//	return FALSE;
+//#endif
+//}
 
 /***********************************************************
  *  Name        : roadmap_native_keyboard_get_params

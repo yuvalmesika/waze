@@ -179,10 +179,10 @@ static void on_address_resolved( void*                context,
       icons[i] = provider_icon;
    }
 
-   if ( roadmap_native_keyboard_enabled() )
-   {
-	   roadmap_native_keyboard_hide();
-   }
+   //if ( roadmap_native_keyboard_enabled() )
+   //{
+	  // roadmap_native_keyboard_hide();
+   //}
    /*
     * Update the results container logo
     * dynamically according to the current provider

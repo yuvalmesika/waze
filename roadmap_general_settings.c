@@ -615,21 +615,21 @@ void roadmap_general_settings_show(void) {
 
 
    // Native keyboard - for android only at this time
-#if defined(_WIN32)
-   box = ssd_container_new ( "Native keyboard container", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,
-                            SSD_WIDGET_SPACE|SSD_END_ROW|tab_flag);
-   ssd_widget_set_color (box, "#000000", "#ffffff");
-
-   ssd_widget_add (box, ssd_text_new ("Native keyboard text",
-                     roadmap_lang_get ("Use native keyboard"),
-                    -1, SSD_TEXT_LABEL|SSD_ALIGN_VCENTER|SSD_WIDGET_SPACE ) );
-
-   ssd_widget_add (box, ssd_checkbox_new ( "Native keyboard", TRUE,  SSD_ALIGN_RIGHT, NULL, NULL, NULL, CHECKBOX_STYLE_ON_OFF ) );
-
-   ssd_widget_add( box, space(1) );
-   ssd_widget_add(box, ssd_separator_new("separator", SSD_ALIGN_BOTTOM));
-   ssd_widget_add ( container, box );
-#endif
+//#if defined(_WIN32)
+//   box = ssd_container_new ( "Native keyboard container", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,
+//                            SSD_WIDGET_SPACE|SSD_END_ROW|tab_flag);
+//   ssd_widget_set_color (box, "#000000", "#ffffff");
+//
+//   ssd_widget_add (box, ssd_text_new ("Native keyboard text",
+//                     roadmap_lang_get ("Use native keyboard"),
+//                    -1, SSD_TEXT_LABEL|SSD_ALIGN_VCENTER|SSD_WIDGET_SPACE ) );
+//
+//   ssd_widget_add (box, ssd_checkbox_new ( "Native keyboard", TRUE,  SSD_ALIGN_RIGHT, NULL, NULL, NULL, CHECKBOX_STYLE_ON_OFF ) );
+//
+//   ssd_widget_add( box, space(1) );
+//   ssd_widget_add(box, ssd_separator_new("separator", SSD_ALIGN_BOTTOM));
+//   ssd_widget_add ( container, box );
+//#endif
 
 
    box = ssd_container_new("ClockFormat group",NULL,SSD_MAX_SIZE, SSD_MIN_SIZE, SSD_WIDGET_SPACE|SSD_END_ROW|tab_flag);
@@ -664,8 +664,8 @@ void roadmap_general_settings_show(void) {
    ssd_widget_add(dialog, container);
 
    //Events Radius
-   container = ssd_container_new ("Events Conatiner Group", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,
-                 SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER);
+   container = ssd_container_new ("Events Conatiner Group", NULL, SSD_MENU_WIDTH, SSD_MIN_SIZE,
+	   SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
 
    box = ssd_container_new ("lang group", NULL, SSD_MAX_SIZE, height,
                              SSD_WIDGET_SPACE|SSD_END_ROW|tab_flag);

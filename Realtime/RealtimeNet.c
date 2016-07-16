@@ -136,6 +136,7 @@ BOOL RTNet_LoadParams();
 //////////////////////////////////////////////////////////////////////////////////////////////////
 BOOL  RTNet_Init()
 {
+	char* service_name;
    assert( NULL == gs_WST);
 
 #ifdef _DEBUG
@@ -143,8 +144,8 @@ BOOL  RTNet_Init()
 #else
    RTNet_LoadParams();
 #endif   // _DEBUG
-
-   gs_WST = wst_init( gs_WebServiceAddress, "binary/octet-stream");
+	//,&service_name);
+   gs_WST = wst_init(WSA_ExtractHttpFromHttps2(gs_WebServiceAddress), "binary/octet-stream");
    assert( gs_WST);
 
    return (NULL != gs_WST);

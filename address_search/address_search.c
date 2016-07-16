@@ -148,7 +148,7 @@ BOOL address_candidate_build_address_string( address_candidate* this)
 BOOL address_search_init()
 {
    const char* address;
-
+   char* service_name;
    if( INVALID_WEBSVC_HANDLE != s_websvc)
    {
       assert(0);  // Called twice?
@@ -164,9 +164,10 @@ BOOL address_search_init()
                               NULL);
       s_initialized_once = TRUE;
    }
-
+   
    address  = get_webservice_address();
-   s_websvc = wst_init( get_webservice_address(), "application/x-www-form-urlencoded; charset=utf-8");
+   //WSA_ExtractHttpFromHttps(get_webservice_address(),&service_name);
+   s_websvc = wst_init( address, "application/x-www-form-urlencoded; charset=utf-8");
 
    if( INVALID_WEBSVC_HANDLE != s_websvc)
    {

@@ -1,3 +1,4 @@
+
 /*
  * LICENSE:
  *
@@ -169,6 +170,101 @@ BOOL   WSA_ExtractParams(
 
    return TRUE;
 }
+
+
+
+
+char *str_replace(char *orig, char *rep, char *with) {
+    char *result; // the return string
+    char *ins;    // the next insert point
+    char *tmp;    // varies
+    int len_rep;  // length of rep
+    int len_with; // length of with
+    int len_front; // distance between rep and end of last rep
+    int count;    // number of replacements
+
+    if (!orig)
+        return NULL;
+    if (!rep)
+        rep = "";
+    len_rep = strlen(rep);
+    if (!with)
+        with = "";
+    len_with = strlen(with);
+
+    ins = orig;
+    for (count = 0; tmp = strstr(ins, rep); ++count) {
+        ins = tmp + len_rep;
+    }
+
+    // first time through the loop, all the variable are set correctly
+    // from here on,
+    //    tmp points to the end of the result string
+    //    ins points to the next occurrence of rep in orig
+    //    orig points to the remainder of orig after "end of rep"
+    tmp = result = malloc(strlen(orig) + (len_with - len_rep) * count + 1);
+
+    if (!result)
+        return NULL;
+
+    while (count--) {
+        ins = strstr(orig, rep);
+        len_front = ins - orig;
+        tmp = strncpy(tmp, orig, len_front) + len_front;
+        tmp = strcpy(tmp, with) + len_with;
+        orig += len_front + len_rep; // move to next "end of rep"
+    }
+    strcpy(tmp, orig);
+    return result;
+}
+void   WSA_ExtractHttpFromHttps(   
+         const char* szWebServiceAddress,
+		 char* szWebServiceAddressHttp)        //   OUT,OPT-  Web service http full address (http://...)
+{
+   char     Copy[WSA_STRING_MAXSIZE+1];
+   char*       temp;
+   int i;
+   
+   ////   Copy of service-name:
+   //for( i=0; i<strlen(szWebServiceAddress); i++)
+   //   Copy[i] = szWebServiceAddress[i];
+   //Copy[i] = '\0';
+   temp = malloc(strlen(szWebServiceAddress)+1);
+   *szWebServiceAddressHttp= malloc(strlen(szWebServiceAddress)+1);
+   strcpy(temp,szWebServiceAddress);
+	*szWebServiceAddressHttp = temp;
+   if( 0 == strncasecmp( szWebServiceAddress, WSA_PREFIX_SECURED, WSA_PREFIX_SIZE_SECURED))
+   {
+	  temp = str_replace(szWebServiceAddressHttp,WSA_PREFIX_SECURED,WSA_PREFIX);
+	  temp = str_replace(temp,WSA_PREFIX_PORT_SECURED,WSA_PREFIX_PORT);
+	  *szWebServiceAddressHttp = temp;
+   }
+   
+   return ;
+}
+
+char* WSA_ExtractHttpFromHttps2(   
+         const char* szWebServiceAddress)        //   OUT,OPT-  Web service http full address (http://...)
+{
+   char     Copy[WSA_STRING_MAXSIZE+1];
+   char*       temp;
+   int i;
+   
+   ////   Copy of service-name:
+   //for( i=0; i<strlen(szWebServiceAddress); i++)
+   //   Copy[i] = szWebServiceAddress[i];
+   //Copy[i] = '\0';
+   temp = malloc(strlen(szWebServiceAddress)+1);
+   strcpy(temp,szWebServiceAddress);
+   if( 0 == strncasecmp( szWebServiceAddress, WSA_PREFIX_SECURED, WSA_PREFIX_SIZE_SECURED))
+   {
+	  temp = str_replace(szWebServiceAddress,WSA_PREFIX_SECURED,WSA_PREFIX);
+	  temp = str_replace(temp,WSA_PREFIX_PORT_SECURED,WSA_PREFIX_PORT);
+   }
+   
+   return temp;
+}
+
 
 void  WSA_RemovePortNumberFromURL(
             char*       szWebServiceAddress) //   IN,OUT    -   Web service full address (http://...)

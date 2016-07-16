@@ -257,10 +257,10 @@ static void on_address_resolved( void*                context,
       }
    }
 
-   if ( roadmap_native_keyboard_enabled() )
-   {
-      roadmap_native_keyboard_hide();
-   }
+   //if ( roadmap_native_keyboard_enabled() )
+   //{
+   //   roadmap_native_keyboard_hide();
+   //}
 
    if ((count_adr > 3) && (count_ls > 0)){
       static char label[50];
