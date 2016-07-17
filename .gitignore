@@ -17,3 +17,5 @@ TestResult.xml
 Version.cs
 Version.h
 Version.cpp
+win32/wince_env/lib/
+win32/wince_env/Roadmap.ncb
