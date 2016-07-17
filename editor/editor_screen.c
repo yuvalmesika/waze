@@ -600,7 +600,7 @@ int editor_screen_override_pen (int line,
       roadmap_screen_draw_line_direction
             (&from, &to, &from, first_shape, last_shape,
              NULL,
-             pen->thickness, direction, "#000000");
+             pen->thickness, direction, "#000000",0);
 
       return 1;
    }
@@ -807,7 +807,7 @@ static int editor_screen_draw_lines
                   (&from, &to, &trk_from_pos, first_shape, last_shape,
                    editor_shape_position,
                    EditorPens[cfcc][pen_type][0].thickness,
-                   direction, "#000000");
+                   direction, "#000000",0);
             }
          }
       }

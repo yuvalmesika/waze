@@ -937,7 +937,7 @@ void roadmap_canvas_agg_configure (unsigned char *buf, int width, int height, in
 		   roadmap_config_get (&RoadMapConfigFont));
 
    if ((width) && (height))
-      roadmap_screen_set_screen_type( roadmap_canvas_agg_get_screen_type( width, height ) );
+      roadmap_screen_set_screen_type(  width, height  );//roadmap_canvas_agg_get_screen_type(
 
    roadmap_log( ROADMAP_ERROR, "roadmap_canvas_agg_configure, roadmap_screen_get_screen_type =%d",roadmap_screen_get_screen_type());
    if (!RoadMapCanvasFontLoaded) {
