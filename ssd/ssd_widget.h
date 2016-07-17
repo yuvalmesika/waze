@@ -29,7 +29,6 @@
 #include "../roadmap_keyboard.h"
 #include "../roadmap_input_type.h"
 
-#define SSD_MENU_WIDTH ((roadmap_canvas_width()*0.9))
 #define SSD_MIN_SIZE -1
 #define SSD_MAX_SIZE -2
 
@@ -60,7 +59,7 @@
 #define SSD_POINTER_NONE	  0x01000000
 #define SSD_POINTER_COMMENT  0x02000000
 #define SSD_POINTER_MENU	  0x04000000
-#define SSD_HEADER_BLACK     0x08000000
+#define SSD_POINTER_FIXED_LOCATION 0x08000000
 #define SSD_ROUNDED_BLACK    0x10000000
 #define SSD_ROUNDED_WHITE    0x40000000
 
@@ -72,7 +71,7 @@
 #define SSD_BUTTON_KEY           0x1000
 #define SSD_BUTTON_TEXT          0x2000
 #define SSD_BUTTON_TEXT_BELOW    0x4000
-#define SSD_BUTTON_NO_TEXT       0x8000
+
 
 /* Dialogs */
 #define SSD_DIALOG_FLOAT          0x10000
@@ -88,7 +87,7 @@
 #define SSD_CONTAINER_BORDER 	    0x1000
 #define SSD_CONTAINER_TITLE  	    0x2000
 #define SSD_ROUNDED_CORNERS	    0x4000
-#define SSD_NO_BG_IMAGE 		    0x8000
+#define SSD_SHADOW_BG             0x8000
 #define SSD_CONTAINER_TXT_BOX     0x20000000
 #define SSD_CONTAINER_SEARCH_BOX  0x80000000
 
@@ -100,6 +99,10 @@
 #define SSD_TEXT_INPUT        0x10000
 #define SSD_TEXT_SINGLE_LINE  0x20000
 
+/* Bitmap flags */
+#define SSD_BITMAP_MIDDLE_STRETCH  0x1000 /* Stretch image indicator */
+
+
 /* Context-menu flags   */
 #define SSD_CONTEXTMENU_ROUNDED              0x0000
 #define SSD_CONTEXTMENU_SIMPLE_LIST          0x0001
@@ -109,6 +112,14 @@
 #define  SSD_ROUNDED_CORNER_WIDTH            (7)
 #define  SSD_ROUNDED_CORNER_HEIGHT           (7)
 
+#define  SSD_MAIN_TEXT_SIZE                  (15)
+#define  SSD_SECONDARY_TEXT_SIZE             (11)
+#define  SSD_HEADER_TEXT_SIZE                (13)
+#define  SSD_FOOTER_TEXT_SIZE                (11)
+
+#define  SSD_ROW_HEIGHT                      (60)
+#define  SSD_CONTAINER_FLAGS                 (SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE)
+#define  SSD_CONTAINER_TEXT_COLOR            ("#000000")
 #define  SOFT_MENU_BAR_HEIGHT                (24)
 #define  TITLE_BAR_HEIGHT                    (24)
 
@@ -173,6 +184,7 @@ struct ssd_widget {
    int offset_y;
 
    int         flags;
+   int         additional_flags;
    BOOL        tab_stop;        	//  Can we receive the focus?
    BOOL        default_widget;  	//  First this to receive the focus in the dialog
    BOOL        in_focus;        	//  Keyboard focus

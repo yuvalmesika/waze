@@ -76,6 +76,7 @@ extern "C" {
 #include "../roadmap_keyboard.h"
 #include "../roadmap_device_events.h"
 #include "../roadmap_browser.h"
+#include "../roadmap_recorder.h"
 #include "wince_input_mon.h"
 #include "win32_serial.h"
 #include "roadmap_wincecanvas.h"

@@ -4191,6 +4191,14 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\roadmap_recorder.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\roadmap_recorder_dlg.c"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\roadmap_res.c"
 				>
 				<FileConfiguration
@@ -5262,6 +5270,46 @@
 				RelativePath="..\..\..\address_search\single_search_dlg.c"
 				>
 			</File>
+			<File
+				RelativePath="..\..\..\tts\tts.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts_apptext.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts\tts_cache.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts\tts_db.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts\tts_db_files.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts\tts_queue.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts\tts_ui.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts\tts_utils.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts\tts_voices.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts_was_provider.c"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
@@ -5400,6 +5448,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\roadmap_path.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\roadmap_pointer.h"
 				>
 			</File>
@@ -5409,6 +5461,10 @@
 			</File>
 			<File
 				RelativePath="..\..\..\roadmap_prompts.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\roadmap_recorder.h"
 				>
 			</File>
 			<File
@@ -5477,6 +5533,58 @@
 			</File>
 			<File
 				RelativePath="..\..\..\address_search\single_search_dlg.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts\tts.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts_apptext.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts_apptext_defs.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts\tts_cache.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts\tts_db.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts\tts_db_files.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts\tts_defs.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts\tts_provider.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts\tts_queue.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts\tts_ui.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts\tts_utils.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts\tts_voices.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\tts_was_provider.h"
 				>
 			</File>
 		</Filter>

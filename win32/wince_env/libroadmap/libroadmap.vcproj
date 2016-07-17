@@ -11700,6 +11700,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\navigate\navigate_main.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\navigate\navigate_res_dlg.h"
 				>
 			</File>

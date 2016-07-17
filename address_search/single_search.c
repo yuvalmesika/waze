@@ -67,7 +67,6 @@ static const char* get_webservice_address()
 BOOL single_search_init()
 {
    const char* address;
-   char* service_name;
 
    if( INVALID_WEBSVC_HANDLE != s_websvc)
    {
@@ -86,9 +85,7 @@ BOOL single_search_init()
    }
 
    address  = get_webservice_address();
-   //address = "http://212.150.51.91:80/WAS/";//TODO: remove this
-   //WSA_ExtractHttpFromHttps(get_webservice_address(),&service_name);
-   s_websvc = wst_init( get_webservice_address(), "application/x-www-form-urlencoded; charset=utf-8");
+   s_websvc = wst_init( address, NULL, NULL, NULL, "application/x-www-form-urlencoded; charset=utf-8");
 
    if( INVALID_WEBSVC_HANDLE != s_websvc)
    {

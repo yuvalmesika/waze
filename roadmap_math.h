@@ -226,7 +226,7 @@ INLINE_DEC void roadmap_math_coordinate (const RoadMapPosition *position,
       ((RoadMapContext.upright_screen.north - position->latitude)
              / RoadMapContext.zoom_y);
 }
-/*
+
 INLINE_DEC void roadmap_math_coordinate_f (const RoadMapPosition *position,
                                          RoadMapGuiPointF *point) {
 //   printf("US: %d, %d\n", RoadMapContext.upright_screen.west, RoadMapContext.upright_screen.north);
@@ -236,7 +236,7 @@ INLINE_DEC void roadmap_math_coordinate_f (const RoadMapPosition *position,
    point->y = (((double)RoadMapContext.upright_screen.north - (double)position->latitude)
                     / RoadMapContext.zoom_y);
 }
-*/
+
 
 INLINE_DEC zoom_t roadmap_math_area_zoom (int area) {
 

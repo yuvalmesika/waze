@@ -42,9 +42,11 @@
 #define SPEEDOMETER_SPEED_COLOR_DAY                   ("#ffffff")
 #define SPEEDOMETER_SPEED_COLOR_NIGHT                 ("#d7ff00")
 
+
 static RoadMapScreenSubscriber roadmap_speedometer_prev_after_refresh = NULL;
 static RoadMapImage SpeedometerImage;
 static int gOffset = 0;
+static BOOL gHideSpeedometer = FALSE;
 
 /////////////////////////////////////////////////////////////////////
 void roadmap_speedometer_set_offset(int offset_y){
@@ -68,19 +70,28 @@ static void roadmap_speedometer_after_refresh (void){
    RoadMapPen speedometer_pen;
    char str[30];
    char unit_str[30];
-   int font_size = 22;
+   int font_size = 20;
    int font_size_units = 10;
-   int speed_offset = 5;
-   int units_offset = 3;
+   int speed_offset = 6;
+   int units_offset = 6;
    int speed;
 
 #ifdef IPHONE_NATIVE
 	font_size = 18;
 	font_size_units = 8;
+#else
+   if ( roadmap_lang_rtl() )
+      font_size_units--;     // Longer text for units
 #endif
+
 
    if (SpeedometerImage == NULL){
       return;
+   }
+
+   if (gHideSpeedometer){
+         after_refresh_callback();
+         return;
    }
 
    if (!roadmap_map_settings_isShowSpeedometer()){
@@ -114,8 +125,13 @@ static void roadmap_speedometer_after_refresh (void){
    units_position.y = image_position.y + roadmap_canvas_image_height(SpeedometerImage)*.8;
 
    if (speed != -1){
-      snprintf (str, sizeof(str), "%3d", roadmap_math_to_speed_unit(speed));
-      snprintf (unit_str, sizeof(unit_str), "%s",  roadmap_lang_get(roadmap_math_speed_unit()));
+      if (!roadmap_gps_is_show_raw()) {
+         snprintf (str, sizeof(str), "%3d", roadmap_math_to_speed_unit(speed));
+         snprintf (unit_str, sizeof(unit_str), "%s",  roadmap_lang_get(roadmap_math_speed_unit()));
+      } else {
+         snprintf (str, sizeof(str), "%3d", pos.accuracy);
+         snprintf (unit_str, sizeof(unit_str), "%s",  "ac");
+      }
 
       if (ssd_widget_rtl(NULL)){
          text_position.x = roadmap_canvas_width() -speed_offset;
@@ -134,6 +150,17 @@ static void roadmap_speedometer_after_refresh (void){
    }
 
    after_refresh_callback();
+}
+
+
+/////////////////////////////////////////////////////////////////////
+void roadmap_speedometer_hide(void){
+   gHideSpeedometer = TRUE;
+}
+
+/////////////////////////////////////////////////////////////////////
+void roadmap_speedometer_show(void){
+   gHideSpeedometer = FALSE;
 }
 
 /////////////////////////////////////////////////////////////////////

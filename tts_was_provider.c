@@ -296,7 +296,8 @@ static void _request_progress_cb( void *context_cb, char *data, size_t size )
 
    if ( context->data )
    {
-      memcpy( context->data + context->size, data, size );
+	   int dataandsize = (int)context->data + context->size;
+      memcpy( dataandsize , data, size );
       context->size += size;
    }
 }
@@ -792,6 +793,7 @@ static int _voices_cfg_size_cb ( void *context_cb, size_t size )
 */
 static void _voices_cfg_progress_cb ( void *context_cb, char *data, size_t size )
 {
+	int datasize ;
    WasVoicesHttpCtx* context = (WasVoicesHttpCtx*) context_cb;
 
   // Store data
@@ -804,7 +806,8 @@ static void _voices_cfg_progress_cb ( void *context_cb, char *data, size_t size 
               to_truncate );
         size -= to_truncate;
      }
-     memcpy( context->data + context->data_size, data, size );
+	 datasize = (int)context->data + context->data_size;
+     memcpy(datasize , data, size );
      context->data_size += size;
   }
 }

@@ -41,6 +41,7 @@
 #include "roadmap_config.h"
 #include "roadmap_path.h"
 #include "roadmap_navigate.h"
+#include "roadmap_analytics.h"
 #include "ssd/ssd_keyboard_dialog.h"
 #include "ssd/ssd_generic_list_dialog.h"
 
@@ -49,7 +50,7 @@
 #endif //IPHONE
 
 
-#define MAX_CAR_ENTRIES 20
+#define MAX_CAR_ENTRIES 40
 
 typedef struct {
 
@@ -75,6 +76,8 @@ static int roadmap_car_call_back (SsdWidget widget, const char *new_value, const
 
    roadmap_config_declare
         ("user", &CarCfg, "car_blue", NULL);
+
+   roadmap_analytics_log_event(ANALYTICS_EVENT_CAR, ANALYTICS_EVENT_INFO_CHANGED_TO, value);
    roadmap_config_set (&CarCfg, value);
 #ifndef IPHONE
    ssd_generic_list_dialog_hide ();
@@ -96,6 +99,7 @@ void roadmap_car_dialog (RoadMapCallback callback) {
     char **files;
     const char *cursor;
     char **cursor2;
+    char* png_name;
     char *directory = NULL;
     int count = 0;
 
@@ -119,8 +123,13 @@ void roadmap_car_dialog (RoadMapCallback callback) {
     		files = roadmap_path_list ( directory, NULL );
     	}
    		for (cursor2 = files; *cursor2 != NULL; ++cursor2) {
-   	  			labels[count]  =   (char *)roadmap_lang_get(*cursor2);
+		         if (strstr(*cursor2, "_3D"))
+		            continue;
+
    	  			values[count] =   strtok(*cursor2,".");
+   	  			png_name = malloc( strlen( (char*) values[count] ) + strlen( ".png" ) + 1 );  // Leaked
+   	  			sprintf( png_name, "%s.png", (char*) values[count] );
+   	  			labels[count]  =   (char *) roadmap_lang_get( png_name );
    	  			icons[count]   =   roadmap_path_join("cars", *cursor2);
       			count++;
    		}
@@ -138,7 +147,7 @@ void roadmap_car_dialog (RoadMapCallback callback) {
                   &context,
                   NULL,
                   NULL,
-                  70,
+                  ADJ_SCALE(70),
                   0,
                   FALSE);
 

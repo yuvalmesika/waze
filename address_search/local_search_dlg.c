@@ -179,10 +179,10 @@ static void on_address_resolved( void*                context,
       icons[i] = provider_icon;
    }
 
-   //if ( roadmap_native_keyboard_enabled() )
-   //{
-	  // roadmap_native_keyboard_hide();
-   //}
+   if ( roadmap_native_keyboard_enabled() )
+   {
+	   roadmap_native_keyboard_hide();
+   }
    /*
     * Update the results container logo
     * dynamically according to the current provider
@@ -409,7 +409,7 @@ static SsdWidget create_results_container()
 
    title = ssd_container_new(  "Title box",
                    NULL,
-				   SSD_MENU_WIDTH,
+                   roadmap_canvas_width()-8,
                    SSD_MIN_SIZE,
                    SSD_CONTAINER_BORDER|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_ALIGN_CENTER);
 
@@ -424,10 +424,10 @@ static SsdWidget create_results_container()
    ssd_widget_add( rcnt, title);
    ssd_dialog_add_vspace(rcnt, 5, 0);
    list = ssd_list_new(       LSD_RC_LIST_NAME,
-	   SSD_MENU_WIDTH,
+                              SSD_MAX_SIZE,
                               SSD_MAX_SIZE,
                               inputtype_free_text,
-							  SSD_CONTAINER_BORDER|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_ALIGN_CENTER,
+                              SSD_CONTAINER_BORDER|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE,
                               NULL);
    //ssd_widget_set_color(list, NULL,NULL);
    ssd_list_resize( list, 80);
@@ -467,7 +467,7 @@ static void search_progress_message_delayed(void)
 {
 	roadmap_main_remove_periodic( search_progress_message_delayed );
 	if( s_searching )
-		ssd_progress_msg_dialog_show( roadmap_lang_get( "Searching . . . " ) );
+		ssd_progress_msg_dialog_show( roadmap_lang_get( "Searching..." ) );
 }
 
 /* Callback for the error message box */

@@ -902,9 +902,10 @@ BOOL win32_roadmap_net_async_connect(  const char*                protocol,
                                        RoadMapNetConnectCallback  on_net_connected,
                                        void*                      context);
 
-int roadmap_net_connect_async(
+void *roadmap_net_connect_async(
                            const char*                protocol,
                            const char*                name,
+						   const char *resolved_name,
                            time_t                     update_time,
                            int                        default_port,
                            int                        flags,

@@ -44,7 +44,9 @@ static const char *yesno_label[2];
 static const char *yesno[2];
 static void on_close_dialog (int exit_code, void* context);
 static int on_ok( SsdWidget this, const char *new_value);
+#ifndef TOUCH_SCREEN
 static int on_ok_softkey(SsdWidget this, const char *new_value, void *context);
+#endif
 static void updateVisibilityDescriptors(RoadMapConfigDescriptor descriptor,const char * labelName);
 static BOOL needToNotifyServer = FALSE;
 static const char * NOTE1 = "* Changes won't affect routing. Your route is always calculated based on real-time traffic conditions.";
@@ -157,6 +159,8 @@ void roadmap_download_settings_show(void){
 	  SsdWidget box2,text;
 	  SsdWidget container;
 	  int hrz_offset;
+	  int width = ssd_container_get_width();
+	  int row_height = ssd_container_get_row_height();
 
       dialog = ssd_dialog_new (title, roadmap_lang_get(title), on_close_dialog,
                                SSD_CONTAINER_TITLE);
@@ -170,8 +174,10 @@ void roadmap_download_settings_show(void){
        box = ssd_container_new ("Download Heading group", NULL, SSD_MIN_SIZE, SSD_MIN_SIZE,
             SSD_WIDGET_SPACE | SSD_END_ROW);
 
-  	   ssd_widget_add (box, ssd_text_new ("Download_Heading_text_cont",
-            roadmap_lang_get ("Reduce data usage:"), 16, SSD_TEXT_LABEL | SSD_ALIGN_VCENTER | SSD_WIDGET_SPACE));
+       text = ssd_text_new ("Download_Heading_text_cont",
+             roadmap_lang_get ("Reduce data usage:"), SSD_HEADER_TEXT_SIZE, SSD_TEXT_NORMAL_FONT|SSD_TEXT_LABEL | SSD_ALIGN_VCENTER | SSD_WIDGET_SPACE);
+       ssd_text_set_color(text, SSD_CONTAINER_TEXT_COLOR);
+  	    ssd_widget_add (box, text);
        ssd_widget_set_color (box, NULL, NULL);
        ssd_widget_add (dialog, box);
 
@@ -188,8 +194,8 @@ void roadmap_download_settings_show(void){
 
      // ---------------------- Net config group ---------------------------------------------
      box = ssd_container_new ("Download map group", NULL,
-		 SSD_MENU_WIDTH, SSD_MIN_SIZE,
-		  SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
+                  width, SSD_MIN_SIZE,
+		  SSD_WIDGET_SPACE|SSD_END_ROW|SSD_CONTAINER_FLAGS|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
 	  ssd_widget_set_color (box, "#000000", "#ffffff");
 
 	  if ( roamdmap_map_download_enabled() )
@@ -197,26 +203,27 @@ void roadmap_download_settings_show(void){
         // Refresh tiles
         icon[0] = "download_map";
 
-        box2 =  ssd_container_new ("download map container", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE, SSD_END_ROW |tab_flag);
+        box2 =  ssd_container_new ("download map container", NULL, SSD_MAX_SIZE, row_height, SSD_END_ROW |tab_flag);
         ssd_widget_set_color(box2, NULL, NULL);
 
         ssd_widget_add ( box2, ssd_button_new ("Download map button", "Download map",
                            (const char **)&icon[0], 1,SSD_START_NEW_ROW|SSD_ALIGN_VCENTER, NULL ) );
         box2->callback = roadmap_map_download;
 
-        ssd_widget_add( box2,
-                 ssd_text_new ( "Download map text", roadmap_lang_get("Download map of my area"), -1, SSD_ALIGN_VCENTER ) );
+        text = ssd_text_new ( "Download map text", roadmap_lang_get("Download map of my area"), SSD_MAIN_TEXT_SIZE, SSD_TEXT_NORMAL_FONT|SSD_ALIGN_VCENTER );
+        ssd_text_set_color(text, SSD_CONTAINER_TEXT_COLOR);
+        ssd_widget_add( box2,text );
 
 
         ssd_widget_add( box, box2 );
 
-        ssd_dialog_add_vspace( box, 2, 0 );
+        //ssd_dialog_add_vspace( box, 2, 0 );
         ssd_widget_add( box, ssd_separator_new( "separator", SSD_END_ROW ) );
 	  }
 
      // Refresh tiles
      icon[0] = "refresh_map";
-     box2 =  ssd_container_new ("refresh map container", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE, SSD_END_ROW |tab_flag);
+     box2 =  ssd_container_new ("refresh map container", NULL, SSD_MAX_SIZE, row_height, SSD_END_ROW |tab_flag);
      ssd_widget_set_color(box2, NULL, NULL);
 
      ssd_widget_add (box2,  ssd_button_new ("Refresh map button", "Refresh map",
@@ -224,85 +231,43 @@ void roadmap_download_settings_show(void){
                         NULL ) );
      box2->callback = refresh_tiles_callback;
 
-     ssd_widget_add( box2,
-              ssd_text_new ("Refresh map text", roadmap_lang_get( "Refresh map of my area" ), -1, SSD_ALIGN_VCENTER ) );
+     text = ssd_text_new ("Refresh map text", roadmap_lang_get( "Refresh map of my area" ), SSD_MAIN_TEXT_SIZE, SSD_TEXT_NORMAL_FONT|SSD_ALIGN_VCENTER );
+     ssd_text_set_color(text, SSD_CONTAINER_TEXT_COLOR);
+     ssd_widget_add( box2, text);
 
-     ssd_dialog_add_vspace( box2, 2, 0 );
+     //ssd_dialog_add_vspace( box2, 2, 0 );
      ssd_widget_add( box, box2 );
 
 	  ssd_widget_add( dialog,box );
 	  ssd_widget_add( dialog, space(3) );
 
 	   // ---------------------- Net config group ---------------------------------------------
-	  container = ssd_container_new ("Net compression", NULL, SSD_MENU_WIDTH, SSD_MIN_SIZE,
-            SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
+      container = ssd_container_new ("Net compression", NULL, width, SSD_MIN_SIZE,
+            SSD_WIDGET_SPACE|SSD_END_ROW|SSD_CONTAINER_FLAGS|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
 
       //////// Net compress ////////
-      box = ssd_container_new( "Net compression group", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,
-              SSD_WIDGET_SPACE|SSD_END_ROW|tab_flag );
-       ssd_widget_set_color ( box, "#000000", "#ffffff" );
-       box2 = ssd_container_new( "Net compression text group", NULL, (2*roadmap_canvas_width())/3, SSD_MIN_SIZE,
-                               SSD_ALIGN_VCENTER );
-      ssd_widget_set_color ( box2, NULL, NULL );
-       ssd_widget_add (box2,
-         ssd_text_new ( "Net compression  Label",
-                        roadmap_lang_get ("Use data compression"), -1, SSD_TEXT_LABEL|SSD_ALIGN_VCENTER|SSD_WIDGET_SPACE ) );
-      ssd_widget_add(box, box2);
-       ssd_widget_add (box,
-            ssd_checkbox_new ( "NetCompression", roadmap_net_get_compress_enabled(),
-            SSD_ALIGN_RIGHT, NULL,NULL, NULL,CHECKBOX_STYLE_ON_OFF ) );
-
-       ssd_widget_add(box, space(1));
+      box = ssd_checkbox_row_new("NetCompression", roadmap_lang_get ("Use data compression"),
+            roadmap_net_get_compress_enabled(), NULL,NULL,NULL,CHECKBOX_STYLE_ON_OFF);
 
        ssd_widget_add (container, box);
+       ssd_widget_add(container, ssd_separator_new("separator", SSD_END_ROW));
 
        //////// Network monitor ////////
-       box = ssd_container_new( "Network monitor group", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,
-               SSD_WIDGET_SPACE|SSD_END_ROW|tab_flag );
-        ssd_widget_set_color ( box, "#000000", "#ffffff" );
-        box2 = ssd_container_new( "Netmon text group", NULL, (2*roadmap_canvas_width())/3, SSD_MIN_SIZE,
-                                SSD_ALIGN_VCENTER );
-       ssd_widget_set_color ( box2, NULL, NULL );
-        ssd_widget_add (box2,
-          ssd_text_new ( "Netmon Label",
-                         roadmap_lang_get ("Display network monitor"), -1, SSD_TEXT_LABEL|SSD_ALIGN_VCENTER|SSD_WIDGET_SPACE ) );
-       ssd_widget_add(box, box2);
-        ssd_widget_add (box,
-             ssd_checkbox_new ( "NetMonitor", roadmap_net_mon_get_enabled(),
-             SSD_ALIGN_RIGHT, NULL,NULL, NULL,CHECKBOX_STYLE_ON_OFF ) );
+       box = ssd_checkbox_row_new("NetMonitor", roadmap_lang_get ("Display network monitor"),
+             roadmap_net_mon_get_enabled(), NULL,NULL,NULL,CHECKBOX_STYLE_ON_OFF);
 
-        ssd_widget_add(box, space(1));
-
-        ssd_widget_add (container, box);
+       ssd_widget_add (container, box);
 
         ssd_widget_add(dialog, container);
 
 	  // ---------------------- Traffic download group ---------------------------------------------
-	   container = ssd_container_new ("Download prefs", NULL, SSD_MENU_WIDTH, SSD_MIN_SIZE,
-            SSD_WIDGET_SPACE|SSD_END_ROW|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
+	   container = ssd_container_new ("Download prefs", NULL, width, SSD_MIN_SIZE,
+            SSD_WIDGET_SPACE|SSD_END_ROW|SSD_CONTAINER_FLAGS|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
 
-	   box = ssd_container_new ("Download Traffic Group", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,
-              SSD_WIDGET_SPACE|SSD_END_ROW|tab_flag);
-       ssd_widget_set_color (box, "#000000", "#ffffff");
-       box2 = ssd_container_new ("download traffic text group", NULL, roadmap_canvas_width()/2, SSD_MIN_SIZE,
-	                            SSD_ALIGN_VCENTER);
-	   ssd_widget_set_color (box2, NULL, NULL);
-       ssd_widget_add (box2,
-         ssd_text_new ( "Download traffic Label",
-                        roadmap_lang_get ("Download traffic info"),
-                        -1, SSD_TEXT_LABEL|SSD_ALIGN_VCENTER|SSD_WIDGET_SPACE ) );
- 	   ssd_widget_add(box, box2);
-       ssd_widget_add (box,
-            ssd_checkbox_new ( "DownloadTraffic", roadmap_download_settings_isEnabled(RoadMapConfigDownloadTraffic)
-            , SSD_ALIGN_RIGHT, NULL,NULL, NULL,CHECKBOX_STYLE_ON_OFF ) );
+	   box = ssd_checkbox_row_new("DownloadTraffic", roadmap_lang_get ("Download traffic info"),
+	         roadmap_download_settings_isEnabled(RoadMapConfigDownloadTraffic), NULL,NULL,NULL,CHECKBOX_STYLE_ON_OFF);
 
-
-
-       ssd_widget_add(box, space(1));
-
-       ssd_widget_add (container, box);
-
-
+      ssd_widget_add (container, box);
 
 
 #if 0  // right now user can only choose to toggle a general traffic download settings
@@ -427,11 +392,11 @@ void roadmap_download_settings_show(void){
 	   ssd_widget_add(dialog, container);
 
 	  // add notes
-	   notesColor = "#3b3838"; // some sort of gray
+	   notesColor = "#383838"; // some sort of gray
        box = ssd_container_new ("Note group", NULL, SSD_MIN_SIZE, SSD_MIN_SIZE,
             SSD_WIDGET_SPACE | SSD_END_ROW);
    	   text = ssd_text_new ("Note_text_cont",
-            roadmap_lang_get ("Note:"), 14, SSD_TEXT_LABEL | SSD_ALIGN_VCENTER | SSD_WIDGET_SPACE);
+            roadmap_lang_get ("Note:"), SSD_FOOTER_TEXT_SIZE, SSD_TEXT_NORMAL_FONT|SSD_TEXT_LABEL | SSD_ALIGN_VCENTER | SSD_WIDGET_SPACE);
        ssd_text_set_color(text,notesColor);
   	   ssd_widget_add (box,text );
        ssd_widget_set_color (box, NULL, NULL);
@@ -439,7 +404,7 @@ void roadmap_download_settings_show(void){
        box = ssd_container_new ("Note1 group", NULL, SSD_MIN_SIZE, SSD_MIN_SIZE,
             SSD_WIDGET_SPACE | SSD_END_ROW|SSD_WS_TABSTOP);
        text = ssd_text_new ("Note1_text_cont",
-            roadmap_lang_get (NOTE1), 14, SSD_TEXT_LABEL | SSD_ALIGN_VCENTER | SSD_WIDGET_SPACE);
+            roadmap_lang_get (NOTE1), SSD_FOOTER_TEXT_SIZE, SSD_TEXT_NORMAL_FONT|SSD_TEXT_LABEL | SSD_ALIGN_VCENTER | SSD_WIDGET_SPACE);
        ssd_widget_add (box,text );
        ssd_text_set_color(text,notesColor);
        ssd_widget_set_color (box, NULL, NULL);
@@ -447,7 +412,7 @@ void roadmap_download_settings_show(void){
        box = ssd_container_new ("Note2 group", NULL, SSD_MIN_SIZE, SSD_MIN_SIZE,
             SSD_WIDGET_SPACE | SSD_END_ROW|SSD_WS_TABSTOP);
        text = ssd_text_new ("Note2_text_cont",
-            roadmap_lang_get (NOTE2), 14, SSD_TEXT_LABEL | SSD_ALIGN_VCENTER | SSD_WIDGET_SPACE);
+            roadmap_lang_get (NOTE2), SSD_FOOTER_TEXT_SIZE, SSD_TEXT_NORMAL_FONT|SSD_TEXT_LABEL | SSD_ALIGN_VCENTER | SSD_WIDGET_SPACE);
        ssd_text_set_color(text,notesColor);
        ssd_widget_add (box, text);
        ssd_widget_set_color (box, NULL, NULL);

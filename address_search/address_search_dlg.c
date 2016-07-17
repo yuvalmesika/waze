@@ -50,6 +50,10 @@
 #include "address_search_dlg.h"
 #include "../roadmap_bar.h"
 #include "../roadmap_device_events.h"
+#include "tts/tts.h"
+#include "navigate/navigate_main.h"
+#include "roadmap_config.h"
+#include "tts_was_provider.h"
 
 #ifdef TOUCH_SCREEN
    #define  USE_ONSCREEN_KEYBOARD
@@ -62,6 +66,7 @@
 static   SsdWidget            s_result_container = NULL;
 static   BOOL                 s_searching = FALSE;
 static   BOOL                 s_menu   = FALSE;
+static   BOOL                 s_auto_start_nav = FALSE;
 
 #define  ASD_DIALOG_NAME            "address-search-dialog"
 #define  ASD_DIALOG_TITLE           "New address"
@@ -75,6 +80,7 @@ static   BOOL                 s_menu   = FALSE;
 
 static void on_search_error_message( int exit_code );
 static void search_progress_message_delayed(void);
+extern RoadMapConfigDescriptor NavigateConfigNavigationGuidanceType;
 
 typedef enum tag_contextmenu_items
 {
@@ -102,7 +108,7 @@ static ssd_cm_item main_menu_items[] =
 
 // Context menu:
 static ssd_contextmenu  context_menu = SSD_CM_INIT_MENU( main_menu_items);
-
+static BOOL navigate( BOOL take_me_there);
 
 
 static int on_options(SsdWidget widget, const char *new_value, void *context);
@@ -198,6 +204,14 @@ static void on_address_resolved( void*                context,
    }
 
    assert( size <= ADSR_MAX_RESULTS);
+   
+   if (size == 1 && s_auto_start_nav) {
+      s_auto_start_nav = FALSE;
+      generic_search_dlg_switch_gui();
+      ssd_dialog_hide_all( dec_close);
+      navigate(1);
+      return;
+   }
 
    for( i=0; i<size; i++)
    {
@@ -210,10 +224,10 @@ static void on_address_resolved( void*                context,
    indexes[i] = (void*)COULDNT_FIND_INDEX;
    icons[i] = "submit_logs";
 
-  /* if ( roadmap_native_keyboard_enabled() )
+   if ( roadmap_native_keyboard_enabled() )
    {
 	   roadmap_native_keyboard_hide();
-   }*/
+   }
    ssd_list_populate(list,
                      size+1,
                      results,
@@ -274,15 +288,50 @@ static void on_search(void)
 
     if ( !strcmp( "##@heb", ssd_text_get_text( edit ) ) )
    {
-      roadmap_lang_set_system_lang("heb");
+      roadmap_lang_set_system_lang("heb", TRUE);
       roadmap_messagebox("", "Language changed to Hebrew, please restart waze");
       return;
    }
 
    if ( !strcmp( "##@eng", ssd_text_get_text( edit ) ) )
    {
-      roadmap_lang_set_system_lang("eng");
+      roadmap_lang_set_system_lang("eng", TRUE);
       roadmap_messagebox("","Language changed to English, please restart waze");
+      return;
+   }
+   if ( !strcmp( "cc@tts", ssd_text_get_text( edit ) ) )
+   {
+      tts_clear_cache();
+      roadmap_messagebox("","TTS cache has been cleared!");
+      return;
+   }
+   if ( !strcmp( "##@tts", ssd_text_get_text( edit ) ) )
+   {
+      tts_set_feature_enabled( !tts_feature_enabled() );
+      if ( tts_feature_enabled() )
+      {
+         roadmap_messagebox("","TTS Feature is enabled!\nPlease restart WAZE.");
+      }
+      else
+      {
+         roadmap_messagebox("","TTS Feature is disabled!");
+
+      }
+      navigate_main_override_nav_settings();
+      return;
+   }
+   if ( !strcmp( "dbg@tts", ssd_text_get_text( edit ) ) )
+   {
+      //if ( !strcmp( tts_was_provider_voices_set(), TTS_WAS_VOICES_SET_PRODUCTION ) )
+      //{
+      //   //tts_was_provider_apply_voices_set( TTS_WAS_VOICES_SET_DEBUG );
+      //   roadmap_messagebox("","TTS Feature is running in debug mode!\nPlease restart WAZE.");
+      //}
+      //else
+      //{
+      //   //tts_was_provider_apply_voices_set( TTS_WAS_VOICES_SET_PRODUCTION );
+      //   roadmap_messagebox("","TTS Feature is running in production mode!\nPlease restart WAZE.");
+      //}
       return;
    }
 
@@ -504,18 +553,18 @@ static SsdWidget create_results_container()
                               NULL,
                               SSD_MIN_SIZE,
                               SSD_MIN_SIZE,
-                              SSD_ALIGN_CENTER);
+                              0);
    ssd_widget_set_color(rcnt, NULL,NULL);
 
 
    list = ssd_list_new(       ASD_RC_LIST_NAME,
-	   SSD_MENU_WIDTH,
+                              SSD_MAX_SIZE,
                               SSD_MAX_SIZE,
                               inputtype_free_text,
-                              SSD_CONTAINER_BORDER|SSD_ROUNDED_CORNERS|SSD_ROUNDED_WHITE|SSD_ALIGN_CENTER,
+                              0,
                               NULL);
    //ssd_widget_set_color(list, NULL,NULL);
-   ssd_list_resize( list, 50);
+   ssd_list_resize( list, ssd_container_get_row_height());
 
    ssd_widget_add( rcnt, list);
 
@@ -566,14 +615,31 @@ BOOL address_search_auto_search( const char* address)
    edit  = generic_search_dlg_get_search_edit_box(search_address);
 
    ssd_text_set_text( edit, address);
+   s_auto_start_nav = FALSE;
    on_search();
 
+   return TRUE;
+}
+
+BOOL address_search_auto_nav( const char* address)
+{
+   SsdWidget edit    = NULL;
+
+   address_search_dlg_show_auto( on_auto_search_completed, (void*)address);
+   
+   edit  = generic_search_dlg_get_search_edit_box(search_address);
+   
+   ssd_text_set_text( edit, address);
+   s_auto_start_nav = TRUE;
+   on_search();
+   
    return TRUE;
 }
 
 void address_search_dlg_show( PFN_ON_DIALOG_CLOSED cbOnClosed,
                               void*                context)
 {
+   s_auto_start_nav = FALSE;
    generic_search_dlg_show( search_address,
                             ASD_DIALOG_NAME,
                             ASD_DIALOG_TITLE,
@@ -592,7 +658,7 @@ static void search_progress_message_delayed(void)
 {
 	roadmap_main_remove_periodic( search_progress_message_delayed );
 	if( s_searching )
-		ssd_progress_msg_dialog_show( roadmap_lang_get( "Searching . . . " ) );
+		ssd_progress_msg_dialog_show( roadmap_lang_get( "Searching..." ) );
 }
 
 /* Callback for the error message box */

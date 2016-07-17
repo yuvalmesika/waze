@@ -25,7 +25,7 @@
 #define  ADSR_WEBSVC_CFG_FILE          ("preferences")
 #define  ADSR_WEBSVC_CFG_TAB           ("Address Search")
 #define  ADSR_WEBSVC_ADDRESS           ("Web-Service Address")
-#define  ADSR_WEBSVC_DEFAULT_ADDRESS   ("http://79.125.17.124:80/WAS")
+#define  ADSR_WEBSVC_DEFAULT_ADDRESS   ("")
 
 #define  LSR_WEBSVC_CFG_FILE          			("preferences")
 #define  LSR_WEBSVC_CFG_TAB           			("Local Search")
@@ -38,12 +38,12 @@
 #define  LSR_WEBSVC_DEFAULT_PROVIDER_ICON      ("ls_icon_google")
 #define  LSR_WEBSVC_DEFAULT_PROVIDER_LOGO      ("ls_logo_google")
 #define  LSR_WEBSVC_DEFAULT_PROVIDER           ("google")
-#define  LSR_WEBSVC_DEFAULT_ADDRESS   			("http://79.125.17.124:80/WAS/external_search")
+#define  LSR_WEBSVC_DEFAULT_ADDRESS   			("")
 
 #define  SSR_WEBSVC_CFG_FILE          ("preferences")
 #define  SSR_WEBSVC_CFG_TAB           ("Single Search")
 #define  SSR_WEBSVC_ADDRESS           ("Web-Service Address")
-#define  SSR_WEBSVC_DEFAULT_ADDRESS   ("http://79.125.17.124:80/WAS")
+#define  SSR_WEBSVC_DEFAULT_ADDRESS   ("")
 
 #define  LSR_GENERIC_PROVIDER_NAME           ("generic")
 #define  LSR_GENERIC_PROVIDER_ICON           ("ls_icon_generic")
@@ -89,6 +89,7 @@ typedef enum tag_search_type
 
 typedef struct tag_address_info
 {
+   const char* name;
    const char* state;
    const char* country;
    const char* city;
@@ -101,6 +102,7 @@ typedef struct tag_address_info
 typedef struct tag_address_candidate
 {
    int type;
+   int      offset;
    double   longtitude;
    double   latitude;
    char     state [ADSR_STATE_STRING_MAX_SIZE   + 1];

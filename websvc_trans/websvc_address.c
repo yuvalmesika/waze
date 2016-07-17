@@ -1,4 +1,3 @@
-
 /*
  * LICENSE:
  *
@@ -74,43 +73,30 @@ BOOL   WSA_ExtractParams(
    char*    pWebSvc  = NULL;
    int      iPort    = WSA_SERVER_DEFAULT_PORT;
    char     Copy[WSA_STRING_MAXSIZE+1];
-   int isValid;
-   int size=0;
+   
    //   Verify sizes are ok:
    if( !szWebServiceAddress                              || 
       !(*szWebServiceAddress)                            || 
       (strlen(szWebServiceAddress)< WSA_STRING_MINSIZE)  ||
       (WSA_STRING_MAXSIZE < strlen(szWebServiceAddress)))
-   {
-	   roadmap_log( ROADMAP_ERROR, "websvc_address() - error on size");
       return FALSE;
-   }
+   
    //   Copy of service-name:
    for( i=0; i<strlen(szWebServiceAddress); i++)
       Copy[i] = szWebServiceAddress[i];
    Copy[i] = '\0';
    
-   
-   isValid = 0;
-   
    //   Search for 'http://':
-   if( 0 == strncasecmp( (const char*)Copy, WSA_PREFIX, WSA_PREFIX_SIZE))
-   {
-      isValid = 1;
-	  size = WSA_PREFIX_SIZE;
+   if( 0 == strncasecmp( (const char*)Copy, WSA_PREFIX, WSA_PREFIX_SIZE)) {
+      //   Server URL:
+      pSrvURL = (Copy + WSA_PREFIX_SIZE);
+   } else if (0 == strncasecmp( (const char*)Copy, WSA_SSL_PREFIX, WSA_SSL_PREFIX_SIZE)) {//   Search for 'https://':
+      //   Server URL:
+      pSrvURL = (Copy + WSA_SSL_PREFIX_SIZE);
+   } else {
+      return FALSE;
    }
-   if( 0 == strncasecmp( (const char*)Copy, WSA_PREFIX_SECURED, WSA_PREFIX_SIZE_SECURED))
-   {
-      isValid = 1;
-	  size = WSA_PREFIX_SIZE_SECURED;
-   }
-   if(isValid == 0)
-   {
-	   roadmap_log( ROADMAP_ERROR, "websvc_address() - no http or https");
-	   return FALSE; 
-   }
-   //   Server URL:
-   pSrvURL = (Copy + size);
+
    
    //   Do we have a port number?
    pTmp = strchr( pSrvURL, WSA_SERVER_PORT_DELIMITER);
@@ -128,38 +114,29 @@ BOOL   WSA_ExtractParams(
    //   Search for server URL termination dellimiter:
    pTmp = strchr( pTmp, WSA_SERVER_URL_DELIMITER);
    if( !pTmp)
-   {
-	   roadmap_log( ROADMAP_ERROR, "websvc_address() - Address termination delimiter was not found");
       return FALSE;   //   Address termination delimiter was not found
-   }
+   
    //   Next value is service-name
    pWebSvc = pTmp + 1;
    (*pTmp) = '\0';      //   Terminate last value (port-number, or server URL)
 
    //   Verify server URL is valid:
    if( !(*pSrvURL) || (WSA_SERVER_URL_MAXSIZE < strlen(pSrvURL)))
-   {
-	   roadmap_log( ROADMAP_ERROR, "websvc_address() - pSrvURL");
       return FALSE;
-   }
+
    //   If we had port-number, verify it is a valid integer value:
    if( pSrvPrt)
    {
       //   Terminate port value string:
       iPort = atoi(pSrvPrt);
       if( (0 == iPort) || (WSA_SERVER_PORT_INVALIDVALUE == iPort))
-	  {
-		  roadmap_log( ROADMAP_ERROR, "websvc_address() - Port-number was zero, or string did not hold an integer value");
          return FALSE;   //   Port-number was zero, or string did not hold an integer value
-	  }
    }
 
    //   Do we have a name?
    if( !(*pWebSvc) || (WSA_SERVICE_NAME_MAXSIZE < strlen(pWebSvc)))
-   {
-	   roadmap_log( ROADMAP_ERROR, "websvc_address() - Do we have a name?");
       return FALSE;
-   }
+
    //   All is cosher, copy output:
    if( pServerURL)
       strncpy( pServerURL, pSrvURL, WSA_SERVER_URL_MAXSIZE);
@@ -170,101 +147,6 @@ BOOL   WSA_ExtractParams(
 
    return TRUE;
 }
-
-
-
-
-char *str_replace(char *orig, char *rep, char *with) {
-    char *result; // the return string
-    char *ins;    // the next insert point
-    char *tmp;    // varies
-    int len_rep;  // length of rep
-    int len_with; // length of with
-    int len_front; // distance between rep and end of last rep
-    int count;    // number of replacements
-
-    if (!orig)
-        return NULL;
-    if (!rep)
-        rep = "";
-    len_rep = strlen(rep);
-    if (!with)
-        with = "";
-    len_with = strlen(with);
-
-    ins = orig;
-    for (count = 0; tmp = strstr(ins, rep); ++count) {
-        ins = tmp + len_rep;
-    }
-
-    // first time through the loop, all the variable are set correctly
-    // from here on,
-    //    tmp points to the end of the result string
-    //    ins points to the next occurrence of rep in orig
-    //    orig points to the remainder of orig after "end of rep"
-    tmp = result = malloc(strlen(orig) + (len_with - len_rep) * count + 1);
-
-    if (!result)
-        return NULL;
-
-    while (count--) {
-        ins = strstr(orig, rep);
-        len_front = ins - orig;
-        tmp = strncpy(tmp, orig, len_front) + len_front;
-        tmp = strcpy(tmp, with) + len_with;
-        orig += len_front + len_rep; // move to next "end of rep"
-    }
-    strcpy(tmp, orig);
-    return result;
-}
-void   WSA_ExtractHttpFromHttps(   
-         const char* szWebServiceAddress,
-		 char* szWebServiceAddressHttp)        //   OUT,OPT-  Web service http full address (http://...)
-{
-   char     Copy[WSA_STRING_MAXSIZE+1];
-   char*       temp;
-   int i;
-   
-   ////   Copy of service-name:
-   //for( i=0; i<strlen(szWebServiceAddress); i++)
-   //   Copy[i] = szWebServiceAddress[i];
-   //Copy[i] = '\0';
-   temp = malloc(strlen(szWebServiceAddress)+1);
-   *szWebServiceAddressHttp= malloc(strlen(szWebServiceAddress)+1);
-   strcpy(temp,szWebServiceAddress);
-	*szWebServiceAddressHttp = temp;
-   if( 0 == strncasecmp( szWebServiceAddress, WSA_PREFIX_SECURED, WSA_PREFIX_SIZE_SECURED))
-   {
-	  temp = str_replace(szWebServiceAddressHttp,WSA_PREFIX_SECURED,WSA_PREFIX);
-	  temp = str_replace(temp,WSA_PREFIX_PORT_SECURED,WSA_PREFIX_PORT);
-	  *szWebServiceAddressHttp = temp;
-   }
-   
-   return ;
-}
-
-char* WSA_ExtractHttpFromHttps2(   
-         const char* szWebServiceAddress)        //   OUT,OPT-  Web service http full address (http://...)
-{
-   char     Copy[WSA_STRING_MAXSIZE+1];
-   char*       temp;
-   int i;
-   
-   ////   Copy of service-name:
-   //for( i=0; i<strlen(szWebServiceAddress); i++)
-   //   Copy[i] = szWebServiceAddress[i];
-   //Copy[i] = '\0';
-   temp = malloc(strlen(szWebServiceAddress)+1);
-   strcpy(temp,szWebServiceAddress);
-   if( 0 == strncasecmp( szWebServiceAddress, WSA_PREFIX_SECURED, WSA_PREFIX_SIZE_SECURED))
-   {
-	  temp = str_replace(szWebServiceAddress,WSA_PREFIX_SECURED,WSA_PREFIX);
-	  temp = str_replace(temp,WSA_PREFIX_PORT_SECURED,WSA_PREFIX_PORT);
-   }
-   
-   return temp;
-}
-
 
 void  WSA_RemovePortNumberFromURL(
             char*       szWebServiceAddress) //   IN,OUT    -   Web service full address (http://...)

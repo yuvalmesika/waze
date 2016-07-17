@@ -668,10 +668,10 @@ void roadmap_display_sign_pop_up(RoadMapSign *sign) {
 
 #ifdef TOUCH_SCREEN
 	bottom.y = (lines) * 21 + top.y + 8;
-	sign_width = roadmap_display_border(sign->style, sign->header_type, sign->pointer_type, &bottom, &top, "#d2dfef", &sign->position);
+	sign_width = roadmap_display_border(sign->style, sign->header_type, sign->pointer_type, &bottom, &top, "#d2dfef", &sign->position,0);
 #else
 	bottom.y = (lines) * 21 + top.y;
-	sign_width = roadmap_display_border(sign->style, sign->header_type, sign->pointer_type, &bottom, &top, "#e4f1f9", &sign->position);
+	sign_width = roadmap_display_border(sign->style, sign->header_type, sign->pointer_type, &bottom, &top, "#e4f1f9", &sign->position,0);
 #endif
     if (sign->image != NULL){
     		RoadMapImage close;

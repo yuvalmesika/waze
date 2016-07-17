@@ -107,62 +107,62 @@ void roadmap_power_initialize( void )
  */
 static void roadmap_power_monitor( void )
 {
-	return;
-	//int batteryCurrentLevel = roadmap_device_get_battery_level();
 
-	//roadmap_log( ROADMAP_INFO, "Current battery level : %d. Threshold 1: %d. Threshold 2: %d", batteryCurrentLevel, gBatteryWarnThr_1, gBatteryWarnThr_2 );
+	int batteryCurrentLevel = roadmap_device_get_battery_level();
 
-	//if ( batteryCurrentLevel < 0 )
-	//	return;
+	roadmap_log( ROADMAP_INFO, "Current battery level : %d. Threshold 1: %d. Threshold 2: %d", batteryCurrentLevel, gBatteryWarnThr_1, gBatteryWarnThr_2 );
 
-	//if ( gConfirmDialogShown )
-	//	return;
+	if ( batteryCurrentLevel < 0 )
+		return;
 
-
+	if ( gConfirmDialogShown )
+		return;
 
 
-	//// State machine for the power monitor
-	//switch ( gPowerMonState )
-	//{
-	//	case pwrmon_normal:	// In normal state check the thresholds
-	//	{
-	//		if ( batteryCurrentLevel < gBatteryWarnThr_2 )
-	//		{
-	//			roadmap_power_state_handler_warn_2();
-	//			gPowerMonState = pwrmon_below_threshold_2;
-	//			break;
-	//		}
-	//		if ( batteryCurrentLevel < gBatteryWarnThr_1 )
-	//		{
-	//			roadmap_power_state_handler_warn_1();
-	//			gPowerMonState = pwrmon_below_threshold_1;
-	//			break;
-	//		}
-	//	}
-	//	case pwrmon_below_threshold_1:
-	//	{
-	//		if ( batteryCurrentLevel > BATTERY_WARN_STATE_NORMAL_THR )
-	//		{
-	//			gPowerMonState = pwrmon_normal;
-	//		}
 
-	//		if ( batteryCurrentLevel < gBatteryWarnThr_2 )
-	//		{
-	//			roadmap_power_state_handler_warn_2();
-	//			gPowerMonState = pwrmon_below_threshold_2;
-	//		}
 
-	//		break;
-	//	}
-	//	case pwrmon_below_threshold_2:
-	//	{
-	//		if ( batteryCurrentLevel > BATTERY_WARN_STATE_NORMAL_THR )
-	//		{
-	//			gPowerMonState = pwrmon_normal;
-	//		}
-	//		break;
-	//	}
-	//}
+	// State machine for the power monitor
+	switch ( gPowerMonState )
+	{
+		case pwrmon_normal:	// In normal state check the thresholds
+		{
+			if ( batteryCurrentLevel < gBatteryWarnThr_2 )
+			{
+				roadmap_power_state_handler_warn_2();
+				gPowerMonState = pwrmon_below_threshold_2;
+				break;
+			}
+			if ( batteryCurrentLevel < gBatteryWarnThr_1 )
+			{
+				roadmap_power_state_handler_warn_1();
+				gPowerMonState = pwrmon_below_threshold_1;
+				break;
+			}
+		}
+		case pwrmon_below_threshold_1:
+		{
+			if ( batteryCurrentLevel > BATTERY_WARN_STATE_NORMAL_THR )
+			{
+				gPowerMonState = pwrmon_normal;
+			}
+
+			if ( batteryCurrentLevel < gBatteryWarnThr_2 )
+			{
+				roadmap_power_state_handler_warn_2();
+				gPowerMonState = pwrmon_below_threshold_2;
+			}
+
+			break;
+		}
+		case pwrmon_below_threshold_2:
+		{
+			if ( batteryCurrentLevel > BATTERY_WARN_STATE_NORMAL_THR )
+			{
+				gPowerMonState = pwrmon_normal;
+			}
+			break;
+		}
+	}
 }
 
 /***********************************************************

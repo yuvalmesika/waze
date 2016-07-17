@@ -39,7 +39,6 @@
 #include "roadmap_gui.h"
 #include "roadmap_math.h"
 #include "roadmap_config.h"
-#include "roadmap_canvas.h"
 #include "roadmap_layer.h"
 #include "roadmap_square.h"
 #include "roadmap_line.h"
@@ -75,7 +74,6 @@
 #include "roadmap_view.h"
 #include "roadmap_screen.h"
 #include "roadmap_start.h"
-#include "roadmap_math.h"
 
 #include "Realtime/RealtimeAlerts.h"
 #include "Realtime/RealtimeTrafficInfo.h"
@@ -2059,7 +2057,6 @@ static void roadmap_screen_draw_alerts (void) {
    int alertId;
    int scale = 100;
    RoadMapGuiPoint offset;
-   zoom_t zoom;
 
    count = roadmap_alert_count ();
 
@@ -2093,7 +2090,7 @@ static void roadmap_screen_draw_alerts (void) {
 
       pen = roadmap_layer_get_pen (ROADMAP_ROAD_MAIN,0 ,0);
       if (pen != NULL) {
-      	zoom = roadmap_math_get_zoom();
+      	zoom_t zoom = roadmap_math_get_zoom();
          // display the icon only at street level zoom
          pen = roadmap_layer_get_pen (ROADMAP_ROAD_STREET,0 ,0);
          alertId = roadmap_alert_get_id(i);
@@ -2523,11 +2520,8 @@ static void roadmap_screen_draw_glow (void) {
 #endif
 }
 void map_credit_display(void){
-   const char* map_credit;
-   static RoadMapPen ;
-   RoadMapPen MapCreditPen ;
-   map_credit = NULL;//roadmap_start_get_map_credit();
-   MapCreditPen = NULL;
+   const char* map_credit = roadmap_start_get_map_credit();
+   static RoadMapPen MapCreditPen = NULL;
 
    if (map_credit && *map_credit){
       RoadMapGuiPoint pos;
@@ -2551,9 +2545,9 @@ void roadmap_screen_draw_map (RoadMapGuiRect *rect) {
    int sq_count, fp_count;
    static int *fips = NULL;
    static int *in_view = NULL;
-   int max_pen;
+   int max_pen = roadmap_layer_max_pen();
    int use_only_main_pen = 0;
-	max_pen = roadmap_layer_max_pen();
+
    if (rect) {
       RoadMapArea focus;
       roadmap_canvas_select_pen (RoadMapBackground);
@@ -4115,13 +4109,6 @@ void roadmap_screen_toggle_view_mode (void) {
    }
 #endif// VIEW_MODE_3D_OGL
 }
-void roadmap_screen_reset_view_mode (void) {
-   if (RoadMapScreenOGLViewMode == RoadMapScreenOGLViewModeConfig)
-      return;
-   
-   RoadMapScreenOGLViewMode = RoadMapScreenOGLViewModeConfig;
-   adjust_after_view_mode_change();
-}
 
 void roadmap_screen_set_view(int view_mode){
 #ifdef VIEW_MODE_3D_OGL
@@ -4138,11 +4125,11 @@ void roadmap_screen_set_view(int view_mode){
    if (( view_mode == VIEW_MODE_3D ) ) {
       RoadMapScreenViewMode = VIEW_MODE_3D;
       roadmap_config_set (&RoadMapConfigMapOrientation,"3D");
-//      roadmap_analytics_log_event(ANALYTICS_EVENT_CHANGE_VIEW, ANALYTICS_EVENT_INFO_NEW_MODE, ANALYTICS_EVENT_VIEWMODE_3D);
+      roadmap_analytics_log_event(ANALYTICS_EVENT_CHANGE_VIEW, ANALYTICS_EVENT_INFO_NEW_MODE, ANALYTICS_EVENT_VIEWMODE_3D);
    } else {
       RoadMapScreenViewMode = VIEW_MODE_2D;
       roadmap_config_set (&RoadMapConfigMapOrientation,"2D");
-      //roadmap_analytics_log_event(ANALYTICS_EVENT_CHANGE_VIEW, ANALYTICS_EVENT_INFO_NEW_MODE, ANALYTICS_EVENT_VIEWMODE_2D);
+      roadmap_analytics_log_event(ANALYTICS_EVENT_CHANGE_VIEW, ANALYTICS_EVENT_INFO_NEW_MODE, ANALYTICS_EVENT_VIEWMODE_2D);
    }
 #endif// VIEW_MODE_3D_OGL
 
@@ -4157,6 +4144,13 @@ void roadmap_screen_override_view_mode (int override_mode) {
 #endif
 }
 
+void roadmap_screen_reset_view_mode (void) {
+   if (RoadMapScreenOGLViewMode == RoadMapScreenOGLViewModeConfig)
+      return;
+   
+   RoadMapScreenOGLViewMode = RoadMapScreenOGLViewModeConfig;
+   adjust_after_view_mode_change();
+}
 
 void roadmap_screen_toggle_labels (void) {
 
