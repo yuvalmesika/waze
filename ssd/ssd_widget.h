@@ -29,7 +29,7 @@
 #include "../roadmap_keyboard.h"
 #include "../roadmap_input_type.h"
 
-#define SSD_MENU_WIDTH ((roadmap_canvas_width()*3)>>2)
+#define SSD_MENU_WIDTH ((roadmap_canvas_width()*0.9))
 #define SSD_MIN_SIZE -1
 #define SSD_MAX_SIZE -2
 

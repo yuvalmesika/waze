@@ -728,7 +728,7 @@ static int roadmap_screen_obj_short_click (RoadMapGuiPoint *point) {
       return 0;
 
    if (object->action) {
-
+#define PLAY_CLICK
 #ifdef PLAY_CLICK
       static RoadMapSoundList list;
       if (!list) {

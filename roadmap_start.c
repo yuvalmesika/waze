@@ -2726,9 +2726,9 @@ static void roadmap_confirmed_send_log_callback(int exit_code, void *context){
 
 void roadmap_start_login_cb (void){
    if (RoadMapStartAfterCrash) {
-      ssd_confirm_dialog_custom_timeout("", "We seem to have encountered a bug. Help us improve by sending us an error report.",
-                              FALSE, roadmap_confirmed_send_log_callback, NULL,
-                              roadmap_lang_get("Send"), roadmap_lang_get("Cancel"),5);
+      //ssd_confirm_dialog_custom_timeout("", "We seem to have encountered a bug. Help us improve by sending us an error report.",
+      //                        FALSE, roadmap_confirmed_send_log_callback, NULL,
+      //                        roadmap_lang_get("Send"), roadmap_lang_get("Cancel"),5);
    } else {
 #ifdef IPHONE_NATIVE
       if (!roadmap_config_match(&RoadMapConfigRateUsShown, "yes") &&
@@ -2746,7 +2746,7 @@ void roadmap_start_login_cb (void){
          roadmap_start_upload();
       }
 #else
-      roadmap_start_upload();
+//      roadmap_start_upload();
 #endif //IPHONE_NATIVE
    }
 }
@@ -2975,7 +2975,7 @@ void roadmap_start_continue(void)   {
    roadmap_bar_initialize();
    roadmap_screen_obj_initialize ();
    roadmap_ticker_initialize   ();
-   roadmap_message_ticker_initialize   ();
+	   roadmap_message_ticker_initialize   ();
    roadmap_reminder_init();
 
    roadmap_social_image_initialize();

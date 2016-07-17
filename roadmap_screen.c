@@ -3703,7 +3703,15 @@ void focus_on_location(){
 }
 
 void show_me_on_map(void){
-
+//#ifdef DEBUG
+	static RoadMapSoundList list;
+      if (!list) {
+         list = roadmap_sound_list_create (SOUND_LIST_NO_FREE);
+         roadmap_sound_list_add (list, "KeepRight");
+         roadmap_res_get (RES_SOUND, 0, "KeepRight");
+      }
+      roadmap_sound_play_list (list);
+//#endif
 	ssd_dialog_hide_all(dec_close);
 
     if (!roadmap_gps_have_reception()) {
