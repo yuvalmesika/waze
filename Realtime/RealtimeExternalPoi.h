@@ -44,12 +44,16 @@ typedef struct
     int  iExternalPoiProviderID; // Provider ID
     char cBigIcon[MAX_ICON_LENGHT];
     char cSmallIcon[MAX_ICON_LENGHT];
+	char cBigPromotionIcon[MAX_ICON_LENGHT];
+    char cSmallPromotionIcon[MAX_ICON_LENGHT];
     char cOnClickUrl[MAX_URL_LENGTH];
     int  iSize;
     int  iMaxDisplayZoomBigIcon;
     int  iMaxDisplayZoomSmallIcon;
     int  iPromotionType;
     int  iIsNavigable;
+	int  iPromotionID;
+    int  iPromotionRadius;
 } RTExternalPoiType;
 
 typedef struct
@@ -67,7 +71,12 @@ typedef struct
     int  iPromotionType;
     int  iIsPromotioned;
     char cResourceUrlParams[MAX_URL_LENGTH];
+    int  iPromotionID;
+    int  iPromotionRadius;
     BOOL isDiplayed;
+    BOOL bPopedUp;
+    BOOL bShowPromo;
+    int  iShowNearByFlags;
 } RTExternalPoi;
 
 

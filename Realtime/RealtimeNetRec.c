@@ -3608,7 +3608,7 @@ const char *AddExternalPoiType (/* IN  */   const char*       pNext,
                 &externalPoiType.cSmallIcon[0],         // [out,opt]Output buffer
                 &iBufferSize,        // [in,out] Buffer size / Size of extracted string
                 ",",                 // [in]     Array of chars to terminate the copy operation
-                TRIM_ALL_CHARS);     // [in]     Remove additional termination chars
+                1);     // [in]     Remove additional termination chars
 
     if( !pNext || !(*pNext))
     {
@@ -3624,7 +3624,7 @@ const char *AddExternalPoiType (/* IN  */   const char*       pNext,
                 &externalPoiType.cBigIcon[0],         // [out,opt]Output buffer
                 &iBufferSize,        // [in,out] Buffer size / Size of extracted string
                 ",",                 // [in]     Array of chars to terminate the copy operation
-                TRIM_ALL_CHARS);     // [in]     Remove additional termination chars
+                1);     // [in]     Remove additional termination chars
 
     if( !pNext || !(*pNext))
     {
@@ -3640,7 +3640,7 @@ const char *AddExternalPoiType (/* IN  */   const char*       pNext,
                 &externalPoiType.cOnClickUrl[0],         // [out,opt]Output buffer
                 &iBufferSize,        // [in,out] Buffer size / Size of extracted string
                 ",",                 // [in]     Array of chars to terminate the copy operation
-                TRIM_ALL_CHARS);     // [in]     Remove additional termination chars
+                1);     // [in]     Remove additional termination chars
 
     if( !pNext || !(*pNext))
     {
@@ -3709,7 +3709,67 @@ const char *AddExternalPoiType (/* IN  */   const char*       pNext,
             (*rc) = err_parser_unexpected_data;
             return NULL;
      }
+ //   Read small promotion icon:
+     iBufferSize = sizeof(externalPoiType.cSmallPromotionIcon);
+     pNext       = ExtractNetworkString(
+                 pNext,               // [in]     Source string
+                 &externalPoiType.cSmallPromotionIcon[0],         // [out,opt]Output buffer
+                 &iBufferSize,        // [in,out] Buffer size / Size of extracted string
+                 ",",                 // [in]     Array of chars to terminate the copy operation
+                 1);     // [in]     Remove additional termination chars
 
+     if( !pNext || !(*pNext))
+     {
+        roadmap_log( ROADMAP_ERROR, "RTNet::OnGeneralResponse::AddExternalPoiType() - Failed to read promotion small icon.");
+        (*rc) = err_parser_unexpected_data;
+        return NULL;
+     }
+
+     //   Read big promotion icon:
+     iBufferSize = sizeof(externalPoiType.cBigPromotionIcon);
+     pNext       = ExtractNetworkString(
+                 pNext,               // [in]     Source string
+                 &externalPoiType.cBigPromotionIcon[0],         // [out,opt]Output buffer
+                 &iBufferSize,        // [in,out] Buffer size / Size of extracted string
+                 ",",                 // [in]     Array of chars to terminate the copy operation
+                 1);     // [in]     Remove additional termination chars
+
+     if( !pNext || !(*pNext))
+     {
+        roadmap_log( ROADMAP_ERROR, "RTNet::OnGeneralResponse::AddExternalPoiType() - Failed to read big promotion icon.");
+        (*rc) = err_parser_unexpected_data;
+        return NULL;
+     }
+
+      //  Promotion ID
+      pNext = ReadIntFromString(
+                         pNext,         //   [in]      Source string
+                         ",\r\n",           //   [in,opt]   Value termination
+                         NULL,          //   [in,opt]   Allowed padding
+                         &externalPoiType.iPromotionID,    //   [out]      Put it here
+                         1);  //   [in]      Remove additional termination CHARS
+
+      if(!pNext)
+      {
+             roadmap_log( ROADMAP_ERROR, "RTNet::OnGeneralResponse::AddExternalPoiType() - Failed to read Promotion ID");
+             (*rc) = err_parser_unexpected_data;
+             return NULL;
+      }
+
+      //  Promotion radius
+      pNext = ReadIntFromString(
+                         pNext,         //   [in]      Source string
+                         ",\r\n",           //   [in,opt]   Value termination
+                         NULL,          //   [in,opt]   Allowed padding
+                         &externalPoiType.iPromotionRadius,    //   [out]      Put it here
+                         TRIM_ALL_CHARS);  //   [in]      Remove additional termination CHARS
+
+      if(!pNext)
+      {
+             roadmap_log( ROADMAP_ERROR, "RTNet::OnGeneralResponse::AddExternalPoiType() - Failed to read Promotion radius");
+             (*rc) = err_parser_unexpected_data;
+             return NULL;
+      }
      externalPoiType.iIsNavigable = TRUE;//TEMP_AVI add to protocol
      RealtimeExternalPoi_ExternalPoiType_Add(&externalPoiType);
      return pNext;

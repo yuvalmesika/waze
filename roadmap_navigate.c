@@ -1196,7 +1196,12 @@ int roadmap_navigate_get_current (RoadMapGpsPosition *position,
 
    if (position) *position = RoadMapLatestGpsPosition;
 
-   if (!line || !direction) return 0;
+   if (!line || !direction) {
+      if (RoadMapConfirmedStreet.valid)
+         return 0;
+      else
+         return -1;
+   }
 
    if (RoadMapConfirmedStreet.valid) {
 
