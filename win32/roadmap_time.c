@@ -24,11 +24,18 @@
  *
  *   See roadmap_time.h
  */
-
+#include <winsock.h>
 #include <stdio.h>
 #include "../roadmap.h"
 #include "../roadmap_time.h"
 
+gettimeofday (struct timeval *tv, void *tz)
+{
+  DWORD timemillis = GetTickCount();
+  tv->tv_sec  = timemillis/1000;
+  tv->tv_usec = (timemillis - (tv->tv_sec*1000)) * 1000;
+  return 0;
+}
 
 char *roadmap_time_get_hours_minutes (time_t gmt) {
     
@@ -44,4 +51,19 @@ char *roadmap_time_get_hours_minutes (time_t gmt) {
 
 uint32_t roadmap_time_get_millis(void) {
    return GetTickCount();
+}
+
+const EpochTimeMicroSec* roadmap_time_get_epoch_us( EpochTimeMicroSec* time_val )
+{
+   static EpochTimeMicroSec s_epoch = { 0, 0 };
+   struct timeval tv;
+   gettimeofday(&tv, NULL);
+
+   s_epoch.epoch_sec = tv.tv_sec;
+   s_epoch.usec = tv.tv_usec;
+
+   if ( time_val )
+      *time_val = s_epoch;
+
+   return &s_epoch;
 }

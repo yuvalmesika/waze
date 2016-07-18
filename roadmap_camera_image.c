@@ -502,7 +502,7 @@ BOOL roadmap_camera_image_alert_async( CameraImageAlertCallback callback, Camera
     CAMERA_IMG_FILE_INIT( *image_file, gCameraImageWidth, gCameraImageHeight, gCameraImageQuality,
                                 file_fmt_JPEG, NULL, NULL );
 
-    roadmap_camera_take_picture_async( image_alert_async_callback, capture_context );
+    //roadmap_camera_take_picture_async( image_alert_async_callback, capture_context );
 
     return TRUE;
 }

@@ -31,7 +31,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <sqlite3.h>
+#include <..\sqllite\sqlite3.h>
 
 #include "roadmap.h"
 #include "roadmap_main.h"
@@ -257,6 +257,7 @@ BOOL tts_db_sqlite_get_info( const TtsDbEntry* entry, TtsTextType* text_type, Tt
    sqlite3_stmt *stmt = NULL;
    int ret_val;
    char stmt_string[TTS_DB_SQLITE_QUERY_MAXSIZE];
+   const char* path_data;
 
    db = _trans_open( NULL );
 
@@ -300,7 +301,8 @@ BOOL tts_db_sqlite_get_info( const TtsDbEntry* entry, TtsTextType* text_type, Tt
       if ( storage_type )
          *storage_type = sqlite3_column_int( stmt, 0 );
       // Path data
-      const char* path_data = sqlite3_column_text( stmt, 1 );
+      
+	  path_data = sqlite3_column_text( stmt, 1 );
       if ( db_path )
       {
          if ( path_data )

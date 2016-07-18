@@ -129,7 +129,7 @@ extern HWND roadmap_canvas_new (HWND hWnd);
 //   #pragma message("    NOTE: Forcing the usage of phone-keyboard!")
 //   extern "C" int USING_PHONE_KEYPAD = TRUE;
 //#else
-//   extern "C" int USING_PHONE_KEYPAD = FALSE;
+   extern "C" int USING_PHONE_KEYPAD = FALSE;
 //#endif   // FORCE_PHONE_KEYBOARD_USAGE
 
 #ifdef UNDER_CE
@@ -2348,3 +2348,7 @@ void TestingFeature( POINT* pPoint)
 }
 
 #endif   //    TESTING_BUILD
+/*************************************************************************************************
+ * roadmap_main_set_output()
+ * Allocates the entry for the io and creates the handler thread
+ */

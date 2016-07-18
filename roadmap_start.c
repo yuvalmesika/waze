@@ -247,7 +247,7 @@ static RoadMapConfigDescriptor RoadMapConfigFBShareMinPeriod =
                         ROADMAP_CONFIG_ITEM("General", "FB Share min period"); //Min period to show FB share after "rate us" shown
 static RoadMapConfigDescriptor RoadMapConfigFBShareShown =
                         ROADMAP_CONFIG_ITEM("General", "FB Share shown");
-
+static void roadmap_start_continue(void);
 extern RoadMapConfigDescriptor RoadMapConfigGeneralLogLevel;
 
 static RoadMapMenu LongClickMenu;
@@ -3264,7 +3264,7 @@ void roadmap_start (int argc, char **argv) {
     roadmap_start_set_right_softkey("Report", "Report", start_alerts_menu);
     roadmap_browser_init();
     _tts_config( NULL );
-    //roadmap_geo_config(roadmap_start_continue);
+    roadmap_geo_config(roadmap_start_continue);
 }
 
 

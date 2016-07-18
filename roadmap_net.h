@@ -35,10 +35,10 @@
 #if defined (_WIN32) && !defined (__SYMBIAN32__)
 
 #include <winsock.h>
-
-typedef SOCKET RoadMapSocket; /* WIN32 style. */
-#define ROADMAP_INVALID_SOCKET INVALID_SOCKET
-
+struct roadmap_socket_t;
+typedef struct roadmap_socket_t *RoadMapSocket;
+//#define ROADMAP_INVALID_SOCKET INVALID_SOCKET
+#define ROADMAP_INVALID_SOCKET ((RoadMapSocket) NULL)
 #elif defined J2ME
 
 struct roadmap_socket_t;

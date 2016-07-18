@@ -353,7 +353,9 @@ void navigate_tts_finish_route( void )
 
    if ( sgCtx.voice_id )
       free( sgCtx.voice_id );
-   sgCtx = (NavTtsContext) NAV_TTS_CTX_INITIALIZER;
+   
+   //sgCtx =  NAV_TTS_CTX_INITIALIZER;//(NavTtsContext)
+   
 }
 
 /*
@@ -777,6 +779,7 @@ static void _on_voice_changed( const char* voice_id, BOOL force_recommit )
 static int _prepare_nav_voice( const char* voice_id )
 {
    int preload_count, route_count,total_count;
+   NavTtsVoicePrepareCtx* ctx;
    if ( sgCtx.voice_prepare_ctx )
    {
       roadmap_log( ROADMAP_WARNING, NAV_TTS_LOGSTR( "Previous voice prepare request is in process" ) );
@@ -785,7 +788,7 @@ static int _prepare_nav_voice( const char* voice_id )
    // TODO:: Start progress
    roadmap_warning_register( _voice_prepare_warning_fn, "navigate_tts" );
 
-   NavTtsVoicePrepareCtx* ctx = calloc( sizeof( NavTtsVoicePrepareCtx ), 1 );
+   ctx = calloc( sizeof( NavTtsVoicePrepareCtx ), 1 );
 
    if ( !voice_id )
       voice_id = tts_voice_id();

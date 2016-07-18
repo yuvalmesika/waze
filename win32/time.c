@@ -191,14 +191,14 @@ struct tm *gmtime(const time_t *timep)
 	return &t;
 }
 
-
-struct tm *localtime(const time_t *timep)
-{
-	static struct tm t;
-	__offtime(timep, -get_bias(&t.tm_isdst) * 60, &t);
-	//t.tm_isdst = 1;
-	return &t;
-}
+//TODO moved to sqllite
+//struct tm *localtime(const time_t *timep)
+//{
+//	static struct tm t;
+//	__offtime(timep, -get_bias(&t.tm_isdst) * 60, &t);
+//	//t.tm_isdst = 1;
+//	return &t;
+//}
 
 time_t timegm(struct tm *_tm)
 {

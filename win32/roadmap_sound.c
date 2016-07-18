@@ -253,6 +253,38 @@ int roadmap_sound_list_add (RoadMapSoundList list, const char *name) {
 
    return list->count - 1;
 }
+int roadmap_sound_list_add_buf (RoadMapSoundList list, void* buf, size_t size )
+{
+      char path[512];
+      int file_num = list->count;
+      RoadMapFile file;
+
+      if (list->count == MAX_SOUND_LIST) return -1;
+
+      list->buf_list[list->count] = buf;
+      list->buf_list_sizes[list->count] = size;
+
+
+      /*
+       * Temporary solution - write the buffer to the file for further playing
+       * AGA
+       */
+      sprintf( path, "%s/tmp/%d", roadmap_path_tts(), file_num );
+      if ( file_num == 0 )
+      {
+         roadmap_path_create( roadmap_path_parent( path, NULL ) );
+      }
+
+      file = roadmap_file_open( path, "w" );
+      roadmap_file_write( file, buf, size );
+      roadmap_file_close( file );
+
+      strncpy_safe( list->list[list->count], path, 512 );
+
+      list->count++;
+
+   return list->count - 1;
+}
 
 
 int roadmap_sound_list_count (const RoadMapSoundList list) {
@@ -451,4 +483,15 @@ int roadmap_sound_record (const char *file_name, int seconds) {
  */
 void roadmap_sound_set_volume ( int volLvl ) 
 {
+}
+const char *roadmap_path_tts( void )
+{
+   static char *RoadMapPathTts = NULL;
+
+   if ( RoadMapPathTts == NULL )
+   {
+      RoadMapPathTts = roadmap_path_join( roadmap_path_user(), "tts" );
+      roadmap_path_create( RoadMapPathTts );
+   }
+   return RoadMapPathTts;
 }

@@ -81,7 +81,12 @@ int roadmap_base64_decode (char* inText, void** outData) {
    int i;
    int inputLength = strlen(inText) -1;
    static int initialized = 0;
-   
+   int outputLength;
+   unsigned char* output;
+   int inputPoint;
+   int outputPoint;
+
+
    if ((inText== NULL) || (inputLength % 4 != 0)) {
       return -1;
    }
@@ -98,17 +103,22 @@ int roadmap_base64_decode (char* inText, void** outData) {
       inputLength--;
    }
    
-   int outputLength = inputLength * 3 / 4;
-   unsigned char* output = (unsigned char*)malloc(outputLength);
+   outputLength = inputLength * 3 / 4;
+   output = (unsigned char*)malloc(outputLength);
    *outData = (void *)output;
    
-   int inputPoint = 0;
-   int outputPoint = 0;
+    inputPoint = 0;
+   outputPoint = 0;
    while (inputPoint < inputLength) {
-      char i0 = inText[inputPoint++];
-      char i1 = inText[inputPoint++];
-      char i2 = inputPoint < inputLength ? inText[inputPoint++] : 'A'; /* 'A' will decode to \0 */
-      char i3 = inputPoint < inputLength ? inText[inputPoint++] : 'A';
+char i0;
+char i1;
+char i2;
+char i3;
+
+       i0 = inText[inputPoint++];
+       i1 = inText[inputPoint++];
+       i2 = inputPoint < inputLength ? inText[inputPoint++] : 'A'; /* 'A' will decode to \0 */
+       i3 = inputPoint < inputLength ? inText[inputPoint++] : 'A';
       
       output[outputPoint++] = (decodingTable[i0] << 2) | (decodingTable[i1] >> 4);
       if (outputPoint < outputLength) {

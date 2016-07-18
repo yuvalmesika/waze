@@ -1158,6 +1158,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\Realtime\RealtimePopUp.c"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\Realtime\RealtimePrivacy.c"
 				>
 			</File>
@@ -1241,6 +1245,10 @@
 			</File>
 			<File
 				RelativePath="..\..\..\Realtime\RealtimeOffline.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Realtime\RealtimePopUp.h"
 				>
 			</File>
 			<File

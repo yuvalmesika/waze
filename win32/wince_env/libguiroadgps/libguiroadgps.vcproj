@@ -2538,10 +2538,6 @@
 			Filter="h;hpp;hxx;hm;inl"
 			>
 			<File
-				RelativePath="..\..\..\roadmap_path.h"
-				>
-			</File>
-			<File
 				RelativePath="..\..\..\roadmap_voice.h"
 				>
 			</File>

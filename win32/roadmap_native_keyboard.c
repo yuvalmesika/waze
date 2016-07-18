@@ -58,12 +58,12 @@ BOOL roadmap_native_keyboard_enabled( void )
  *	Params		: params - set of parameters for the keyboard representation
  *
  */
-//void roadmap_native_keyboard_show( RMNativeKBParams* params )
-//{
+void roadmap_native_keyboard_show( RMNativeKBParams* params )
+{
 //#ifndef EMBEDDED_CE
 //	SipShowIM(SIPF_ON);
 //#endif
-//}
+}
 
 /***********************************************************
  *  Name        : roadmap_keyboard_hide
@@ -71,12 +71,12 @@ BOOL roadmap_native_keyboard_enabled( void )
  *
  *
  */
-//void roadmap_native_keyboard_hide( void )
-//{
+void roadmap_native_keyboard_hide( void )
+{
 //#ifndef EMBEDDED_CE
 //	SipShowIM(SIPF_OFF);
 //#endif
-//}
+}
 
 /***********************************************************
  *  Name        : roadmap_keyboard_hide

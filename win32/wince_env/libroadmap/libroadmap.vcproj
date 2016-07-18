@@ -4553,6 +4553,10 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath="..\..\..\navigate\navigate_route_events.c"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\navigate\navigate_route_trans.c"
 				>
 			</File>
@@ -4721,6 +4725,10 @@
 						UsePrecompiledHeader="0"
 					/>
 				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\..\navigate\navigate_tts.c"
+				>
 			</File>
 			<File
 				RelativePath="..\..\..\navigate\navigate_zoom.c"
@@ -11709,6 +11717,10 @@
 			</File>
 			<File
 				RelativePath="..\..\..\navigate\navigate_route_trans.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\roadmap.h"
 				>
 			</File>
 			<File
