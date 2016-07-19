@@ -129,11 +129,11 @@ static wst_parser general_parser[] =
    { "AddExternalPoi",        AddExternalPoi},
    { "RmExternalPoi",         RmExternalPoi},
    { "SetExternalPoiDrawOrder",SetExternalPoiDrawOrder},
-   { "ThumbsUpRes"            ,ThumbsUpRes},
+   //{ "ThumbsUpRes"            ,ThumbsUpRes},
    { "UpdateAlert"            ,UpdateAlert},
-   { "UpdateInboxCount"       ,UpdateInboxCount},
-   { "ThumbsUpReceived"       ,ThumbsUpReceived},
-   { "AddBonusTemplate"       ,AddBonusTemplate},
+   //{ "UpdateInboxCount"       ,UpdateInboxCount},
+  // { "ThumbsUpReceived"       ,ThumbsUpReceived},
+   //{ "AddBonusTemplate"       ,AddBonusTemplate},
 };
 
 extern const char* RT_GetWebServiceAddress();
@@ -1554,7 +1554,7 @@ BOOL  RTNet_CreateAccount (
             sizeof(general_parser)/sizeof(wst_parser),
             pfnOnCompleted,
                            pCI,
-                           RTNET_FORMAT_NETPACKET_4CreateAccount,// Custom data for the HTTP request
+                           RTNET_FORMAT_NETPACKET_5CreateAccount,// Custom data for the HTTP request
                            userName,
                            passWord,
                            email,
@@ -1576,7 +1576,7 @@ BOOL  RTNet_UpdateProfile (
                                    sizeof(general_parser)/sizeof(wst_parser),
                                    pfnOnCompleted,
                                    pCI,
-                                   RTNET_FORMAT_NETPACKET_4UpdateProfile,// Custom data for the HTTP request
+                                   RTNET_FORMAT_NETPACKET_5UpdateProfile,// Custom data for the HTTP request
                                    userName,
                                    passWord,
                                    email,
@@ -1955,7 +1955,7 @@ void	RTNet_Auth_BuildCommand (	char*				Command,
 											const char*		Version)
 {
 
-	sprintf (Command, RTNET_FORMAT_NETPACKET_5Auth,
+	sprintf (Command, RTNET_FORMAT_NETPACKET_6Auth,
 				ServerId, ServerCookie, UserName, DeviceId, Version);
 }
 
@@ -2330,7 +2330,7 @@ BOOL RTNet_GetGeoConfig(
                          sizeof(geo_config_parser)/sizeof(wst_parser),
                          pfnOnCompleted,
                          pCI,
-                         RTNET_FORMAT_NETPACKET_5GetGeoConfig,// Custom data for the HTTP request
+                         RTNET_FORMAT_NETPACKET_6GetGeoConfig,// Custom data for the HTTP request
                          RTNET_PROTOCOL_VERSION,
                          GPSPosString,
                          RT_DEVICE_ID,

@@ -3311,7 +3311,7 @@ static void RTAlerts_popup_alert(int alertId, int iCenterAround)
     gCurrentAlertId = alertId;
     gCurrentCommentId = -1;
 
-    popup = ssd_popup_new("AlertPopUPDlg", "", on_popup_close, SSD_MAX_SIZE, SSD_MIN_SIZE,&position, SSD_ROUNDED_BLACK|SSD_POINTER_LOCATION);
+    popup = ssd_popup_new("AlertPopUPDlg", "", on_popup_close, SSD_MAX_SIZE, SSD_MIN_SIZE,&position, SSD_ROUNDED_BLACK|SSD_POINTER_LOCATION,DIALOG_ANIMATION_FROM_TOP);
 
 
     /* Makes it possible to click in the bottom vicinity of the buttons  */
@@ -3549,7 +3549,7 @@ static void RTAlerts_popup_PingWazer(RTAlert *pAlert)
    gCurrentAlertId = pAlert->iID;
    gCurrentCommentId = -1;
 
-    pingWazerPopUP = ssd_popup_new("PingWazerPopUPDlg", "", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,NULL, SSD_ROUNDED_BLACK|SSD_POINTER_COMMENT);
+    pingWazerPopUP = ssd_popup_new("PingWazerPopUPDlg", "", NULL, SSD_MAX_SIZE, SSD_MIN_SIZE,NULL, SSD_ROUNDED_BLACK|SSD_POINTER_COMMENT,DIALOG_ANIMATION_FROM_TOP);
 
     /* Makes it possible to click in the bottom vicinity of the buttons  */
     ssd_widget_set_click_offsets_ext( pingWazerPopUP, 0, 0, 0, 15 );
@@ -5745,4 +5745,16 @@ BOOL RTAlerts_isAlertArchive(int iId)
       return FALSE;
    else
       return pAlert->bArchive;
+}
+void RTAlerts_Update(int iID, int iNumThumbsUp, BOOL bIsOnRoute, BOOL bIsArchive, int iNumViewed){
+
+   RTAlert *pAlert = RTAlerts_Get_By_ID(iID);
+   if (pAlert == NULL){
+      roadmap_log( ROADMAP_ERROR, "RTAlerts_Update -Alert ID %d not found", iID);
+      return;
+   }
+   pAlert->iNumThumbsUp = iNumThumbsUp;
+   pAlert->bAlertIsOnRoute = bIsOnRoute;
+   pAlert->bArchive = bIsArchive;
+   pAlert->iNumViewed = iNumViewed;
 }

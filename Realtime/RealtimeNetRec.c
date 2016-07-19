@@ -3031,7 +3031,189 @@ const char *AddBonus (/* IN  */   const char*       pNext,
 
      return pNext;
 }
+const char *AddBonusTemplate (/* IN  */   const char*       pNext,
+               /* IN  */   void*             pContext,
+               /* OUT */   BOOL*             more_data_needed,
+               /* OUT */   roadmap_result*   rc)
+{
+	return NULL;
+   //RTBonusTemplate template;
+   //int      iBufferSize;
+   //char     iconName[256];
+   //char     bonusTitle[256];
+   //char     bonusTitleColor[20];
+   //char     bonusTxt[256];
+   //char     bonusTxtColor[20];
+   //char     webExtraParams[256];
 
+   //RealtimeBonus_BonusTemplate_Init(&template);
+
+
+   //// ID
+   //pNext = ReadIntFromString(
+   //                 pNext,         //   [in]      Source string
+   //                 ",",           //   [in,opt]   Value termination
+   //                 NULL,          //   [in,opt]   Allowed padding
+   //                 &template.iID,    //   [out]      Put it here
+   //                 1);  //   [in]      Remove additional termination CHARS
+
+   // if( !pNext || (-1 == template.iID))
+   // {
+   //     roadmap_log( ROADMAP_ERROR, "RTNet::AddBonusTemplate() - Failed to read  ID");
+   //     (*rc) = err_parser_unexpected_data;
+   //     return NULL;
+   // }
+
+   // // Radius
+   // pNext = ReadIntFromString(
+   //                     pNext,         //   [in]      Source string
+   //                     ",",           //   [in,opt]   Value termination
+   //                     NULL,          //   [in,opt]   Allowed padding
+   //                     &template.iRadius,    //   [out]      Put it here
+   //                     1);  //   [in]      Remove additional termination CHARS
+
+   // if( !pNext)
+   // {
+   //         roadmap_log( ROADMAP_ERROR, "RTNet::AddBonusTemplate() - Failed to read radius");
+   //         (*rc) = err_parser_unexpected_data;
+   //         return NULL;
+   // }
+
+   // //   5.   Read points:
+   // pNext = ReadIntFromString(
+   //                      pNext,         //   [in]      Source string
+   //                      ",",           //   [in,opt]   Value termination
+   //                      NULL,          //   [in,opt]   Allowed padding
+   //                      &template.iNumPoints,    //   [out]      Put it here
+   //                      1);  //   [in]      Remove additional termination CHARS
+
+   // if( !pNext)
+   // {
+   //          roadmap_log( ROADMAP_ERROR, "RTNet::AddBonusTemplate() - Failed to read number of points");
+   //          (*rc) = err_parser_unexpected_data;
+   //          return NULL;
+   // }
+
+   // // Icon
+   // iconName[0] = 0;
+   // iBufferSize = sizeof(iconName);
+   // pNext       = ExtractNetworkString(
+   //                   pNext,               // [in]     Source string
+   //                   &iconName[0],  // [out,opt]Output buffer
+   //                   &iBufferSize,        // [in,out] Buffer size / Size of extracted string
+   //                   ",",                 // [in]     Array of chars to terminate the copy operation
+   //                   1);                  // [in]     Remove additional termination chars
+
+   // if( !pNext)
+   // {
+   //          roadmap_log( ROADMAP_ERROR, "RTNet::AddBonusTemplate - Failed to read Icon Name");
+   //          (*rc) = err_parser_unexpected_data;
+   //          return NULL;
+   // }
+   // if (iconName[0])
+   //    template.pIconName = &iconName[0];
+
+   // //Title
+   // bonusTitle[0] = 0;
+   // iBufferSize = sizeof(bonusTitle);
+   // pNext       = ExtractNetworkString(
+   //                   pNext,               // [in]     Source string
+   //                   &bonusTitle[0],  // [out,opt]Output buffer
+   //                   &iBufferSize,        // [in,out] Buffer size / Size of extracted string
+   //                   ",",                 // [in]     Array of chars to terminate the copy operation
+   //                   1);                  // [in]     Remove additional termination chars
+
+   // if( !pNext)
+   // {
+   //          roadmap_log( ROADMAP_ERROR, "RTNet::AddBonusTemplate - Failed to read title");
+   //          (*rc) = err_parser_unexpected_data;
+   //          return NULL;
+   // }
+   // if (bonusTitle[0])
+   //    template.pTitle = &bonusTitle[0];
+
+   // //Title Color
+   // bonusTitleColor[0] = 0;
+   // iBufferSize = sizeof(bonusTitleColor);
+   // pNext       = ExtractNetworkString(
+   //                   pNext,               // [in]     Source string
+   //                   &bonusTitleColor[0],  // [out,opt]Output buffer
+   //                   &iBufferSize,        // [in,out] Buffer size / Size of extracted string
+   //                   ",",                 // [in]     Array of chars to terminate the copy operation
+   //                   1);                  // [in]     Remove additional termination chars
+
+   // if( !pNext)
+   // {
+   //          roadmap_log( ROADMAP_ERROR, "RTNet::AddBonusTemplate - Failed to read title color");
+   //          (*rc) = err_parser_unexpected_data;
+   //          return NULL;
+   // }
+   // if (bonusTitleColor[0])
+   //    template.pTitleColor = &bonusTitleColor[0];
+
+   // //Text
+   // bonusTxt[0] = 0;
+   // iBufferSize = sizeof(bonusTxt);
+   // pNext       = ExtractNetworkString(
+   //                   pNext,               // [in]     Source string
+   //                   &bonusTxt[0],  // [out,opt]Output buffer
+   //                   &iBufferSize,        // [in,out] Buffer size / Size of extracted string
+   //                   ",",                 // [in]     Array of chars to terminate the copy operation
+   //                   1);                  // [in]     Remove additional termination chars
+
+   // if( !pNext)
+   // {
+   //          roadmap_log( ROADMAP_ERROR, "RTNet::AddBonusTemplate - Failed to read Txt");
+   //          (*rc) = err_parser_unexpected_data;
+   //          return NULL;
+   // }
+
+   // if(bonusTxt[0])
+   //    template.pText = &bonusTxt[0];
+
+   // //Text Color
+   // bonusTxtColor[0] = 0;
+   // iBufferSize = sizeof(bonusTxtColor);
+   // pNext       = ExtractNetworkString(
+   //                    pNext,               // [in]     Source string
+   //                    &bonusTxtColor[0],  // [out,opt]Output buffer
+   //                    &iBufferSize,        // [in,out] Buffer size / Size of extracted string
+   //                    ",",                 // [in]     Array of chars to terminate the copy operation
+   //                    1);                  // [in]     Remove additional termination chars
+
+   // if( !pNext)
+   // {
+   //           roadmap_log( ROADMAP_ERROR, "RTNet::AddBonusTemplate - Failed to read Txt color");
+   //           (*rc) = err_parser_unexpected_data;
+   //           return NULL;
+   // }
+   // if (bonusTxtColor[0])
+   //    template.pTextColor = &bonusTxtColor[0];
+
+
+   // //Web Extra params
+   // webExtraParams[0] = 0;
+   // iBufferSize = sizeof(webExtraParams);
+   // pNext       = ExtractNetworkString(
+   //                   pNext,               // [in]     Source string
+   //                   &webExtraParams[0],  // [out,opt]Output buffer
+   //                   &iBufferSize,        // [in,out] Buffer size / Size of extracted string
+   //                   ",\r\n",                 // [in]     Array of chars to terminate the copy operation
+   //                   TRIM_ALL_CHARS);                  // [in]     Remove additional termination chars
+
+   // if( !pNext)
+   // {
+   //          roadmap_log( ROADMAP_ERROR, "RTNet::AddBonusTemplate - Failed to read Web Extra params");
+   //          (*rc) = err_parser_unexpected_data;
+   //          return NULL;
+   // }
+   // if (webExtraParams[0])
+   //    template.pWebDlgExtraParams = &webExtraParams[0];
+
+
+   // RealtimeBonus_BonusTemplate_Add(&template);
+   // return pNext;
+}
 //////////////////////////////////////////////////////////////////////////////////////////////////
 const char *AddCustomBonus (/* IN  */   const char*       pNext,
                /* IN  */   void*             pContext,
@@ -4154,3 +4336,107 @@ void ParseUpdateAccountErrors( int status, roadmap_result*  rc )
 	  }
    }
 }
+const char* UpdateAlert(/* IN  */   const char*       pNext,
+                        /* IN  */   void*             pContext,
+                        /* OUT */   BOOL*             more_data_needed,
+                        /* OUT */   roadmap_result*   rc)
+{
+   int   iID;
+   int   iNumThumbsUp;
+   BOOL  bIsOnRoute;
+   BOOL  bIsArchive;
+   int   iBufferSize;
+   char  tempBuff[5];
+   int   iNumViewed;
+
+   //   Alert ID
+   pNext = ReadIntFromString( pNext,         // [in]     Source string
+                              ",",       // [in,opt] Value termination
+                              NULL,          // [in,opt] Allowed padding
+                              &iID,          // [out]    Put it here
+                              1);  // [in]     Remove additional termination CHARS
+
+   if( !pNext || (-1 == iID))
+   {
+      roadmap_log( ROADMAP_ERROR, "RTNet::OnGeneralResponse::UpdateAlert() - Failed to read  ID");
+      (*rc) = err_parser_unexpected_data;
+      return NULL;
+   }
+
+   //   Number of Thumbs up
+   pNext = ReadIntFromString( pNext,         // [in]     Source string
+                              ",",       // [in,opt] Value termination
+                              NULL,          // [in,opt] Allowed padding
+                              &iNumThumbsUp,          // [out]    Put it here
+                              1);  // [in]     Remove additional termination CHARS
+
+   if( !pNext)
+   {
+      roadmap_log( ROADMAP_ERROR, "RTNet::OnGeneralResponse::UpdateAlert() - Failed to read  Number of thumbs up");
+      (*rc) = err_parser_unexpected_data;
+      return NULL;
+   }
+
+   //    Is On route
+   iBufferSize = sizeof(tempBuff);
+   tempBuff[0] = 0;
+   pNext       = ExtractNetworkString(
+                    pNext,             // [in]     Source string
+                    tempBuff,//   [out]   Output buffer
+                    &iBufferSize,      // [in,out] Buffer size / Size of extracted string
+                    ",",          //   [in]   Array of chars to terminate the copy operation
+                    1);   // [in]     Remove additional termination chars
+
+    if( !pNext)
+    {
+        roadmap_log( ROADMAP_ERROR, "RTNet::OnGeneralResponse::UpdateAlert() - Failed to read isOnRoute flag id=%d", iID);
+        (*rc) = err_parser_unexpected_data;
+        return NULL;
+    }
+
+    if (tempBuff[0] == 'T')
+       bIsOnRoute = TRUE;
+    else
+       bIsOnRoute = FALSE;
+
+   //    Is archive
+   iBufferSize = sizeof(tempBuff);
+   tempBuff[0] = 0;
+   pNext       = ExtractNetworkString(
+                    pNext,             // [in]     Source string
+                    tempBuff,//   [out]   Output buffer
+                    &iBufferSize,      // [in,out] Buffer size / Size of extracted string
+                    ",\r\n",          //   [in]   Array of chars to terminate the copy operation
+                    TRIM_ALL_CHARS);   // [in]     Remove additional termination chars
+
+    if( !pNext)
+    {
+        roadmap_log( ROADMAP_ERROR, "RTNet::OnGeneralResponse::UpdateAlert() - Failed to read isArchive flag id=%d", iID);
+        (*rc) = err_parser_unexpected_data;
+        return NULL;
+    }
+
+    if (tempBuff[0] == 'T')
+       bIsArchive = TRUE;
+    else
+       bIsArchive = FALSE;
+
+    	// num viewed
+    	pNext = ReadIntFromString(pNext,          					//   [in]      Source string
+                                 ",\r\n",           					//   [in,opt]  Value termination
+                                 NULL,          					//   [in,opt]  Allowed padding
+                                 &iNumViewed,	//   [out]     Output value
+                                 TRIM_ALL_CHARS);            					//   [in]      TRIM_ALL_CHARS, DO_NOT_TRIM, or 'n'
+
+    	if (!pNext) {
+    		roadmap_log (ROADMAP_ERROR, "RTNet::OnGeneralResponse::AddAlert() - Failed to read num viewed");
+    		return NULL;
+    	}
+
+    //TEMP_AVI
+   //   Update the alert
+   RTAlerts_Update(iID, iNumThumbsUp, bIsOnRoute, bIsArchive, iNumViewed);
+
+   return pNext;
+}
+

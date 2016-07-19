@@ -317,7 +317,7 @@ void RTAlerts_update_stars(SsdWidget container,  RTAlert *Alert);
 void RTAlerts_Set_Ignore_Max_Distance(BOOL ignore);
 void RTAlerts_show_space_before_desc( SsdWidget containter, RTAlert *pAlert );
 int RTAlertsGetMapProblems (int **outMapProblems, char **outMapProblemsOption[]);
-
+void RTAlerts_Update(int iID, int iNumThumbsUp, BOOL bIsOnRoute, BOOL bIsArchive, int iNumViewed);
 BOOL RTAlerts_isByMe(int iId);
 BOOL RTAlerts_isAlertOnRoute(int iId);
 const char * RTAlerts_Get_Map_AddOn(int alertId, int AddOnIndex);

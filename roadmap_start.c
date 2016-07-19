@@ -445,7 +445,7 @@ static void roadmap_start_trip_reverse (void) {
 
 static void roadmap_start_navigate (void) {
 
-    navigate_main_calc_route ();
+    navigate_main_calc_route (NAV_ROUTE_FLAGS_NONE);
 }
 
 

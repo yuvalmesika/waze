@@ -1,8 +1,8 @@
-/* ssd_choice.h - Combo box widget
+/*  ssd_segmented_control.h- buttons tabs
  *
  * LICENSE:
  *
- *   Copyright 2006 Ehud Shabtai
+ *   Copyright 2006 Avi Ben-Shoshan
  *
  *   This file is part of RoadMap.
  *
@@ -21,20 +21,20 @@
  *   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  */
+#ifndef SSD_SEGMENTED_CONTROL_H_
+#define SSD_SEGMENTED_CONTROL_H_
 
-#ifndef __SSD_CHOICE_LIST_H_
-#define __SSD_CHOICE_LIST_H_
-  
-#include "ssd_widget.h"
+typedef int (*SsdSegmentedControlCallback)(SsdWidget widget, const char *new_value, void *context);
 
-SsdWidget ssd_choice_new (const char *name, const char *title, int count,
-                          const char **labels,
+SsdWidget ssd_segmented_control_new (const char *name, int count, const char **labels,
                           const void **values,
                           int flags,
-                          SsdCallback callback);
+                          SsdSegmentedControlCallback *callback, void *context, int default_button);
+void ssd_segmented_control_set_focus(SsdWidget tab, int item);
 
+SsdWidget ssd_segmented_icon_control_new (const char *name, int count, const char **labels,
+                          const void **values, const char **button_icons,
+                          int flags,
+                          SsdSegmentedControlCallback *callback, void *context, int default_button);
 
-void ssd_choice_update_values ( SsdWidget choice, int count, const char **labels, const void **values );
-
-
-#endif // __SSD_CHOICE_LIST_H_
+#endif /* SSD_SEGMENTED_CONTROL_H_ */

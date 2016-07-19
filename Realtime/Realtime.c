@@ -2171,7 +2171,7 @@ BOOL SendAllMessagesTogether_SendPart2( BOOL bFirstCycle)
 
 
    ExternalPoiDisplayedCount = RealtimeExternalPoiNotifier_DisplayedList_Count();
-   iStatsCount = roadmap_analytics_count();
+   iStatsCount = 0;//roadmap_analytics_count();
 
    if (bFirstCycle) {
       iPoint = 0;
@@ -2251,10 +2251,10 @@ BOOL SendAllMessagesTogether_SendPart2( BOOL bFirstCycle)
    }
 
    //Stats
-   if (!roadmap_analytics_is_empty()){
-      Realtime_SendAllStats( p);
-      p = Packet + strlen(Packet);
-   }
+   //if (!roadmap_analytics_is_empty()){
+      //Realtime_SendAllStats( p);
+    //  p = Packet + strlen(Packet);
+   //}
 
    if( 0 < strlen( Packet)) {
       bRes = RTNet_GeneralPacket( &gs_CI,
@@ -2392,10 +2392,10 @@ BOOL SendAllMessagesTogether_BuildPacket( BOOL bSummaryOnly, char* Packet)
    }
 
    //Stats
-   if (!roadmap_analytics_is_empty()){
+  /* if (!roadmap_analytics_is_empty()){
       Realtime_SendAllStats( p);
       p = Packet + strlen(Packet);
-   }
+   }*/
 
 
    if( 0 < strlen( Packet))
@@ -2423,7 +2423,7 @@ BOOL SendAllMessagesTogether( BOOL bSummaryOnly, BOOL bCalledAfterLogin)
    iNodePointsCount     = gs_pPI->num_nodes;
    iAllowNewRoadsCount  = gs_pPI->num_update_toggles;
    iExternalPoiDisplayedCount = RealtimeExternalPoiNotifier_DisplayedList_Count();
-   iStatsCount = roadmap_analytics_count();
+   iStatsCount = 0;//roadmap_analytics_count();
 
    if (GPSPointsMultipleCycles()) {
       roadmap_log( ROADMAP_WARNING, "SendAllMessagesTogether() - Long data, splitting packets...");
