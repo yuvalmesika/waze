@@ -46,6 +46,11 @@ enum { MATH_DIST_ACTUAL = 0,
 
 #define ROADMAP_VISIBILITY_GAP 5
 
+#ifdef OPENGL
+typedef float  zoom_t;
+#else
+typedef int    zoom_t;
+#endif //OGL_TILE
 enum projection_modes {
    PROJECTION_MODE_NONE,
    PROJECTION_MODE_3D_NON_OGL,

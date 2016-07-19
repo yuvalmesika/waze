@@ -2004,6 +2004,7 @@ BOOL Realtime_SendCurrenScreenEdges()
    return bRes;
 }
 
+
 BOOL SendAllMessagesTogether_SendPart2( BOOL bFirstCycle);
 
 void OnAsyncOperationCompleted_AllTogether_Part1( void* ctx, roadmap_result rc)
@@ -2059,6 +2060,7 @@ BOOL SendAllMessagesTogether_SendPart1( BOOL bSummaryOnly)
                            MESSAGE_MAX_SIZE__AllTogether__dynamic( 0,
                                                                    0,
                                                                    RTTRK_CREATENEWROADS_MAX_TOGGLES,
+                                                                   0,
                                                                    0));
    p = Packet;
 
@@ -2114,7 +2116,7 @@ BOOL SendAllMessagesTogether_SendPart1( BOOL bSummaryOnly)
 
    if( !bSummaryOnly)
    {
-      if ( gs_bShouldSendMapDisplayed)
+      if (TRUE /*gs_bShouldSendMapDisplayed*/)
       {
          // Map displayed
          if( !SendMessage_MapDisplyed( p))
@@ -2163,7 +2165,13 @@ BOOL SendAllMessagesTogether_SendPart2( BOOL bFirstCycle)
    static RTPathInfo    *pOrigPI;
    CB_OnWSTCompleted    pfnOnCompleted;
    BOOL                 bRes;
+   int                  ExternalPoiDisplayedCount;
+   int                  iStatsCount;
    BOOL                 bLastPacket = FALSE;
+
+
+   ExternalPoiDisplayedCount = RealtimeExternalPoiNotifier_DisplayedList_Count();
+   iStatsCount = roadmap_analytics_count();
 
    if (bFirstCycle) {
       iPoint = 0;
@@ -2189,7 +2197,8 @@ BOOL SendAllMessagesTogether_SendPart2( BOOL bFirstCycle)
                            MESSAGE_MAX_SIZE__AllTogether__dynamic( RTTRK_GPSPATH_MAX_POINTS,
                                                                    RTTRK_NODEPATH_MAX_POINTS,
                                                                    0,
-                                                                   0));
+                                                                   ExternalPoiDisplayedCount,
+                                                                   iStatsCount));
 
    p = Packet;
    pi = *pOrigPI;
@@ -2241,6 +2250,11 @@ BOOL SendAllMessagesTogether_SendPart2( BOOL bFirstCycle)
       p = Packet + strlen(Packet);
    }
 
+   //Stats
+   if (!roadmap_analytics_is_empty()){
+      Realtime_SendAllStats( p);
+      p = Packet + strlen(Packet);
+   }
 
    if( 0 < strlen( Packet)) {
       bRes = RTNet_GeneralPacket( &gs_CI,
@@ -2322,7 +2336,7 @@ BOOL SendAllMessagesTogether_BuildPacket( BOOL bSummaryOnly, char* Packet)
 
 	if( !bSummaryOnly)
 	{
-	   if (gs_bShouldSendMapDisplayed)
+	   if (TRUE/*gs_bShouldSendMapDisplayed*/)
 	   {
 	      // Map displayed
 	      if( !SendMessage_MapDisplyed( p))
@@ -2377,6 +2391,13 @@ BOOL SendAllMessagesTogether_BuildPacket( BOOL bSummaryOnly, char* Packet)
       p = Packet + strlen(Packet);
    }
 
+   //Stats
+   if (!roadmap_analytics_is_empty()){
+      Realtime_SendAllStats( p);
+      p = Packet + strlen(Packet);
+   }
+
+
    if( 0 < strlen( Packet))
       return TRUE;
 
@@ -2391,6 +2412,7 @@ BOOL SendAllMessagesTogether( BOOL bSummaryOnly, BOOL bCalledAfterLogin)
    int      iNodePointsCount;
    int      iExternalPoiDisplayedCount;
    int      iAllowNewRoadsCount;
+   int      iStatsCount;
    char*    Buffer = NULL;
    BOOL     bTransactionStarted = FALSE;
 
@@ -2401,6 +2423,7 @@ BOOL SendAllMessagesTogether( BOOL bSummaryOnly, BOOL bCalledAfterLogin)
    iNodePointsCount     = gs_pPI->num_nodes;
    iAllowNewRoadsCount  = gs_pPI->num_update_toggles;
    iExternalPoiDisplayedCount = RealtimeExternalPoiNotifier_DisplayedList_Count();
+   iStatsCount = roadmap_analytics_count();
 
    if (GPSPointsMultipleCycles()) {
       roadmap_log( ROADMAP_WARNING, "SendAllMessagesTogether() - Long data, splitting packets...");
@@ -2413,7 +2436,8 @@ BOOL SendAllMessagesTogether( BOOL bSummaryOnly, BOOL bCalledAfterLogin)
                              MESSAGE_MAX_SIZE__AllTogether__dynamic(iGPSPointsCount,
                                                                     iNodePointsCount,
                                                                     iAllowNewRoadsCount,
-                                                                    iExternalPoiDisplayedCount));
+                                                                    iExternalPoiDisplayedCount,
+                                                                    iStatsCount));
       if( SendAllMessagesTogether_BuildPacket( bSummaryOnly, Buffer))
          bTransactionStarted = RTNet_GeneralPacket(&gs_CI,
                                                    Buffer,
@@ -4281,7 +4305,7 @@ void Realtime_DumpOffline (void)
                                 MESSAGE_MAX_SIZE__AllTogether__dynamic(RTTRK_GPSPATH_MAX_POINTS,
                                                                        RTTRK_NODEPATH_MAX_POINTS,
                                                                        RTTRK_CREATENEWROADS_MAX_TOGGLES,
-                                                                       0));
+                                                                       0,0));
 
       pi = *pOrigPI;
 

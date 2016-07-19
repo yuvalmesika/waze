@@ -401,7 +401,7 @@ void roadmap_option (int argc, char **argv, RoadMapUsage usage) {
 
     RoadMapOptionUsage = usage;
 
-    for (i = 1; i < argc; i++) {
+    for (i = 0; i < argc; i++) {
 
         compare = 1; /* Different. */
 

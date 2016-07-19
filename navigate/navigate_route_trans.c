@@ -1026,6 +1026,204 @@ static void adjust_segment_times (int i_segment, int length, int cross_time)
 }
 
 
+const char *on_route_events (/* IN  */   const char*       data,
+                               /* IN  */   void*             context,
+                               /* OUT */   BOOL*             more_data_needed,
+                               /* OUT */   roadmap_result*   rc)
+{
+	event_on_route_info event;
+	int iBufferSize;
+
+   // Default error for early exit:
+   (*rc) = err_parser_unexpected_data;
+
+	events_on_route_clear_record(&event);
+
+
+//   // route_id
+//   if (!verify_route_id (&data, rc)){
+//   	roadmap_log (ROADMAP_ERROR, "on_route_events() -verify_route_id failed!");
+//   	return data;
+//   }
+//TEMP_AVI
+   // TEMP_AVI
+   data = ReadIntFromString(  data,    //   [in]      Source string
+                                ",",     //   [in,opt]  Value termination
+                                NULL,    //   [in,opt]  Allowed padding
+                                &event.iAltRouteID,	//   [out]     Output value
+                                1);      //   [in]      TRIM_ALL_CHARS, DO_NOT_TRIM, or 'n'
+
+   if (!data) {
+      roadmap_log (ROADMAP_ERROR, "on_route_events() - Failed to read 'alt route ID'");
+      return NULL;
+   }
+
+
+   // Alt ID
+   data = ReadIntFromString(  data,    //   [in]      Source string
+                                ",",     //   [in,opt]  Value termination
+                                NULL,    //   [in,opt]  Allowed padding
+                                &event.iAltRouteID,	//   [out]     Output value
+                                1);      //   [in]      TRIM_ALL_CHARS, DO_NOT_TRIM, or 'n'
+
+   if (!data) {
+      roadmap_log (ROADMAP_ERROR, "on_route_events() - Failed to read 'alt route ID'");
+      return NULL;
+   }
+
+   // Alert ID
+   data = ReadIntFromString(  data,    //   [in]      Source string
+                                ",",     //   [in,opt]  Value termination
+                                NULL,    //   [in,opt]  Allowed padding
+                                &event.iAlertId,	//   [out]     Output value
+                                1);      //   [in]      TRIM_ALL_CHARS, DO_NOT_TRIM, or 'n'
+
+   if (!data) {
+      roadmap_log (ROADMAP_ERROR, "on_route_events() - Failed to read 'alt route ID'");
+      return NULL;
+   }
+
+   // Type
+   data = ReadIntFromString(  data,    //   [in]      Source string
+                              ",",     //   [in,opt]  Value termination
+                              NULL,    //   [in,opt]  Allowed padding
+                              &event.iType,	//   [out]     Output value
+                              1);      //   [in]      TRIM_ALL_CHARS, DO_NOT_TRIM, or 'n'
+
+   if (!data) {
+      roadmap_log (ROADMAP_ERROR, "on_route_events() - Failed to read 'type'");
+      return NULL;
+   }
+
+   // Sub-Type
+   data = ReadIntFromString(  data,    //   [in]      Source string
+                               ",",     //   [in,opt]  Value termination
+                               NULL,    //   [in,opt]  Allowed padding
+                               &event.iSubType,	//   [out]     Output value
+                               1);      //   [in]      TRIM_ALL_CHARS, DO_NOT_TRIM, or 'n'
+
+   if (!data) {
+       roadmap_log (ROADMAP_ERROR, "on_route_events() - Failed to read 'sub-type'");
+       return NULL;
+   }
+
+   //   addon Name
+   iBufferSize = RT_ALERTS_MAX_ADD_ON_NAME;
+   data       = ExtractNetworkString(
+               data,               // [in]     Source string
+               event.sAddOnName,  // [out,opt]Output buffer
+               &iBufferSize,        // [in,out] Buffer size / Size of extracted string
+               ",",                 // [in]     Array of chars to terminate the copy operation
+               1);                  // [in]     Remove additional termination chars
+
+   if( !data)
+   {
+      roadmap_log( ROADMAP_ERROR, "on_route_events - Failed to read AddonName");
+      return NULL;
+   }
+
+   // Severity
+   data = ReadIntFromString(  data,    //   [in]      Source string
+                                ",",     //   [in,opt]  Value termination
+                                NULL,    //   [in,opt]  Allowed padding
+                                &event.iSeverity,	//   [out]     Output value
+                                1);      //   [in]      TRIM_ALL_CHARS, DO_NOT_TRIM, or 'n'
+
+   if (!data) {
+      roadmap_log (ROADMAP_ERROR, "on_route_events() - Failed to read 'severity'");
+      return NULL;
+   }
+
+   // positionStart Longitude
+     data = ReadIntFromString(
+     					data,            //   [in]      Source string
+                    ",",              //   [in,opt]   Value termination
+                    NULL,             //   [in,opt]   Allowed padding
+                    &event.positionStart.longitude,      //   [out]      Put it here
+                    1);               //   [in]      Remove additional termination CHARS
+
+     if( !data || !(*data))
+     {
+        roadmap_log( ROADMAP_ERROR, "on_route_events()  Failed to read positionStart longitude");
+        return NULL;
+     }
+
+     //  positionStart Latitude
+     data = ReadIntFromString(
+     				  data,             //   [in]      Source string
+                 ",",              //   [in,opt]   Value termination
+                 NULL,             //   [in,opt]   Allowed padding
+                 &event.positionStart.latitude,        //   [out]      Put it here
+                 1);               //   [in]      Remove additional termination CHARS
+
+     if( !data || !(*data))
+     {
+        roadmap_log( ROADMAP_ERROR, "on_route_events - Failed to read positionStart latitude");
+        return NULL;
+     }
+
+     // positionEnd Longitude
+     data = ReadIntFromString(
+       					data,            //   [in]      Source string
+                      ",",              //   [in,opt]   Value termination
+                      NULL,             //   [in,opt]   Allowed padding
+                      &event.positionEnd.longitude,      //   [out]      Put it here
+                      1);               //   [in]      Remove additional termination CHARS
+
+     if( !data || !(*data))
+     {
+        roadmap_log( ROADMAP_ERROR, "on_route_events()  Failed to read positionEnd longitude");
+        return NULL;
+     }
+
+     //  positionEnd Latitude
+     data = ReadIntFromString(
+     				data,            //   [in]      Source string
+                 ",",              //   [in,opt]   Value termination
+                 NULL,             //   [in,opt]   Allowed padding
+                 &event.positionEnd.latitude,        //   [out]      Put it here
+                 1);               //   [in]      Remove additional termination CHARS
+
+     if( !data || !(*data))
+     {
+        roadmap_log( ROADMAP_ERROR, "on_route_events - Failed to read positionEnd latitude");
+        return NULL;
+     }
+
+   // PromilleStart
+   data = ReadIntFromString(  data,    //   [in]      Source string
+                                ",",     //   [in,opt]  Value termination
+                                NULL,    //   [in,opt]  Allowed padding
+                                &event.iStart,	//   [out]     Output value
+                                1);      //   [in]      TRIM_ALL_CHARS, DO_NOT_TRIM, or 'n'
+
+   if (!data) {
+      roadmap_log (ROADMAP_ERROR, "on_route_events() - Failed to read 'PromilleStart'");
+      return NULL;
+   }
+   event.iStart = event.iStart / 10;
+
+   // PromilleEnd
+   data = ReadIntFromString(  data,    //   [in]      Source string
+                                ",\r\n",     //   [in,opt]  Value termination
+                                NULL,    //   [in,opt]  Allowed padding
+                                &event.iEnd,	//   [out]     Output value
+                                1);      //   [in]      TRIM_ALL_CHARS, DO_NOT_TRIM, or 'n'
+
+   if (!data) {
+      roadmap_log (ROADMAP_ERROR, "on_route_events() - Failed to read 'PromilleStart'");
+      return NULL;
+   }
+   event.iEnd = event.iEnd / 10;
+
+
+   (*rc) = succeeded;
+
+
+   //events_on_route_add(&event);
+   return data;
+}
+
 const char *on_route_segments (/* IN  */   const char*       data,
                                /* IN  */   void*             context,
                                /* OUT */   BOOL*             more_data_needed,

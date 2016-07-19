@@ -248,7 +248,7 @@ void roadmap_line_points (int line, int *from, int *to) {
 
 #ifdef DEBUG
    if (line < 0 || line >= RoadMapLineActive->LineCount) {
-      roadmap_log (ROADMAP_FATAL, "illegal line index %d", line);
+      roadmap_log (ROADMAP_ERROR, "illegal line index %d", line);
    }
 #endif
 

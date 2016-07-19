@@ -67,6 +67,7 @@ static wst_parser login_parser[] =
    { "UpdateConfig",          on_update_config},
    { "UpgradeClient",         VersionUpgrade},
    { "UserGroups",            UserGroups},
+   { "UpdateInboxCount",		UpdateInboxCount},
    { NULL, OnLoginResponse},
 };
 
@@ -90,7 +91,7 @@ static wst_parser geo_config_parser[] =
 
 static wst_parser general_parser[] =
 {
-   { "RC",              VerifyStatus},
+    { "RC",              VerifyStatus},
    { "AddUser",         AddUser},
    { "AddAlert",        AddAlert},
    { "AddAlertComment", AddAlertComment},
@@ -103,6 +104,7 @@ static wst_parser general_parser[] =
    { "RmRoadInfo",      RmRoadInfo},
    { "BridgeToRes", 		BridgeToRes},
    { "ReportAlertRes",   ReportAlertRes},
+   { "ReportTrafficRes",   ReportTrafficRes},
    { "PostAlertCommentRes", PostAlertCommentRes},
    { "MapUpdateTime", 	    MapUpdateTime},
    { "GeoLocation",         GeoLocation},
@@ -111,6 +113,7 @@ static wst_parser general_parser[] =
    { "RoutingResponse",			on_routing_response },
    { "RoutePoints",				on_route_points },
    { "RouteSegments",			on_route_segments },
+   { "EventOnRoute",			   on_route_events },
    { "SuggestReroute",			on_suggest_reroute },
    { "GeoServerConfig",       on_geo_server_config},
    { "ServerConfig",          on_server_config},
@@ -126,6 +129,11 @@ static wst_parser general_parser[] =
    { "AddExternalPoi",        AddExternalPoi},
    { "RmExternalPoi",         RmExternalPoi},
    { "SetExternalPoiDrawOrder",SetExternalPoiDrawOrder},
+   { "ThumbsUpRes"            ,ThumbsUpRes},
+   { "UpdateAlert"            ,UpdateAlert},
+   { "UpdateInboxCount"       ,UpdateInboxCount},
+   { "ThumbsUpReceived"       ,ThumbsUpReceived},
+   { "AddBonusTemplate"       ,AddBonusTemplate},
 };
 
 extern const char* RT_GetWebServiceAddress();

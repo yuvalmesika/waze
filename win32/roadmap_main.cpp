@@ -1078,9 +1078,10 @@ BOOL InitInstance(HINSTANCE hInstance, LPTSTR lpCmdLine)
 	   roadmap_urlscheme_init( query );
 	}
 
-	char *args[1] = {0};
-
+	//char *args[1] = {"--gps=file://\GPS_track_170716__21_18.csv"};
+char *args[1] = {0};
    roadmap_start_subscribe (roadmap_start_event);
+   //roadmap_start(1, args);
    roadmap_start(0, args);
 
 #if(!defined _ROADGPS && defined FREEMAP_IL)

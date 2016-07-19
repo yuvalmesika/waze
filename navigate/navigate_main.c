@@ -315,9 +315,10 @@ static void navigate_play_sound (void) {
    roadmap_sound_play_list (list);
 }
 
+
 static int navigate_find_track_points (PluginLine *from_line, int *from_point,
                                      	PluginLine *to_line, int *to_point,
-                                     	int *from_direction, int recalc_route) {
+                                     	int *from_direction, int recalc_route, int find_from) {
 
    const RoadMapPosition *position = NULL;
    RoadMapPosition from_position;
@@ -328,6 +329,16 @@ static int navigate_find_track_points (PluginLine *from_line, int *from_point,
    int to_tmp;
    BOOL found_source_road = TRUE;
    int direction = ROUTE_DIRECTION_NONE;
+   RoadMapPosition context_save_pos;
+   zoom_t context_save_zoom;
+   zoom_t zoom = 20;
+
+   if ( roadmap_screen_is_hd_screen() )
+#ifndef IPHONE_NATIVE
+      zoom *= 2;
+#else
+      zoom = 33; //TODO: check this logic
+#endif //IPHONE_NATIVE
 
    *from_point = -1;
 
@@ -370,6 +381,9 @@ static int navigate_find_track_points (PluginLine *from_line, int *from_point,
 
          if (position) NavigateSrcPos = *position;
          direction = ROUTE_DIRECTION_NONE;
+         
+         roadmap_log (ROADMAP_DEBUG, "navigate_find_track_points() - Origin road not determined.");
+         found_source_road = FALSE;
       }
 
 #ifndef J2ME
@@ -381,29 +395,40 @@ static int navigate_find_track_points (PluginLine *from_line, int *from_point,
 
       position = roadmap_trip_get_position ("Departure");
       NavigateSrcPos = *position;
+      
+      roadmap_log (ROADMAP_DEBUG, "navigate_find_track_points() - Origin road not determined.");
+      found_source_road = FALSE;
    }
 
-   if (*from_point == -1) {
+   if (*from_point == -1 && !position)
+   {
 
-      if (!position)
-      {
-         roadmap_messagebox("Error", "Current position is unknown");
-         return -1;
-      }
+
+
+      roadmap_messagebox("Error", "Current position is unknown");
+      return -1;
+   }
+   
+   if (find_from && *from_point == -1) {
+
 
 #ifndef J2ME
       //FIXME remove when navigation will support plugin lines
       editor_plugin_set_override (0);
 #endif
+      roadmap_math_get_context (&context_save_pos, &context_save_zoom);
+      roadmap_math_set_context (position, zoom);
 
       if ((roadmap_navigate_retrieve_line
-               (position, 0, 300, &line, &distance, LAYER_ALL_ROADS) == -1) ||
-            (roadmap_plugin_get_id (&line) != ROADMAP_PLUGIN_ID)) {
+           (position, 0, 300, &line, &distance, LAYER_ALL_ROADS) == -1) ||
+          (roadmap_plugin_get_id (&line) != ROADMAP_PLUGIN_ID)) {
+         
 
 #ifndef J2ME
          //FIXME remove when navigation will support plugin lines
          editor_plugin_set_override (1);
 #endif
+         
 
 			roadmap_log (ROADMAP_ERROR, "Failed to find a valid road near origin %d,%d", position->longitude, position->latitude);
 			from_line->line_id = -1;
@@ -412,12 +437,16 @@ static int navigate_find_track_points (PluginLine *from_line, int *from_point,
       else{
          found_source_road = TRUE;
       }
+      
+      
 
 
 #ifndef J2ME
       //FIXME remove when navigation will support plugin lines
       editor_plugin_set_override (1);
 #endif
+      
+      roadmap_math_set_context (&context_save_pos, context_save_zoom);
 
    }
 
@@ -478,6 +507,8 @@ static int navigate_find_track_points (PluginLine *from_line, int *from_point,
    editor_plugin_set_override (0);
 #endif
 
+   roadmap_math_get_context (&context_save_pos, &context_save_zoom);
+   roadmap_math_set_context (position, zoom);
    if ((roadmap_navigate_retrieve_line
             (position, 0, 600, &line, &distance, LAYER_ALL_ROADS) == -1) ||
          (roadmap_plugin_get_id (&line) != ROADMAP_PLUGIN_ID)) {
@@ -492,8 +523,11 @@ static int navigate_find_track_points (PluginLine *from_line, int *from_point,
       editor_plugin_set_override (1);
 #endif
 
+      roadmap_math_set_context (&context_save_pos, context_save_zoom);
       return 0;
    }
+
+   roadmap_math_set_context (&context_save_pos, context_save_zoom);
 
 #ifndef J2ME
    //FIXME remove when navigation will support plugin lines
@@ -527,17 +561,15 @@ static int navigate_find_track_points (PluginLine *from_line, int *from_point,
 
    return 0;
 }
-
-
 static int navigate_find_track_points_in_scale (PluginLine *from_line, int *from_point,
                                        			PluginLine *to_line, int *to_point,
-                                       			int *from_direction, int recalc_route, int scale) {
+                                       			int *from_direction, int recalc_route, int scale, int find_from) {
 
 	int prev_scale = roadmap_square_get_screen_scale ();
 	int rc;
 
 	roadmap_square_set_screen_scale (scale);
-	rc = navigate_find_track_points (from_line, from_point, to_line, to_point, from_direction, recalc_route);
+	rc = navigate_find_track_points (from_line, from_point, to_line, to_point, from_direction, recalc_route,find_from);
 	roadmap_square_set_screen_scale (prev_scale);
 
 	return rc;
@@ -830,6 +862,7 @@ void navigate_main_on_route (int flags, int length, int track_time,
 
 	NavigateSegments = segments;
 	NavigateNumSegments = num_segment;
+
 	NavigateNumInstSegments = num_instrumented;
 	NavigateDetourSize = 0;
 	NavigateDetourEnd = 0;
@@ -1011,7 +1044,7 @@ static int navigate_main_recalc_route (int delay_message) {
 
    if (navigate_find_track_points_in_scale
          (&from_line, &from_point,
-          &NavigateDestination, &NavigateDestPoint, NULL, 1, 0) < 0) {
+          &NavigateDestination, &NavigateDestPoint, NULL, 1, 0,0) < 0) {
 
       return -1;
    }
@@ -1044,6 +1077,14 @@ static int navigate_main_recalc_route (int delay_message) {
    if (NavigateIsByServer &&
        timeNow < NavigateOfftrackTime + 60 &&
        !RealTimeLoginState ()) {
+		if (from_point == -1) {
+         if (navigate_find_track_points_in_scale
+             (&from_line, &from_point,
+              &NavigateDestination, &NavigateDestPoint, NULL, 1, 0, 1) < 0) {
+                
+                return -1;
+             }
+		}
        flags = (flags | USE_LAST_RESULTS) & ~ALLOW_DESTINATION_CHANGE;
 
 	   navigate_cost_reset ();
@@ -2448,7 +2489,7 @@ int navigate_main_calc_route (void) {
    }
 
    if (navigate_find_track_points_in_scale
-         (&from_line, &from_point, &NavigateDestination, &NavigateDestPoint, &from_direction, 0, 0)) {
+         (&from_line, &from_point, &NavigateDestination, &NavigateDestPoint, &from_direction, 0, 0, !RealTimeLoginState ())) {
       return -1;
    }
 

@@ -73,7 +73,7 @@ static struct roadmap_message_descriptor {
    {ROADMAP_MESSAGE_INFO,    0, 1, 0, "Info --->"},
    {ROADMAP_MESSAGE_WARNING, 0, 1, 0, ":WARNING:"},
    {ROADMAP_MESSAGE_ERROR,   1, 1, 0, "ERROR !!!"},
-   {ROADMAP_MESSAGE_FATAL,   1, 1, 1, "[???????]"},
+   {ROADMAP_MESSAGE_FATAL,   1, 1, 1, "[FATAL]"},
    {0,                       1, 1, 1, "??"}
 };
 

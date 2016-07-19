@@ -165,8 +165,12 @@ static inline void do_assert(char *text) {
 
 #define DEBUG_LEVEL_SET_PATTERN  "2##2"
 
+#if DEBUG
+#define  DEFAULT_LOG_LEVEL      ROADMAP_MESSAGE_DEBUG
+#endif
+#if !DEBUG
 #define  DEFAULT_LOG_LEVEL       ROADMAP_MESSAGE_WARNING
-
+#endif
 #ifdef   WIN32_DEBUG
    ///[BOOKMARK]:[NOTE] - In case of fatal error - halt process and wait for debugger to attach
    #define  FREEZE_ON_FATAL_ERROR

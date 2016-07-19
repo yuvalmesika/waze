@@ -661,6 +661,8 @@ transaction_result on_data_received_( void* data, int size, wst_context_ptr sess
       //   Done?
       if( trans_succeeded == res )
          session->http_parser_state = http_parse_completed;
+	  else
+		roadmap_log( ROADMAP_ERROR, "WST::on_data_received_() - Response not successfull (%s)", session->service);
    }
 
    //   2.   Handle custom data:
