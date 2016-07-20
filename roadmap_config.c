@@ -722,9 +722,9 @@ const char *roadmap_config_get (RoadMapConfigDescriptor *descriptor) {
     if (item != NULL) {
 
         if (item->value != NULL) {
-            return item->value;
+            return WSA_ExtractHttpFromHttps2(item->value); 
         }
-        return item->default_value;
+        return WSA_ExtractHttpFromHttps2(item->default_value);
     }
 
    return "";

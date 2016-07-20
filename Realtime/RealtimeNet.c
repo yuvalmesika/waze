@@ -161,10 +161,10 @@ BOOL  RTNet_Init()
    RTNet_LoadParams();
 #endif   // _DEBUG
 
-   gs_WST = wst_init( gs_WebServiceAddress, gs_WebServiceSecuredAddress, gs_WebServiceSecuredAddressResolved, gs_WebServiceV2Suffix, "binary/octet-stream");
+   gs_WST = wst_init(WSA_ExtractHttpFromHttps2( gs_WebServiceAddress), WSA_ExtractHttpFromHttps2(gs_WebServiceSecuredAddress), WSA_ExtractHttpFromHttps2(gs_WebServiceSecuredAddressResolved), WSA_ExtractHttpFromHttps2(gs_WebServiceV2Suffix), "binary/octet-stream");
    assert( gs_WST);
    
-   gs_WST_Routing = wst_init( gs_WebServiceAddress, gs_WebServiceSecuredAddress, gs_WebServiceSecuredAddressResolved, gs_WebServiceV2Suffix, "binary/octet-stream");
+   gs_WST_Routing = wst_init( WSA_ExtractHttpFromHttps2(gs_WebServiceAddress), WSA_ExtractHttpFromHttps2(gs_WebServiceSecuredAddress), WSA_ExtractHttpFromHttps2(gs_WebServiceSecuredAddressResolved), gs_WebServiceV2Suffix, "binary/octet-stream");
    assert( gs_WST_Routing);
 
    return (NULL != gs_WST);
