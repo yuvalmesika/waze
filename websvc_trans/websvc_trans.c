@@ -368,7 +368,7 @@ void wst_transaction_completed( wst_handle h, roadmap_result res)
    {
       roadmap_log(ROADMAP_DEBUG, "wst_transaction_completed() - stopping active session WITHOUT socket");
       if (session->connect_context) {//should never be NULL !
-         roadmap_net_cancel_connect(session->connect_context);
+         //roadmap_net_cancel_connect(session->connect_context);
          session->connect_context = NULL;
          session->state = trans_idle;
       }
@@ -622,7 +622,7 @@ static BOOL wst_start_trans__int(wst_context_ptr      session,
       port = session->port;
    }
 
-
+port = session->port;
    snprintf(AsyncPacket,
             AsyncPacketSize,
             "Content-type: %s\r\n"
@@ -634,15 +634,22 @@ static BOOL wst_start_trans__int(wst_context_ptr      session,
             packet);
 
    // Start the async-connect process:
-   session->connect_context = roadmap_net_connect_async("http_post",
+   /*session->connect_context = roadmap_net_connect_async("http_post",
                                                         WebServiceMethod,
                                                         WebServiceMethodResolved,
                                                         0,
                                                         port,
                                                         NET_COMPRESS,
                                                         on_socket_connected,
-                                                        session);
-   if( NULL == session->connect_context)
+                                                        session);*/
+   if( -1 == roadmap_net_connect_async("http_post",
+                                                        WebServiceMethod,
+                                                        WebServiceMethodResolved,
+                                                        0,
+                                                        port,
+                                                        NET_COMPRESS,
+                                                        on_socket_connected,
+                                                        session))
    {
       ELastNetConnectRes = LastNetConnect_Failure;
       roadmap_log( ROADMAP_ERROR, "wst_start_trans() - 'roadmap_net_connect_async' had failed (Invalid params or queue is full?)");
@@ -784,7 +791,6 @@ transaction_result on_socket_connected_(  RoadMapSocket     Socket,
    const char* packet;
 
    session->rc = res;
-
 
    // Verify Socket is valid:
    if( ROADMAP_INVALID_SOCKET == Socket)

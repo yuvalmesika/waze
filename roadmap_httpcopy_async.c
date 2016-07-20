@@ -390,7 +390,7 @@ static void roadmap_http_async_prepare_input (HttpAsyncContext *hcontext) {
    hcontext->received_status = 0;
    hcontext->content_length = -1;
    
-   roadmap_main_set_input(&hcontext->io, roadmap_http_async_has_data_cb);
+   //roadmap_main_set_input(&hcontext->io, roadmap_http_async_has_data_cb);
 }
 
 static void roadmap_http_async_prepare_output (HttpAsyncContext *hcontext) {
@@ -434,20 +434,20 @@ static void roadmap_http_async_connect_cb (RoadMapSocket socket, void *context, 
       return;
    }
 
-   if ( hcontext->data != NULL )
-   {
-      if ( roadmap_io_write( &hcontext->io, hcontext->data, hcontext->data_len, 0 ) == -1) {
+   //if ( hcontext->data != NULL )
+   //{
+    /*  if ( roadmap_io_write( &hcontext->io, hcontext->data, hcontext->data_len, 0 ) == -1) {
          roadmap_io_close(&hcontext->io);
          callbacks->error(hcontext->cb_context, 1, "Error sending request.");
          free (hcontext);
          return;
-      }
+      }*/
    if (roadmap_io_write(&hcontext->io, "\r\n", 2, 0) == -1) {
       roadmap_io_close(&hcontext->io);
       callbacks->error(hcontext->cb_context, 1, "Error sending request.");
       free (hcontext);
       return;
-   }
+   //}
 
    }
    
@@ -456,7 +456,8 @@ static void roadmap_http_async_connect_cb (RoadMapSocket socket, void *context, 
    else
       roadmap_http_async_prepare_output(hcontext);
    
-   callbacks->progress (hcontext->cb_context, NULL, 0);
+
+   //callbacks->progress (hcontext->cb_context, NULL, 0);
 }
 
 HttpAsyncContext * roadmap_http_async_post_file( RoadMapHttpAsyncCallbacks *callbacks, void *context,
@@ -625,7 +626,7 @@ HttpAsyncContext * roadmap_http_async_copy (RoadMapHttpAsyncCallbacks *callbacks
 	hcontext->flags = HTTPCOPY_FLAG_NONE;
 	
    if (roadmap_net_connect_async("http_get", source, source, update_time, 80, 0,
-            roadmap_http_async_connect_cb, hcontext) == NULL) {
+            roadmap_http_async_connect_cb, hcontext) == -1) {
       callbacks->error(context, 1, "Can't create http connection.");
       free (hcontext);
       return NULL;

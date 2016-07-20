@@ -469,9 +469,9 @@ void roadmap_general_settings_show(void) {
       const char ** prompts_labels = roadmap_prompts_get_labels();
       int prompts_count = roadmap_prompts_get_count();
 
-      const void ** tts_voices_values = tts_ui_voices_values();
-      const char ** tts_voices_labels = tts_ui_voices_labels();
-      int tts_voices_count = tts_ui_count();
+      //const void ** tts_voices_values = tts_ui_voices_values();
+      //const char ** tts_voices_labels = tts_ui_voices_labels();
+      //int tts_voices_count = tts_ui_count();
 
 
       dialog = ssd_dialog_new (title, roadmap_lang_get(title), on_close_dialog,
@@ -538,7 +538,7 @@ void roadmap_general_settings_show(void) {
          ssd_widget_add (container, box);
       }
       //////////// TTS Voices /////////////
-      if ( tts_voices_count > 0 )
+    /*  if ( tts_voices_count > 0 )
       {
          box = ssd_container_new ("TTS Voices group", NULL, SSD_MAX_SIZE, height,
                                   SSD_WIDGET_SPACE|SSD_END_ROW|tab_flag);
@@ -563,7 +563,7 @@ void roadmap_general_settings_show(void) {
                                          (const void **)tts_voices_values,
                                          SSD_ALIGN_RIGHT, NULL ) );
          ssd_widget_add (container, box);
-      }
+      }*/
 
       ssd_widget_add(dialog, container);
 

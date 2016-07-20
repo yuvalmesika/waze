@@ -36,7 +36,7 @@
 
 #include <winsock.h>
 struct roadmap_socket_t;
-typedef struct roadmap_socket_t *RoadMapSocket;
+typedef SOCKET RoadMapSocket;
 //#define ROADMAP_INVALID_SOCKET INVALID_SOCKET
 #define ROADMAP_INVALID_SOCKET ((RoadMapSocket) NULL)
 #elif defined J2ME
