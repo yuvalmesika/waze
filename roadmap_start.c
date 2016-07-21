@@ -3164,7 +3164,7 @@ void roadmap_start (int argc, char **argv) {
    roadmap_history_initialize  ();
    roadmap_adjust_initialize   ();
    roadmap_device_initialize   ();
-   roadmap_power_initialize    ();
+   //roadmap_power_initialize    ();
    roadmap_login_initialize	   ();
    roadmap_map_settings_init   ();
    roadmap_download_settings_init ();

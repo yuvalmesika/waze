@@ -408,6 +408,7 @@ const char *roadmap_file_map (const char *set,
          strcat (full_name, name);
 
          full_name_unicode = ConvertToWideChar(full_name, CP_UTF8);
+		 roadmap_log (ROADMAP_WARNING, "roadmap_file_map %s",full_name);
 #ifdef UNDER_CE
          context->hFile = CreateFileForMapping(
             full_name_unicode,

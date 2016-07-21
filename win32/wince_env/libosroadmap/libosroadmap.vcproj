@@ -234,7 +234,7 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				PreprocessorDefinitions="DEBUG;_WIN32_WCE=$(CEVER);$(CePlatform);ARM;_ARM_;ARMV4;UNDER_CE=$(CEVER);UNICODE;TOUCH_SCREEN"
+				PreprocessorDefinitions="DEBUG;_WIN32_WCE=$(CEVER);$(CePlatform);ARM;_ARM_;ARMV4;UNDER_CE=$(CEVER);UNICODE;TOUCH_SCREEN;EMBEDDED_CE"
 				RuntimeLibrary="1"
 				UsePrecompiledHeader="0"
 				PrecompiledHeaderFile="$(PlatformName)\$(ConfigurationName)/libosroadmap.pch"
@@ -3778,6 +3778,10 @@
 			</File>
 			<File
 				RelativePath="..\..\..\roadmap_internet.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\roadmap_net.h"
 				>
 			</File>
 		</Filter>
