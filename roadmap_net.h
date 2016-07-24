@@ -35,7 +35,7 @@
 #if defined (_WIN32) && !defined (__SYMBIAN32__)
 
 #include <winsock.h>
-struct roadmap_socket_t;
+//struct roadmap_socket_t;
 typedef SOCKET RoadMapSocket;
 //#define ROADMAP_INVALID_SOCKET INVALID_SOCKET
 #define ROADMAP_INVALID_SOCKET ((RoadMapSocket) NULL)
