@@ -1248,7 +1248,7 @@
 			/>
 			<DeploymentTool
 				ForceDirty="-1"
-				RemoteDirectory="\ResidentFlash\Waze"
+				RemoteDirectory="\storage card\"
 				RegisterOutput="0"
 				AdditionalFiles=""
 			/>
@@ -1843,7 +1843,7 @@
 			/>
 			<DeploymentTool
 				ForceDirty="-1"
-				RemoteDirectory="\ResidentFlash\Waze"
+				RemoteDirectory="\storage card"
 				RegisterOutput="0"
 				AdditionalFiles=""
 			/>

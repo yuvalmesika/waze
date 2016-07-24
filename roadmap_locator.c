@@ -99,7 +99,7 @@ static RoadMapConfigDescriptor RoadMapConfigStaticCounty =
 static void roadmap_locator_configure (void) {
 
    roadmap_config_declare
-       ("preferences", &RoadMapConfigStaticCounty, "0", NULL);
+       ("preferences", &RoadMapConfigStaticCounty, "77001", NULL);
 
    if (RoadMapCountyCache == NULL) {
 

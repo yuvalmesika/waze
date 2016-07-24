@@ -187,7 +187,7 @@ void  RTNet_Term()
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 static int wst_flags_for_commnand (const char* command) {
-   //return WEBSVC_FLAG_V2;
+   
    if (RT_IsWebServiceSSLEnabled() && RT_IsWebServiceSecuredCommand(command))
    {
       if (RT_IsWebServiceV2Command(command))
@@ -2651,6 +2651,14 @@ BOOL RTNet_RequestRoute(LPRTConnectionInfo   pCI,
    				  ;
 
   	szPacket = malloc (iPacketSize);
+  /*snprintf (szPacket, iPacketSize,
+   			 "RoutingRequest,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%s,%s,%d,%d,%d,%d,%d,%s,%s,T,T,%d",
+   			 iRoute, iType, iTripId, nMaxRoutes, nMaxSegments, nMaxPoints,
+   			 posFrom.longitude, posFrom.latitude, iFrSegmentId, iFrNodeId[0], iFrNodeId[1],
+   			 szPackedFrStreet, bFrAllowBidi ? "T" : "F",
+   			 posTo.longitude, posTo.latitude, iToSegmentId, iToNodeId[0], iToNodeId[1],
+   			 szPackedToStreet, bToAllowBidi ? "T" : "F",
+   			 nOptions*2);*/
 
    snprintf (szPacket, iPacketSize,
    			 "UID,%d,%s\r\n%s,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%s,%s,%d,%d,%d,%d,%d,%s,%s,T,T,%d",

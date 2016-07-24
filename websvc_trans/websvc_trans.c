@@ -17,7 +17,6 @@
  *   along with RoadMap; if not, write to the Free Software
  *   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
-
 #include <stdio.h>
 #include <string.h>
 #include <stdarg.h>
@@ -131,7 +130,7 @@ static void wst_context_reset( wst_context_ptr this, int use_ack)
 /* 6*/   this->async_receive_started= FALSE;
 /* 7*/   this->last_receive_time        = 0;
 // 8     this->queue    !NOT MODIFYING QUEUE!
-/* 9*/   //this->context              = NULL;
+/* 9*/   this->active_item.context              = NULL;
    this->retries = 0;
 
 /* Send:          */
@@ -197,7 +196,7 @@ static void  wst_context_load(wst_context_ptr         this,
                               void*                   context,
                               char*                   packet)
 {
-   wst_context_reset( this, (flags & WEBSVC_FLAG_V2));
+   wst_context_reset( this, 0);//(flags & WEBSVC_FLAG_V2));
 
 //   this->action            = action;
 //   this->parsers           = parsers;
@@ -577,9 +576,9 @@ static BOOL wst_start_trans__int(wst_context_ptr      session,
       roadmap_log( ROADMAP_ERROR, "wst_start_trans() - retry # %d", session->retries); //TODO: reduce log level
       session->state             = trans_active;
       
-      if (flags & WEBSVC_FLAG_V2)
+      /*if (flags & WEBSVC_FLAG_V2)
          session->http_parser_state    = http_not_acked;
-      else
+      else*/
          session->http_parser_state    = http_not_parsed;
    }
    
@@ -588,7 +587,7 @@ static BOOL wst_start_trans__int(wst_context_ptr      session,
    AsyncPacketSize= HTTP_HEADER_MAX_SIZE + strlen(packet) + 10;
    AsyncPacket    = ebuffer_alloc( &(session->packet), AsyncPacketSize);
 
-   if ((flags & WEBSVC_FLAG_SECURED) && !(flags & WEBSVC_FLAG_V2)) {
+   /*if ((flags & WEBSVC_FLAG_SECURED) && !(flags & WEBSVC_FLAG_V2)) {
       snprintf(WebServiceMethod,
                WST_WEBSERVICE_METHOD_MAX_SIZE,
                "%s/%s", session->secured_service, action);
@@ -612,7 +611,7 @@ static BOOL wst_start_trans__int(wst_context_ptr      session,
                WST_WEBSERVICE_METHOD_MAX_SIZE,
                "%s%s/%s", session->secured_service_resolved, session->service_v2_suffix, action);
       port = session->secured_port;
-   } else {
+   } else {*/
       snprintf(WebServiceMethod,
                WST_WEBSERVICE_METHOD_MAX_SIZE,
                "%s/%s", session->service, action);
@@ -620,7 +619,7 @@ static BOOL wst_start_trans__int(wst_context_ptr      session,
                WST_WEBSERVICE_METHOD_MAX_SIZE,
                "%s/%s", session->service, action);
       port = session->port;
-   }
+   //}
 
 port = session->port;
    snprintf(AsyncPacket,
@@ -641,7 +640,8 @@ port = session->port;
                                                         port,
                                                         NET_COMPRESS,
                                                         on_socket_connected,
-                                                        session);*/
+                                                        session);
+   if (session->connect_context ==NULL){*/
    if( -1 == roadmap_net_connect_async("http_post",
                                                         WebServiceMethod,
                                                         WebServiceMethodResolved,
@@ -653,7 +653,7 @@ port = session->port;
    {
       ELastNetConnectRes = LastNetConnect_Failure;
       roadmap_log( ROADMAP_ERROR, "wst_start_trans() - 'roadmap_net_connect_async' had failed (Invalid params or queue is full?)");
-      wst_context_reset( session, (flags & WEBSVC_FLAG_V2));
+      wst_context_reset( session, 0);//(flags & WEBSVC_FLAG_V2));
       return FALSE;
    }
    ELastNetConnectRes = LastNetConnect_Success;
@@ -1082,6 +1082,24 @@ static transaction_result OnHTTPAck( cyclic_buffer_ptr CB, http_parsing_state* p
       
    return trans_succeeded;
 }
+char *strignorecase(const char *str, const char *pattern) {
+    size_t i;
+
+    if (!*pattern)
+        return (char*)str;
+
+    for (; *str; str++) {
+        if (toupper(*str) == toupper(*pattern)) {
+            for (i = 1;; i++) {
+                if (!pattern[i])
+                    return (char*)str;
+                if (toupper(str[i]) != toupper(pattern[i]))
+                    break;
+            }
+        }
+    }
+    return NULL;
+}
 
 //   General HTTP packet parser
 //   Used prior to any response by all response-cases
@@ -1103,7 +1121,7 @@ static transaction_result OnHTTPHeader( cyclic_buffer_ptr CB, http_parsing_state
       ToLowerN( (char*)buffer, (size_t)(szDelimiter - (char*)buffer));
 
       //   Verify we have the '200 OK' status:
-      if( !strstr( buffer, "200 ok"))
+      if( !strignorecase( buffer, "200 ok"))
       {
          roadmap_log( ROADMAP_ERROR, "WST::OnHTTPHeader() - Response not successfull (%s)", buffer);
          return trans_failed;         //   Quit reading loop

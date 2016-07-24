@@ -390,7 +390,7 @@ static void roadmap_http_async_prepare_input (HttpAsyncContext *hcontext) {
    hcontext->received_status = 0;
    hcontext->content_length = -1;
    
-   //roadmap_main_set_input(&hcontext->io, roadmap_http_async_has_data_cb);
+   roadmap_main_set_input(&hcontext->io, roadmap_http_async_has_data_cb);
 }
 
 static void roadmap_http_async_prepare_output (HttpAsyncContext *hcontext) {
@@ -416,7 +416,7 @@ static void roadmap_http_async_connect_cb (RoadMapSocket socket, void *context, 
    hcontext->io.subsystem = ROADMAP_IO_NET;
    hcontext->io.context = context;
    hcontext->io.os.socket = socket;
-
+   
    if ( ( strlen( header ) + 3 ) /* [header"\r\n\0"]*/ > sizeof( hcontext->header_buffer ) )
    {
       callbacks->error( hcontext->cb_context, 1, "Error sending request. Header text is too long." );
@@ -434,14 +434,15 @@ static void roadmap_http_async_connect_cb (RoadMapSocket socket, void *context, 
       return;
    }
 
-   //if ( hcontext->data != NULL )
-   //{
-    /*  if ( roadmap_io_write( &hcontext->io, hcontext->data, hcontext->data_len, 0 ) == -1) {
+   if ( hcontext->data != NULL )
+   {
+      if ( roadmap_io_write( &hcontext->io, hcontext->data, hcontext->data_len, 0 ) == -1) {
          roadmap_io_close(&hcontext->io);
          callbacks->error(hcontext->cb_context, 1, "Error sending request.");
          free (hcontext);
          return;
-      }*/
+      }
+   }
    if (roadmap_io_write(&hcontext->io, "\r\n", 2, 0) == -1) {
       roadmap_io_close(&hcontext->io);
       callbacks->error(hcontext->cb_context, 1, "Error sending request.");
@@ -457,7 +458,7 @@ static void roadmap_http_async_connect_cb (RoadMapSocket socket, void *context, 
       roadmap_http_async_prepare_output(hcontext);
    
 
-   //callbacks->progress (hcontext->cb_context, NULL, 0);
+   callbacks->progress (hcontext->cb_context, NULL, 0);
 }
 
 HttpAsyncContext * roadmap_http_async_post_file( RoadMapHttpAsyncCallbacks *callbacks, void *context,
@@ -498,7 +499,7 @@ HttpAsyncContext * roadmap_http_async_post_file( RoadMapHttpAsyncCallbacks *call
    }
    
    if ( roadmap_net_connect_async( "http_post", source, source, 0, 80, 0,
-                                  roadmap_http_async_connect_cb, hcontext ) == NULL )
+                                  roadmap_http_async_connect_cb, hcontext ) == -1 )
    {
       callbacks->error(context, 1, "Can't create http connection.");
       free (hcontext);
@@ -585,7 +586,7 @@ HttpAsyncContext * roadmap_http_async_post( RoadMapHttpAsyncCallbacks *callbacks
       strncpy( hcontext->header_buffer, header, sizeof( hcontext->header_buffer ) );
 
    if ( roadmap_net_connect_async( "http_post", source, source, 0, 80, 0,
-               roadmap_http_async_connect_cb, hcontext ) == NULL )
+               roadmap_http_async_connect_cb, hcontext ) == -1 )
       {
          callbacks->error(context, 1, "Can't create http connection.");
          free (hcontext);

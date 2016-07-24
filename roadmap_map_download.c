@@ -85,7 +85,7 @@ static void dlmap_initialize (void) {
 	
 	if (first_time) {
 		roadmap_config_declare
-	      ("preferences", &DlMapSourceConf,  "", NULL);
+	      ("preferences", &DlMapSourceConf,  "http://54.232.86.149:80/1.1", NULL);
 
       roadmap_config_declare
          ("preferences", &DlMapEnabledConf,  "0", NULL);
@@ -172,9 +172,9 @@ void DlMapCallbackProgress (void *context, char *data, size_t size) {
 			dlmap_close (0);
 		}
 		DlMapProgress += written;
-		//if (DlMapProgress * 10 / DlMapTotalSize > (DlMapProgress - (int)written) * 10 / DlMapTotalSize) {
-//			roadmap_screen_refresh ();
-//		}
+		if (DlMapProgress * 10 / DlMapTotalSize > (DlMapProgress - (int)written) * 10 / DlMapTotalSize) {
+			roadmap_screen_refresh ();
+		}
 	}
 }
 
@@ -259,3 +259,4 @@ void roadmap_map_download_region (const char *region_code, int fips) {
 	dlmap_initialize ();
 	DlContext = roadmap_http_async_copy (&cbs, NULL, url, 0);
 }
+

@@ -378,7 +378,7 @@ SsdWidget create_quick_setting_menu(){
 
       //View 2D/3D
    #ifndef OPENGL
-      if ( !roadmap_screen_is_hd_screen() )
+      if ( roadmap_screen_is_hd_screen() )
       {
    #endif
          if (roadmap_screen_get_view_mode() == VIEW_MODE_2D)

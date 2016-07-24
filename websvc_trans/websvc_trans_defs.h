@@ -41,7 +41,7 @@
 #define  HTTP_HEADER_MAX_SIZE                (400)
 #define  WST_WEBSERVICE_METHOD_MAX_SIZE      (0xFF)
 #define  WST_MIN_PARSERS_COUNT               ( 1)
-#define  WST_MAX_PARSERS_COUNT               (45)
+#define  WST_MAX_PARSERS_COUNT               (55)
 
 #define WEBSVC_FLAG_SECURED                  0x0001
 #define WEBSVC_FLAG_V2                       0x0002

@@ -3780,6 +3780,10 @@
 				RelativePath="..\..\..\roadmap_internet.h"
 				>
 			</File>
+			<File
+				RelativePath="..\..\..\roadmap_net.h"
+				>
+			</File>
 		</Filter>
 	</Files>
 	<Globals>

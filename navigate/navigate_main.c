@@ -2429,7 +2429,8 @@ void navigate_get_next_line
       if (navigate_main_recalc_route (0) == -1) {
 
 			// Why is that needed? Causes a redraw which focuses on last trip (departure?)
-         //roadmap_trip_start ();
+		  
+         roadmap_trip_start ();
          return;
       }
 		num_segments = navigate_num_segments ();

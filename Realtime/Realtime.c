@@ -4372,7 +4372,7 @@ void OnAsyncOperationCompleted_RequestRoute (void* ctx, roadmap_result rc)
       navigate_route_on_response_error();
    }
 
-   //OnTransactionCompleted( ctx, rc);
+   OnTransactionCompleted( ctx, rc);
 }
 
 BOOL Realtime_RequestRoute(int						iRoute,

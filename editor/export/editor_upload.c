@@ -565,7 +565,7 @@ int editor_upload_auto (const char *filename,
 		url = roadmap_config_get (&RoadMapConfigTarget);
 
 	// Start the async-connect process:
-	if( NULL == roadmap_net_connect_async("http_post",url,url,0,80,0,editor_upload_on_socket_connected, upload_context))
+	if( -1 == roadmap_net_connect_async("http_post",url,url,0,80,0,editor_upload_on_socket_connected, upload_context))
 	{
 		free(upload_context->custom_content_type);
 		free(upload_context->file_name);

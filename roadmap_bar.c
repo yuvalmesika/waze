@@ -48,6 +48,7 @@
 
 #include "Realtime/RealtimeAlerts.h"
 
+#define PLAY_CLICK
 #define MAX_STATES     40
 #define MAX_CONDITIONS 9
 #define TOP_BAR_IMAGE 		"top_bar_background"

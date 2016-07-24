@@ -25,7 +25,6 @@
 
 #define  INVALID_WEBSVC_HANDLE      (NULL)
 #define  WEBSVC_NO_TYPE             (-1)
-
 wst_handle  wst_init( const char* service_name, const char* secured_service_name,
                      const char* secured_service_name_resolved,
                      const char* service_v2_suffix, const char* content_type);

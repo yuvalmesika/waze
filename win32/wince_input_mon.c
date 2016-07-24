@@ -178,8 +178,10 @@ DWORD WINAPI SerialMonThread(LPVOID lpParam) {
 				roadmap_log (ROADMAP_INFO,
 						"Com port is closed.");
 			} else {
+#ifndef DEBUG
 				roadmap_log (ROADMAP_ERROR,
 						"Error in serial_read: %d", error_code);
+#endif
 			}
 		
 			/* Ok, we got some error. We continue to the same path

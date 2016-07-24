@@ -116,17 +116,17 @@ void roadmap_res_download_init (void) {
 
    roadmap_config_declare ("preferences", &RoadMapConfigDownloadLangUrl, "http://waze-client-resources.s3.amazonaws.com/langs/", NULL);
 
-   roadmap_config_declare ("preferences", &RoadMapConfigDownloadCountrySpecificImagesUrl, "", NULL);
+   roadmap_config_declare ("preferences", &RoadMapConfigDownloadCountrySpecificImagesUrl, "1.0", NULL);
 
-   roadmap_config_declare ("preferences", &RoadMapConfigDownloadImageUrl_Ver, "", NULL);
+   roadmap_config_declare ("preferences", &RoadMapConfigDownloadImageUrl_Ver, "1.0", NULL);
 
-   roadmap_config_declare ("preferences", &RoadMapConfigDownloadCountrySpecificImagesUrl_Ver, "", NULL);
+   roadmap_config_declare ("preferences", &RoadMapConfigDownloadCountrySpecificImagesUrl_Ver, "1.0", NULL);
 
-   roadmap_config_declare ("preferences", &RoadMapConfigDownloadSoundUrl_Ver, "", NULL);
+   roadmap_config_declare ("preferences", &RoadMapConfigDownloadSoundUrl_Ver, "1.0", NULL);
 
    roadmap_config_declare ("preferences", &RoadMapConfigDownloadConfigUrl_Ver, "", NULL);
 
-   roadmap_config_declare ("preferences", &RoadMapConfigDownloadLangUrl_Ver, "", NULL);
+   roadmap_config_declare ("preferences", &RoadMapConfigDownloadLangUrl_Ver, "1.0", NULL);
 
 
    Initialized = TRUE;

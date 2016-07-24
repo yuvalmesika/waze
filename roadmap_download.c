@@ -1021,7 +1021,7 @@ void roadmap_download_initialize (void) {
    roadmap_config_declare
       ("preferences",
       &RoadMapConfigSource,
-      "" FREEMAP_FILE_NAME_FORMAT,
+      "http://54.232.86.149/1.1" FREEMAP_FILE_NAME_FORMAT,
       NULL);
 
    roadmap_config_declare

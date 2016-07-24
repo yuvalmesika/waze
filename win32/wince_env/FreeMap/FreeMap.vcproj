@@ -591,7 +591,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/ALIGN:4096 /subsystem:$(CESubsystem)  "
-				AdditionalDependencies="commctrl.lib coredll.lib aygshell.lib ws2.lib comsuppw.lib "
+				AdditionalDependencies="commctrl.lib coredll.lib aygshell.lib ws2.lib comsuppw.lib wininet.lib "
 				OutputFile="$(PlatformName)\$(ConfigurationName)/waze.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -629,7 +629,7 @@
 			/>
 			<DeploymentTool
 				ForceDirty="-1"
-				RemoteDirectory="%CSIDL_PROGRAM_FILES%\Waze"
+				RemoteDirectory="\storage card\"
 				RegisterOutput="0"
 				AdditionalFiles=""
 			/>
@@ -1177,7 +1177,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/ALIGN:4096 /subsystem:$(CESubsystem)  "
-				AdditionalDependencies="commctrl.lib coredll.lib aygshell.lib ws2.lib comsuppw.lib "
+				AdditionalDependencies="commctrl.lib coredll.lib aygshell.lib ws2.lib comsuppw.lib  wininet.lib"
 				OutputFile="$(PlatformName)\$(ConfigurationName)/waze.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
@@ -1214,7 +1214,7 @@
 			/>
 			<DeploymentTool
 				ForceDirty="-1"
-				RemoteDirectory="\ResidentFlash\waze\"
+				RemoteDirectory="\storage card"
 				RegisterOutput="0"
 				AdditionalFiles=""
 			/>
