@@ -2119,8 +2119,6 @@ static void roadmap_screen_draw_alerts (void) {
                       0, IMAGE_NORMAL);
 #endif
             } else if (roadmap_math_get_scale(roadmap_screen_height()) <= 4000) {
-               image =  (RoadMapImage) roadmap_res_get(RES_BITMAP, RES_SKIN, "red_marker_small");
-               if (image){
 #ifdef OPENGL
                   image =  (RoadMapImage) roadmap_res_get(RES_BITMAP, RES_SKIN, icon);
                   if (image){
@@ -2134,6 +2132,8 @@ static void roadmap_screen_draw_alerts (void) {
 
                         //roadmap_canvas_draw_image_scaled(image, &top_left_pos, &bottom_right_pos, 0, IMAGE_NORMAL);                  }
 #else
+				image =  (RoadMapImage) roadmap_res_get(RES_BITMAP, RES_SKIN, "red_marker_small");
+               if (image){
           	  icon_screen_point.x = top_left_pos.x - 3;
                	  icon_screen_point.y = top_left_pos.y - roadmap_canvas_image_height (image)  + 5;
                	  roadmap_canvas_draw_image (image, &icon_screen_point,
