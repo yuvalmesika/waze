@@ -153,6 +153,7 @@ BOOL RealtimeExternalPoi_FeatureEnabled (void) {
    if (0 == strcmp (roadmap_config_get (&RoadMapConfigExternalPoisFeatureEnabled), "yes")){
       return TRUE;
    }
+   return FALSE;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -163,7 +164,7 @@ BOOL RealtimeExternalPoi_PopupEnabled (void) {
    return FALSE;
 #endif
 
-   if (RealtimeExternalPoi_FeatureEnabled() && !strcmp (roadmap_config_get (&RoadMapConfigPopUpPromotionEnabled), "yes"))
+   if (RealtimeExternalPoi_FeatureEnabled() && !strcmp (roadmap_config_get (&RoadMapConfigPopUpPromotionEnabled), "no"))
       return TRUE;
    else
       return FALSE;
