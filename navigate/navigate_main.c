@@ -176,6 +176,9 @@ static RoadMapConfigDescriptor ShowDisclaimerCfg =
 static RoadMapConfigDescriptor DriveOnLeftSide =
                   ROADMAP_CONFIG_ITEM("Navigation", "Drive on Left");
 
+int roadmap_navigation_guidance_is_on (void);
+//void navigation_home (void);
+//void navigation_work (void);
 
 static void set_last_nav_time ();
 
@@ -190,6 +193,7 @@ static int NavigateDisplayALtRoute = 0;
 static int NavigateAltId[MAX_ALT_ROUTES] = {-1, -1, -1};
 static int NavigateDisplayedAltId = 0;
 static int NavigateTrackFollowGPS = 0;
+static int RoadMapNavigationGuidance = 0;
 static BOOL CalculatingRoute = FALSE;
 static BOOL ReCalculatingRoute = FALSE;
 static RoadMapPen NavigatePen[2];
@@ -1114,6 +1118,9 @@ static void navigate_main_format_messages (void) {
    char unit_str[20];
    int ETA;
    RoadMapGpsPosition pos;
+   	timeStruct ETA_struct;
+   	timeStruct curTime = navigate_main_get_current_time();
+   	timeStruct timeToDest;
 
    (*NextMessageUpdate) ();
 
@@ -1133,23 +1140,20 @@ static void navigate_main_format_messages (void) {
    navigate_main_get_distance_str(distance_to_destination, &str[0], sizeof(str), &unit_str[0], sizeof(unit_str));
 
    roadmap_message_set ('D', "%s %s", str, unit_str);
-   if (!showETA){
+   //if (!showETA){
  		sprintf (str, "%d %s", ETA /60, roadmap_lang_get("min."));
- 		roadmap_message_unset('@');
+ 	//	roadmap_message_unset('@');
       roadmap_message_set ('T', str);
-   }else{
-   	timeStruct ETA_struct;
-   	timeStruct curTime = navigate_main_get_current_time();
-   	timeStruct timeToDest;
+   //}else{
    	timeToDest.hours = ETA / 3600;
 	   timeToDest.minutes =  (ETA % 3600) / 60;
 	   timeToDest.seconds = ETA % 60;
 	   ETA_struct = navigate_main_calculate_eta(curTime,timeToDest);
  	   sprintf (str, "%s %d:%02d",roadmap_lang_get("ETA"), ETA_struct.hours, ETA_struct.minutes);
- 	   roadmap_message_unset('T');
+ 	//   roadmap_message_unset('T');
  	   roadmap_message_set ('@', str); // 1 hr. 25 min.
 
-   }
+   //}
    roadmap_navigate_get_current (&pos, NULL, NULL);
    roadmap_message_set ('S', "%3d %s",
          roadmap_math_to_speed_unit(pos.speed),
@@ -1261,10 +1265,10 @@ void navigate_main_on_route (int flags, int length, int track_time,
    navigate_bar_initialize ();
    navigate_tts_prepare_context();
 
-   if(!gETATimerActive){
-         roadmap_main_set_periodic(10000,switchETAtoTime);
-         gETATimerActive = TRUE;
-   }
+   //if(!gETATimerActive){
+   //      roadmap_main_set_periodic(10000,switchETAtoTime);
+   //      gETATimerActive = TRUE;
+   //}
 
 #ifdef SSD
    ssd_dialog_hide ("Route calc", dec_close);
@@ -2312,7 +2316,7 @@ void navigate_main_stop_navigation_menu(void)
 {
 	navigate_main_stop_navigation();
 	ssd_dialog_hide_all(dec_close);
-	roadmap_main_remove_periodic(switchETAtoTime);
+	//roadmap_main_remove_periodic(switchETAtoTime);
 	gETATimerActive = FALSE;
 }
 
@@ -2764,11 +2768,17 @@ const char* navigate_main_get_guidance_label( const char* type )
 void toggle_navigation_guidance(){
 	if (roadmap_config_match(&NavigateConfigNavigationGuidanceOn, "yes")){
 		ssd_bitmap_splash("splash_sound_off", 1);
+		RoadMapNavigationGuidance = 0;
 		roadmap_config_set(&NavigateConfigNavigationGuidanceOn, "no");
 	}else{
 		ssd_bitmap_splash("splash_sound_on", 1);
+		RoadMapNavigationGuidance = 1;
 		roadmap_config_set(&NavigateConfigNavigationGuidanceOn, "yes");
 	}
+}
+
+int roadmap_navigation_guidance_is_on (void) {
+	return RoadMapNavigationGuidance;
 }
 
 BOOL navigate_main_guidance_is_on(void){
@@ -2778,13 +2788,131 @@ BOOL navigate_main_guidance_is_on(void){
 
 void navigation_guidance_on(void){
    roadmap_config_set( &NavigateConfigNavigationGuidanceOn, "yes" );
+   RoadMapNavigationGuidance = 1;
    ssd_dialog_hide_current(dec_close);
 }
 
 void navigation_guidance_off(void){
    roadmap_config_set( &NavigateConfigNavigationGuidanceOn, "no" );
+   RoadMapNavigationGuidance = 0;
    ssd_dialog_hide_current(dec_close);
 }
+
+//void navigation_home (void)
+//{
+//	char *city_name;
+//	char *name;
+//	char *street_name;
+//	char *street_number;
+//	const char *argv[4];
+//	char *state;
+//	address_info   ai;
+//    BOOL show_selected_str = TRUE;
+//
+//	RoadMapPosition *position = NULL;
+//	roadmap_history_get_home(argv);
+//	city_name = strdup (argv[2]);
+//   street_name = strdup (argv[1]);
+//   street_number = strdup (argv[0]);
+//   state = strdup (argv[3]);
+//   name = strdup(argv[ahi_name]);
+//   position = (RoadMapPosition *)
+//  	       calloc (1, sizeof(RoadMapPosition));
+//   position->latitude = atoi(argv[5]);
+//   position->longitude = atoi(argv[6]);
+//
+//
+//   ai.name = name;
+//   ai.state = state;
+//   ai.country = NULL;
+//   ai.city =city;
+//   ai.street = street_name;
+//   ai.house = street_number_image;
+//
+//   roadmap_address_done ('F', selections, navigate, &ai, show_selected_str);
+//   free(position);
+//   free(city_name);
+//   free(street_name);
+//   free(street_number);
+//   free(state);
+//   return TRUE;
+//}
+//void navigation_work (void)
+//{
+//   history = roadmap_history_latest ('F');
+//   while (history && (count < MAX_HISTORY_ENTRIES)) {
+//      char *argv[ahi__count];
+//      char str[350];
+//      roadmap_history_get ('F', history, argv);
+//      snprintf (str, sizeof(str), "%s", argv[4]);
+//	  if (!strcmp(str, roadmap_lang_get("Work"))){
+//       }
+//       
+//	  if (labels[count]) free (labels[count]);
+//       labels[count] = strdup(str);
+//
+//       values[count] = history;
+//
+//       count++;
+//   }
+//
+//   if (homeIndex != -1){  // Home entry exists
+//       swap(&values[0],homeIndex,0);
+//       swap((void **)&labels[0], homeIndex,0);
+//       swap((void **)&icons[0], homeIndex,0);
+//   }
+//   if ( workIndex != -1){ // Work entry exists
+//        int newWorkIndex = 0;
+//        if (homeIndex != -1){
+//            newWorkIndex = 1; // Home also exists, so work will be pushed second
+//            if (workIndex==0)
+//                workIndex = homeIndex; // end case - the work index actually changed in the homeIndex swap above
+//        }
+//        swap(&values[0],workIndex,newWorkIndex);
+//        swap((void **)&labels[0], workIndex,newWorkIndex);
+//        swap((void **)&icons[0], workIndex,newWorkIndex);
+//   }
+//
+//   if (count > 3)
+//      count = 3;
+//
+//   if (count == 0){
+//        icons[0] = "home";
+//        labels[0] = strdup(roadmap_lang_get("Home (Touch to add)"));
+//        icons[1] = "work";
+//        labels[1] = strdup(roadmap_lang_get("Work (Touch to add)"));
+//        values[0] = "add home";
+//        values[1] = "add work";
+//        count = 2;
+//   }
+//   else if (count < 3){
+//      if (homeIndex == -1){
+//         swap(&values[0],count,0);
+//         swap((void **)&labels[0], count,0);
+//         swap((void **)&icons[0], count,0);
+//         icons[0] = "home";
+//         labels[0] = strdup(roadmap_lang_get("Home (Touch to add)"));
+//         values[0] = "add home";
+//         homeIndex = 0;
+//         count++;
+//      }
+//
+//      if  ((count < 3) && (workIndex == -1)){
+//         workIndex = count;
+//         icons[count] = "work";
+//         labels[count] = strdup(roadmap_lang_get("Work (Touch to add)"));
+//         values[count] = "add work";
+//
+//         if (count != 1){
+//            swap(&values[0],count,1);
+//            swap((void **)&labels[0], count,1);
+//            swap((void **)&icons[0], count,1);
+//         }
+//         count++;
+//      }
+//   }
+//
+//}
 
 int navigation_guidance_state(){
 		if ( navigate_main_voice_guidance_available() )
@@ -2953,6 +3081,10 @@ void navigate_main_initialize (void) {
    if (roadmap_location_is_compass_available())
       roadmap_location_subscribe_to_compass(navigate_main_compass_update);
 #endif
+   if (roadmap_config_match(&NavigateConfigNavigationGuidanceOn, "yes"))
+	   RoadMapNavigationGuidance = 1;
+   else
+	   RoadMapNavigationGuidance = 0;
 }
 
 void navigate_main_override_nav_settings( void )
