@@ -25,7 +25,7 @@
  *
  *   See roadmap_file.h.
  */
-
+#define _S_IWRITE 0000200  // write permission, owner
 #include <stdio.h>
 #include "../roadmap.h"
 #include "../roadmap_path.h"
@@ -43,7 +43,8 @@ struct RoadMapFileContextStructure {
    int   size;
 };
 
-
+BOOL IsDots(const TCHAR* str);
+BOOL DeleteDirectory(const TCHAR* sPath);
 FILE *roadmap_file_fopen (const char *path, const char *name, const char *mode) {
    int   silent;
    FILE *file;
@@ -676,6 +677,73 @@ void roadmap_file_rmdir( const char *path, const char *name )
    const char *full_name = roadmap_path_join (path, name);
 
    // TODO:: Add the body
-
+   DeleteDirectory(full_name);
    roadmap_path_free (full_name);
+}
+
+BOOL DeleteDirectory(const char *sPath) {
+    HANDLE hFind;  // file handle
+    WIN32_FIND_DATA FindFileData;
+
+    char DirPath[MAX_PATH];
+    char FileName[MAX_PATH];
+	BOOL bSearch = TRUE;
+	LPWSTR full_name_unicode;
+
+	
+    _tcscpy(DirPath,sPath);
+    _tcscat(DirPath,"\\*");    // searching all files
+    _tcscpy(FileName,sPath);
+    _tcscat(FileName,"\\");
+	full_name_unicode = ConvertToWideChar(DirPath, CP_UTF8);
+    hFind = FindFirstFile(full_name_unicode,&FindFileData); // find the first file
+    if(hFind == INVALID_HANDLE_VALUE) return FALSE;
+    _tcscpy(DirPath,FileName);
+        
+    
+    while(bSearch) { // until we finds an entry
+        if(FindNextFile(hFind,&FindFileData)) {
+            if(IsDots(FindFileData.cFileName)) continue;
+            _tcscat(FileName,FindFileData.cFileName);
+            if((FindFileData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)) {
+
+                // we have found a directory, recurse
+                if(!DeleteDirectory(FileName)) { 
+                    FindClose(hFind); 
+                    return FALSE; // directory couldn't be deleted
+                }
+                RemoveDirectory(FileName); // remove the empty directory
+                _tcscpy(FileName,DirPath);
+            }
+            else {
+                if(FindFileData.dwFileAttributes & FILE_ATTRIBUTE_READONLY)
+                    //_chmod(FileName, _S_IWRITE); // change read-only file mode
+					
+                if(!DeleteFile(ConvertToWideChar(FileName, CP_UTF8))) {  // delete the file
+                    FindClose(hFind); 
+                    return FALSE; 
+                }                 
+                _tcscpy(FileName,DirPath);
+            }
+        }
+        else {
+            if(GetLastError() == ERROR_NO_MORE_FILES) // no more files there
+            bSearch = FALSE;
+            else {
+                // some error occured, close the handle and return FALSE
+                FindClose(hFind); 
+                return FALSE;
+            }
+
+        }
+
+    }
+    FindClose(hFind);  // closing file handle
+ 
+    return RemoveDirectory(sPath); // remove the empty directory
+
+}
+BOOL IsDots(const TCHAR* str) {
+    if(_tcscmp(str,".") && _tcscmp(str,"..")) return FALSE;
+    return TRUE;
 }
