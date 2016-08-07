@@ -635,6 +635,9 @@ RoadMapAction RoadMapStartActions[MAX_ACTIONS + 1] = {
    {"enablevoice", "Enable Voice", "Mute Off", NULL,
       "Enable all voice annoucements", roadmap_voice_enable},
 
+	{"togglevoice", "Toggle Voice", "Mute Off", NULL,
+      "Toggle voice annoucements", roadmap_voice_toggle},
+
    {"nonavigation", "Disable Navigation", "Nav Off", NULL,
       "Disable all navigation functions", roadmap_navigate_disable},
 
@@ -1162,6 +1165,11 @@ RoadMapAction RoadMapStartActions[MAX_ACTIONS + 1] = {
 
   {"exit", "Quit", NULL, NULL,
                      "Exit application", roadmap_main_exit},
+
+  //{"Navigate_home", "Home", NULL, NULL,
+  //                   "Drive Home", navigation_home},
+  //{"Navigate_work", "Work", NULL, NULL,
+  //                   "Drive Work", navigation_work},
 
                   #ifdef   TESTING_MENU
    {"dummy_entry", "Dummy popup", "", NULL,
@@ -3242,6 +3250,7 @@ void roadmap_start (int argc, char **argv) {
     roadmap_state_add ("mood_state", roadmap_mood_state);
     roadmap_state_add ("alert_minimized", RTAlerts_Get_Minimize_State);
     roadmap_state_add ("navigation_state", navigate_main_state);
+	roadmap_state_add ("navigation_guidance", roadmap_navigation_guidance_is_on);
     roadmap_state_add ("ticker_state", roadmap_ticker_state);
     roadmap_state_add ("user_addon_state", Realtime_AddonState);
     roadmap_state_add ("wazer_nearby_state", Realtime_WazerNearbyState);

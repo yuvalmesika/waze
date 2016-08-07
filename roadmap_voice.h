@@ -28,7 +28,7 @@ void roadmap_voice_announce (const char *title);
 
 void roadmap_voice_mute   (void);
 void roadmap_voice_enable (void);
-
+void roadmap_voice_toggle (void);
 void roadmap_voice_initialize (void);
 
 #endif // INCLUDE__ROADMAP_VOICE__H

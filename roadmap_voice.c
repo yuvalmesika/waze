@@ -51,7 +51,7 @@ struct roadmap_voice_config {
 static RoadMapConfigDescriptor RoadMapVoiceMute =
                         ROADMAP_CONFIG_ITEM("Voice", "Mute");
 
-BOOL featureEnabled = FALSE;
+BOOL featureEnabled = TRUE;
 
 static struct roadmap_voice_config RoadMapVoiceText[] = {
     {ROADMAP_CONFIG_ITEM("Voice", "Approach"), "flite -t 'Approaching %N'"},
@@ -80,6 +80,9 @@ struct voice_translation {
     char *to;
 };
 
+int roadmap_voice_muted (void) {
+   return RoadMapVoiceMuted;
+}
 
 /* The translations below must be sorted by decreasing size,
  * so that the longest match is always selected first.
@@ -365,6 +368,13 @@ void roadmap_voice_mute (void) {
     roadmap_spawn_check ();
 }
 
+void roadmap_voice_toggle (void) {
+	if(   RoadMapVoiceMuted == 1)
+		roadmap_voice_enable();
+	else
+		roadmap_voice_mute();
+}
+
 void roadmap_voice_enable (void) {
 
    if (!featureEnabled)
@@ -393,4 +403,5 @@ void roadmap_voice_initialize (void) {
              &RoadMapVoiceText[i].config, RoadMapVoiceText[i].default_text,
              NULL);
     }
+	roadmap_state_add ("voice_mute", &roadmap_voice_muted);
 }
