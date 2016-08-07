@@ -1698,6 +1698,7 @@ const char *on_route_segments (/* IN  */   const char*       data,
       return NULL;
    }
 
+   if ((RoutingContext.flags & RETRY_ROUTE_REQUEST)) 
    roadmap_main_remove_periodic(navigate_route_retry_periodic);
 	on_route_complete ();
 
@@ -1742,7 +1743,7 @@ void navigate_route_request (const PluginLine *from_line,
 
 
    if (!(flags & RETRY_ROUTE_REQUEST)) {
-      roadmap_main_remove_periodic(navigate_route_retry_periodic); //in case we have retries in progress
+      //roadmap_main_remove_periodic(navigate_route_retry_periodic); //in case we have retries in progress
       
       if (flags & RECALC_ROUTE) {
          navigate_route_clear_context ();
