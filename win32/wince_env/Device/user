@@ -1,0 +1,85 @@
+Display.Map sub_skin: day
+Navigation.Guidance type default: 
+Navigation.Navigation guidance on: yes
+Navigation.Navigation guidance type: Minimal
+Traffic Detection.Ask me: yes
+TTS.Voice ID: Sivan4
+General.FB Share shown: no
+General.Rate us ver: 
+General.Rate us time: -1
+General.Unit: metric
+System Messages.Last message ID displayed: 0
+Custom bonus.Last Bonus ID: 0
+Ping a wazer.Disclaimer Shown: no
+Realtime.In Dump Offline: no
+Realtime.Allow Ping: no
+Realtime.is Newbie: 0
+Realtime.Random user: 1
+Realtime.Visability Driving: ReportNickname
+Realtime.Visability Group: Nickname
+Display.Auto night mode: yes
+Display.Map scheme: 4
+Welcome Wizard.Terms of Use accepted: yes
+Routing.Avoid Palestinian Roads: yes
+Routing.Allow unknown directions: yes
+Routing.Avoid trails: Don't allow
+Routing.Avoid tolls: no
+Routing.Avoid primaries: no
+Routing.Type: Fastest
+Navigation.Navigation guidance: yes
+Routing.Auto zoom: yes
+Groups.Tip Shown: no
+Groups.Show wazers: following
+Groups.Pop-up reports: none
+User.Mood: happy
+Foursquare.Logged In: no
+Foursquare.Tweet Badge: Enabled
+Foursquare.Tweet Login: Enabled
+Foursquare.Password: 
+Foursquare.Name: 
+Facebook.Logged In: no
+Facebook.Send Munching: Disabled
+Facebook.Send Destination: Disabled
+Facebook.Send Twitts: Enabled
+Facebook.Show Profile: Disabled
+Facebook.Show Picture: Disabled
+Facebook.Show Name: Disabled
+Twitter.Logged In: no
+Twitter.Publish Signup: Enabled
+Twitter.Show Profile: Disabled
+Twitter.Send Munching: Enabled
+Twitter.Send Destination: Disabled
+Twitter.Send Twitts: Enabled
+Twitter.Password: 
+Twitter.Name: 
+Keyboard.Use native: yes
+Network.Monitor Enabled: yes
+Clock.Format: 24 hr.
+Events.Radius: -1
+User.Show points ticker: yes
+Voice.Volume Control: 2
+Display.BackLight: yes
+Connection.AutoConnect: yes
+General.Rate us shown: no
+General.First use: 1468711988
+Network.Compression Enabled: no
+Trip.Car: car_blue
+Map.Orientation: 3D
+Map Icons.Show on screen on tap: yes
+Alternative Routes.Show Suggested: yes
+Alternative Routes.Last check timestamp: -1
+Realtime.Name: israel_vfcyj43j
+Realtime.Password: 7jg0szn1
+Realtime.Nickname: 
+Map.Show top bar on tap: no
+Map.Auto show street bar: yes
+Map.Show other wazers: yes
+Map.Show traffic jams: yes
+Map.Show road goodies: yes
+Map.Dont Show reports types: 
+Map.Show speed cams: yes
+Map.Show speedometer: yes
+Download.Download traffic jams: yes
+System.Language: heb
+Prompts.Name: heb_galit
+Routing.Prefer unknown directions: no

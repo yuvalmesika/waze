@@ -1,0 +1,40 @@
+Errorlevel("warn")
+
+#Uncomment the following 3 lines if you wish to close the main GUI (not recommended)
+#If(WndExists("YFMainMenu"))
+#Close("YFMainMenu")
+#EndIf
+
+#Start explorer.exe, as Waze will crash upon exiting and with any interruption without it
+If(NOT ProcExists("explorer.exe"))
+Run("\Windows\explorer.exe")
+Sleep(3000)
+EndIf
+
+#Hide Taskbar (remove # if not called in earlier script)
+Run("\SDMMC\Waze20\TaskbarHide.exe")	
+
+Run ("\ResidentFlash2\YFAP30\BluetoothNav.exe")
+WaitForActive( "BlueTooth", 10)
+Sleep 8000
+MouseClick( "BlueTooth", 160, 160)
+Sleep 500
+MouseClick( "BlueTooth", 30, 60)
+Sleep 200
+MouseClick( "BlueTooth", 460, 145)
+Sleep 1000
+MouseClick( "BlueTooth", 470, 8)
+Sleep 1000
+MouseClick( "BlueTooth", 250, 160)
+Sleep 500
+MouseDblClick( "BlueTooth", 30, 60)
+Sleep 1000
+MouseClick( "BlueTooth", 160, 180)
+WaitForActive( "myie1", 40)
+Close( "myie1" )
+Minimize( "BlueTooth" )
+RunWait ("\SDMMC\Waze20\waze.exe")
+Show( "BlueTooth" )
+MouseClick("BlueTooth", 320, 180)
+Sleep 8000
+Close( "BlueTooth" )

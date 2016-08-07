@@ -1,0 +1,27 @@
+Errorlevel("warn")
+
+If(WndExists("Waze"))
+Show( "Waze" )
+Exit
+EndIf
+
+
+
+pmsize=FileSize("\SDMMC\Waze\postmortem",MB)
+
+
+
+If(pmsize>10)
+
+	delpm=Question("The log file size exceeds 10MB. Delete?","Warning")
+
+	If(delpm=1)
+
+		WriteFile("\SDMMC\Waze\postmortem","*** Starting log file 1121333074 ***")
+
+	EndIf
+
+EndIf
+
+Run("\SDMMC\Waze\waze_connect.exe")
+

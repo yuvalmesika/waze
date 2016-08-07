@@ -1,0 +1,375 @@
+Voice.Mute: yes
+Alerts.Last Jam Street name: 
+TTS.DB Version: 0
+GPS_LOCATE.Position: 34794810, 32106010
+Alerts.Last comment ID: -1
+Alerts.Last comment alert ID: -1
+Realtime.Server Cookie: ChBLMHJwRmlaSWQyZWQ1SEdZEPur9aLwFGGQiBmlzcmFlbCjqu7SBAQ
+Realtime.Server Id: 271392234
+Navigation.Navigate time: 1470028339
+Navigation.Is navigating: 1
+Navigation.Last position: 34798131,32107554
+Splash.Last check time: -1
+Splash.Update time: 
+Tiles.Last Session: 1469941446
+Points.Points Update Time Stamp: 0
+Points.Server Points Time Stamp: 0
+Points.Old Points: 0
+Points.New Points: 0
+FreeMap.Last sync: 0
+Navigation.Enable: yes
+Focus.Rotate: 1
+Focus.Name: Hold
+Trip.Name: default
+Alt-Routes.Direction: 0
+Alt-Routes.Position: 34794810, 32106010
+ORIG_GPS.Position: 34794810, 32106010
+Location.Position: 34794810, 32106010
+Hold.Direction: 0
+Hold.Position: 34798914,32107618
+Selection.Position: 34798131,32107554
+Address.Position: 34895534,32132194
+GPS.Direction: 0
+GPS.Position: 34794810, 32106010
+General.Zoom: 100
+General.Closed properly: no
+Lang.Update time: 
+Prompts.Update time: 
+Prompts.Downloading lang: 
+Prompts.Queued lang: 
+heb.Update time: Wed, 20 Jul 2016 10:31:58 GMT
+eng.Update time: 
+Traffic Detection.Max Road type: 3
+Traffic Detection.Speed: 15
+Traffic Detection.Min segment length: 150
+Traffic Detection.Number of seconds to ask: 30
+Traffic Detection.Max times per session: 2
+Traffic Detection.Feature enabled: yes
+TTS.Cache Enabled: yes
+Prompts.Updated new: yes
+Realtime.Signup skip button: Enabled
+Map.Auto show me on map timer: 20000
+General.Primary Zoom: 100
+Map.Credit: 
+Download.Langs_Ver: 
+Download.Config_Ver: 
+Download.Sound_Ver: 
+Download.Country_Specific_Images_Ver: 
+Download.Images_Ver: 
+Download.Sound: http://waze-client-resources.s3.amazonaws.com/sounds/
+Download.Map name: israel
+Search Autocomplete.Enabled features: 0
+Camera Image.Car Pic Web-Service Address: https://social.waze.co.il/StorageGateway/upload_cars
+ExternalPOI.URL V2: https://il-advil.waze.com/advil2/popup.html
+ExternalPOI.URL V3: https://il-advil.waze.com/advil2/popup.html
+Foursquare.Feauture enabled: yes
+ExternalPOI.URL: https://www.waze.co.il:443/WAS/ads
+Download.Tiles V3: http://ctiles-il.waze.com:80/TileServer/multi-get
+Download.Tiles V2: http://ctiles-il.waze.com:80/1.1
+Single Search.Web-Service Address V2: http://79.125.17.124:80/WAS
+Help.Guided tour url V2: http://movies.waze.com/guided_tour_en.mp4
+Navigation.Drive on Left: no
+Realtime.SecuredOfflineTarget: https://newwww.waze.co.il:443/upload/upload_wud.php
+GPS.Shift coordinates: no
+Market.Feature enabled: yes
+Navigation.Guidance type default: 
+Local Search.Provider Label: Yellow pages
+Tiles3.Batch Size: 20
+Widget.Routing Server URL: https://www.waze.com/il-RoutingManager
+Twitter.Secured Url: https://social.waze.co.il:443/
+Average speed camera.Feature enabled: no
+Alerts.Alert Distance: 600
+Carpool.realtime ride banner timeout: 20
+Linkedin.Linkedin Url: https://social.waze.co.il
+Carpool.Messaging enabled: yes
+Routing.Unknown roads: no
+Welcome Wizard.Guided Tour Url: https://www.waze.com/guided_tour/client
+Realtime.Auto registration: Enabled
+Local Search.Provider Logo: ls_logo_yellowpages
+Scoreboard.Feature enabled: yes
+Widget.Authentication: no
+Carpool.phone proxy enabled: 1
+Calendar.Reminders feature enabled: no
+Carpool.realtime ride dialog timeout: 20
+Routing.Allow unknown directions: no
+Alerts.Max Dist: 100000
+Carpool.tutorial x: 0
+Download.Sound Ver: 1.0
+Download.Langs: http://cres.waze.com/langs/
+Single Search.Web-Service Secured Address V2: https://search.waze.co.il/SearchServer
+Help.Social Intro URL: http://client-assets.waze.com/videos
+Provider Search.Provider List: googlePlaces|foursquare|yellowpages
+Alerts.Enable Enforcement Alerts: yes
+Walk2Car.Walking mode min ETA sec: 0
+Keyboard.Typing lock threshold: 10
+ExternalPOI.Max POIs Display: 4
+Realtime.Web-Service Secure Enabled: no
+Address Search.Web-Service Address: http://www.waze.co.il:80/WAS
+Download.Ad Images: https://adsassets.waze.com/client_ads/logos/
+Facebook.Like AppUrl: fb://profile/86232932633
+ExternalPOI.My Coupons URL: https://newwww.waze.co.il:80/WAS/coupons
+Navigation.ETA enabled: yes
+ExternalPOI.Popup Number of Seconds: 20
+Facebook.Url: https://social.waze.co.il:443
+Calendar.Max days to upload: 30
+Camera Image.Web-Service Address: https://social.waze.co.il:443/StorageGateway/upload_image
+ExternalPOI.NearBy Display Time: 60
+Newbie.Number of Miles: 100
+Matcher.Wait for match level: 0
+TTS Navigate.Announce Destination Enabled: no
+Facebook.Read Access Permissions: user_events|user_friends|email|email|email|email|email|email
+Signup.Flow type: Minimal
+ExternalPOI.NearBy Sleep time: 36000
+Plan Drive.Feature enabled: no
+Report.Allow Police subtypes: no
+Camera Image.Venue Web-Service Address: https://social.waze.co.il:443/StorageGateway/upload_venue
+Twitter.Url: https://social.waze.co.il:443/
+Download.Langs TTS: http://cres.waze.com/lang_tts/
+Download.Source: http://176.34.247.11:80/1.1
+General.FB Like min period: 864000
+Routing.Palestinian Roads: yes
+Harard.Weather categories: 9-10-13-21
+Widget.Allow Refresh Timer: 10
+Twitter.Feature enabled: yes
+General.Map Problem Options(new): 0-1-2-3-10-4
+Download.Tiles: http://ctiles-il.waze.com:80/1.1
+Download.Images: http://waze-tiles-legacy-cdn.waze.com/resources/images/
+Network Check.URL: http://www.google.com:80/mail
+General.FB Connect min period: 172800
+Navigation.Navigation guidance enabled: yes
+Foursquare.Url: https://social.waze.co.il:443/
+General.Map Editor enc min period: -1
+First Time Experience.Nav list menu tooltip enabled: no
+GeoConfig.Ignore server config: no
+Navigation.TTS Guidance V2: no
+Download.Country Specific Images: http://cres.waze.com/country_specific_images/normal/
+Download.Config V2: http://cres.waze.com/newVconfig/
+Facebook.Sharing Url Prefix: https://social.waze.co.il:443/RepositoryServer/places/facebook/
+Recorder Voice.Download Prefix: http://waze-audio.waze.com/
+Recorder Voice.Web-Service Address: https://social.waze.co.il/StorageGateway/upload_media
+Realtime.Web-Service Address: http://rtproxy-il.waze.com/rtserver
+Shield.Config URL: http://roadshields.waze.com/shields_conf_all
+TTS.Feature Enabled: no
+Sensors.Mask: 0
+Facebook.Share Url: https://bit.ly/1YbutsU
+Calendar.Exclude location regex: (?i).*(http|online|call|dial|phone|skype|lync|webex|gvc).*|\\d+
+Navigation.Show disclaimer: no
+Foursquare.Secured Url: https://social.waze.co.il:443/
+Facebook.Access Permissions: user_events|user_friends|email|publish_actions|publish_actions
+Plan Drive.Show text button: no
+Splash.Feature Enabled: no
+ExternalPOI.Max PopupUps Per Session: 6
+Routing.Prefer same street: no
+Provider Search.Config URL: http://cres.waze.com/search/heb_stg_venues.buf
+ExternalPOI.My Coupons URL V2: https://il-advil.waze.com/advil2/inbox
+Calendar.Min offline location update interval seconds: 0
+Navigation.TTS Start Route V2: no
+TTS.Default Voice ID: Sivan4
+Address Search.Web-Service Secured Address: https://79.125.17.124:443/WAS
+Login.Delete account URL: https://www.waze.com/dashboard/delete_account
+Local Search.Provider Icon: ls_icon_yellowpages
+Groups.URL: https://mobile-web.waze.co.il/teams
+Help.How to edit map url: http://movies.waze.com/map_editor_en.mp4
+Display.NotificationSettingsUrl: https://www.waze.com/notifications
+General.TW Follow min period: 864000
+Map.Speedometer speed limit enabled: no
+General.FB Share min period: 864000
+Carpool.photo abuse detection enabled: 1
+Carpool.tutorial checkbox: 0
+Auto night mode.Feature enabled: yes
+Download.Config: http://cres.waze.com/config/
+Social Contacts.Restrict Phone Types: yes
+Realtime.Web-Service Secured Address Resolved: https://rtproxy-il.waze.com:443/rtserver
+Twitter.Show Munching: yes
+Camera Image.Profile Pic Web-Service Address: https://social.waze.co.il:443/StorageGateway/upload_profile
+ExternalPOI.Max PopupUps Per Scroll: 1
+Geo-Location.Enabled: no
+Groups.Feature Enabled: yes
+General.Rate us min period: 1206600
+Carpool.payment terms of service url: https://www.waze.com/
+Realtime.Web-Service Secured Address: https://rtproxy-il.waze.com:443/rtserver
+Shield.Images URL: http://roadshields.waze.com/images/
+Net monitor.Activated: yes
+Walk2Car.Full walking mode min distance: 0
+Navigation.Enable continue prompt: no
+Navigation.U-Turn supported: no
+TTS.Feature Enabled V2: yes
+Alerts.Allow image: yes
+Carpool.is LH mandatory: 0
+Local Search.Web-Service Address: https://www.waze.co.il:443/WAS/external_search
+Login.Forgot password URL: https://www.waze.com/he/forgot_password/?from_app=1
+Carpool.Web-Service Secured Address: https://carpool-pa.googleapis.com/v1
+Local Search.Provider: yellowpages
+Social Image.Url prefix: https://social.waze.co.il:443/SocialMediaServer/facebook/getResource
+Routing.Tolls roads: yes
+Share.SMS location URL: https://waze.to/li
+Welcome Wizard.Enabled: no
+Tiles3.Protocol: 2
+Popup Bank.Max display: 3
+Carpool.Is on: no
+Facebook.Like Url: https://bit.ly/1YbutsU
+TTS WAS Provider.Web-Service Address: http://ttsgw.world.waze.com/TTSGateway/Text2SpeechServlet
+Custom bonus.Feature enabled: no
+Places Sync.Enabled: yes
+Single Search.Web-Service Address: https://www.waze.co.il:443/WAS
+ExternalPOI.My Coupons Enabled: yes
+Closure.Feature enabled: no
+TTS WAS Provider.Voices Url: http://ttsgw.world.waze.com/TTSGateway/Text2SpeechCapabilitiesCsvServlet
+Calendar.Min offline location update distance meters: 0
+Download.Enabled: yes
+Help.Show how to edit: no
+Facebook.Secured Url: https://social.waze.co.il:443
+ExternalPOI.Popup Number of Seconds Multiple Popups: 12
+Carpool.Payoneer avaliable: no
+TTS.Voices Enabled: Sivan4
+Social Venue Image.Url prefix: http://venue-image.waze.com/thumbs/thumb700_
+Debug Info.Web-Service Address: https://social.waze.co.il/StorageGateway/upload_log
+Help.Nanorep URL: https://client-assets.waze.com/nanorep_google/
+ASR.Feature enabled: no
+main.problematic gpu: PowerVR SGX 530|VideoCore IV HW|Mali-T604|Mali-T628|Mali-T624|Mali-T760|Mali-T720
+Facebook.Publish Permissions: publish_actions|publish_actions|publish_actions|publish_actions
+Scoreboard.Url: https://mobile-web.waze.co.il/scoreboard
+General.Map Problem Options: 0-1-2-3-4
+Linkedin.Feature enabled: yes
+Social Contacts.Approve Contacts Info URL: https://support.google.com/waze/answer/6100208
+Navigation.Nameless skip types: 1001
+Carpool.max motto length: 140
+Alerts.Allow voice recording: yes
+Foursquare.Activated: no
+Alerts.Enable Enforcement Police: yes
+Navigation.Max skip segments: 4
+Popups.Min Distance: 500
+Welcome Wizard.Guided Tour Url V2: https://www.waze.com/guided_tour/client_new/
+Share.Email location URL: https://waze.to/li
+Welcome Wizard.Show intro screen: no
+Inbox.Url: https://social.waze.co.il/InboxServer/
+Linkedin.Linkedin Secured Url: https://social.waze.co.il
+Navigation.Max skip distance: 400
+Facebook.Feature enabled: no
+Provider Search.Gas popup feature enabled: no
+Routing.Ferries: no
+System.Default Language: heb
+GeoConfig.Force Location: 
+GeoConfig.version: 1
+System.ServerId: 4
+GeoConfig.Web-Service Address: http://rt.waze.com/rtserver
+FreeMap.Welcome wizard: Yes
+Tiles.Loading session lifetime: 604800
+Points.Points Per Distance: 10
+Editor Bar.Feature Enabled: no
+Notes.Recording length: 10
+Editor.Editor grid: no
+Editor.Editor shortcut: map-updates
+Editor.Start with Road Roller: Never
+Editor.wazzy: wazzy
+Editor.Gray scale: no
+Record.Show unmatched roads: no
+FreeMap.Save GPS data: no
+Realtime.OfflineTarget: http://79.125.17.124:80/upload/upload_wud.php
+Map.Static County: 0
+Help.Roller nutshell: no
+Help.Show what to expect: no
+Help.What to expect url: http://movies.waze.com/what_to_expect.mp4
+Help.Guided tour url: http://movies.waze.com/guided_tour_en.mp4
+Help.Browser: dillo
+Help.Arguments: http://www.waze.co.il/client_help
+Style.Use Pretty Lines: yes
+Labels.FontNameNormal: font_normal.ttf
+Labels.FontName: font.ttf
+FreeMap.Auto sync: Yes
+General.Menu bar: No
+KeyBinding.Button-App4: 
+KeyBinding.Button-App3: 
+KeyBinding.Button-App2: 
+KeyBinding.Button-App1: 
+KeyBinding.Button-Down: Zoom Out
+KeyBinding.Button-Up: Zoom In
+KeyBinding.Button-Right: Rotate Clockwise
+KeyBinding.Button-Left: Rotate Counter-Clockwise
+Download.Display data download options: no
+Map.Enable Toggle Construction: no
+Battery.CheckPeriod: 30000
+Battery.Threshold 2: 20
+Battery.Threshold 1: 30
+Map.GPS map offset longitude: 0
+Map.GPS map offset latitude: 0
+History.Depth: 30
+GPS.Show GPS coordinates: yes
+GPS.Show GPS: no
+GPS.Timeout: 3
+GPS.Baud Rate: 57600
+GPS.Source: COM3:
+GPS.Virtual: 
+GPS.Coarse fix seconds: 10
+GPS.Coarse location timeout: 5
+Accuracy.GPS Position: 30
+Accuracy.GPS Speed: 4
+GPS.CSV Tracker: no
+Warning.TimeOut: 2000
+Navigation list Pop Up.Foreground: #FFFFFF
+Navigation list Pop Up.Background: #e4f1f9
+Navigation list Pop Up.Text: 
+Shortcuts.Foreground: 
+Shortcuts.Background: 
+Distance To Alert.Foreground: #FFFFFF
+Distance To Alert.Background: #FF0000
+Approach Alert.Foreground: #000000
+Approach Alert.Background: #e4f1f9
+Approach Alert.Text: 
+Driving Instruction.Foreground: #ffffff
+Driving Instruction.Background: #ff0000
+Driving Instruction.Text: In %D %I
+Error.Foreground: #ffffff
+Error.Background: #ff0000
+Info.Foreground: #000000
+Info.Background: #ffff00
+Selected Street.Foreground: #000000
+Selected Street.Background: #e4f1f9
+Selected Street.Text: %F
+Approach.Foreground: #000000
+Approach.Background: #bdd1e7
+Approach.Text: Approaching %N, %C|Approaching %N
+Current Street.Foreground: #ffffff
+Current Street.Background: #698b69
+Current Street.Text: %N, %C|%N
+DEBUG_LOC.Foreground: #000000
+DEBUG_LOC.Background: #ffffff
+DEBUG_LOC.Text: %g
+Display.Top Right: ETA: %A|%T
+Display.Bottom Left: %S
+Display.Bottom Right: %D (%W)|%D
+Display.Duration: 5
+Navigation.Min Jam Distance: 75
+Navigation.Max Jam Knots: 10
+Navigation.Min Mobile Knots: 20
+Alternative Routes.Feature enabled: yes
+Accuracy.Confidence: 50
+Accuracy.Street: 120
+Map.Labels: on
+Style.Show Objects when Dragging: yes
+Style.Pretty Lines when Dragging: yes
+Map.Refresh: normal
+Map.Signs: yes
+Accuracy.Mouse: 20
+Display.Rotate: yes
+General.Default Zoom: 20
+Alerts.Enable Alerts: yes
+Alerts.Enable Audio Alerts: yes
+Alerts.Minimum Speed to Alert: 10
+General.Log level: 3
+Map.Cache: 8
+General.Icons: yes
+General.Toolbar: yes
+Map.Path: 
+Geometry.Main: 800x600
+General.Keyboard: yes
+General.Unit: metric
+Download.Destination: \Storage Card\maps
+Facebook.Show Munching: no
+Geo-Reminder.Feature enabled: no
+TrafficInfo.Display traffic info: yes
+Traffic.Display traffic information: no
+Traffic.Use for calculating routes: yes
+Keyboard.Layout: 
+Keyboard.Input: 
+Keyboard.Typing Lock Enabled: yes

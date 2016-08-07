@@ -1,0 +1,233 @@
+Local Search.Provider Logo: ls_logo_google
+Local Search.Provider Icon: ls_icon_google
+Local Search.Provider Label: Google
+Address Search.Web-Service Address: 
+General.Rate us min period: 1206600
+Carpool.payment terms of service url: https://www.waze.com/
+Realtime.Web-Service Secured Address: https://rtproxy-il.waze.com:443/rtserver
+Shield.Images URL: http://roadshields.waze.com/images/
+Net monitor.Activated: yes
+Walk2Car.Full walking mode min distance: 0
+Navigation.Enable continue prompt: no
+Navigation.U-Turn supported: no
+TTS.Feature Enabled V2: yes
+Alerts.Allow image: yes
+Carpool.is LH mandatory: 0
+Local Search.Web-Service Address: http://79.125.17.124:80/WAS/external_search
+Login.Forgot password URL: https://www.waze.com/he/forgot_password/?from_app=1
+Carpool.Web-Service Secured Address: https://carpool-pa.googleapis.com/v1
+Local Search.Provider: yellowpages
+Share.SMS location URL: https://waze.to/li
+Welcome Wizard.Enabled: no
+Tiles3.Protocol: 2
+Popup Bank.Max display: 3
+Carpool.Is on: no
+Facebook.Like Url: https://bit.ly/1YbutsU
+TTS WAS Provider.Web-Service Address: http://ttsgw.world.waze.com/TTSGateway/Text2SpeechServlet
+Places Sync.Enabled: yes
+ExternalPOI.My Coupons Enabled: yes
+Closure.Feature enabled: no
+TTS WAS Provider.Voices Url: http://ttsgw.world.waze.com/TTSGateway/Text2SpeechCapabilitiesCsvServlet
+Calendar.Min offline location update distance meters: 0
+Download.Enabled: yes
+Help.Show how to edit: no
+Facebook.Secured Url: https://social.waze.co.il:443
+ExternalPOI.Popup Number of Seconds Multiple Popups: 12
+Carpool.Payoneer avaliable: no
+TTS.Voices Enabled: Sivan4
+Social Venue Image.Url prefix: http://venue-image.waze.com/thumbs/thumb700_
+Debug Info.Web-Service Address: https://social.waze.co.il/StorageGateway/upload_log
+Help.Nanorep URL: https://client-assets.waze.com/nanorep_google/
+ASR.Feature enabled: no
+main.problematic gpu: PowerVR SGX 530|VideoCore IV HW|Mali-T604|Mali-T628|Mali-T624|Mali-T760|Mali-T720
+Facebook.Publish Permissions: publish_actions|publish_actions|publish_actions|publish_actions
+Scoreboard.Url: https://mobile-web.waze.co.il/scoreboard
+General.Map Problem Options: 0-1-2-3-4
+Linkedin.Feature enabled: yes
+Social Contacts.Approve Contacts Info URL: https://support.google.com/waze/answer/6100208
+Navigation.Nameless skip types: 1001
+Carpool.max motto length: 140
+Alerts.Allow voice recording: yes
+Alerts.Enable Enforcement Police: yes
+Navigation.Max skip segments: 4
+Popups.Min Distance: 500
+Welcome Wizard.Guided Tour Url V2: https://www.waze.com/guided_tour/client_new/
+Share.Email location URL: https://waze.to/li
+Inbox.Url: https://social.waze.co.il/InboxServer/
+Linkedin.Linkedin Secured Url: https://social.waze.co.il
+Navigation.Max skip distance: 400
+Facebook.Feature enabled: yes
+Provider Search.Gas popup feature enabled: no
+Routing.Ferries: no
+General.Unit: metric
+General.Keyboard: yes
+Geometry.Main: 800x600
+Map.Path: 
+General.Toolbar: yes
+General.Icons: yes
+Map.Cache: 8
+General.Log level: 3
+Alerts.Minimum Speed to Alert: 10
+Alerts.Enable Audio Alerts: yes
+Alerts.Enable Alerts: yes
+General.Default Zoom: 20
+Display.Rotate: yes
+Accuracy.Mouse: 20
+Map.Signs: yes
+Map.Orientation: 3D
+Map.Refresh: normal
+Style.Pretty Lines when Dragging: yes
+Style.Show Objects when Dragging: yes
+Map.Labels: on
+Accuracy.Street: 120
+Accuracy.Confidence: 50
+Alternative Routes.Feature enabled: yes
+Navigation.Min Mobile Knots: 20
+Navigation.Max Jam Knots: 10
+Navigation.Min Jam Distance: 75
+Display.Duration: 5
+Display.Bottom Right: %D (%W)|%D
+Display.Bottom Left: %S
+Display.Top Right: ETA: %A|%T
+DEBUG_LOC.Text: %g
+DEBUG_LOC.Background: #ffffff
+DEBUG_LOC.Foreground: #000000
+Current Street.Text: %N, %C|%N
+Current Street.Background: #698b69
+Current Street.Foreground: #ffffff
+Approach.Text: Approaching %N, %C|Approaching %N
+Approach.Background: #bdd1e7
+Approach.Foreground: #000000
+Selected Street.Text: %F
+Selected Street.Background: #e4f1f9
+Selected Street.Foreground: #000000
+Info.Background: #ffff00
+Info.Foreground: #000000
+Error.Background: #ff0000
+Error.Foreground: #ffffff
+Driving Instruction.Text: In %D %I
+Driving Instruction.Background: #ff0000
+Driving Instruction.Foreground: #ffffff
+Approach Alert.Text: 
+Approach Alert.Background: #e4f1f9
+Approach Alert.Foreground: #000000
+Distance To Alert.Background: #FF0000
+Distance To Alert.Foreground: #FFFFFF
+Shortcuts.Background: 
+Shortcuts.Foreground: 
+Navigation list Pop Up.Text: 
+Navigation list Pop Up.Background: #e4f1f9
+Navigation list Pop Up.Foreground: #FFFFFF
+Warning.TimeOut: 2000
+GPS.CSV Tracker: no
+Accuracy.GPS Speed: 4
+Accuracy.GPS Position: 30
+GPS.Coarse location timeout: 5
+GPS.Coarse fix seconds: 10
+GPS.Virtual: 
+GPS.Source: COM3:
+GPS.Baud Rate: 57600
+GPS.Timeout: 3
+GPS.Show GPS: no
+GPS.Show GPS coordinates: yes
+History.Depth: 30
+Map.GPS map offset latitude: 0
+Map.GPS map offset longitude: 0
+Battery.Threshold 1: 30
+Battery.Threshold 2: 20
+Battery.CheckPeriod: 30000
+Map.Enable Toggle Construction: no
+Download.Display data download options: no
+KeyBinding.Button-Left: Rotate Counter-Clockwise
+KeyBinding.Button-Right: Rotate Clockwise
+KeyBinding.Button-Up: Zoom In
+KeyBinding.Button-Down: Zoom Out
+KeyBinding.Button-App1: 
+KeyBinding.Button-App2: 
+KeyBinding.Button-App3: 
+KeyBinding.Button-App4: 
+General.Menu bar: No
+FreeMap.Auto sync: Yes
+Labels.FontName: font.ttf
+Labels.FontNameNormal: font_normal.ttf
+Style.Use Pretty Lines: yes
+Help.Arguments: http://www.waze.co.il/client_help
+Help.Browser: dillo
+Help.Guided tour url: http://movies.waze.com/guided_tour_en.mp4
+Help.What to expect url: http://movies.waze.com/what_to_expect.mp4
+Help.Show what to expect: no
+Help.Roller nutshell: no
+Map.Static County: 0
+Realtime.OfflineTarget: http://79.125.17.124:80/upload/upload_wud.php
+FreeMap.Save GPS data: no
+Record.Show unmatched roads: no
+Editor.Gray scale: no
+Editor.wazzy: wazzy
+Editor.Start with Road Roller: Never
+Editor.Editor shortcut: map-updates
+Editor.Editor grid: no
+Notes.Recording length: 10
+Editor Bar.Feature Enabled: no
+Points.Points Per Distance: 10
+Tiles.Loading session lifetime: 604800
+FreeMap.Welcome wizard: Yes
+GeoConfig.Web-Service Address: http://rt.waze.com/rtserver
+System.ServerId: 4
+GeoConfig.version: 1
+GeoConfig.Force Location: 
+System.Default Language: heb
+Splash.Feature Enabled: no
+Download.Source: http://176.34.247.11:80/1.1
+Download.Destination: \Storage Card\maps
+Twitter.Show Munching: yes
+Facebook.Show Munching: no
+Facebook.Url: https://social.waze.co.il:443
+Foursquare.Activated: no
+Single Search.Web-Service Address: http://79.125.17.124:80/WAS
+Newbie.Number of Miles: 100
+Geo-Reminder.Feature enabled: no
+Social Image.Url prefix: https://social.waze.co.il:443/SocialMediaServer/facebook/getResource
+Groups.URL: https://mobile-web.waze.co.il/teams
+Groups.Feature Enabled: yes
+TrafficInfo.Display traffic info: yes
+Navigation.Navigation guidance enabled: yes
+Navigation.ETA enabled: yes
+Navigation.Show disclaimer: no
+Routing.Prefer same street: no
+Routing.Tolls roads: yes
+Routing.Palestinian Roads: yes
+Routing.Unknown roads: no
+Traffic.Display traffic information: no
+Traffic.Use for calculating routes: yes
+Camera Image.Width: 320
+Camera Image.Height: 240
+Camera Image.Quality: 1
+Camera Image.Web-Service Address: https://social.waze.co.il:443/StorageGateway/upload_image
+Camera Image.Download Prefix: http://waze.photos.s3.amazonaws.com/thumbs/thumb347_
+Welcome Wizard.Show intro screen: no
+Auto night mode.Feature enabled: yes
+Realtime.Status: Enabled
+Realtime.Auto registration: Enabled
+Realtime.Refresh rate (minutes): 0.5
+Realtime.Hi-Res Refresh rate (minutes): 0.25
+Realtime.Summary Refresh rate (minutes): 0.02
+Realtime.Keep-alive rate (minutes): 5.0
+Realtime.Comm Check period (minutes): 1.2
+Realtime.Web-Service Address: http://rtproxy-il.waze.com:80/rtserver
+Alerts.Max Dist: 100000
+General.Map Problem Options(new): 0-1-2-3-10-4
+Custom bonus.Radius: 30
+Custom bonus.Feature enabled: no
+ExternalPOI.Feature Enabled: no
+Download.Images: http://waze-tiles-legacy-cdn.waze.com/resources/images/
+Download.Sound: http://waze-client-resources.s3.amazonaws.com/sounds/
+Download.Config: http://cres.waze.com/config/
+Download.Langs: http://cres.waze.com/langs/
+Download.Country Specific Images: http://cres.waze.com/country_specific_images/normal/
+Download.Images_Ver: 
+Download.Country_Specific_Images_Ver: 
+Download.Sound_Ver: 
+Download.Config_Ver: 
+Download.Langs_Ver: 
+Download.Tiles: 
+Alerts.Alert Distance: 400

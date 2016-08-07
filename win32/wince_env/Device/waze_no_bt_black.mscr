@@ -1,0 +1,17 @@
+Errorlevel("warn")
+
+#Uncomment the following 3 lines if you wish to close the main GUI (not recommended)
+#If(WndExists("YFMainMenu"))
+#Close("YFMainMenu")
+#EndIf
+
+#Start explorer.exe, as Waze will crash upon exiting and with any interruption without it
+If(NOT ProcExists("explorer.exe"))
+Run("\Windows\explorer.exe")
+Sleep(3000)
+EndIf
+
+#Hide Taskbar (remove # if not called in earlier script)
+Run("\SDMMC\Waze20\TaskbarHide.exe")	
+
+RunWait ("\SDMMC\Waze20\waze.exe")

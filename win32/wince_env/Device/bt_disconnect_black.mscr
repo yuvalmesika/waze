@@ -1,0 +1,6 @@
+Errorlevel("warn")
+
+Show( "BlueTooth" )
+MouseClick("BlueTooth", 320, 180)
+Sleep 8000
+Close( "BlueTooth" )
