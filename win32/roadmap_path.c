@@ -51,7 +51,7 @@ static RoadMapPathList RoadMapPaths = NULL;
 static const char *RoadMapPathConfig[] = {
    "&",
    "\\Program Files\\waze",
-   "\\Storage Card\\roadmap",
+   //"\\Storage Card\\roadmap",
    "\\Storage Card",
    NULL
 };
