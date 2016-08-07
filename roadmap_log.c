@@ -309,7 +309,7 @@ void roadmap_log (int level, const char *source, int line, const char *format, .
    char saved = ' ';
    struct roadmap_message_descriptor *category;
    char *debug;
-
+   int size;
    if (level < roadmap_verbosity()) return;
 
 #if(defined DEBUG && defined SKIP_DEBUG_LOGS)
@@ -336,6 +336,14 @@ void roadmap_log (int level, const char *source, int line, const char *format, .
                                          roadmap_log_filename(),
                                          roadmap_log_access_mode());
 
+		 size = roadmap_log_get_size();
+		 if (size > 10485760){//10mb
+			 roadmap_log_purge();
+	         sgLogFile = roadmap_file_fopen (roadmap_log_path(),
+                                         roadmap_log_filename(),
+                                         roadmap_log_access_mode());
+
+		 }
          if (sgLogFile) fprintf (sgLogFile, "*** Starting log file %d ***\n", (int)time(NULL));
       }
 
@@ -501,4 +509,15 @@ FILE * roadmap_log_get_log_file(){
 		return sgLogFile;
 	}
 	return NULL;
+}
+int roadmap_log_get_size(){
+	int size;
+	if (sgLogFile){
+		fseek(sgLogFile, 0, SEEK_END); // seek to end of file
+		size = ftell(sgLogFile); // get current file pointer
+		fseek(sgLogFile, 0, SEEK_SET); // seek back to beginning of file
+		return size;
+	}
+	return 0;
+
 }
