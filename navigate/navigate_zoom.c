@@ -85,11 +85,11 @@ void navigate_zoom_update (int distance,
 
  if (roadmap_screen_get_view_mode() == VIEW_MODE_3D){
       if (distance <= 100 || current_road_type == ROADMAP_ROAD_RAMP) {
-          NavigateZoomScale = 200;
+          NavigateZoomScale = 600;
        } else if (distance <= 600) {
-          NavigateZoomScale = distance * 2;
+          NavigateZoomScale = distance * 3;
        } else if (distance <= 1200) {
-        NavigateZoomScale = distance * 4 - 1200;
+        NavigateZoomScale = distance * 4 - 600;
        } else {
 #ifdef VIEW_MODE_3D_OGL
           NavigateZoomScale = 2000;
@@ -99,18 +99,18 @@ void navigate_zoom_update (int distance,
       }
    } else {
       if (current_road_type == ROADMAP_ROAD_RAMP){
-         NavigateZoomScale = 500;
+         NavigateZoomScale = 600;
       }else if (distance <= 250) {
-         NavigateZoomScale = 750;
+         NavigateZoomScale = 1200;
       } else if (distance <= 500) {
          NavigateZoomScale = distance*3;
       } else if (distance <= 1000) {
          NavigateZoomScale = ((distance - 500) * 2000 + (1000 - distance) * 1500) / 500;
       } else {
-      if (distance > 1000)
-         NavigateZoomScale = 3000;
+      if (distance > 1500)
+         NavigateZoomScale = 5000;
       else
-         NavigateZoomScale = distance * 2;
+         NavigateZoomScale = distance * 3;
       }
    }
 }
