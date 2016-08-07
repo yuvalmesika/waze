@@ -131,6 +131,7 @@ int navigate_is_line_on_route(int square_id, int line_id, int from_line, int to_
 void navigate_main_shutdown (void);
 void navigate_main_initialize (void);
 int navigation_guidance_state(void);
+int roadmap_navigation_guidance_is_on (void);
 void toggle_navigation_guidance(void);
 void navigation_guidance_on(void);
 void navigation_guidance_off(void);
@@ -139,6 +140,8 @@ int navigate_main_get_follow_gps (void);
 void navigate_main_prepare_for_request (void);
 int  navigate_main_calc_route ( int add_flags /* Additional flags */ );
 int navigate_main_route ( int add_flags );
+//void navigation_home (void);
+//void navigation_work (void);
 void navigate_main_on_route (int flags, int length, int track_time,
 									  NavigateSegment *segments, int num_segment, int num_instrumented,
 									  RoadMapPosition *outline_points, int num_outline_points, const char *description, BOOL show_message);
