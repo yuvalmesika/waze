@@ -198,28 +198,28 @@ void roadmap_download_settings_show(void){
 		  SSD_WIDGET_SPACE|SSD_END_ROW|SSD_CONTAINER_FLAGS|SSD_POINTER_NONE|SSD_CONTAINER_BORDER|SSD_ALIGN_CENTER);
 	  ssd_widget_set_color (box, "#000000", "#ffffff");
 
-	  if ( roamdmap_map_download_enabled() )
-	  {
-        // Refresh tiles
-        icon[0] = "download_map";
+	  //if ( roamdmap_map_download_enabled() )
+	  //{
+   //     // Refresh tiles
+   //     icon[0] = "download_map";
 
-        box2 =  ssd_container_new ("download map container", NULL, SSD_MAX_SIZE, row_height, SSD_END_ROW |tab_flag);
-        ssd_widget_set_color(box2, NULL, NULL);
+   //     box2 =  ssd_container_new ("download map container", NULL, SSD_MAX_SIZE, row_height, SSD_END_ROW |tab_flag);
+   //     ssd_widget_set_color(box2, NULL, NULL);
 
-        ssd_widget_add ( box2, ssd_button_new ("Download map button", "Download map",
-                           (const char **)&icon[0], 1,SSD_START_NEW_ROW|SSD_ALIGN_VCENTER, NULL ) );
-        box2->callback = roadmap_map_download;
+   //     ssd_widget_add ( box2, ssd_button_new ("Download map button", "Download map",
+   //                        (const char **)&icon[0], 1,SSD_START_NEW_ROW|SSD_ALIGN_VCENTER, NULL ) );
+   //     box2->callback = roadmap_map_download;
 
-        text = ssd_text_new ( "Download map text", roadmap_lang_get("Download map of my area"), SSD_MAIN_TEXT_SIZE, SSD_TEXT_NORMAL_FONT|SSD_ALIGN_VCENTER );
-        ssd_text_set_color(text, SSD_CONTAINER_TEXT_COLOR);
-        ssd_widget_add( box2,text );
+   //     text = ssd_text_new ( "Download map text", roadmap_lang_get("Download map of my area"), SSD_MAIN_TEXT_SIZE, SSD_TEXT_NORMAL_FONT|SSD_ALIGN_VCENTER );
+   //     ssd_text_set_color(text, SSD_CONTAINER_TEXT_COLOR);
+   //     ssd_widget_add( box2,text );
 
 
-        ssd_widget_add( box, box2 );
+   //     ssd_widget_add( box, box2 );
 
-        //ssd_dialog_add_vspace( box, 2, 0 );
-        ssd_widget_add( box, ssd_separator_new( "separator", SSD_END_ROW ) );
-	  }
+   //     //ssd_dialog_add_vspace( box, 2, 0 );
+   //     ssd_widget_add( box, ssd_separator_new( "separator", SSD_END_ROW ) );
+	  //}
 
      // Refresh tiles
      icon[0] = "refresh_map";
