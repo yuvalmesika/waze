@@ -1159,7 +1159,6 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				AdditionalIncludeDirectories="C:\Projects\Waze\win32\GLES"
 				PreprocessorDefinitions="EMBEDDED_CE;DEBUG;_WIN32_WCE=$(CEVER);$(CePlatform);ARM;_ARM_;ARMV4;UNDER_CE=$(CEVER);UNICODE;_USRDLL;FRIBIDI_EXPORTS;HAS_FRIBIDI_TAB_CHAR_TYPE_9_I;HAS_FRIBIDI_TAB_CHAR_TYPE_2_I;MEM_OPTIMIZED;FRIBIDI_NO_CHARSETS;TOUCH_SCREEN"
 				RuntimeLibrary="1"
 				UsePrecompiledHeader="0"
