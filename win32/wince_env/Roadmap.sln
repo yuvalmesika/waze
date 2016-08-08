@@ -34,6 +34,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libroadmap", "libroadmap\libroadmap.vcproj", "{175A63A0-7FF2-4C2C-8847-2A1938F88B15}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libssd", "libssd\libssd.vcproj", "{0380E491-F4BA-45EE-AB2F-EF22F09EA9AD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{255AC4F9-0A65-453A-B616-15C8A2B76D29} = {255AC4F9-0A65-453A-B616-15C8A2B76D29}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libwinceguiroadmap", "libwinceguiroadmap\libwinceguiroadmap.vcproj", "{12CE6C30-7062-462C-BB6D-55A627D9CF75}"
 EndProject
@@ -1163,6 +1166,7 @@ Global
 		{255AC4F9-0A65-453A-B616-15C8A2B76D29}.Debug|Smartphone 2003 (ARMV4).Build.0 = Debug|Smartphone 2003 (ARMV4)
 		{255AC4F9-0A65-453A-B616-15C8A2B76D29}.Debug|Smartphone 2003 (ARMV4).Deploy.0 = Debug|Smartphone 2003 (ARMV4)
 		{255AC4F9-0A65-453A-B616-15C8A2B76D29}.Debug|STANDARDSDK_500 (ARMV4I).ActiveCfg = Debug|Windows Mobile 5.0 Pocket PC SDK (ARMV4I)
+		{255AC4F9-0A65-453A-B616-15C8A2B76D29}.Debug|STANDARDSDK_500 (ARMV4I).Build.0 = Debug|Windows Mobile 5.0 Pocket PC SDK (ARMV4I)
 		{255AC4F9-0A65-453A-B616-15C8A2B76D29}.Debug|Win32.ActiveCfg = Debug|Win32
 		{255AC4F9-0A65-453A-B616-15C8A2B76D29}.Debug|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Debug|Windows Mobile 5.0 Pocket PC SDK (ARMV4I)
 		{255AC4F9-0A65-453A-B616-15C8A2B76D29}.Debug|Windows Mobile 5.0 Smartphone SDK (ARMV4I).ActiveCfg = Debug|Windows Mobile 5.0 Smartphone SDK (ARMV4I)

@@ -465,8 +465,8 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\..\..\"
-				PreprocessorDefinitions="EMBEDDED_CE;DEBUG;ARM;_ARM_;ARMV4;USE_FRIBIDI;_WIN32_WCE=$(CEVER);$(CePlatform);UNDER_CE=$(CEVER);UNICODE;SSD;TOUCH_SCREEN"
+				AdditionalIncludeDirectories="C:\Projects\Waze\win32\GLES;C:\Projects\Waze"
+				PreprocessorDefinitions="EMBEDDED_CE;DEBUG;ARM;_ARM_;ARMV4;USE_FRIBIDI;_WIN32_WCE=$(CEVER);$(CePlatform);UNDER_CE=$(CEVER);UNICODE;SSD;TOUCH_SCREEN;OPENGL"
 				RuntimeLibrary="1"
 				UsePrecompiledHeader="0"
 				PrecompiledHeaderFile="$(PlatformName)\$(ConfigurationName)/libguiroadmap.pch"
@@ -5573,11 +5573,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\sqlite3.h"
+				RelativePath="..\..\..\sqllite\sqlite3.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\sqllite\sqlite3.h"
+				RelativePath="..\..\..\sqlite3.h"
 				>
 			</File>
 			<File
