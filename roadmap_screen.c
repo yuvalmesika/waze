@@ -2981,9 +2981,10 @@ void roadmap_screen_repaint_now( void ) {
 
    map_credit_display();
 
-   RoadMapScreenAfterRefresh();
-
    roadmap_bar_draw();
+
+   RoadMapScreenAfterRefresh();
+  
 
    roadmap_screen_obj_draw ();
 
