@@ -72,6 +72,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "default", "default", "{8B98
 		top_bar_backup.txt = top_bar_backup.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "device", "device", "{0E0F944F-01A1-4920-9155-228F7ABAC29C}"
+	ProjectSection(SolutionItems) = preProject
+		Device\preferences = Device\preferences
+		Device\user = Device\user
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Pocket PC 2003 (ARMV4) = Debug|Pocket PC 2003 (ARMV4)
@@ -1232,5 +1238,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8B9811E5-BD83-424C-8C1E-D68810A4F17B} = {2CC85B78-006C-48EF-A1C1-F774A67D74CD}
+		{2CC85B78-006C-48EF-A1C1-F774A67D74CD} = {0E0F944F-01A1-4920-9155-228F7ABAC29C}
 	EndGlobalSection
 EndGlobal
