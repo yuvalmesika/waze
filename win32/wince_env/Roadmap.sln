@@ -61,6 +61,17 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libovd", "libovd\libovd.vcp
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libogl", "libogl\libogl.vcproj", "{255AC4F9-0A65-453A-B616-15C8A2B76D29}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "skins", "skins", "{2CC85B78-006C-48EF-A1C1-F774A67D74CD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "default", "default", "{8B9811E5-BD83-424C-8C1E-D68810A4F17B}"
+	ProjectSection(SolutionItems) = preProject
+		Device\SKINS\DEFAULT\bottom_bar = Device\SKINS\DEFAULT\bottom_bar
+		Device\SKINS\DEFAULT\bottom_bar_background.png = Device\SKINS\DEFAULT\bottom_bar_background.png
+		Device\SKINS\DEFAULT\TOP_BAR = Device\SKINS\DEFAULT\TOP_BAR
+		Device\SKINS\DEFAULT\top_bar_background.png = Device\SKINS\DEFAULT\top_bar_background.png
+		top_bar_backup.txt = top_bar_backup.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Pocket PC 2003 (ARMV4) = Debug|Pocket PC 2003 (ARMV4)
@@ -1218,5 +1229,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8B9811E5-BD83-424C-8C1E-D68810A4F17B} = {2CC85B78-006C-48EF-A1C1-F774A67D74CD}
 	EndGlobalSection
 EndGlobal

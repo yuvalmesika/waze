@@ -338,6 +338,7 @@ void roadmap_log (int level, const char *source, int line, const char *format, .
 
 		 size = roadmap_log_get_size();
 		 if (size > 10485760){//10mb
+			 roadmap_file_close(sgLogFile);
 			 roadmap_log_purge();
 	         sgLogFile = roadmap_file_fopen (roadmap_log_path(),
                                          roadmap_log_filename(),

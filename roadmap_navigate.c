@@ -118,11 +118,16 @@ static RoadMapNavigateRoute RoadMapRouteInfo;
  * the next.
  */
 static int RoadMapNavigateEnabled = 0;
-
+#if DEBUG
 /* Avoid doing navigation work when the position has not changed. */
+static RoadMapGpsPosition RoadMapLatestGpsPosition = {32323967, 34856641, 0, -1, 0};
+static RoadMapGpsPosition RoadMapLatestValidPosition = {32323967, 34856641, 0, -1, 0};
+static RoadMapPosition    RoadMapLatestPosition = {32323967, 34856641};
+#else
 static RoadMapGpsPosition RoadMapLatestGpsPosition = {0, 0, 0, -1, INVALID_STEERING};
 static RoadMapGpsPosition RoadMapLatestValidPosition = {0, 0, 0, -1, INVALID_STEERING};
 static RoadMapPosition    RoadMapLatestPosition;
+#endif
 static time_t             RoadMapLatestUpdate;
 static time_t				  RoadMapLatestGpsTime = 0;
 

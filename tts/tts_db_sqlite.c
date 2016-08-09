@@ -31,7 +31,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <..\sqllite\sqlite3.h>
+#include <sqllite\sqlite3.h>
 
 #include "roadmap.h"
 #include "roadmap_main.h"
