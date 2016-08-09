@@ -475,7 +475,7 @@
 				ProgramDataBaseFileName="$(PlatformName)\$(ConfigurationName)/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
-				DebugInformationFormat="3"
+				DebugInformationFormat="1"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -5573,11 +5573,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\sqllite\sqlite3.h"
+				RelativePath="..\..\..\sqlite3.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\sqlite3.h"
+				RelativePath="..\..\..\sqllite\sqlite3.h"
 				>
 			</File>
 			<File
