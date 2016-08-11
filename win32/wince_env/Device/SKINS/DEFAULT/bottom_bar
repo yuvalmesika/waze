@@ -18,7 +18,7 @@ B 0 0 3 60
 N Mute
 I mute mute
 I unmute unmute
-P -111 -60
+P -123 -60
 S navigation_guidance
 A toggle_navigation_guidance
 B 0 0 60 60

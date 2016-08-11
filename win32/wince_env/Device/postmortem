@@ -37401,3 +37401,1043 @@ RoutingRequest,1,3,-1,1,-1,1000,34794810,32106010,-1,-1,-1,,T,34895534,32132194,
 11/08 08:26:06 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
    Call stack:
          roadmap_screen_repaint
+*** Starting log file 1470973350 ***
+11/08 19:42:30 ERROR !!!	roadmap_canvas_agg_configure, height =0 width=0 	[File: '..\..\..\agg\roadmap_canvas.cpp'; Line: 920]
+11/08 19:42:30 ERROR !!!	roadmap_canvas_agg_configure, roadmap_screen_get_screen_type =65537 	[File: '..\..\..\agg\roadmap_canvas.cpp'; Line: 942]
+11/08 19:42:31 ERROR !!!	roadmap_canvas_agg_configure, height =480 width=800 	[File: '..\..\..\agg\roadmap_canvas.cpp'; Line: 920]
+11/08 19:42:31 ERROR !!!	roadmap_canvas_agg_configure, roadmap_screen_get_screen_type =131073 	[File: '..\..\..\agg\roadmap_canvas.cpp'; Line: 942]
+11/08 19:42:31 ERROR !!!	roadmap_canvas_agg_configure, height =480 width=800 	[File: '..\..\..\agg\roadmap_canvas.cpp'; Line: 920]
+11/08 19:42:31 ERROR !!!	roadmap_canvas_agg_configure, roadmap_screen_get_screen_type =131073 	[File: '..\..\..\agg\roadmap_canvas.cpp'; Line: 942]
+11/08 19:42:31 ERROR !!!	roadmap_canvas_agg_configure, height =480 width=800 	[File: '..\..\..\agg\roadmap_canvas.cpp'; Line: 920]
+11/08 19:42:31 ERROR !!!	roadmap_canvas_agg_configure, roadmap_screen_get_screen_type =131073 	[File: '..\..\..\agg\roadmap_canvas.cpp'; Line: 942]
+11/08 19:42:32 :WARNING:	roadmap_file_map \storage card\sprites 	[File: '..\..\roadmap_file.c'; Line: 412]
+11/08 19:42:32 :WARNING:	roadmap_file_map \Program Files\waze\sprites 	[File: '..\..\roadmap_file.c'; Line: 412]
+11/08 19:42:32 :WARNING:	roadmap_file_map \Storage Card\sprites 	[File: '..\..\roadmap_file.c'; Line: 412]
+11/08 19:42:32 ERROR !!!	download map path \storage card\maps 	[File: '..\..\..\roadmap_dbread.c'; Line: 571]
+11/08 19:42:32 :WARNING:	cannot access GPS source file://\Storage Card\GPS\GPS_track_200716__22_17.csv 	[File: '..\..\..\roadmap_gps.c'; Line: 1432]
+11/08 19:42:33 :WARNING:	roadmap_file_map \storage card\skins\default\day\top_bar 	[File: '..\..\roadmap_file.c'; Line: 412]
+11/08 19:42:33 :WARNING:	roadmap_file_map \storage card\skins\default\top_bar 	[File: '..\..\roadmap_file.c'; Line: 412]
+11/08 19:42:33 :WARNING:	roadmap_file_map \storage card\skins\default\day\bottom_bar 	[File: '..\..\roadmap_file.c'; Line: 412]
+11/08 19:42:33 :WARNING:	roadmap_file_map \storage card\skins\default\bottom_bar 	[File: '..\..\roadmap_file.c'; Line: 412]
+11/08 19:42:33 :WARNING:	roadmap_file_map \storage card\skins\default\day\objects_wide_softkeys_bottom 	[File: '..\..\roadmap_file.c'; Line: 412]
+11/08 19:42:33 :WARNING:	roadmap_file_map \storage card\skins\default\objects_wide_softkeys_bottom 	[File: '..\..\roadmap_file.c'; Line: 412]
+11/08 19:42:33 ERROR !!!	Waze did not close properly 	[File: '..\..\..\roadmap_start.c'; Line: 3332]
+11/08 19:42:33 ERROR !!!	roadmap_canvas_agg_configure, height =480 width=800 	[File: '..\..\..\agg\roadmap_canvas.cpp'; Line: 920]
+11/08 19:42:34 ERROR !!!	roadmap_canvas_agg_configure, roadmap_screen_get_screen_type =131073 	[File: '..\..\..\agg\roadmap_canvas.cpp'; Line: 942]
+11/08 19:42:34 ERROR !!!	invalid host name 'rtproxy-il.waze.com' 	[File: '..\..\roadmap_net.c'; Line: 835]
+11/08 19:42:35 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:42:35 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:42:35 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:05 ERROR !!!	Error waiting on select in roadmap_net_send, LastError = 10038 	[File: '..\..\roadmap_net.c'; Line: 1085]
+11/08 19:43:05 ERROR !!!	wst_Send( SOCKET: -1) - 'roadmap_net_send()' returned -1 	[File: '..\..\..\websvc_trans\websvc_trans.c'; Line: 1048]
+11/08 19:43:05 ERROR !!!	Error in select. 	[File: '..\..\wince_input_mon.c'; Line: 229]
+11/08 19:43:05 ERROR !!!	Error waiting on select in roadmap_net_send, LastError = 10038 	[File: '..\..\roadmap_net.c'; Line: 1140]
+11/08 19:43:05 ERROR !!!	on_data_received( SOCKET: -1) - 'roadmap_net_receive()' returned -1 bytes 	[File: '..\..\..\websvc_trans\websvc_trans.c'; Line: 878]
+11/08 19:43:05 ERROR !!!	OnAsyncOperationCompleted_Login(POST) - Failed to log in 	[File: '..\..\..\Realtime\Realtime.c'; Line: 2734]
+11/08 19:43:05 :WARNING:	OnTransactionCompleted() - Last operation ended with error 'Invalid argument' 	[File: '..\..\..\Realtime\Realtime.c'; Line: 1275]
+11/08 19:43:06 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:06 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:06 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:07 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:07 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:07 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:08 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:08 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:08 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:09 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:09 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:09 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:11 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:11 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:11 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:12 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:12 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:12 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:12 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:13 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:13 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:13 ERROR !!!	UID,203315309,ChBFbm5QSzZKZkQ4NVQ0eDNWEJvWsr0FGGQiBmlzcmFlbCjtsPlg
+RoutingRequest,1,3,-1,1,-1,1000,34794810,32106010,-1,-1,-1,,T,34794144,32107010,-1,-1,-1,,T,T,T,24,1,F,2,T,3,F,4,F,5,F,6,T,7,T,8,T,10,F,12,F,13,T,16,T,0,,,,70993,0,F,0,0,-1,-1,-1,-1,-1,32323967,34856641,0,F 	[File: '..\..\..\Realtime\RealtimeNet.c'; Line: 2700]
+11/08 19:43:13 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:13 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:13 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:14 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:14 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:14 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:14 ERROR !!!	timer 0x001d653c not found 	[File: '..\..\roadmap_main.cpp'; Line: 1687]
+11/08 19:43:16 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:16 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:16 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:17 ERROR !!!	Error in recv in roadmap_net_send, LastError = 10054 	[File: '..\..\roadmap_net.c'; Line: 1151]
+11/08 19:43:17 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:17 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:17 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:18 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:18 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:18 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:19 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:19 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:19 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:19 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:19 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:20 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:20 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:20 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:20 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:22 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:22 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:22 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:24 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:24 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:24 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:24 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:24 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:24 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:26 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:26 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:26 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:28 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:28 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:28 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:30 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:30 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:30 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:32 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:32 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:32 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:34 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:34 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:34 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:36 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:36 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:36 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:36 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:36 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:36 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:38 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:38 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:38 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:40 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:40 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:40 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:42 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:42 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:42 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:44 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:44 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:44 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:46 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:46 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:46 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:48 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:48 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:48 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:50 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:50 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:50 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:52 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:52 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:52 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:53 :WARNING:	SendAllMessagesTogether() - NOT SENDING (maybe no data to send?) 	[File: '..\..\..\Realtime\Realtime.c'; Line: 2710]
+11/08 19:43:54 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:54 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:54 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:57 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:57 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:57 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:59 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:59 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:43:59 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:01 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:01 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:01 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:03 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:03 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:03 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:05 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:05 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:05 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:07 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:07 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:07 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:09 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:09 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:09 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:11 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:11 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:11 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:13 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:13 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:13 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:15 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:15 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:15 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:16 :WARNING:	SendAllMessagesTogether() - NOT SENDING (maybe no data to send?) 	[File: '..\..\..\Realtime\Realtime.c'; Line: 2710]
+11/08 19:44:17 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:17 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:17 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:19 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:19 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:19 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:21 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:21 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:21 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:23 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:23 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:23 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:25 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:25 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:25 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:27 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:27 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:27 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:29 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:29 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:29 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+*** Starting log file 1470973482 ***
+11/08 19:44:42 ERROR !!!	roadmap_canvas_agg_configure, height =0 width=0 	[File: '..\..\..\agg\roadmap_canvas.cpp'; Line: 920]
+11/08 19:44:42 ERROR !!!	roadmap_canvas_agg_configure, roadmap_screen_get_screen_type =65537 	[File: '..\..\..\agg\roadmap_canvas.cpp'; Line: 942]
+11/08 19:44:42 ERROR !!!	roadmap_canvas_agg_configure, height =480 width=800 	[File: '..\..\..\agg\roadmap_canvas.cpp'; Line: 920]
+11/08 19:44:42 ERROR !!!	roadmap_canvas_agg_configure, roadmap_screen_get_screen_type =131073 	[File: '..\..\..\agg\roadmap_canvas.cpp'; Line: 942]
+11/08 19:44:42 ERROR !!!	roadmap_canvas_agg_configure, height =480 width=800 	[File: '..\..\..\agg\roadmap_canvas.cpp'; Line: 920]
+11/08 19:44:42 ERROR !!!	roadmap_canvas_agg_configure, roadmap_screen_get_screen_type =131073 	[File: '..\..\..\agg\roadmap_canvas.cpp'; Line: 942]
+11/08 19:44:42 ERROR !!!	roadmap_canvas_agg_configure, height =480 width=800 	[File: '..\..\..\agg\roadmap_canvas.cpp'; Line: 920]
+11/08 19:44:42 ERROR !!!	roadmap_canvas_agg_configure, roadmap_screen_get_screen_type =131073 	[File: '..\..\..\agg\roadmap_canvas.cpp'; Line: 942]
+11/08 19:44:43 :WARNING:	roadmap_file_map \storage card\sprites 	[File: '..\..\roadmap_file.c'; Line: 412]
+11/08 19:44:43 :WARNING:	roadmap_file_map \Program Files\waze\sprites 	[File: '..\..\roadmap_file.c'; Line: 412]
+11/08 19:44:43 :WARNING:	roadmap_file_map \Storage Card\sprites 	[File: '..\..\roadmap_file.c'; Line: 412]
+11/08 19:44:43 ERROR !!!	download map path \storage card\maps 	[File: '..\..\..\roadmap_dbread.c'; Line: 571]
+11/08 19:44:43 :WARNING:	cannot access GPS source file://\Storage Card\GPS\GPS_track_200716__22_17.csv 	[File: '..\..\..\roadmap_gps.c'; Line: 1432]
+11/08 19:44:44 :WARNING:	roadmap_file_map \storage card\skins\default\day\top_bar 	[File: '..\..\roadmap_file.c'; Line: 412]
+11/08 19:44:44 :WARNING:	roadmap_file_map \storage card\skins\default\top_bar 	[File: '..\..\roadmap_file.c'; Line: 412]
+11/08 19:44:44 :WARNING:	roadmap_file_map \storage card\skins\default\day\bottom_bar 	[File: '..\..\roadmap_file.c'; Line: 412]
+11/08 19:44:44 :WARNING:	roadmap_file_map \storage card\skins\default\bottom_bar 	[File: '..\..\roadmap_file.c'; Line: 412]
+11/08 19:44:44 :WARNING:	roadmap_file_map \storage card\skins\default\day\objects_wide_softkeys_bottom 	[File: '..\..\roadmap_file.c'; Line: 412]
+11/08 19:44:44 :WARNING:	roadmap_file_map \storage card\skins\default\objects_wide_softkeys_bottom 	[File: '..\..\roadmap_file.c'; Line: 412]
+11/08 19:44:44 ERROR !!!	Waze did not close properly 	[File: '..\..\..\roadmap_start.c'; Line: 3332]
+11/08 19:44:44 ERROR !!!	roadmap_canvas_agg_configure, height =480 width=800 	[File: '..\..\..\agg\roadmap_canvas.cpp'; Line: 920]
+11/08 19:44:45 ERROR !!!	roadmap_canvas_agg_configure, roadmap_screen_get_screen_type =131073 	[File: '..\..\..\agg\roadmap_canvas.cpp'; Line: 942]
+11/08 19:44:47 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:47 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:47 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:47 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:47 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:47 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:48 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:48 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:48 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:50 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:50 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:50 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:51 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:51 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:51 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:52 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:52 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:52 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:52 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:52 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:52 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:53 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:53 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:53 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:54 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:54 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:54 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:54 ERROR !!!	UID,206601983,ChBjOUs2WUdUZ2FVNGg4aFhnEP9bWsr0FGGQiBmlzcmFlbCj9b9bcFi
+RoutingRequest,1,3,-1,1,-1,1000,34794810,32106010,-1,-1,-1,,T,34794144,32107010,-1,-1,-1,,T,T,T,24,1,F,2,T,3,F,4,F,5,F,6,T,7,T,8,T,10,F,12,F,13,T,16,T,0,,,,71094,0,F,0,0,-1,-1,-1,-1,-1,32323967,34856641,0,F 	[File: '..\..\..\Realtime\RealtimeNet.c'; Line: 2700]
+11/08 19:44:55 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:55 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:55 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:44:55 ERROR !!!	timer 0x001d653c not found 	[File: '..\..\roadmap_main.cpp'; Line: 1687]
+11/08 19:45:14 ERROR !!!	Error in recv in roadmap_net_send, LastError = 10054 	[File: '..\..\roadmap_net.c'; Line: 1151]
+11/08 19:45:14 ERROR !!!	on_data_received( SOCKET: 21) - 'roadmap_net_receive()' returned -1 bytes 	[File: '..\..\..\websvc_trans\websvc_trans.c'; Line: 878]
+11/08 19:45:14 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:14 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:14 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:15 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:15 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:15 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:16 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:16 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:16 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:16 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:16 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:16 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:17 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:17 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:17 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:19 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:19 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:19 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:19 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:19 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:19 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:20 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:20 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:20 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:21 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:21 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:21 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:23 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:23 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:23 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:25 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:25 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:25 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:27 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:27 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:27 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:29 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:29 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:29 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:31 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:31 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:31 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:34 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:34 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:34 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:35 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:35 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:35 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:36 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:36 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:36 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:36 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:36 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:36 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:37 :WARNING:	SendAllMessagesTogether() - NOT SENDING (maybe no data to send?) 	[File: '..\..\..\Realtime\Realtime.c'; Line: 2710]
+11/08 19:45:37 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:37 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:37 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:38 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:38 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:38 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:40 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:40 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:40 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:42 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:42 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:42 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:42 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:42 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:42 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:44 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:44 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:44 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:46 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:46 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:46 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:48 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:48 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:48 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:50 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:50 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:50 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:52 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:52 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:52 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:54 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:54 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:54 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:56 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:56 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:56 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:58 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:58 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:45:58 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:00 :WARNING:	SendAllMessagesTogether() - NOT SENDING (maybe no data to send?) 	[File: '..\..\..\Realtime\Realtime.c'; Line: 2710]
+11/08 19:46:00 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:00 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:00 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:02 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:02 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:02 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:04 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:04 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:04 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:06 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:06 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:06 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:08 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:08 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:08 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:10 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:10 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:10 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:12 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:12 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:12 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:14 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:14 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:14 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:17 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:17 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:17 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:19 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:19 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:19 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:21 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:21 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:21 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:23 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:23 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:23 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:23 :WARNING:	SendAllMessagesTogether() - NOT SENDING (maybe no data to send?) 	[File: '..\..\..\Realtime\Realtime.c'; Line: 2710]
+11/08 19:46:25 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:25 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:25 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:27 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:27 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:27 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:29 ERROR !!!	roadmap bar:'sep1' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:29 ERROR !!!	roadmap bar:'sep2' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
+11/08 19:46:29 ERROR !!!	roadmap bar:'sep3' can't load image:separtor. 	[File: '..\..\..\roadmap_bar.c'; Line: 1402]
+   Call stack:
+         roadmap_screen_repaint
