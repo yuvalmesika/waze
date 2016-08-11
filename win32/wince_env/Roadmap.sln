@@ -66,7 +66,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "default", "default", "{8B9811E5-BD83-424C-8C1E-D68810A4F17B}"
 	ProjectSection(SolutionItems) = preProject
 		Device\SKINS\DEFAULT\bottom_bar = Device\SKINS\DEFAULT\bottom_bar
-		Device\SKINS\DEFAULT\bottom_bar_background.png = Device\SKINS\DEFAULT\bottom_bar_background.png
 		Device\SKINS\DEFAULT\TOP_BAR = Device\SKINS\DEFAULT\TOP_BAR
 		Device\SKINS\DEFAULT\top_bar_background.png = Device\SKINS\DEFAULT\top_bar_background.png
 		top_bar_backup.txt = top_bar_backup.txt
@@ -75,7 +74,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "device", "device", "{0E0F944F-01A1-4920-9155-228F7ABAC29C}"
 	ProjectSection(SolutionItems) = preProject
 		Device\preferences = Device\preferences
-		Device\user = Device\user
 	EndProjectSection
 EndProject
 Global
@@ -1237,7 +1235,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{8B9811E5-BD83-424C-8C1E-D68810A4F17B} = {2CC85B78-006C-48EF-A1C1-F774A67D74CD}
 		{2CC85B78-006C-48EF-A1C1-F774A67D74CD} = {0E0F944F-01A1-4920-9155-228F7ABAC29C}
+		{8B9811E5-BD83-424C-8C1E-D68810A4F17B} = {2CC85B78-006C-48EF-A1C1-F774A67D74CD}
 	EndGlobalSection
 EndGlobal

@@ -1,80 +1,37 @@
-N me_on_map
-I me_on_map me_on_map2
-P 0 -75
-A show_me
-B -10 0 143 75
-
-N Map_text
-E Me_on_map
-P 72 -20
-L 12
-F 14
-D #ffffff
-
-N me_on_map
-I me_on_map_d me_on_map2
-P 0 -75
-A show_me
-B -10 0 143 75
-C bottom_bar 1
-
-N Map_text
-E Me_on_map
-P 72 -20
-L 12
-F 14
-D #939393
-C bottom_bar 1
-
-N Search_text
-I Search Search2
-P 144 -75
+N search
+I search
+P 0 -60
 A search_menu
-B -10 0 110 75
+B 0 0 60 60
 
 
-N Search_text
-E Drive_to
-P 200 -20
-L 12
-F 14
-D #ffffff
+N sep1
+I separtor
+P 61 -60
+B 0 0 3 60
 
-N More
-I More More2
-P 255 -75
-A settingsmenu
-B -10 0 110 75
-
-
-N More_text
-E More
-P 313 -20
-L 12
-F 14
-D #ffffff
+N sep2
+I separtor
+P -114 -60
+B 0 0 3 60
 
 N Mute
-I splash_sound_off splash_sound_off
-I splash_sound_on splash_sound_on
-P -180 -75
+I mute mute
+I unmute unmute
+P -111 -60
 S navigation_guidance
 A toggle_navigation_guidance
-B -10 0 110 75
+B 0 0 60 60
+
+N sep3
+I separtor
+P -63 -60
+B 0 0 3 60
 
 N Exit
 I Quit Quit
-P -85 -75
+P -60 -60
 A exit
-B -10 0 110 75
-
-
-N Exit_text
-E Quit
-P -50 -20
-L 12
-F 14
-D #ffffff
-
+B 0 0 60 60
 
 Y 1

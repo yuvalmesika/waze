@@ -1043,7 +1043,7 @@ static void roadmap_display_console_box
     }
 
     if (roadmap_screen_is_hd_screen())
-       offset = 94;
+       offset = 14;
 
     if (type == ROADMAP_CONSOLE_ACTIVITY) {
 #ifdef TOUCH_SCREEN
@@ -1074,7 +1074,7 @@ static void roadmap_display_console_box
     } else {
        if ( type == ROADMAP_CONSOLE_ACTIVITY || type == ROADMAP_CONSOLE_WARNING )
        {
-    	   frame[0].y = roadmap_bar_top_height() +  roadmap_ticker_height()+ roadmap_message_ticker_height()+1;
+		   frame[0].y = roadmap_canvas_height() -  roadmap_bar_bottom_height() -  roadmap_ticker_height()- roadmap_message_ticker_height()-32;//roadmap_bar_top_height() +  roadmap_ticker_height()+ roadmap_message_ticker_height()+1;
        }
        else
        {
