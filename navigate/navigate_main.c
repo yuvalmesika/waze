@@ -1225,7 +1225,7 @@ static void navigate_show_message (void) {
    else
       snprintf (title, sizeof(title), "%s", roadmap_lang_get("Route found"));
 
-   navigate_res_dlg(NavigateFlags,title,NavigateLength,NavigateTrackTime, NavigateDescription, 12000 ,(navigate_cost_allow_unknowns () && show_disclaimer()));
+   navigate_res_dlg(NavigateFlags,title,NavigateLength,NavigateTrackTime, NavigateDescription, 5000 ,(navigate_cost_allow_unknowns () && show_disclaimer()));
    focus_on_me();
 }
 
