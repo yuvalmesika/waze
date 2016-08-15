@@ -646,6 +646,10 @@ void  roadmap_file_close(RoadMapFile file)
    CloseHandle((HANDLE)file);
 }
 
+void  roadmap_file_fclose(FILE *file)
+{
+   fclose (file);
+}
 
 int roadmap_file_free_space (const char *path)
 {
