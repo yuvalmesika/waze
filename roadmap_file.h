@@ -96,7 +96,7 @@ int roadmap_file_truncate (const char *path, const char *name,
                            int length);
 
 FILE *roadmap_file_fopen (const char *path, const char *name, const char *mode);
-
+void  roadmap_file_fclose(FILE *file);
 
 /* The following file operations hide the OS file mapping primitives. */
 
