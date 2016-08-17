@@ -14,7 +14,7 @@ Ping a wazer.Disclaimer Shown: no
 Realtime.In Dump Offline: no
 Realtime.Allow Ping: no
 Realtime.is Newbie: 0
-Realtime.Random user: 1
+Realtime.Random user: 0
 Realtime.Visability Driving: ReportNickname
 Realtime.Visability Group: Nickname
 Display.Auto night mode: yes
@@ -68,9 +68,9 @@ Map.Orientation: 3D
 Map Icons.Show on screen on tap: yes
 Alternative Routes.Show Suggested: yes
 Alternative Routes.Last check timestamp: -1
-Realtime.Name: israel_vfcyj43j
-Realtime.Password: 7jg0szn1
-Realtime.Nickname: 
+Realtime.Name: yuval_car
+Realtime.Password: lancer90
+Realtime.Nickname: yuv
 Map.Show top bar on tap: yes
 Map.Auto show street bar: yes
 Map.Show other wazers: yes

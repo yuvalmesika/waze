@@ -6,14 +6,12 @@ B 0 0 60 60
 
 
 N sep1
-I separtor
+I separator
 P 61 -60
-B 0 0 3 60
 
 N sep2
-I separtor
-P -114 -60
-B 0 0 3 60
+I separator
+P -126 -60
 
 N Mute
 I mute mute
@@ -24,7 +22,7 @@ A toggle_navigation_guidance
 B 0 0 60 60
 
 N sep3
-I separtor
+I separator
 P -63 -60
 B 0 0 3 60
 

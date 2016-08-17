@@ -24,3 +24,4 @@ win32/wince_env/Device/libfribidi.dll
 win32/wince_env/Device/lpngce.dll
 win32/wince_env/Device/waze.exe
 win32/wince_env/Device/zlibce.dll
+win32/wince_env/Device/GPS/
