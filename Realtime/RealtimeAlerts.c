@@ -1906,6 +1906,7 @@ RoadMapSoundList RTAlerts_Get_Sound(int alertId)
           sound_list = tts_apptext_get_sound( TTS_APPTEXT_POLICE );
        }
        else {
+
           sound_list = roadmap_sound_list_create(0);
           roadmap_sound_list_add(sound_list, "Police");
        }
@@ -1915,8 +1916,10 @@ RoadMapSoundList RTAlerts_Get_Sound(int alertId)
           sound_list = tts_apptext_get_sound( TTS_APPTEXT_APPROACH_ACCIDENT );
        }
        else {
+		   if ( navigate_main_voice_guidance_available() ) {
           sound_list = roadmap_sound_list_create(0);
           roadmap_sound_list_add(sound_list, "ApproachAccident");
+		   }
        }
        break;
     case RT_ALERT_TYPE_HAZARD:
@@ -1924,8 +1927,10 @@ RoadMapSoundList RTAlerts_Get_Sound(int alertId)
           sound_list = tts_apptext_get_sound( TTS_APPTEXT_APPROACH_HAZARD );
        }
        else {
+		   if ( navigate_main_voice_guidance_available() ) {
           sound_list = roadmap_sound_list_create(0);
           roadmap_sound_list_add(sound_list, "ApproachHazard");
+		   }
        }
        break;
     case RT_ALERT_TYPE_TRAFFIC_INFO:
@@ -1934,8 +1939,10 @@ RoadMapSoundList RTAlerts_Get_Sound(int alertId)
           sound_list = tts_apptext_get_sound( TTS_APPTEXT_APPROACH_TRAFFIC );
        }
        else {
+		   if ( navigate_main_voice_guidance_available() ) {
           sound_list = roadmap_sound_list_create(0);
           roadmap_sound_list_add(sound_list, "ApproachTraffic");
+		   }
        }
        break;
      default:
@@ -6250,15 +6257,17 @@ BOOL  AlertAheadHandler(int alertId){
       Set_LastJamStreetName(pAlert->sLocationStr);
    }
 
+   if ( navigate_main_voice_guidance_available() ) {
+
    sound_list = RTAlerts_Get_Sound(alertId);
    if (sound_list)
       roadmap_sound_play_list (sound_list);
-
+   }
    //AlertAheadDlgDisplay(pAlert);
 //   roadmap_main_set_periodic(1000, AlertAfeadTimner);
    if (!strcmp(roadmap_trip_get_focus_name(), "GPS"))
       on_AlertAhead_Show(pAlert);
-   g_alert_ahead_seconds = 12;
+   g_alert_ahead_seconds = 5;
    return TRUE;
 }
 
