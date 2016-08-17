@@ -162,6 +162,7 @@ static int  NavigateBarEnabled = 0;
 static int  eta_drawing_offset_spacing = 50;
 static int  gOffset;
 static int  height;
+static int  clockWidth;
 
 
 static BOOL drag_start_on_bar;
@@ -464,11 +465,10 @@ static int navigate_bar_short_click(RoadMapGuiPoint *point) {
 
    if (!NavigateBarEnabled) return 0;
 
-   min = roadmap_canvas_height() - get_AddressBarHeight() - get_EtaBoxHeight() - roadmap_bar_bottom_height();
-   max = min + get_AddressBarHeight() + get_EtaBoxHeight() - 5;
+   min = 0;
+   max = get_AddressBarHeight();
 
-   if ( ((point->y >= min) && (point->y <= max)) ||
-         ( (point->x <= get_DirectionsBoxWidth()) && (point->y >= min + get_EtaBoxHeight() - get_DirectionsBoxHeight()) && (point->y <= max)   )) {
+   if ((point->x <= NavigatePanel->street_width +NavigatePanel->street_start - clockWidth ) && (point->y >= min) && (point->y <= max)) {
        navigate_menu();
        return 1;
    }
@@ -956,7 +956,8 @@ void navigate_bar_draw (void){
               (time, 18, &text_width, &text_ascent, &text_descent, NULL);
    BarLocation.y = get_AddressBarHeight()/2;//roadmap_canvas_height() - roadmap_bar_bottom_height() -
                      //(get_AddressBarHeight() -2 + roadmap_canvas_image_height(NavigateBarArrow))/2;
-   BarLocation.x = roadmap_canvas_width() - text_width - NAV_BAR_PIXELS(15);
+   clockWidth = text_width + NAV_BAR_PIXELS(15);
+   BarLocation.x = roadmap_canvas_width() - clockWidth;
    roadmap_canvas_draw_string_size(&BarLocation, ROADMAP_CANVAS_CENTERLEFT, 18, time);
 
 #endif
