@@ -25,3 +25,8 @@ win32/wince_env/Device/lpngce.dll
 win32/wince_env/Device/waze.exe
 win32/wince_env/Device/zlibce.dll
 win32/wince_env/Device/GPS/
+win32/wince_env/Device/history
+win32/wince_env/Device/postmortem
+win32/wince_env/Device/preferences
+win32/wince_env/Device/session
+win32/wince_env/Device/trips/default
