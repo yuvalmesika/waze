@@ -66,6 +66,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "default", "default", "{8B9811E5-BD83-424C-8C1E-D68810A4F17B}"
 	ProjectSection(SolutionItems) = preProject
 		Device\SKINS\DEFAULT\bottom_bar = Device\SKINS\DEFAULT\bottom_bar
+		Device\SKINS\DEFAULT\OBJECTS = Device\SKINS\DEFAULT\OBJECTS
+		Device\SKINS\DEFAULT\objects_wide = Device\SKINS\DEFAULT\objects_wide
+		Device\SKINS\DEFAULT\objects_wide_softkeys_bottom = Device\SKINS\DEFAULT\objects_wide_softkeys_bottom
 		Device\SKINS\DEFAULT\TOP_BAR = Device\SKINS\DEFAULT\TOP_BAR
 		Device\SKINS\DEFAULT\top_bar_background.png = Device\SKINS\DEFAULT\top_bar_background.png
 		top_bar_backup.txt = top_bar_backup.txt

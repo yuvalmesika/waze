@@ -40,7 +40,7 @@
 
 
 #define SPEEDOMETER_SPEED_COLOR_DAY                   ("#ffffff")
-#define SPEEDOMETER_SPEED_COLOR_NIGHT                 ("#d7ff00")
+#define SPEEDOMETER_SPEED_COLOR_NIGHT                 ("#ffffff")//("#d7ff00")
 
 
 static RoadMapScreenSubscriber roadmap_speedometer_prev_after_refresh = NULL;
@@ -70,12 +70,16 @@ static void roadmap_speedometer_after_refresh (void){
    RoadMapPen speedometer_pen;
    char str[30];
    char unit_str[30];
-   int font_size = 20;
-   int font_size_units = 10;
+   int font_size = 16;
+   int font_size_units = 6;
    int speed_offset = 6;
    int units_offset = 6;
    int speed;
-
+   int text_width;
+   int text_ascent;
+   int text_descent;
+   int text_height;
+   int text_offset;
 #ifdef IPHONE_NATIVE
 	font_size = 18;
 	font_size_units = 8;
@@ -105,11 +109,15 @@ static void roadmap_speedometer_after_refresh (void){
    }
    roadmap_navigate_get_current (&pos, NULL, NULL);
    speed = pos.speed;
+#if DEBUG
+	speed = rand() % 120;
+
+#else
    if ((speed == -1) || !roadmap_gps_have_reception()){
       after_refresh_callback();
       return;
    }
-
+#endif
 
    speedometer_pen = roadmap_canvas_create_pen ("speedometer_pen");
    if (roadmap_skin_state() == 1)
@@ -117,14 +125,20 @@ static void roadmap_speedometer_after_refresh (void){
    else
       roadmap_canvas_set_foreground(SPEEDOMETER_SPEED_COLOR_DAY);
 
-   image_position.x = roadmap_canvas_width() - roadmap_canvas_image_width(SpeedometerImage);
-   image_position.y = roadmap_canvas_height() - roadmap_canvas_image_height(SpeedometerImage) - roadmap_bar_bottom_height() - gOffset;
+   image_position.x = 15;//roadmap_canvas_width() - roadmap_canvas_image_width(SpeedometerImage);
+   image_position.y = roadmap_canvas_height() - roadmap_canvas_image_height(SpeedometerImage) - roadmap_bar_bottom_height();// - gOffset;
    roadmap_canvas_draw_image (SpeedometerImage, &image_position,  0, IMAGE_NORMAL);
 
-   text_position.y = image_position.y + roadmap_canvas_image_height(SpeedometerImage) *.8;
-   units_position.y = image_position.y + roadmap_canvas_image_height(SpeedometerImage)*.8;
+   text_position.y = image_position.y + roadmap_canvas_image_height(SpeedometerImage) *.6;
+   units_position.y = image_position.y + roadmap_canvas_image_height(SpeedometerImage)*.75;
 
    if (speed != -1){
+	   if (speed <10)
+		text_offset = -6;
+	   else if (speed <100)
+		text_offset = -3;
+	   else
+		text_offset = -1;
       if (!roadmap_gps_is_show_raw()) {
          snprintf (str, sizeof(str), "%3d", roadmap_math_to_speed_unit(speed));
          snprintf (unit_str, sizeof(unit_str), "%s",  roadmap_lang_get(roadmap_math_speed_unit()));
@@ -133,19 +147,29 @@ static void roadmap_speedometer_after_refresh (void){
          snprintf (unit_str, sizeof(unit_str), "%s",  "ac");
       }
 
-      if (ssd_widget_rtl(NULL)){
-         text_position.x = roadmap_canvas_width() -speed_offset;
-         roadmap_canvas_draw_string_size(&text_position, ROADMAP_CANVAS_BOTTOMRIGHT, font_size, str);
 
-         units_position.x = image_position.x + units_offset;
+   roadmap_canvas_get_text_extents
+         (str, font_size, &text_width, &text_ascent, &text_descent, NULL);
+
+      if (ssd_widget_rtl(NULL)){
+         text_position.x = image_position.x + (roadmap_canvas_image_width(SpeedometerImage)/2) - (text_width/2) + text_offset;
+		 roadmap_canvas_draw_string_size(&text_position, ROADMAP_CANVAS_BOTTOMLEFT, font_size, str);
+
+		 roadmap_canvas_get_text_extents
+         (unit_str, font_size_units, &text_width, &text_ascent, &text_descent, NULL);
+
+		 units_position.x = image_position.x + (roadmap_canvas_image_width(SpeedometerImage)/2) - (text_width/2)-2;
          roadmap_canvas_draw_string_size(&units_position, ROADMAP_CANVAS_BOTTOMLEFT, font_size_units, unit_str);
       }
       else{
-         text_position.x = image_position.x + speed_offset;
-         roadmap_canvas_draw_string_size(&text_position, ROADMAP_CANVAS_BOTTOMLEFT, font_size, str);
+         text_position.x = image_position.x + (roadmap_canvas_image_width(SpeedometerImage)/2)- (text_width/2) + text_offset;
+         roadmap_canvas_draw_string_size(&text_position, ROADMAP_CANVAS_BOTTOMMIDDLE, font_size, str);
 
-         units_position.x = roadmap_canvas_width() -units_offset;
-         roadmap_canvas_draw_string_size(&units_position, ROADMAP_CANVAS_BOTTOMRIGHT, font_size_units, unit_str);
+		 roadmap_canvas_get_text_extents
+         (unit_str, font_size_units, &text_width, &text_ascent, &text_descent, NULL);
+
+         units_position.x = image_position.x + (roadmap_canvas_image_width(SpeedometerImage)/2)- (text_width/2)-2 ;
+         roadmap_canvas_draw_string_size(&units_position, ROADMAP_CANVAS_BOTTOMMIDDLE, font_size_units, unit_str);
       }
    }
 

@@ -25,6 +25,13 @@ B -1 -2 94 94
 A toggleorientation
 S orientation_mode
 
+N me_on_map
+I map_control_locate
+P 31 -212
+A show_me
+B -2 -2 57 57
+C bottom_bar 0
+
 N map_update_shortcut
 I update_map_button
 I update_map_button_recording

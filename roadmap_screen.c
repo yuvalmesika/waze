@@ -3556,7 +3556,7 @@ void roadmap_screen_update_center (const RoadMapPosition *pos) {
 
     RoadMapScreenCenterPixel.x = (RoadMapScreenWidth / 2);
 
-    RoadMapScreenCenterPixel.y = (RoadMapScreenHeight / 2) ;
+    RoadMapScreenCenterPixel.y = roadmap_bar_bottom_height() + 40;//(RoadMapScreenHeight / 2) ;
 
     RoadMapScreenCenterPixel.y += RoadMapScreenCenterDelta;
     roadmap_math_to_position (&RoadMapScreenCenterPixel, &view_center, 0);

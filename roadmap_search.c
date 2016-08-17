@@ -1562,23 +1562,63 @@ static SsdWidget get_favorites_widget( SsdWidget list, int *f_count){
       roadmap_history_get ('F', history, argv);
       prev = history;
       snprintf (str, sizeof(str), "%s", argv[4]);
-      if (!strcmp(str, roadmap_lang_get("Home"))){
+      if (!strcmp(str, roadmap_lang_get("Home")) || !strcmp(str,"home") || !strcmp(str,"Home")){
           icons[count] = "home";
           homeIndex = count;
-       }else if (!strcmp(str, roadmap_lang_get("Work"))){
+		  labels[count] = strdup(str);
+		  values[count] = history;
+		  count++;
+       }else if (!strcmp(str, roadmap_lang_get("Work"))|| !strcmp(str,"office") || !strcmp(str,"work") || !strcmp(str,"Work")){
           icons[count] = "work";
           workIndex= count;
-       }else{
-          icons[count] = "favorite";
+		  labels[count] = strdup(str);
+		  values[count] = history;
+		  count++;
        }
+	   /*else{
+          icons[count] = "favorite";
+       }*/
        if (labels[count]) free (labels[count]);
-       labels[count] = strdup(str);
+
+       history = roadmap_history_before ('F', history);
+       if (history == prev) break;
+   }
+
+   history = roadmap_history_latest (ADDRESS_HISTORY_CATEGORY);
+   while (history && (count < MAX_HISTORY_ENTRIES)) {
+      char *argv[ahi__count];
+      char str[350];
+	  char tmp1[250],tmp[250],tmp2[250];
+      roadmap_history_get (ADDRESS_HISTORY_CATEGORY, history, argv);
+      prev = history;
+	  snprintf (tmp1, sizeof(tmp1), "%s%s%s", argv[1], argv[0], argv[2]);
+      snprintf (tmp, sizeof(tmp), "%s", argv[1]);
+      if (!*tmp1)
+		snprintf (tmp2, sizeof(tmp2), "-");
+       else if (!*tmp)
+          snprintf (tmp2, sizeof(tmp2), "%s",argv[2]);
+       else if (ssd_widget_rtl(NULL))
+          snprintf (tmp2, sizeof(tmp2), "%s %s, %s", argv[1], argv[0], argv[2]);
+       else
+          snprintf (tmp2, sizeof(tmp2), "%s %s, %s", argv[0], argv[1], argv[2]);
+
+      if (argv[4][0] != 0){
+           snprintf (str, sizeof(str), "%s \n%s", argv[4], tmp2);
+           icons[count] = local_search_get_icon_name();
+      }else{
+         snprintf (str, sizeof(str), "%s", tmp2);
+         icons[count] = "history";
+      }
+      //icons[count] = "favorite";
+       if (labels[count]) free (labels[count]);
+       
+	   labels[count] = strdup(str);
 
        values[count] = history;
 
        count++;
 
-       history = roadmap_history_before ('F', history);
+       history = roadmap_history_before (ADDRESS_HISTORY_CATEGORY, history);
        if (history == prev) break;
    }
 
@@ -1599,8 +1639,8 @@ static SsdWidget get_favorites_widget( SsdWidget list, int *f_count){
         swap((void **)&icons[0], workIndex,newWorkIndex);
    }
 
-   if (count > 3)
-      count = 3;
+   if (count > 99)
+      count = 99;
 
    if (count == 0){
         icons[0] = "home";
@@ -1611,7 +1651,7 @@ static SsdWidget get_favorites_widget( SsdWidget list, int *f_count){
         values[1] = "add work";
         count = 2;
    }
-   else if (count < 3){
+   else if (count < 100){
       if (homeIndex == -1){
          swap(&values[0],count,0);
          swap((void **)&labels[0], count,0);
@@ -1623,7 +1663,7 @@ static SsdWidget get_favorites_widget( SsdWidget list, int *f_count){
          count++;
       }
 
-      if  ((count < 3) && (workIndex == -1)){
+      if  ((count < 100) && (workIndex == -1)){
          workIndex = count;
          icons[count] = "work";
          labels[count] = strdup(roadmap_lang_get("Work (Touch to add)"));

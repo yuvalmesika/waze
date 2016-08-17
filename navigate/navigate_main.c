@@ -1077,12 +1077,14 @@ static void navigate_display_street (int isegment) {
 
 void navigate_main_get_distance_str(int distance_to_destination, char *str, int sizeof_str, char *unit_str, int sizeof_unit_str){
    int distance_to_destination_far;
-
+	int r = rand() % 3000;
 
    distance_to_destination_far =
       roadmap_math_to_trip_distance(distance_to_destination);
 
-
+#if DEBUG
+	distance_to_destination_far = r;
+#endif
    if (distance_to_destination_far > 0) {
 
        int tenths = roadmap_math_to_trip_distance_tenths(distance_to_destination);
@@ -1223,7 +1225,7 @@ static void navigate_show_message (void) {
    else
       snprintf (title, sizeof(title), "%s", roadmap_lang_get("Route found"));
 
-   navigate_res_dlg(NavigateFlags,title,NavigateLength,NavigateTrackTime, NavigateDescription, 12000 ,(navigate_cost_allow_unknowns () && show_disclaimer()));
+   navigate_res_dlg(NavigateFlags,title,NavigateLength,NavigateTrackTime, NavigateDescription, 5000 ,(navigate_cost_allow_unknowns () && show_disclaimer()));
    focus_on_me();
 }
 
