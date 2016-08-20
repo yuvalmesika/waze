@@ -420,9 +420,9 @@ void roadmap_general_settings_show(void) {
    static int initialized = 0;
    int height = ssd_container_get_row_height();
    int i;
-   char temp[6][100];
-   static const char *distance_labels[6];
-   static const char *distance_values[6];
+   char temp[7][100];
+   static const char *distance_labels[7];
+   static const char *distance_values[7];
    const char* nav_guidance = (const char *)ssd_dialog_get_data ("nav guidance choice");
    BOOL show_prompts = FALSE;
    BOOL show_tts = FALSE;
@@ -733,6 +733,7 @@ void roadmap_general_settings_show(void) {
          distance_values[3] = "100";
          distance_values[4] = "200";
          distance_values[5] = "-1";
+		 distance_values[6] = "0";
          for (i=0; i<5; i++){
             strcat(temp[i], roadmap_lang_get("Km"));
             distance_labels[i] = strdup(temp[i]);
@@ -746,15 +747,17 @@ void roadmap_general_settings_show(void) {
          distance_values[3] = "160";
          distance_values[4] = "320";
          distance_values[5] = "-1";
+		 distance_values[6] = "0";
          for (i=0; i<5; i++){
             strcat(temp[i], roadmap_lang_get("miles"));
             distance_labels[i] = strdup(temp[i]);
          }
       }
       distance_labels[5] = roadmap_lang_get("All");
+	  distance_labels[6] = roadmap_lang_get("None");
 
       ssd_widget_add (box,
-                      ssd_choice_new ("event_radius", roadmap_lang_get ("Events Radius"),6,
+                      ssd_choice_new ("event_radius", roadmap_lang_get ("Events Radius"),7,
                                       (const char **)distance_labels,
                                       (const void **)distance_values,
                                       SSD_ALIGN_RIGHT, NULL));
@@ -856,7 +859,7 @@ void roadmap_general_settings_show(void) {
 
    }
 
-   for (i = 0; i < 6; i++){
+   for (i = 0; i < 7; i++){
       if (!strcmp(distance_values[i], roadmap_config_get( &RoadMapConfigEventsRadius )))
          break;
    }
@@ -892,7 +895,7 @@ void roadmap_general_settings_init(void){
       ("user", &RoadMapConfigShowTicker, NULL, "yes", "no", NULL);
 
    roadmap_config_declare_enumeration
-      ("user", &RoadMapConfigEventsRadius, NULL, "-1", "5", "25", "50", "100", "200", NULL);
+      ("user", &RoadMapConfigEventsRadius, NULL, "-1", "0", "5", "25", "50", "100", "200", NULL);
 
    roadmap_config_declare_enumeration
       ("user", &RoadMapConfigClockFormat, NULL, CLOCK_SETTINGS_12_HOUR, CLOCK_SETTINGS_24_HOUR, NULL);
