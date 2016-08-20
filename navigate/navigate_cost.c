@@ -63,6 +63,8 @@
 
 static time_t start_time;
 
+static RoadMapConfigDescriptor NavigateConfigCloseOnArrive =
+                        ROADMAP_CONFIG_ITEM("Navigation", "Close On Arrive");
 static RoadMapConfigDescriptor CostTypeCfg =
                   ROADMAP_CONFIG_ITEM("Routing", "Type");
 static RoadMapConfigDescriptor PreferSameStreetCfg =
@@ -123,6 +125,9 @@ int navigate_cost_prefer_same_street (void) {
 	return roadmap_config_match(&PreferSameStreetCfg, "yes");
 }
 
+int navigate_is_close_on_arrive(void) {
+	return (roadmap_config_match(&NavigateConfigCloseOnArrive, "yes"));
+}
 
 int navigate_cost_avoid_primaries (void) {
 
@@ -428,6 +433,9 @@ int navigate_cost_time (int line_id, int is_revesred, int cur_cost,
 
 void navigate_cost_initialize (void) {
 
+	roadmap_config_declare_enumeration
+         ("user", &NavigateConfigCloseOnArrive, NULL, "yes", "no", NULL);
+
    roadmap_config_declare_enumeration
       ("user", &CostTypeCfg, NULL, "Fastest", "Shortest", NULL);
 
@@ -501,6 +509,8 @@ static void save_changes(){
                            (const char *)ssd_dialog_get_data ("avoidPalestinianRoads"));
    }
 
+   roadmap_config_set (&NavigateConfigCloseOnArrive,
+                           (const char *)ssd_dialog_get_data ("closeonarrive"));
    roadmap_config_set (&CostAvoidPrimaryCfg,
                            (const char *)ssd_dialog_get_data ("avoidprime"));
    roadmap_config_set (&PreferSameStreetCfg,
@@ -628,6 +638,12 @@ static void create_ssd_dialog (void) {
 
    ssd_widget_add (container, box);
 
+   //Close On Arrive
+      box = ssd_checkbox_row_new("closeonarrive", roadmap_lang_get ("Exit On Arrive"),
+         TRUE, NULL,NULL,NULL,CHECKBOX_STYLE_ON_OFF);
+
+   ssd_widget_add (container, box);
+
    //Avoid toll roads
    if (roadmap_config_match(&TollRoadsCfg, "yes")){
       ssd_widget_add(container, ssd_separator_new("separator", SSD_END_ROW));
@@ -686,6 +702,10 @@ void cost_preferences (void) {
    if (navigate_cost_avoid_primaries ()) value = yesno[0];
    else value = yesno[1];
    ssd_dialog_set_data ("avoidprime", (void *) value);
+
+   if (navigate_is_close_on_arrive()) value = yesno[0];
+   else value = yesno[1];
+   ssd_dialog_set_data ("closeonarrive", (void *) value);
 
    if (navigate_cost_avoid_toll_roads()) value = yesno[0];
    else value = yesno[1];

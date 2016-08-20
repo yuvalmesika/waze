@@ -134,6 +134,7 @@ static RoadMapConfigDescriptor NavigateConfigAlt1RouteColor =
 static RoadMapConfigDescriptor NavigateConfigAlt2RouteColor =
                     ROADMAP_CONFIG_ITEM("Navigation", "Alt2outeColor");
 
+
 static RoadMapConfigDescriptor NavigateConfigAlt3RouteColor =
                     ROADMAP_CONFIG_ITEM("Navigation", "Alt3RouteColor");
 
@@ -1877,6 +1878,16 @@ void get_inst(NavSmallValue instruction, NavSmallValue exit_no, const char **ins
          break;
    }
 }
+static void CloseOnArriveConfirmCallback(int exit_code, void *context){
+    if (exit_code != dec_yes)
+         return;
+    ssd_dialog_hide_all( dec_close);
+
+    if (!roadmap_screen_refresh ())
+       roadmap_screen_redraw();
+    
+	roadmap_main_exit();
+}
 
 void navigate_update (RoadMapPosition *position, PluginLine *current, int speed, BOOL announce_prompt){
 
@@ -2052,8 +2063,10 @@ void navigate_update (RoadMapPosition *position, PluginLine *current, int speed,
             roadmap_screen_zoom_reset ();
          }
       }
-
+	
       navigate_main_stop_navigation ();
+	  if (navigate_is_close_on_arrive())
+		ssd_confirm_dialog_timeout(roadmap_lang_get("Exit on Arrive"), roadmap_lang_get("Exit waze on arrive to destination?"), TRUE, CloseOnArriveConfirmCallback , NULL,4);
       return;
    }
 
