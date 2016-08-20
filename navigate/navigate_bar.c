@@ -237,7 +237,7 @@ static int get_EtaBoxHeight(void){
 
 static int get_EtaBoxWidth(void){
    //return roadmap_canvas_image_width(NavigateBarEtaImage);
-	return 200;
+	return 180;
 }
 
 static int get_DirectionsBoxHeight(void){
@@ -1018,11 +1018,12 @@ static void navigate_bar_draw_time_to_destination () {
    }
    position = NavigatePanel->time_to_destination_pos;
    position.x -= (text_width/2);
-   position.x += 15;
+   //position.x += 15;
    roadmap_canvas_draw_string_size(&position, ROADMAP_CANVAS_BOTTOMLEFT, font_size, text2);
    
    position = NavigatePanel->time_to_destination_pos;
    position.x -= (text_width/2);
+   position.x -= 15;
    if (!ssd_widget_rtl(NULL)){
        roadmap_canvas_get_text_extents
              (text2, font_size, &text_width, &text_ascent, &text_descent, NULL);
@@ -1126,7 +1127,7 @@ static void navigate_bar_draw_distance_to_destination () {
   	if (ssd_widget_rtl(NULL)){
   	   position = NavigatePanel->distance_to_destination_pos;
 	   position.x -= (width/2);
-	   position.x += 15;//position.x -  distance_offset;//roadmap_canvas_width() - distance_offset;
+	   //position.x += 15;//position.x -  distance_offset;//roadmap_canvas_width() - distance_offset;
        roadmap_canvas_draw_string_size(&position, ROADMAP_CANVAS_BOTTOMLEFT, font_size, text);
 
   	   pch = strtok (NULL," ");
@@ -1134,6 +1135,7 @@ static void navigate_bar_draw_distance_to_destination () {
 
 	   position = NavigatePanel->distance_to_destination_pos;
 	   position.x -= (width/2);
+	   position.x -= 15;
 	   //position.x = position.x + eta_drawing_offset ;
 	   roadmap_canvas_draw_string_size(&position, ROADMAP_CANVAS_BOTTOMMIDDLE, font_size-10, text);
 
