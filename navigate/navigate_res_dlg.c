@@ -103,6 +103,7 @@ static void close_res_dlg(void){
 /////////////////////////////////////////////////////////////////////
 static int on_drive_btn_cb (SsdWidget widget, const char *new_value){
    close_res_dlg();
+   ssd_dialog_hide_all(dec_cancel);
    return 1;
 }
 
