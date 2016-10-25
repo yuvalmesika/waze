@@ -739,7 +739,6 @@ static RoadMapSocket roadmap_net_connect__internal(
    char *separator = strchr (name, ':');
    DWORD dwSockOpt = 0;
    DWORD dwSockOptSize = sizeof(DWORD);
-
    struct hostent *host;
    struct sockaddr_in addr;
 
@@ -859,7 +858,7 @@ static RoadMapSocket roadmap_net_connect__internal(
          (*res) = err_net_failed;
       goto connection_failure;
    }
-   /*
+   
    if( 0 == getsockopt( fd, SOL_SOCKET, SO_REUSEADDR, (char*)&dwSockOpt, &dwSockOptSize))
    {
       if( !dwSockOpt)
@@ -870,10 +869,12 @@ static RoadMapSocket roadmap_net_connect__internal(
       }
       else
          roadmap_log( ROADMAP_DEBUG, "roadmap_net.c::roadmap_net_connect() - SO_REUSEADDR already set");
+
    }
    else
       roadmap_log( ROADMAP_ERROR, "roadmap_net.c::roadmap_net_connect() - 'getsockopt()' failed with neterr: %d", WSAGetLastError());
-*/
+
+   
    if (connect (fd, (struct sockaddr *) &addr, sizeof(addr)) == SOCKET_ERROR) {
 
       roadmap_log( ROADMAP_ERROR, "roadmap_net.c::roadmap_net_connect() - 'connect()' failed with neterr: %d", WSAGetLastError());
@@ -1341,8 +1342,12 @@ void *roadmap_net_connect_async(
 	//if (socket == -1)
 	//return NULL;
 	//return socket;
+	const char*                httpAddress;
+   //patch support only http
+   httpAddress = WSA_ExtractHttpFromHttps(name);
+   default_port= 80;
    if( !win32_roadmap_net_async_connect(  protocol,
-                                          name,
+                                          httpAddress ,
                                           update_time,
                                           default_port,
                                           flags,

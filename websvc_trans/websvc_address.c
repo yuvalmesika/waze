@@ -193,34 +193,33 @@ char *str_replace(char *orig, char *rep, char *with) {
     strcpy(tmp, orig);
     return result;
 }
-void   WSA_ExtractHttpFromHttps(   
-         const char* szWebServiceAddress,
-		 char* szWebServiceAddressHttp)        //   OUT,OPT-  Web service http full address (http://...)
-{
-   char     Copy[WSA_STRING_MAXSIZE+1];
-   char*       temp;
-   int i;
-   
-   ////   Copy of service-name:
-   //for( i=0; i<strlen(szWebServiceAddress); i++)
-   //   Copy[i] = szWebServiceAddress[i];
-   //Copy[i] = '\0';
-   temp = malloc(strlen(szWebServiceAddress)+1);
-   *szWebServiceAddressHttp= malloc(strlen(szWebServiceAddress)+1);
-   strcpy(temp,szWebServiceAddress);
-	*szWebServiceAddressHttp = temp;
-   if( 0 == strncasecmp( szWebServiceAddress, WSA_PREFIX_SECURED, WSA_PREFIX_SIZE_SECURED))
-   {
-	  temp = str_replace(szWebServiceAddressHttp,WSA_PREFIX_SECURED,WSA_PREFIX);
-	  temp = str_replace(temp,WSA_PREFIX_PORT_SECURED,WSA_PREFIX_PORT);
-	  *szWebServiceAddressHttp = temp;
-   }
-   
-   return ;
-}
+//void   WSA_ExtractHttpFromHttps(   
+//         const char* szWebServiceAddress,
+//		 char* szWebServiceAddressHttp)        //   OUT,OPT-  Web service http full address (http://...)
+//{
+//   char     Copy[WSA_STRING_MAXSIZE+1];
+//   char*       temp;
+//   int i;
+//   
+//   ////   Copy of service-name:
+//   //for( i=0; i<strlen(szWebServiceAddress); i++)
+//   //   Copy[i] = szWebServiceAddress[i];
+//   //Copy[i] = '\0';
+//   temp = malloc(strlen(szWebServiceAddress)+1);
+//   *szWebServiceAddressHttp= malloc(strlen(szWebServiceAddress)+1);
+//   strcpy(temp,szWebServiceAddress);
+//	*szWebServiceAddressHttp = temp;
+//   if( 0 == strncasecmp( szWebServiceAddress, WSA_PREFIX_SECURED, WSA_PREFIX_SIZE_SECURED))
+//   {
+//	  temp = str_replace(szWebServiceAddressHttp,WSA_PREFIX_SECURED,WSA_PREFIX);
+//	  temp = str_replace(temp,WSA_PREFIX_PORT_SECURED,WSA_PREFIX_PORT);
+//	  *szWebServiceAddressHttp = temp;
+//   }
+//   
+//   return ;
+//}
 
-char* WSA_ExtractHttpFromHttps2(   
-         const char* szWebServiceAddress)        //   OUT,OPT-  Web service http full address (http://...)
+char* WSA_ExtractHttpFromHttps(const char* szWebServiceAddress)        //   OUT,OPT-  Web service http full address (http://...)
 {
    char     Copy[WSA_STRING_MAXSIZE+1];
    char*       temp;

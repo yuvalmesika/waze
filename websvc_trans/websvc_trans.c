@@ -884,7 +884,12 @@ transaction_result on_data_received_( void* data, int size, wst_context_ptr sess
       roadmap_log( ROADMAP_ERROR, "on_data_received( SOCKET: %d) - Invalid data (NULL)", roadmap_net_get_fd(session->Socket));
       return trans_failed;
    }
-
+#ifdef DEBUG
+   if( size > 0 && data == NULL )
+   {
+		roadmap_log( ROADMAP_INFO, "on_data_received( SOCKET: %d) - data %s", roadmap_net_get_fd(session->Socket), data);
+   }
+#endif
    roadmap_log( ROADMAP_DEBUG, "on_data_received( SOCKET: %d) - Received %d bytes", roadmap_net_get_fd(session->Socket), size);
    session->last_receive_time = time(NULL);
    

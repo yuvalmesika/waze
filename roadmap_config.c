@@ -34,7 +34,7 @@
 #include "roadmap_path.h"
 #include "roadmap_file.h"
 #include "roadmap_config.h"
-
+#include "websvc_trans\websvc_address.h"
 
 typedef struct RoadMapConfigEnumRecord RoadMapConfigEnum;
 
@@ -96,7 +96,6 @@ static RoadMapConfig RoadMapConfigFiles[] = {
    {"schema",      "skin",   1, ROADMAP_CONFIG_CLEAN, NULL, NULL,1,0},
    {NULL, "", 0, 0, NULL, NULL,0,0}
 };
-
 
 static RoadMapConfig *roadmap_config_search_file (const char *name) {
 
@@ -722,9 +721,11 @@ const char *roadmap_config_get (RoadMapConfigDescriptor *descriptor) {
     if (item != NULL) {
 
         if (item->value != NULL) {
-            return WSA_ExtractHttpFromHttps2(item->value); 
+            //return WSA_ExtractHttpFromHttps(item->value); 
+			return item->value; 
         }
-        return WSA_ExtractHttpFromHttps2(item->default_value);
+        return item->default_value;
+		//return WSA_ExtractHttpFromHttps(item->default_value);
     }
 
    return "";
@@ -879,4 +880,5 @@ void  roadmap_config_set_position
       }
    }
 }
+
 
