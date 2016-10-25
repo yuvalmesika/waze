@@ -2863,7 +2863,8 @@ static void RTAlerts_Popup(void)
     }
 
     pAlert = RTAlerts_Get(gIterator);
-    if (pAlert == NULL){
+	//incase roadmap_general_settings_events_radius() ==0 disable alerts
+    if (pAlert == NULL || roadmap_general_settings_events_radius() == 0){
           if (RTAlerts_IsIdleAlertScrolling())
               RTAlerts_Stop_Scrolling();
           return;
