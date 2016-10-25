@@ -497,7 +497,6 @@ void roadmap_trip_server_init(void){
    }
 
    roadmap_history_declare (ADDRESS_FAVORITE_CATEGORY, ahi__count);
-   roadmap_history_declare (ADDRESS_HISTORY_CATEGORY, ahi__count);
    gLoginCallBack = Realtime_NotifyOnLogin (roadmap_trip_server_after_login);
    gLoginChangedCallBack = Realtime_NotifyOnLoginChanged (roadmap_trip_get_num_Pois);
 }
