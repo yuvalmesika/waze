@@ -3275,7 +3275,8 @@ void roadmap_start (int argc, char **argv) {
     roadmap_browser_init();
     _tts_config( NULL );
     roadmap_geo_config(roadmap_start_continue);
-	roadmap_search_menu();
+	if (navigate_is_open_search_on_startup())
+		roadmap_search_menu();
 }
 
 
