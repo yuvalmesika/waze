@@ -587,6 +587,7 @@ static void on_delete(void *data){
    else
       strcpy(string, "Are you sure you want to remove item from favorites?");
 
+   
    ssd_confirm_dialog( selection,
                         string,
                         FALSE,

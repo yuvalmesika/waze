@@ -2944,6 +2944,7 @@ void navigate_resume_navigation (int exit_code, void *context){
            roadmap_config_set_integer (&NavigateConfigNavigating, 0);
            roadmap_config_save (TRUE);
       } else {
+	     ssd_dialog_hide_all(dec_cancel);
          NavigateAllowTweet = FALSE;
          NavigationResumed =  TRUE;
          roadmap_analytics_log_event (ANALYTICS_EVENT_NAVIGATE, ANALYTICS_EVENT_INFO_SOURCE,  "RESUME_NAV" );

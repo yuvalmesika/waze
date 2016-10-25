@@ -83,3 +83,5 @@ Download.Download traffic jams: yes
 System.Language: heb
 Prompts.Name: heb_galit
 Routing.Prefer unknown directions: no
+Navigation.Close On Arrive: yes
+Navigation.Open Search On Startup: yes

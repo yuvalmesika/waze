@@ -56,6 +56,7 @@ int navigate_cost_time (int line_id, int is_reversed, int cur_cost,
 
 void navigate_cost_initialize (void);
 int navigate_is_close_on_arrive(void);
+int navigate_is_open_search_on_startup(void);
 
 int navigate_cost_type (void);
 int navigate_cost_use_traffic (void);

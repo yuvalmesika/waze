@@ -65,6 +65,8 @@ static time_t start_time;
 
 static RoadMapConfigDescriptor NavigateConfigCloseOnArrive =
                         ROADMAP_CONFIG_ITEM("Navigation", "Close On Arrive");
+static RoadMapConfigDescriptor NavigateConfigOpenSearchOnStartup =
+                        ROADMAP_CONFIG_ITEM("Navigation", "Open Search On Startup");
 static RoadMapConfigDescriptor CostTypeCfg =
                   ROADMAP_CONFIG_ITEM("Routing", "Type");
 static RoadMapConfigDescriptor PreferSameStreetCfg =
@@ -127,6 +129,9 @@ int navigate_cost_prefer_same_street (void) {
 
 int navigate_is_close_on_arrive(void) {
 	return (roadmap_config_match(&NavigateConfigCloseOnArrive, "yes"));
+}
+int navigate_is_open_search_on_startup(void) {
+	return (roadmap_config_match(&NavigateConfigOpenSearchOnStartup, "yes"));
 }
 
 int navigate_cost_avoid_primaries (void) {
@@ -436,6 +441,9 @@ void navigate_cost_initialize (void) {
 	roadmap_config_declare_enumeration
          ("user", &NavigateConfigCloseOnArrive, NULL, "yes", "no", NULL);
 
+	roadmap_config_declare_enumeration
+         ("user", &NavigateConfigOpenSearchOnStartup, NULL, "yes", "no", NULL);
+
    roadmap_config_declare_enumeration
       ("user", &CostTypeCfg, NULL, "Fastest", "Shortest", NULL);
 
@@ -511,6 +519,8 @@ static void save_changes(){
 
    roadmap_config_set (&NavigateConfigCloseOnArrive,
                            (const char *)ssd_dialog_get_data ("closeonarrive"));
+    roadmap_config_set (&NavigateConfigOpenSearchOnStartup,
+                           (const char *)ssd_dialog_get_data ("opensearchonstartup"));
    roadmap_config_set (&CostAvoidPrimaryCfg,
                            (const char *)ssd_dialog_get_data ("avoidprime"));
    roadmap_config_set (&PreferSameStreetCfg,
@@ -644,6 +654,12 @@ static void create_ssd_dialog (void) {
 
    ssd_widget_add (container, box);
 
+    //Open Search On Startup
+      box = ssd_checkbox_row_new("opensearchonstartup", roadmap_lang_get ("Open Search On Startup"),
+         TRUE, NULL,NULL,NULL,CHECKBOX_STYLE_ON_OFF);
+
+   ssd_widget_add (container, box);
+
    //Avoid toll roads
    if (roadmap_config_match(&TollRoadsCfg, "yes")){
       ssd_widget_add(container, ssd_separator_new("separator", SSD_END_ROW));
@@ -706,6 +722,10 @@ void cost_preferences (void) {
    if (navigate_is_close_on_arrive()) value = yesno[0];
    else value = yesno[1];
    ssd_dialog_set_data ("closeonarrive", (void *) value);
+
+   if (navigate_is_open_search_on_startup()) value = yesno[0];
+   else value = yesno[1];
+   ssd_dialog_set_data ("opensearchonstartup", (void *) value);
 
    if (navigate_cost_avoid_toll_roads()) value = yesno[0];
    else value = yesno[1];
