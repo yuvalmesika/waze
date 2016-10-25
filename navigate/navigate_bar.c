@@ -163,7 +163,7 @@ static int  eta_drawing_offset_spacing = 50;
 static int  gOffset;
 static int  height;
 static int  clockWidth;
-
+static int  distance_offset;
 
 static BOOL drag_start_on_bar;
 static enum NavigateInstr NavigateBarNextInstr = LAST_DIRECTION;
@@ -288,13 +288,14 @@ static int navigate_bar_align_text (char *text, char **line1, char **line2,
                                     int size) {
 
    int width, ascent, descent;
-
+   int street_width;
    roadmap_canvas_get_text_extents
       (text, size, &width, &ascent, &descent, NULL);
 
-   if (width >= 2 * NavigatePanel->street_width) return -1;
+   street_width = (NavigatePanel->street_width-distance_offset);
+   if (width >= (2 * street_width)) return -1;
 
-   if (width < NavigatePanel->street_width) {
+   if (width < street_width) {
 
       *line1 = text;
       return 1;
@@ -331,12 +332,12 @@ static int navigate_bar_align_text (char *text, char **line1, char **line2,
          roadmap_canvas_get_text_extents
             (text_line, size, &width, &ascent, &descent, NULL);
 
-         if (width < NavigatePanel->street_width) {
+         if (width < street_width) {
 
             roadmap_canvas_get_text_extents
                (text_line, size, &width, &ascent, &descent, NULL);
 
-            if (width < NavigatePanel->street_width) {
+            if (width < street_width) {
 
                *line1 = text_line;
                *line2 = p1 + 1;
@@ -715,6 +716,7 @@ static void navigate_bar_draw_distance (int distance, int offset) {
       position = NavigatePanel->distance_value_pos;
       position.y += (get_AddressBarHeight()/2) + offset;
       position.x = (position.x +text_width);
+	  distance_offset = position.x;
       roadmap_canvas_draw_string_size(&position, ROADMAP_CANVAS_CENTERLEFT, font_size-2, str);
 
       position.x = (position.x) - text_width - 3;
@@ -724,11 +726,13 @@ static void navigate_bar_draw_distance (int distance, int offset) {
      position = NavigatePanel->distance_value_pos;
      position.y += (get_AddressBarHeight()/2) + offset;
   	  position.x = (position.x +text_width);
+	  
   	  roadmap_canvas_draw_string_size(&position, ROADMAP_CANVAS_TOPMIDDLE, font_size, str);
 
   	  position = NavigatePanel->distance_value_pos;
      position.y += (get_AddressBarHeight()/2) + offset;
   	  position.x = (position.x) + NAV_BAR_PIXELS( 15 );
+	  distance_offset = position.x;
 	  roadmap_canvas_draw_string_size(&position, ROADMAP_CANVAS_BOTTOMRIGHT, font_size_units, unit_str);
 
   	}
@@ -798,6 +802,13 @@ static void navigate_bar_draw_street (const char *street) {
    size = font_size_normal;
 
    num_lines = navigate_bar_align_text (text, &line1, &line2, size);
+
+   if (num_lines>1)
+   {
+	    size = font_size_small;
+		NavigatePanel->street_line1_pos = (get_AddressBarHeight()/(4));
+		NavigatePanel->street_line2_pos = (get_AddressBarHeight()/(4))*3;
+   }
 
    if ((num_lines < 0)  || ((num_lines>1) && (NavigatePanel->street_line2_pos == -1))){
       /* Try again with a smaller font size */
