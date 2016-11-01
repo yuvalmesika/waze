@@ -162,14 +162,14 @@ static void roadmap_speedometer_after_refresh (void){
          roadmap_canvas_draw_string_size(&units_position, ROADMAP_CANVAS_BOTTOMLEFT, font_size_units, unit_str);
       }
       else{
-         text_position.x = image_position.x + (roadmap_canvas_image_width(SpeedometerImage)/2)- (text_width/2) + text_offset;
-         roadmap_canvas_draw_string_size(&text_position, ROADMAP_CANVAS_BOTTOMMIDDLE, font_size, str);
+         text_position.x = image_position.x + (roadmap_canvas_image_width(SpeedometerImage)/2) - (text_width/2) + text_offset;
+		 roadmap_canvas_draw_string_size(&text_position, ROADMAP_CANVAS_BOTTOMLEFT, font_size, str);
 
 		 roadmap_canvas_get_text_extents
          (unit_str, font_size_units, &text_width, &text_ascent, &text_descent, NULL);
 
-         units_position.x = image_position.x + (roadmap_canvas_image_width(SpeedometerImage)/2)- (text_width/2)-2 ;
-         roadmap_canvas_draw_string_size(&units_position, ROADMAP_CANVAS_BOTTOMMIDDLE, font_size_units, unit_str);
+		 units_position.x = image_position.x + (roadmap_canvas_image_width(SpeedometerImage)/2) - (text_width/2)-2;
+         roadmap_canvas_draw_string_size(&units_position, ROADMAP_CANVAS_BOTTOMLEFT, font_size_units, unit_str);
       }
    }
 

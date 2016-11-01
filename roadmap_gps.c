@@ -1115,7 +1115,7 @@ void roadmap_gps_initialize (void) {
 
 #endif
       roadmap_config_declare
-         ("preferences", &RoadMapConfigGPSTimeout, "3", NULL);
+         ("preferences", &RoadMapConfigGPSTimeout, "4", NULL);
 
       roadmap_config_declare_enumeration ("preferences", &RoadMapConfigGpsRaw, NULL, "no", "yes", NULL);
 
